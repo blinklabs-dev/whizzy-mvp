@@ -1,0 +1,1198 @@
+[
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "Phone": "664.583.2963",
+      "Website": "www.saopaulo.com",
+      "Id": "001gL00000Hm4D2QAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D4",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D4",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-brasilia",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "brasilia",
+      "Phone": "+1-413-939-1281x8846",
+      "Website": "www.brasilia.com",
+      "Id": "001gL00000Hm4D4QAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D4",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D4",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-brasilia",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "brasilia",
+      "Phone": "316-519-9684x933",
+      "Website": "www.brasilia.com",
+      "Id": "001gL00000Hm4D4QAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4DB",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4DB",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-belo horizonte",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "belo horizonte",
+      "Phone": "(562)976-0840x06588",
+      "Website": "www.belohorizonte.com",
+      "Id": "001gL00000Hm4DBQAZ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4DB",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4DB",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-belo horizonte",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "belo horizonte",
+      "Phone": "647.284.9266",
+      "Website": "www.belohorizonte.com",
+      "Id": "001gL00000Hm4DBQAZ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "Phone": "001-614-215-4327x62029",
+      "Website": "www.saopaulo.com",
+      "Id": "001gL00000Hm4D2QAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4Cj",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4Cj",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-guaruja",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "guaruja",
+      "Phone": "3972102624",
+      "Website": "www.guaruja.com",
+      "Id": "001gL00000Hm4CjQAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4DC",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4DC",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-santo andre",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "santo andre",
+      "Phone": "361-282-6491x0438",
+      "Website": "www.santoandre.com",
+      "Id": "001gL00000Hm4DCQAZ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "Phone": "001-522-321-6685",
+      "Website": "www.saopaulo.com",
+      "Id": "001gL00000Hm4D2QAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D0",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D0",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-sao jose dos pinhais",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao jose dos pinhais",
+      "Phone": "(811)530-9701x5195",
+      "Website": "www.saojosedospinhais.com",
+      "Id": "001gL00000Hm4D0QAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "Phone": "001-497-622-3258",
+      "Website": "www.saopaulo.com",
+      "Id": "001gL00000Hm4D2QAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "Phone": "+1-925-800-6088x5516",
+      "Website": "www.saopaulo.com",
+      "Id": "001gL00000Hm4D2QAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4Cq",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4Cq",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-sao bernardo do campo",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao bernardo do campo",
+      "Phone": "001-486-964-3049",
+      "Website": "www.saobernardodocampo.com",
+      "Id": "001gL00000Hm4CqQAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "Phone": "+1-281-233-0300x8264",
+      "Website": "www.saopaulo.com",
+      "Id": "001gL00000Hm4D2QAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "Phone": "(469)378-8148",
+      "Website": "www.saopaulo.com",
+      "Id": "001gL00000Hm4D2QAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4CU",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4CU",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-rio de janeiro",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "rio de janeiro",
+      "Phone": "461-465-3415",
+      "Website": "www.riodejaneiro.com",
+      "Id": "001gL00000Hm4CUQAZ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4CU",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4CU",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-rio de janeiro",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "rio de janeiro",
+      "Phone": "4456670578",
+      "Website": "www.riodejaneiro.com",
+      "Id": "001gL00000Hm4CUQAZ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "Phone": "375-355-7773x74248",
+      "Website": "www.saopaulo.com",
+      "Id": "001gL00000Hm4D2QAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "Phone": "001-673-809-9017x51307",
+      "Website": "www.saopaulo.com",
+      "Id": "001gL00000Hm4D2QAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4DC",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4DC",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-santo andre",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "santo andre",
+      "Phone": "001-613-471-1803x77969",
+      "Website": "www.santoandre.com",
+      "Id": "001gL00000Hm4DCQAZ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "Phone": "(811)552-7403x96739",
+      "Website": "www.saopaulo.com",
+      "Id": "001gL00000Hm4D2QAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4DB",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4DB",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-belo horizonte",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "belo horizonte",
+      "Phone": "001-758-647-4992x67028",
+      "Website": "www.belohorizonte.com",
+      "Id": "001gL00000Hm4DBQAZ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4CU",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4CU",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-rio de janeiro",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "rio de janeiro",
+      "Phone": "(408)335-7801",
+      "Website": "www.riodejaneiro.com",
+      "Id": "001gL00000Hm4CUQAZ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4CU",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4CU",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-rio de janeiro",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "rio de janeiro",
+      "Phone": "429-978-0021",
+      "Website": "www.riodejaneiro.com",
+      "Id": "001gL00000Hm4CUQAZ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "Phone": "277.574.5509",
+      "Website": "www.saopaulo.com",
+      "Id": "001gL00000Hm4D2QAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "Phone": "(790)997-0635x1061",
+      "Website": "www.saopaulo.com",
+      "Id": "001gL00000Hm4D2QAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4Cm",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4Cm",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-salto",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "salto",
+      "Phone": "883.373.7560x7045",
+      "Website": "www.salto.com",
+      "Id": "001gL00000Hm4CmQAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "Phone": "7175892948",
+      "Website": "www.saopaulo.com",
+      "Id": "001gL00000Hm4D2QAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4CU",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4CU",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-rio de janeiro",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "rio de janeiro",
+      "Phone": "+1-532-271-3676x81265",
+      "Website": "www.riodejaneiro.com",
+      "Id": "001gL00000Hm4CUQAZ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "Phone": "(875)665-1701",
+      "Website": "www.saopaulo.com",
+      "Id": "001gL00000Hm4D2QAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "Phone": "969.913.5750x0796",
+      "Website": "www.saopaulo.com",
+      "Id": "001gL00000Hm4D2QAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D4",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D4",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-brasilia",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "brasilia",
+      "Phone": "(810)520-0312x6033",
+      "Website": "www.brasilia.com",
+      "Id": "001gL00000Hm4D4QAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "Phone": "+1-938-761-1587x93237",
+      "Website": "www.saopaulo.com",
+      "Id": "001gL00000Hm4D2QAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D4",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D4",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-brasilia",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "brasilia",
+      "Phone": "216.416.0644x29540",
+      "Website": "www.brasilia.com",
+      "Id": "001gL00000Hm4D4QAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "Phone": "849-940-7761x4307",
+      "Website": "www.saopaulo.com",
+      "Id": "001gL00000Hm4D2QAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "Phone": "282.206.2072x69104",
+      "Website": "www.saopaulo.com",
+      "Id": "001gL00000Hm4D2QAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "Phone": "001-558-834-8126x99508",
+      "Website": "www.saopaulo.com",
+      "Id": "001gL00000Hm4D2QAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "Phone": "(713)547-0177",
+      "Website": "www.saopaulo.com",
+      "Id": "001gL00000Hm4D2QAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4CU",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4CU",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-rio de janeiro",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "rio de janeiro",
+      "Phone": "001-652-403-3512",
+      "Website": "www.riodejaneiro.com",
+      "Id": "001gL00000Hm4CUQAZ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4CU",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4CU",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-rio de janeiro",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "rio de janeiro",
+      "Phone": "444-798-1761x20867",
+      "Website": "www.riodejaneiro.com",
+      "Id": "001gL00000Hm4CUQAZ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "Phone": "705-407-4066x3808",
+      "Website": "www.saopaulo.com",
+      "Id": "001gL00000Hm4D2QAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4Ct",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4Ct",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-curitiba",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "curitiba",
+      "Phone": "657.526.9073",
+      "Website": "www.curitiba.com",
+      "Id": "001gL00000Hm4CtQAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "Phone": "503-865-4306x506",
+      "Website": "www.saopaulo.com",
+      "Id": "001gL00000Hm4D2QAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4D2",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "Phone": "(246)272-0485",
+      "Website": "www.saopaulo.com",
+      "Id": "001gL00000Hm4D2QAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4Ct",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4Ct",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-curitiba",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "curitiba",
+      "Phone": "741-336-2395x2637",
+      "Website": "www.curitiba.com",
+      "Id": "001gL00000Hm4CtQAJ"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "DUPLICATE_VALUE",
+      "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4Ct",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATE_VALUE",
+          "message": "Maximum number of duplicate updates in one batch (12 allowed). Attempt to update Id more than once in this Api call: 001gL00000Hm4Ct",
+          "fields": []
+        }
+      ],
+      "Name": "Seed[MVP]-curitiba",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "curitiba",
+      "Phone": "(736)974-7512",
+      "Website": "www.curitiba.com",
+      "Id": "001gL00000Hm4CtQAJ"
+    }
+  }
+]

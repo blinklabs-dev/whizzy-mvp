@@ -1,0 +1,1402 @@
+[
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_0",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_0",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_0",
+      "Name": "Seed[MVP]-Order e481f51cbdc54678b7cc49136f2d6af7",
+      "Amount": 1354.640838786301,
+      "CloseDate": "2024-12-11",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_1",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_1",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_1",
+      "Name": "Seed[MVP]-Order 53cdb2fc8bc7dce0b6741e2150273451",
+      "Amount": 8840.013619434809,
+      "CloseDate": "2025-02-06",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_2",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_2",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_2",
+      "Name": "Seed[MVP]-Order 47770eb9100c2d0c44946d9cf07ec65d",
+      "Amount": 3621.6522245672118,
+      "CloseDate": "2024-10-30",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_3",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_3",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_3",
+      "Name": "Seed[MVP]-Order 949d5b44dbf5de918fe9c16f97b45f8a",
+      "Amount": 6143.512128644736,
+      "CloseDate": "2025-03-11",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_4",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_4",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_4",
+      "Name": "Seed[MVP]-Order ad21c59c0840e6cb83a9ceb5573f8159",
+      "Amount": 4722.194574874936,
+      "CloseDate": "2025-05-27",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_5",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_5",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_5",
+      "Name": "Seed[MVP]-Order a4591c265e18cb1dcee52889e2d8acc3",
+      "Amount": 6231.703834537074,
+      "CloseDate": "2024-10-20",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_6",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_6",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_6",
+      "Name": "Seed[MVP]-Order 136cce7faa42fdb2cefd53fdc79a6098",
+      "Amount": 6693.533583952119,
+      "CloseDate": "2024-10-13",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_7",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_7",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_7",
+      "Name": "Seed[MVP]-Order 6514b8ad8028c9f2cc2374ded245783f",
+      "Amount": 2055.457770709195,
+      "CloseDate": "2025-04-04",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_8",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_8",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_8",
+      "Name": "Seed[MVP]-Order 76c6e866289321a7c93b82b54852dc33",
+      "Amount": 7294.935432665587,
+      "CloseDate": "2025-01-30",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_9",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_9",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_9",
+      "Name": "Seed[MVP]-Order e69bfb5eb88e0ed6a785585b27e16dbf",
+      "Amount": 7220.304909054774,
+      "CloseDate": "2025-06-07",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_10",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_10",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_10",
+      "Name": "Seed[MVP]-Order e6ce16cb79ec1d90b1da9085a6118aeb",
+      "Amount": 9896.985960718357,
+      "CloseDate": "2025-01-19",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_11",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_11",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_11",
+      "Name": "Seed[MVP]-Order 34513ce0c4fab462a55830c0989c7edb",
+      "Amount": 6255.550798285232,
+      "CloseDate": "2025-03-03",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_12",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_12",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_12",
+      "Name": "Seed[MVP]-Order 82566a660a982b15fb86e904c8d32918",
+      "Amount": 5141.404390739869,
+      "CloseDate": "2025-03-29",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_13",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_13",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_13",
+      "Name": "Seed[MVP]-Order 5ff96c15d0b717ac6ad1f3d77225a350",
+      "Amount": 8502.687450735677,
+      "CloseDate": "2025-01-01",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_14",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_14",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_14",
+      "Name": "Seed[MVP]-Order 432aaf21d85167c2c86ec9448c4e42cc",
+      "Amount": 4683.214443793074,
+      "CloseDate": "2025-02-15",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_15",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_15",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_15",
+      "Name": "Seed[MVP]-Order dcb36b511fcac050b97cd5c05de84dc3",
+      "Amount": 6488.308268051126,
+      "CloseDate": "2025-06-04",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_16",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_16",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_16",
+      "Name": "Seed[MVP]-Order 403b97836b0c04a622354cf531062e5f",
+      "Amount": 4439.509825923453,
+      "CloseDate": "2024-09-07",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_17",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_17",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_17",
+      "Name": "Seed[MVP]-Order 116f0b09343b49556bbad5f35bee0cdf",
+      "Amount": 8551.35610997216,
+      "CloseDate": "2025-02-10",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_18",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_18",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_18",
+      "Name": "Seed[MVP]-Order 85ce859fd6dc634de8d2f1e290444043",
+      "Amount": 8431.115202896459,
+      "CloseDate": "2024-09-24",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_19",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_19",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_19",
+      "Name": "Seed[MVP]-Order 83018ec114eee8641c97e08f7b4e926f",
+      "Amount": 8277.078712927507,
+      "CloseDate": "2024-09-30",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_20",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_20",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_20",
+      "Name": "Seed[MVP]-Order 203096f03d82e0dffbc41ebc2e2bcfb7",
+      "Amount": 9254.794919789174,
+      "CloseDate": "2025-07-18",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_21",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_21",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_21",
+      "Name": "Seed[MVP]-Order f848643eec1d69395095eb3840d2051e",
+      "Amount": 5259.745140895557,
+      "CloseDate": "2025-06-28",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_22",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_22",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_22",
+      "Name": "Seed[MVP]-Order 2807d0e504d6d4894d41672727bc139f",
+      "Amount": 7731.634080745229,
+      "CloseDate": "2024-10-11",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_23",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_23",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_23",
+      "Name": "Seed[MVP]-Order 95266dbfb7e20354baba07964dac78d5",
+      "Amount": 7604.890948648887,
+      "CloseDate": "2025-04-11",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_24",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_24",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_24",
+      "Name": "Seed[MVP]-Order f3e7c359154d965827355f39d6b1fdac",
+      "Amount": 8618.280262796232,
+      "CloseDate": "2025-03-10",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_25",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_25",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_25",
+      "Name": "Seed[MVP]-Order fbf9ac61453ac646ce8ad9783d7d0af6",
+      "Amount": 4760.976299075653,
+      "CloseDate": "2024-09-02",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_26",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_26",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_26",
+      "Name": "Seed[MVP]-Order acce194856392f074dbf9dada14d8d82",
+      "Amount": 6905.131658658056,
+      "CloseDate": "2025-06-02",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_27",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_27",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_27",
+      "Name": "Seed[MVP]-Order dd78f560c270f1909639c11b925620ea",
+      "Amount": 8861.929456184804,
+      "CloseDate": "2025-02-18",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_28",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_28",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_28",
+      "Name": "Seed[MVP]-Order 91b2a010e1e45e6ba3d133fa997597be",
+      "Amount": 6248.451201462677,
+      "CloseDate": "2025-07-07",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_29",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_29",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_29",
+      "Name": "Seed[MVP]-Order ecab90c9933c58908d3d6add7c6f5ae3",
+      "Amount": 4011.093906146416,
+      "CloseDate": "2025-03-23",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_30",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_30",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_30",
+      "Name": "Seed[MVP]-Order f70a0aff17df5a6cdd9a7196128bd354",
+      "Amount": 6825.003949643978,
+      "CloseDate": "2025-04-02",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_31",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_31",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_31",
+      "Name": "Seed[MVP]-Order 1790eea0b567cf50911c057cf20f90f9",
+      "Amount": 6315.49837546853,
+      "CloseDate": "2024-11-01",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_32",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_32",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_32",
+      "Name": "Seed[MVP]-Order 989225ba6d0ebd5873335f7e01de2ae7",
+      "Amount": 1055.019482525343,
+      "CloseDate": "2024-10-15",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_33",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_33",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_33",
+      "Name": "Seed[MVP]-Order d887b52c6516beb39e8cd44a5f8b60f7",
+      "Amount": 7276.361209057993,
+      "CloseDate": "2025-05-31",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_34",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_34",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_34",
+      "Name": "Seed[MVP]-Order b276e4f8c0fb86bd82fce576f21713e0",
+      "Amount": 2909.542114990804,
+      "CloseDate": "2025-05-22",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_35",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_35",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_35",
+      "Name": "Seed[MVP]-Order 8563039e855156e48fccee4d611a3196",
+      "Amount": 9245.638873810396,
+      "CloseDate": "2024-09-04",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_36",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_36",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_36",
+      "Name": "Seed[MVP]-Order 60550084e6b4c0cb89a87df1f3e5ebd9",
+      "Amount": 3425.9278530397287,
+      "CloseDate": "2025-06-21",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_37",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_37",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_37",
+      "Name": "Seed[MVP]-Order 5acce57f8d9dfd55fa48e212a641a69d",
+      "Amount": 6896.684557239752,
+      "CloseDate": "2024-09-19",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_38",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_38",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_38",
+      "Name": "Seed[MVP]-Order 434d158e96bdd6972ad6e6d73ddcfd22",
+      "Amount": 1215.7018495601235,
+      "CloseDate": "2025-02-10",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_39",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_39",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_39",
+      "Name": "Seed[MVP]-Order 7206b86ea789983f7a273ea7fa0bc2a8",
+      "Amount": 6287.630311085484,
+      "CloseDate": "2024-11-19",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_40",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_40",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_40",
+      "Name": "Seed[MVP]-Order 1e7aff52cdbb2451ace09d0f848c3699",
+      "Amount": 9906.913224962944,
+      "CloseDate": "2025-03-22",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_41",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_41",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_41",
+      "Name": "Seed[MVP]-Order 6ea2f835b4556291ffdc53fa0b3b95e8",
+      "Amount": 2815.6676456105088,
+      "CloseDate": "2024-12-18",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_42",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_42",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_42",
+      "Name": "Seed[MVP]-Order 948097deef559c742e7ce321e5e58919",
+      "Amount": 3761.0823341382993,
+      "CloseDate": "2025-05-06",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_43",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_43",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_43",
+      "Name": "Seed[MVP]-Order d22e9fa5731b9e30e8b27afcdc2f8563",
+      "Amount": 8135.29518136505,
+      "CloseDate": "2024-12-18",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_44",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_44",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_44",
+      "Name": "Seed[MVP]-Order ee64d42b8cf066f35eac1cf57de1aa85",
+      "Amount": 2634.5620840788188,
+      "CloseDate": "2024-10-31",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_45",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_45",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_45",
+      "Name": "Seed[MVP]-Order 6ebaec694d7025e2ad4a05dba887c032",
+      "Amount": 4860.763307260064,
+      "CloseDate": "2024-12-21",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_46",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_46",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_46",
+      "Name": "Seed[MVP]-Order d17dc4a904426827ca80f2ccb3a6be56",
+      "Amount": 4306.435505218015,
+      "CloseDate": "2025-06-12",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_47",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_47",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_47",
+      "Name": "Seed[MVP]-Order 25f4376934e13d3508486352e11a5db0",
+      "Amount": 3525.7715345481442,
+      "CloseDate": "2024-11-13",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_48",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_48",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_48",
+      "Name": "Seed[MVP]-Order 5820a1100976432c7968a52da59e9364",
+      "Amount": 3520.5163220615104,
+      "CloseDate": "2025-04-14",
+      "StageName": "Prospecting"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "MALFORMED_ID",
+      "message": "Account ID: id value of incorrect type: account_49",
+      "fields": [
+        "AccountId"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "MALFORMED_ID",
+          "message": "Account ID: id value of incorrect type: account_49",
+          "fields": [
+            "AccountId"
+          ]
+        }
+      ],
+      "AccountId": "account_49",
+      "Name": "Seed[MVP]-Order 2ce1ad82022c1ba30c2079502ac725aa",
+      "Amount": 493.967158272413,
+      "CloseDate": "2024-11-07",
+      "StageName": "Prospecting"
+    }
+  }
+]

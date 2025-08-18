@@ -1,0 +1,4502 @@
+[
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-campinas SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "campinas",
+      "BillingState": "SP",
+      "Phone": "001-711-711-0075",
+      "Website": "www.campinas.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-mogi guacu SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "mogi guacu",
+      "BillingState": "SP",
+      "Phone": "651-217-7719x859",
+      "Website": "www.mogiguacu.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-rio de janeiro RJ",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "rio de janeiro",
+      "BillingState": "RJ",
+      "Phone": "+1-853-815-0271",
+      "Website": "www.riodejaneiro.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "001-418-507-2009x70006",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-braganca paulista SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "braganca paulista",
+      "BillingState": "SP",
+      "Phone": "+1-842-326-2624",
+      "Website": "www.bragancapaulista.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-rio de janeiro RJ",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "rio de janeiro",
+      "BillingState": "RJ",
+      "Phone": "(542)759-9378x31969",
+      "Website": "www.riodejaneiro.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-brejao PE",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "brejao",
+      "BillingState": "PE",
+      "Phone": "+1-544-926-4890x1737",
+      "Website": "www.brejao.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-penapolis SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "penapolis",
+      "BillingState": "SP",
+      "Phone": "001-802-792-8298",
+      "Website": "www.penapolis.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "(808)946-5750",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-curitiba PR",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "curitiba",
+      "BillingState": "PR",
+      "Phone": "001-413-486-8715x234",
+      "Website": "www.curitiba.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-anapolis GO",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "anapolis",
+      "BillingState": "GO",
+      "Phone": "258.341.2540",
+      "Website": "www.anapolis.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-itirapina SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "itirapina",
+      "BillingState": "SP",
+      "Phone": "223-259-5942x728",
+      "Website": "www.itirapina.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "852-329-1751",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "001-713-862-4485x78418",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-tubarao SC",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "tubarao",
+      "BillingState": "SC",
+      "Phone": "+1-664-723-8284x716",
+      "Website": "www.tubarao.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-lauro de freitas BA",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "lauro de freitas",
+      "BillingState": "BA",
+      "Phone": "769.625.0898",
+      "Website": "www.laurodefreitas.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-imbituba SC",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "imbituba",
+      "BillingState": "SC",
+      "Phone": "001-649-841-5447x59407",
+      "Website": "www.imbituba.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-brasilia DF",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "brasilia",
+      "BillingState": "DF",
+      "Phone": "+1-400-513-4183",
+      "Website": "www.brasilia.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-porto seguro BA",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "porto seguro",
+      "BillingState": "BA",
+      "Phone": "268.871.4217",
+      "Website": "www.portoseguro.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "001-535-536-1031x6400",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-guaruja SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "guaruja",
+      "BillingState": "SP",
+      "Phone": "(260)999-9588x18190",
+      "Website": "www.guaruja.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-tabatinga SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "tabatinga",
+      "BillingState": "SP",
+      "Phone": "001-348-434-6953x344",
+      "Website": "www.tabatinga.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "(404)411-7948",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-salto SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "salto",
+      "BillingState": "SP",
+      "Phone": "609-385-3203x123",
+      "Website": "www.salto.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-tres de maio RS",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "tres de maio",
+      "BillingState": "RS",
+      "Phone": "241.454.7619x00907",
+      "Website": "www.tresdemaio.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-belo horizonte MG",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "belo horizonte",
+      "BillingState": "MG",
+      "Phone": "447-571-3911",
+      "Website": "www.belohorizonte.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-arapongas PR",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "arapongas",
+      "BillingState": "PR",
+      "Phone": "205-916-4452",
+      "Website": "www.arapongas.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao bernardo do campo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao bernardo do campo",
+      "BillingState": "SP",
+      "Phone": "258.898.7195x09739",
+      "Website": "www.saobernardodocampo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "001-980-854-7322x588",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-tatui SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "tatui",
+      "BillingState": "SP",
+      "Phone": "+1-764-523-4199x02390",
+      "Website": "www.tatui.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-curitiba PR",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "curitiba",
+      "BillingState": "PR",
+      "Phone": "602.465.4400",
+      "Website": "www.curitiba.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "(897)276-5653x623",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-garopaba SC",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "garopaba",
+      "BillingState": "SC",
+      "Phone": "+1-840-737-5903x8238",
+      "Website": "www.garopaba.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "(707)952-2358x9926",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-camanducaia MG",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "camanducaia",
+      "BillingState": "MG",
+      "Phone": "001-519-435-1745x2292",
+      "Website": "www.camanducaia.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-tupa SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "tupa",
+      "BillingState": "SP",
+      "Phone": "(400)619-2414",
+      "Website": "www.tupa.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-guarulhos SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "guarulhos",
+      "BillingState": "SP",
+      "Phone": "629.529.1759x41300",
+      "Website": "www.guarulhos.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao jose dos pinhais PR",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao jose dos pinhais",
+      "BillingState": "PR",
+      "Phone": "(483)866-7275",
+      "Website": "www.saojosedospinhais.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "+1-707-634-2651x697",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "957.916.7405x2909",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-brasilia DF",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "brasilia",
+      "BillingState": "DF",
+      "Phone": "738.356.1426",
+      "Website": "www.brasilia.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-brasilia DF",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "brasilia",
+      "BillingState": "DF",
+      "Phone": "(311)343-5326",
+      "Website": "www.brasilia.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao ludgero SC",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao ludgero",
+      "BillingState": "SC",
+      "Phone": "497-741-7142x3972",
+      "Website": "www.saoludgero.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao jose SC",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao jose",
+      "BillingState": "SC",
+      "Phone": "436-404-3056x2186",
+      "Website": "www.saojose.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-piracicaba SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "piracicaba",
+      "BillingState": "SP",
+      "Phone": "653-205-7160x0993",
+      "Website": "www.piracicaba.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-porto alegre RS",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "porto alegre",
+      "BillingState": "RS",
+      "Phone": "+1-523-716-6139x47909",
+      "Website": "www.portoalegre.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-congonhal MG",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "congonhal",
+      "BillingState": "MG",
+      "Phone": "723.545.8034x3841",
+      "Website": "www.congonhal.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-belo horizonte MG",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "belo horizonte",
+      "BillingState": "MG",
+      "Phone": "835.818.2393",
+      "Website": "www.belohorizonte.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-belo horizonte MG",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "belo horizonte",
+      "BillingState": "MG",
+      "Phone": "001-367-466-3088x08662",
+      "Website": "www.belohorizonte.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-santo andre SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "santo andre",
+      "BillingState": "SP",
+      "Phone": "472-910-1185",
+      "Website": "www.santoandre.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "8484224240",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-osasco SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "osasco",
+      "BillingState": "SP",
+      "Phone": "919-215-9982x73723",
+      "Website": "www.osasco.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-valinhos SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "valinhos",
+      "BillingState": "SP",
+      "Phone": "(486)918-0653",
+      "Website": "www.valinhos.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-joinville SC",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "joinville",
+      "BillingState": "SC",
+      "Phone": "842-539-5714",
+      "Website": "www.joinville.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-guaruja SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "guaruja",
+      "BillingState": "SP",
+      "Phone": "(212)285-0293x50705",
+      "Website": "www.guaruja.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-saquarema RJ",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "saquarema",
+      "BillingState": "RJ",
+      "Phone": "774-368-5197x416",
+      "Website": "www.saquarema.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-barra velha SC",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "barra velha",
+      "BillingState": "SC",
+      "Phone": "(908)925-3284",
+      "Website": "www.barravelha.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-petropolis RJ",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "petropolis",
+      "BillingState": "RJ",
+      "Phone": "(304)336-7970",
+      "Website": "www.petropolis.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-santo antonio da patrulha RS",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "santo antonio da patrulha",
+      "BillingState": "RS",
+      "Phone": "001-957-206-7985x09775",
+      "Website": "www.santoantoniodapatrulha.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-ponta grossa PR",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "ponta grossa",
+      "BillingState": "PR",
+      "Phone": "001-936-919-9165",
+      "Website": "www.pontagrossa.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-santana de parnaiba SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "santana de parnaiba",
+      "BillingState": "SP",
+      "Phone": "001-786-301-9576x93783",
+      "Website": "www.santanadeparnaiba.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-santo andre SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "santo andre",
+      "BillingState": "SP",
+      "Phone": "+1-221-500-7491",
+      "Website": "www.santoandre.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao carlos SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao carlos",
+      "BillingState": "SP",
+      "Phone": "(926)450-4154",
+      "Website": "www.saocarlos.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-osasco SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "osasco",
+      "BillingState": "SP",
+      "Phone": "9187106573",
+      "Website": "www.osasco.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-ibitinga SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "ibitinga",
+      "BillingState": "SP",
+      "Phone": "901.342.7654x3876",
+      "Website": "www.ibitinga.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "001-550-452-3108x7976",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao jose dos pinhais PR",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao jose dos pinhais",
+      "BillingState": "PR",
+      "Phone": "001-901-326-2314x333",
+      "Website": "www.saojosedospinhais.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "509.490.8668",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-barueri SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "barueri",
+      "BillingState": "SP",
+      "Phone": "626-693-4249",
+      "Website": "www.barueri.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-osasco SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "osasco",
+      "BillingState": "SP",
+      "Phone": "(603)439-4272x7465",
+      "Website": "www.osasco.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-caxias do sul SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "caxias do sul",
+      "BillingState": "SP",
+      "Phone": "8257237218",
+      "Website": "www.caxiasdosul.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "001-243-846-1886",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-joinville SC",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "joinville",
+      "BillingState": "SC",
+      "Phone": "561-251-3650x44108",
+      "Website": "www.joinville.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-araguari MG",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "araguari",
+      "BillingState": "MG",
+      "Phone": "001-825-289-4143x036",
+      "Website": "www.araguari.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-contagem MG",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "contagem",
+      "BillingState": "MG",
+      "Phone": "001-685-571-2067x9966",
+      "Website": "www.contagem.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-jaragua do sul SC",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "jaragua do sul",
+      "BillingState": "SC",
+      "Phone": "+1-984-482-3280x316",
+      "Website": "www.jaraguadosul.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-ibitinga SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "ibitinga",
+      "BillingState": "SP",
+      "Phone": "+1-486-810-8112x078",
+      "Website": "www.ibitinga.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao bernardo do campo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao bernardo do campo",
+      "BillingState": "SP",
+      "Phone": "700.376.6761x303",
+      "Website": "www.saobernardodocampo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-lages - sc SC",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "lages - sc",
+      "BillingState": "SC",
+      "Phone": "8474251772",
+      "Website": "www.lages-sc.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-bento goncalves RS",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "bento goncalves",
+      "BillingState": "RS",
+      "Phone": "+1-204-460-3572",
+      "Website": "www.bentogoncalves.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-catanduva SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "catanduva",
+      "BillingState": "SP",
+      "Phone": "572.632.8475",
+      "Website": "www.catanduva.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-ribeirao pires SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "ribeirao pires",
+      "BillingState": "SP",
+      "Phone": "558-227-1014",
+      "Website": "www.ribeiraopires.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "+1-420-788-5276x480",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-jaboticabal SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "jaboticabal",
+      "BillingState": "SP",
+      "Phone": "(256)324-6245x71842",
+      "Website": "www.jaboticabal.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-echapora SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "echapora",
+      "BillingState": "SP",
+      "Phone": "282-602-8887",
+      "Website": "www.echapora.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-cotia SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "cotia",
+      "BillingState": "SP",
+      "Phone": "486-796-3313",
+      "Website": "www.cotia.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-rio do sul SC",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "rio do sul",
+      "BillingState": "SC",
+      "Phone": "4716101915",
+      "Website": "www.riodosul.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "275.378.2515x4035",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sorocaba SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sorocaba",
+      "BillingState": "SP",
+      "Phone": "+1-498-621-9537",
+      "Website": "www.sorocaba.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-rio de janeiro RJ",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "rio de janeiro",
+      "BillingState": "RJ",
+      "Phone": "366-228-2411x61882",
+      "Website": "www.riodejaneiro.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-pradopolis SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "pradopolis",
+      "BillingState": "SP",
+      "Phone": "001-338-676-8601",
+      "Website": "www.pradopolis.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-rio de janeiro RJ",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "rio de janeiro",
+      "BillingState": "RJ",
+      "Phone": "+1-248-509-9043x850",
+      "Website": "www.riodejaneiro.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "(399)840-4480x89442",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-itaborai RJ",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "itaborai",
+      "BillingState": "RJ",
+      "Phone": "819.854.7255x7446",
+      "Website": "www.itaborai.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "001-648-558-3504",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-mirassol SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "mirassol",
+      "BillingState": "SP",
+      "Phone": "001-751-613-4792x649",
+      "Website": "www.mirassol.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-santo andre SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "santo andre",
+      "BillingState": "SP",
+      "Phone": "001-839-284-2867x788",
+      "Website": "www.santoandre.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-birigui SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "birigui",
+      "BillingState": "SP",
+      "Phone": "(590)256-0361x289",
+      "Website": "www.birigui.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "(949)675-2807",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-belo horizonte MG",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "belo horizonte",
+      "BillingState": "MG",
+      "Phone": "358-296-8016x4842",
+      "Website": "www.belohorizonte.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-rio de janeiro RJ",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "rio de janeiro",
+      "BillingState": "RJ",
+      "Phone": "793-507-2272x65427",
+      "Website": "www.riodejaneiro.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-rio de janeiro RJ",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "rio de janeiro",
+      "BillingState": "RJ",
+      "Phone": "938.533.3251x347",
+      "Website": "www.riodejaneiro.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-ibitinga SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "ibitinga",
+      "BillingState": "SP",
+      "Phone": "001-311-217-7167",
+      "Website": "www.ibitinga.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "249-210-8349x3734",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "309-512-7434x8670",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-assis SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "assis",
+      "BillingState": "SP",
+      "Phone": "827.339.5129x2289",
+      "Website": "www.assis.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-jaguariuna SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "jaguariuna",
+      "BillingState": "SP",
+      "Phone": "950-234-4933",
+      "Website": "www.jaguariuna.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-araraquara SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "araraquara",
+      "BillingState": "SP",
+      "Phone": "238.937.8563x168",
+      "Website": "www.araraquara.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-macae RJ",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "macae",
+      "BillingState": "RJ",
+      "Phone": "+1-220-546-4353x5864",
+      "Website": "www.macae.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-salto SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "salto",
+      "BillingState": "SP",
+      "Phone": "+1-630-630-0687x2293",
+      "Website": "www.salto.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-rio claro SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "rio claro",
+      "BillingState": "SP",
+      "Phone": "862.557.7607",
+      "Website": "www.rioclaro.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-londrina PR",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "londrina",
+      "BillingState": "PR",
+      "Phone": "(269)632-0829",
+      "Website": "www.londrina.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "201.674.2003x33406",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-ribeirao preto SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "ribeirao preto",
+      "BillingState": "SP",
+      "Phone": "325.645.0438",
+      "Website": "www.ribeiraopreto.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-rio de janeiro RN",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "rio de janeiro",
+      "BillingState": "RN",
+      "Phone": "547-287-2417x67313",
+      "Website": "www.riodejaneiro.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-tres coracoes MG",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "tres coracoes",
+      "BillingState": "MG",
+      "Phone": "001-845-734-6613x77373",
+      "Website": "www.trescoracoes.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "+1-279-452-8323x95380",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-nhandeara SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "nhandeara",
+      "BillingState": "SP",
+      "Phone": "846.255.0591",
+      "Website": "www.nhandeara.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-ibitinga SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "ibitinga",
+      "BillingState": "SP",
+      "Phone": "617.380.0063x3103",
+      "Website": "www.ibitinga.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "001-884-577-1323x18010",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-brasilia DF",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "brasilia",
+      "BillingState": "DF",
+      "Phone": "990.563.0202x99830",
+      "Website": "www.brasilia.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-barueri SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "barueri",
+      "BillingState": "SP",
+      "Phone": "949-538-4328x884",
+      "Website": "www.barueri.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "(958)516-6273",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-orleans SC",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "orleans",
+      "BillingState": "SC",
+      "Phone": "001-529-535-1821x555",
+      "Website": "www.orleans.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-brasilia DF",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "brasilia",
+      "BillingState": "DF",
+      "Phone": "(425)587-1009",
+      "Website": "www.brasilia.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "(617)311-8350x410",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "7034731490",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-cuiaba MT",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "cuiaba",
+      "BillingState": "MT",
+      "Phone": "480-729-6512x46608",
+      "Website": "www.cuiaba.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao carlos SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao carlos",
+      "BillingState": "SP",
+      "Phone": "358.262.8427",
+      "Website": "www.saocarlos.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "001-828-237-7880x270",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "(579)573-2254x742",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-rio de janeiro RJ",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "rio de janeiro",
+      "BillingState": "RJ",
+      "Phone": "907-336-9544x2973",
+      "Website": "www.riodejaneiro.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-formosa do oeste PR",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "formosa do oeste",
+      "BillingState": "PR",
+      "Phone": "(635)967-5597",
+      "Website": "www.formosadooeste.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-rio de janeiro RJ",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "rio de janeiro",
+      "BillingState": "RJ",
+      "Phone": "5247646772",
+      "Website": "www.riodejaneiro.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-santos SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "santos",
+      "BillingState": "SP",
+      "Phone": "976.699.9964",
+      "Website": "www.santos.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "429.255.4944",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-santa terezinha de goias GO",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "santa terezinha de goias",
+      "BillingState": "GO",
+      "Phone": "310.294.8429",
+      "Website": "www.santaterezinhadegoias.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-curitiba PR",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "curitiba",
+      "BillingState": "PR",
+      "Phone": "(843)309-5339x010",
+      "Website": "www.curitiba.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "(672)728-1851x88510",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-arvorezinha RS",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "arvorezinha",
+      "BillingState": "RS",
+      "Phone": "(779)877-9849x5018",
+      "Website": "www.arvorezinha.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-sao paulo SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "sao paulo",
+      "BillingState": "SP",
+      "Phone": "852-434-6272",
+      "Website": "www.saopaulo.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-ribeirao preto SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "ribeirao preto",
+      "BillingState": "SP",
+      "Phone": "001-329-341-9969x4711",
+      "Website": "www.ribeiraopreto.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-guiricema MG",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "guiricema",
+      "BillingState": "MG",
+      "Phone": "742-484-8735",
+      "Website": "www.guiricema.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-caxias do sul RS",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "caxias do sul",
+      "BillingState": "RS",
+      "Phone": "+1-795-734-2375x2766",
+      "Website": "www.caxiasdosul.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-caruaru PE",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "caruaru",
+      "BillingState": "PE",
+      "Phone": "6763328814",
+      "Website": "www.caruaru.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-curitiba PR",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "curitiba",
+      "BillingState": "PR",
+      "Phone": "001-420-924-2362x0840",
+      "Website": "www.curitiba.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-franca SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "franca",
+      "BillingState": "SP",
+      "Phone": "+1-613-348-3808",
+      "Website": "www.franca.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-curitiba PR",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "curitiba",
+      "BillingState": "PR",
+      "Phone": "506.321.0468",
+      "Website": "www.curitiba.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-salvador BA",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "salvador",
+      "BillingState": "BA",
+      "Phone": "312.981.0724x63494",
+      "Website": "www.salvador.com"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+      "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+      "fields": [
+        "BillingState"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "FIELD_INTEGRITY_EXCEPTION",
+          "message": "A country/territory must be specified before specifying a state value for field: Billing State/Province",
+          "fields": [
+            "BillingState"
+          ]
+        }
+      ],
+      "Name": "Seed[MVP]-diadema SP",
+      "Type": "Customer",
+      "Industry": "Technology",
+      "BillingCity": "diadema",
+      "BillingState": "SP",
+      "Phone": "(352)766-3937",
+      "Website": "www.diadema.com"
+    }
+  }
+]
