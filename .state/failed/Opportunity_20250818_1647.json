@@ -1,0 +1,5219 @@
+[
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4CPQAZ",
+      "Name": "Seed[MVP]-Opportunity e481f51cbdc54678b7cc49136f2d6af7",
+      "Amount": 32137.01241949583,
+      "CloseDate": "2025-09-22",
+      "StageName": "Id. Decision Makers",
+      "Type": "New Customer",
+      "LeadSource": "Trade Show",
+      "Description": "Diverse demo opportunity: Id. Decision Makers stage, $32,137",
+      "Probability": 45,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 14461.655588773123
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4CQQAZ",
+      "Name": "Seed[MVP]-Opportunity 53cdb2fc8bc7dce0b6741e2150273451",
+      "Amount": 102102.87682163858,
+      "CloseDate": "2026-08-10",
+      "StageName": "Prospecting",
+      "Type": "Renewal",
+      "LeadSource": "Referral",
+      "Description": "Diverse demo opportunity: Prospecting stage, $102,103",
+      "Probability": 12,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 12252.345218596629
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4CUQAZ",
+      "Name": "Seed[MVP]-Opportunity 47770eb9100c2d0c44946d9cf07ec65d",
+      "Amount": 34518.95389998224,
+      "CloseDate": "2025-10-04",
+      "StageName": "Perception Analysis",
+      "Type": "Existing Customer",
+      "LeadSource": "Trade Show",
+      "Description": "Diverse demo opportunity: Perception Analysis stage, $34,519",
+      "Probability": 65,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 22437.320034988457
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4D2QAJ",
+      "Name": "Seed[MVP]-Opportunity 949d5b44dbf5de918fe9c16f97b45f8a",
+      "Amount": 601408.2084301999,
+      "CloseDate": "2025-07-23",
+      "StageName": "Closed Won",
+      "Type": "New Customer",
+      "LeadSource": "Direct Mail",
+      "Description": "Diverse demo opportunity: Closed Won stage, $601,408",
+      "Probability": 100,
+      "ForecastCategory": "Closed",
+      "CampaignId": null,
+      "ExpectedRevenue": 601408.2084301999
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4CTQAZ",
+      "Name": "Seed[MVP]-Opportunity ad21c59c0840e6cb83a9ceb5573f8159",
+      "Amount": 5717.066577071992,
+      "CloseDate": "2025-08-26",
+      "StageName": "Proposal/Price Quote",
+      "Type": "Existing Customer",
+      "LeadSource": "Event",
+      "Description": "Diverse demo opportunity: Proposal/Price Quote stage, $5,717",
+      "Probability": 73,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 4173.458601262554
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4CVQAZ",
+      "Name": "Seed[MVP]-Opportunity a4591c265e18cb1dcee52889e2d8acc3",
+      "Amount": 471227.77321657893,
+      "CloseDate": "2026-05-09",
+      "StageName": "Qualification",
+      "Type": "Renewal",
+      "LeadSource": "Partner",
+      "Description": "Diverse demo opportunity: Qualification stage, $471,228",
+      "Probability": 18,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 84820.9991789842
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4CWQAZ",
+      "Name": "Seed[MVP]-Opportunity 136cce7faa42fdb2cefd53fdc79a6098",
+      "Amount": 877834.5489972379,
+      "CloseDate": "2025-08-24",
+      "StageName": "Proposal/Price Quote",
+      "Type": "Upgrade",
+      "LeadSource": "Referral",
+      "Description": "Diverse demo opportunity: Proposal/Price Quote stage, $877,835",
+      "Probability": 69,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 605705.8388080942
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4CtQAJ",
+      "Name": "Seed[MVP]-Opportunity 6514b8ad8028c9f2cc2374ded245783f",
+      "Amount": 39074.098754135535,
+      "CloseDate": "2026-05-14",
+      "StageName": "Qualification",
+      "Type": "New Customer",
+      "LeadSource": "Phone",
+      "Description": "Diverse demo opportunity: Qualification stage, $39,074",
+      "Probability": 20,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 7814.819750827108
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4CZQAZ",
+      "Name": "Seed[MVP]-Opportunity 76c6e866289321a7c93b82b54852dc33",
+      "Amount": 318224.3771731611,
+      "CloseDate": "2025-09-13",
+      "StageName": "Negotiation/Review",
+      "Type": "Renewal",
+      "LeadSource": "Phone",
+      "Description": "Diverse demo opportunity: Negotiation/Review stage, $318,224",
+      "Probability": 78,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 248215.01419506565
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4CaQAJ",
+      "Name": "Seed[MVP]-Opportunity e69bfb5eb88e0ed6a785585b27e16dbf",
+      "Amount": 345033.4843702379,
+      "CloseDate": "2026-04-22",
+      "StageName": "Qualification",
+      "Type": "Existing Customer",
+      "LeadSource": "Advertisement",
+      "Description": "Diverse demo opportunity: Qualification stage, $345,033",
+      "Probability": 23,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 79357.70140515473
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4CdQAJ",
+      "Name": "Seed[MVP]-Opportunity e6ce16cb79ec1d90b1da9085a6118aeb",
+      "Amount": 40475.04953613218,
+      "CloseDate": "2025-09-28",
+      "StageName": "Id. Decision Makers",
+      "Type": "Upgrade",
+      "LeadSource": "Partner",
+      "Description": "Diverse demo opportunity: Id. Decision Makers stage, $40,475",
+      "Probability": 47,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 19023.273281982125
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4CeQAJ",
+      "Name": "Seed[MVP]-Opportunity 34513ce0c4fab462a55830c0989c7edb",
+      "Amount": 732374.0232336668,
+      "CloseDate": "2025-12-14",
+      "StageName": "Qualification",
+      "Type": "New Customer",
+      "LeadSource": "Email",
+      "Description": "Diverse demo opportunity: Qualification stage, $732,374",
+      "Probability": 20,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 146474.80464673336
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4CfQAJ",
+      "Name": "Seed[MVP]-Opportunity 82566a660a982b15fb86e904c8d32918",
+      "Amount": 927024.6399297471,
+      "CloseDate": "2026-08-14",
+      "StageName": "Prospecting",
+      "Type": "New Customer",
+      "LeadSource": "Trade Show",
+      "Description": "Diverse demo opportunity: Prospecting stage, $927,025",
+      "Probability": 15,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 139053.69598946205
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4D4QAJ",
+      "Name": "Seed[MVP]-Opportunity 5ff96c15d0b717ac6ad1f3d77225a350",
+      "Amount": 891604.1118013364,
+      "CloseDate": "2025-05-28",
+      "StageName": "Closed Won",
+      "Type": "Existing Customer",
+      "LeadSource": "Email",
+      "Description": "Diverse demo opportunity: Closed Won stage, $891,604",
+      "Probability": 100,
+      "ForecastCategory": "Closed",
+      "CampaignId": null,
+      "ExpectedRevenue": 891604.1118013364
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4ChQAJ",
+      "Name": "Seed[MVP]-Opportunity 432aaf21d85167c2c86ec9448c4e42cc",
+      "Amount": 294141.64715489023,
+      "CloseDate": "2026-03-05",
+      "StageName": "Prospecting",
+      "Type": "New Customer",
+      "LeadSource": "Event",
+      "Description": "Diverse demo opportunity: Prospecting stage, $294,142",
+      "Probability": 5,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 14707.082357744512
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4CjQAJ",
+      "Name": "Seed[MVP]-Opportunity dcb36b511fcac050b97cd5c05de84dc3",
+      "Amount": 856097.7375862484,
+      "CloseDate": "2026-02-11",
+      "StageName": "Needs Analysis",
+      "Type": "Upgrade",
+      "LeadSource": "Social Media",
+      "Description": "Diverse demo opportunity: Needs Analysis stage, $856,098",
+      "Probability": 35,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 299634.2081551869
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4CkQAJ",
+      "Name": "Seed[MVP]-Opportunity 403b97836b0c04a622354cf531062e5f",
+      "Amount": 38656.542433610644,
+      "CloseDate": "2025-10-31",
+      "StageName": "Perception Analysis",
+      "Type": "Existing Customer",
+      "LeadSource": "Phone",
+      "Description": "Diverse demo opportunity: Perception Analysis stage, $38,657",
+      "Probability": 60,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 23193.925460166385
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4CmQAJ",
+      "Name": "Seed[MVP]-Opportunity 116f0b09343b49556bbad5f35bee0cdf",
+      "Amount": 749892.5037911895,
+      "CloseDate": "2025-10-01",
+      "StageName": "Id. Decision Makers",
+      "Type": "Renewal",
+      "LeadSource": "Email",
+      "Description": "Diverse demo opportunity: Id. Decision Makers stage, $749,893",
+      "Probability": 55,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 412440.8770851543
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4CnQAJ",
+      "Name": "Seed[MVP]-Opportunity 85ce859fd6dc634de8d2f1e290444043",
+      "Amount": 625650.5989113424,
+      "CloseDate": "2025-08-20",
+      "StageName": "Negotiation/Review",
+      "Type": "Renewal",
+      "LeadSource": "Event",
+      "Description": "Diverse demo opportunity: Negotiation/Review stage, $625,651",
+      "Probability": 78,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 488007.46715084714
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4DBQAZ",
+      "Name": "Seed[MVP]-Opportunity 83018ec114eee8641c97e08f7b4e926f",
+      "Amount": 110978.62322351798,
+      "CloseDate": "2026-07-30",
+      "StageName": "Prospecting",
+      "Type": "Upgrade",
+      "LeadSource": "Web",
+      "Description": "Diverse demo opportunity: Prospecting stage, $110,979",
+      "Probability": 10,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 11097.862322351799
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4CpQAJ",
+      "Name": "Seed[MVP]-Opportunity 203096f03d82e0dffbc41ebc2e2bcfb7",
+      "Amount": 856467.3160739412,
+      "CloseDate": "2026-02-21",
+      "StageName": "Qualification",
+      "Type": "Existing Customer",
+      "LeadSource": "Direct Mail",
+      "Description": "Diverse demo opportunity: Qualification stage, $856,467",
+      "Probability": 17,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 145599.44373257
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4CqQAJ",
+      "Name": "Seed[MVP]-Opportunity f848643eec1d69395095eb3840d2051e",
+      "Amount": 14347.774566225902,
+      "CloseDate": "2026-04-26",
+      "StageName": "Needs Analysis",
+      "Type": "Upgrade",
+      "LeadSource": "Email",
+      "Description": "Diverse demo opportunity: Needs Analysis stage, $14,348",
+      "Probability": 27,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 3873.899132880994
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4CsQAJ",
+      "Name": "Seed[MVP]-Opportunity 2807d0e504d6d4894d41672727bc139f",
+      "Amount": 557671.1581172141,
+      "CloseDate": "2025-06-10",
+      "StageName": "Closed Won",
+      "Type": "Upgrade",
+      "LeadSource": "Cold Call",
+      "Description": "Diverse demo opportunity: Closed Won stage, $557,671",
+      "Probability": 100,
+      "ForecastCategory": "Closed",
+      "CampaignId": null,
+      "ExpectedRevenue": 557671.1581172141
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4CvQAJ",
+      "Name": "Seed[MVP]-Opportunity 95266dbfb7e20354baba07964dac78d5",
+      "Amount": 179026.35724649488,
+      "CloseDate": "2025-07-26",
+      "StageName": "Closed Won",
+      "Type": "New Customer",
+      "LeadSource": "Web",
+      "Description": "Diverse demo opportunity: Closed Won stage, $179,026",
+      "Probability": 100,
+      "ForecastCategory": "Closed",
+      "CampaignId": null,
+      "ExpectedRevenue": 179026.35724649488
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4CxQAJ",
+      "Name": "Seed[MVP]-Opportunity f3e7c359154d965827355f39d6b1fdac",
+      "Amount": 226991.5409040907,
+      "CloseDate": "2026-05-05",
+      "StageName": "Prospecting",
+      "Type": "Renewal",
+      "LeadSource": "Event",
+      "Description": "Diverse demo opportunity: Prospecting stage, $226,992",
+      "Probability": 12,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 27238.984908490886
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4CyQAJ",
+      "Name": "Seed[MVP]-Opportunity fbf9ac61453ac646ce8ad9783d7d0af6",
+      "Amount": 34788.054230299815,
+      "CloseDate": "2025-09-09",
+      "StageName": "Proposal/Price Quote",
+      "Type": "Upgrade",
+      "LeadSource": "Social Media",
+      "Description": "Diverse demo opportunity: Proposal/Price Quote stage, $34,788",
+      "Probability": 74,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 25743.160130421864
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4CzQAJ",
+      "Name": "Seed[MVP]-Opportunity acce194856392f074dbf9dada14d8d82",
+      "Amount": 31791.705013753086,
+      "CloseDate": "2025-10-11",
+      "StageName": "Id. Decision Makers",
+      "Type": "Upgrade",
+      "LeadSource": "Phone",
+      "Description": "Diverse demo opportunity: Id. Decision Makers stage, $31,792",
+      "Probability": 52,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 16531.686607151605
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4D0QAJ",
+      "Name": "Seed[MVP]-Opportunity dd78f560c270f1909639c11b925620ea",
+      "Amount": 40460.39326452159,
+      "CloseDate": "2025-11-02",
+      "StageName": "Perception Analysis",
+      "Type": "New Customer",
+      "LeadSource": "Direct Mail",
+      "Description": "Diverse demo opportunity: Perception Analysis stage, $40,460",
+      "Probability": 58,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 23467.02809342252
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4D5QAJ",
+      "Name": "Seed[MVP]-Opportunity 91b2a010e1e45e6ba3d133fa997597be",
+      "Amount": 14521.40068285221,
+      "CloseDate": "2026-03-14",
+      "StageName": "Prospecting",
+      "Type": "New Customer",
+      "LeadSource": "Cold Call",
+      "Description": "Diverse demo opportunity: Prospecting stage, $14,521",
+      "Probability": 11,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 1597.3540751137432
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4D6QAJ",
+      "Name": "Seed[MVP]-Opportunity ecab90c9933c58908d3d6add7c6f5ae3",
+      "Amount": 39342.21939343206,
+      "CloseDate": "2025-07-21",
+      "StageName": "Closed Won",
+      "Type": "Renewal",
+      "LeadSource": "Social Media",
+      "Description": "Diverse demo opportunity: Closed Won stage, $39,342",
+      "Probability": 100,
+      "ForecastCategory": "Closed",
+      "CampaignId": null,
+      "ExpectedRevenue": 39342.21939343206
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4D7QAJ",
+      "Name": "Seed[MVP]-Opportunity f70a0aff17df5a6cdd9a7196128bd354",
+      "Amount": 22922.145412337617,
+      "CloseDate": "2025-10-11",
+      "StageName": "Perception Analysis",
+      "Type": "Upgrade",
+      "LeadSource": "Cold Call",
+      "Description": "Diverse demo opportunity: Perception Analysis stage, $22,922",
+      "Probability": 60,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 13753.28724740257
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4D8QAJ",
+      "Name": "Seed[MVP]-Opportunity 1790eea0b567cf50911c057cf20f90f9",
+      "Amount": 12667.095968723052,
+      "CloseDate": "2026-08-13",
+      "StageName": "Needs Analysis",
+      "Type": "Upgrade",
+      "LeadSource": "Phone",
+      "Description": "Diverse demo opportunity: Needs Analysis stage, $12,667",
+      "Probability": 27,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 3420.115911555224
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4D9QAJ",
+      "Name": "Seed[MVP]-Opportunity 989225ba6d0ebd5873335f7e01de2ae7",
+      "Amount": 18077.279002305942,
+      "CloseDate": "2025-11-17",
+      "StageName": "Needs Analysis",
+      "Type": "New Customer",
+      "LeadSource": "Email",
+      "Description": "Diverse demo opportunity: Needs Analysis stage, $18,077",
+      "Probability": 32,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 5784.729280737902
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4DCQAZ",
+      "Name": "Seed[MVP]-Opportunity d887b52c6516beb39e8cd44a5f8b60f7",
+      "Amount": 28904.34824068221,
+      "CloseDate": "2026-08-08",
+      "StageName": "Qualification",
+      "Type": "Existing Customer",
+      "LeadSource": "Advertisement",
+      "Description": "Diverse demo opportunity: Qualification stage, $28,904",
+      "Probability": 23,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 6648.000095356909
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UNQAZ",
+      "Name": "Seed[MVP]-Opportunity b276e4f8c0fb86bd82fce576f21713e0",
+      "Amount": 198889.70879472862,
+      "CloseDate": "2025-07-06",
+      "StageName": "Closed Lost",
+      "Type": "New Customer",
+      "LeadSource": "Referral",
+      "Description": "Diverse demo opportunity: Closed Lost stage, $198,890",
+      "Probability": 0,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 0.0
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UBQAZ",
+      "Name": "Seed[MVP]-Opportunity 8563039e855156e48fccee4d611a3196",
+      "Amount": 33564.47069979728,
+      "CloseDate": "2025-12-22",
+      "StageName": "Prospecting",
+      "Type": "New Customer",
+      "LeadSource": "Phone",
+      "Description": "Diverse demo opportunity: Prospecting stage, $33,564",
+      "Probability": 5,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 1678.2235349898642
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UPQAZ",
+      "Name": "Seed[MVP]-Opportunity 60550084e6b4c0cb89a87df1f3e5ebd9",
+      "Amount": 451370.7147422866,
+      "CloseDate": "2025-07-14",
+      "StageName": "Closed Won",
+      "Type": "Existing Customer",
+      "LeadSource": "Email",
+      "Description": "Diverse demo opportunity: Closed Won stage, $451,371",
+      "Probability": 100,
+      "ForecastCategory": "Closed",
+      "CampaignId": null,
+      "ExpectedRevenue": 451370.7147422866
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UDQAZ",
+      "Name": "Seed[MVP]-Opportunity 5acce57f8d9dfd55fa48e212a641a69d",
+      "Amount": 642008.0794725993,
+      "CloseDate": "2026-06-12",
+      "StageName": "Qualification",
+      "Type": "Renewal",
+      "LeadSource": "Event",
+      "Description": "Diverse demo opportunity: Qualification stage, $642,008",
+      "Probability": 15,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 96301.2119208899
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UEQAZ",
+      "Name": "Seed[MVP]-Opportunity 434d158e96bdd6972ad6e6d73ddcfd22",
+      "Amount": 7413.678145268221,
+      "CloseDate": "2025-07-16",
+      "StageName": "Closed Won",
+      "Type": "New Customer",
+      "LeadSource": "Cold Call",
+      "Description": "Diverse demo opportunity: Closed Won stage, $7,414",
+      "Probability": 100,
+      "ForecastCategory": "Closed",
+      "CampaignId": null,
+      "ExpectedRevenue": 7413.678145268221
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UFQAZ",
+      "Name": "Seed[MVP]-Opportunity 7206b86ea789983f7a273ea7fa0bc2a8",
+      "Amount": 31424.0438440705,
+      "CloseDate": "2025-06-12",
+      "StageName": "Closed Won",
+      "Type": "Renewal",
+      "LeadSource": "Direct Mail",
+      "Description": "Diverse demo opportunity: Closed Won stage, $31,424",
+      "Probability": 100,
+      "ForecastCategory": "Closed",
+      "CampaignId": null,
+      "ExpectedRevenue": 31424.0438440705
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UGQAZ",
+      "Name": "Seed[MVP]-Opportunity 1e7aff52cdbb2451ace09d0f848c3699",
+      "Amount": 434477.26646668266,
+      "CloseDate": "2025-11-01",
+      "StageName": "Perception Analysis",
+      "Type": "Existing Customer",
+      "LeadSource": "Social Media",
+      "Description": "Diverse demo opportunity: Perception Analysis stage, $434,477",
+      "Probability": 62,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 269375.90520934324
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UHQAZ",
+      "Name": "Seed[MVP]-Opportunity 6ea2f835b4556291ffdc53fa0b3b95e8",
+      "Amount": 647140.0635945041,
+      "CloseDate": "2025-08-31",
+      "StageName": "Proposal/Price Quote",
+      "Type": "New Customer",
+      "LeadSource": "Trade Show",
+      "Description": "Diverse demo opportunity: Proposal/Price Quote stage, $647,140",
+      "Probability": 75,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 485355.0476958781
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UIQAZ",
+      "Name": "Seed[MVP]-Opportunity 948097deef559c742e7ce321e5e58919",
+      "Amount": 5704.536750933125,
+      "CloseDate": "2025-11-16",
+      "StageName": "Needs Analysis",
+      "Type": "Existing Customer",
+      "LeadSource": "Event",
+      "Description": "Diverse demo opportunity: Needs Analysis stage, $5,705",
+      "Probability": 34,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 1939.5424953172628
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UvQAJ",
+      "Name": "Seed[MVP]-Opportunity d22e9fa5731b9e30e8b27afcdc2f8563",
+      "Amount": 84605.19295150333,
+      "CloseDate": "2025-09-02",
+      "StageName": "Negotiation/Review",
+      "Type": "Upgrade",
+      "LeadSource": "Trade Show",
+      "Description": "Diverse demo opportunity: Negotiation/Review stage, $84,605",
+      "Probability": 80,
+      "ForecastCategory": "Closed",
+      "CampaignId": null,
+      "ExpectedRevenue": 67684.15436120266
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UrQAJ",
+      "Name": "Seed[MVP]-Opportunity ee64d42b8cf066f35eac1cf57de1aa85",
+      "Amount": 29022.472173468588,
+      "CloseDate": "2025-11-01",
+      "StageName": "Perception Analysis",
+      "Type": "Renewal",
+      "LeadSource": "Partner",
+      "Description": "Diverse demo opportunity: Perception Analysis stage, $29,022",
+      "Probability": 60,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 17413.483304081154
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UsQAJ",
+      "Name": "Seed[MVP]-Opportunity 6ebaec694d7025e2ad4a05dba887c032",
+      "Amount": 49582.98471846531,
+      "CloseDate": "2025-10-28",
+      "StageName": "Id. Decision Makers",
+      "Type": "Upgrade",
+      "LeadSource": "Advertisement",
+      "Description": "Diverse demo opportunity: Id. Decision Makers stage, $49,583",
+      "Probability": 51,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 25287.32220641731
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4V2QAJ",
+      "Name": "Seed[MVP]-Opportunity d17dc4a904426827ca80f2ccb3a6be56",
+      "Amount": 36261.20847408289,
+      "CloseDate": "2026-04-05",
+      "StageName": "Prospecting",
+      "Type": "New Customer",
+      "LeadSource": "Partner",
+      "Description": "Diverse demo opportunity: Prospecting stage, $36,261",
+      "Probability": 8,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 2900.896677926631
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UQQAZ",
+      "Name": "Seed[MVP]-Opportunity 25f4376934e13d3508486352e11a5db0",
+      "Amount": 23335.43509419631,
+      "CloseDate": "2025-10-01",
+      "StageName": "Perception Analysis",
+      "Type": "New Customer",
+      "LeadSource": "Phone",
+      "Description": "Diverse demo opportunity: Perception Analysis stage, $23,335",
+      "Probability": 57,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 13301.198003691896
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4URQAZ",
+      "Name": "Seed[MVP]-Opportunity 5820a1100976432c7968a52da59e9364",
+      "Amount": 12480.459761949794,
+      "CloseDate": "2025-08-20",
+      "StageName": "Proposal/Price Quote",
+      "Type": "New Customer",
+      "LeadSource": "Web",
+      "Description": "Diverse demo opportunity: Proposal/Price Quote stage, $12,480",
+      "Probability": 74,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 9235.540223842847
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4USQAZ",
+      "Name": "Seed[MVP]-Opportunity 2ce1ad82022c1ba30c2079502ac725aa",
+      "Amount": 725094.7793620614,
+      "CloseDate": "2025-08-27",
+      "StageName": "Negotiation/Review",
+      "Type": "New Customer",
+      "LeadSource": "Web",
+      "Description": "Diverse demo opportunity: Negotiation/Review stage, $725,095",
+      "Probability": 76,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 551072.0323151667
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UUQAZ",
+      "Name": "Seed[MVP]-Opportunity 138849fd84dff2fb4ca70a0a34c4aa1c",
+      "Amount": 821585.8363946275,
+      "CloseDate": "2025-09-27",
+      "StageName": "Perception Analysis",
+      "Type": "Renewal",
+      "LeadSource": "Advertisement",
+      "Description": "Diverse demo opportunity: Perception Analysis stage, $821,586",
+      "Probability": 55,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 451872.21001704514
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UVQAZ",
+      "Name": "Seed[MVP]-Opportunity 47aa4816b27ba60ec948cd019cc1afc1",
+      "Amount": 56429.701528947786,
+      "CloseDate": "2025-10-25",
+      "StageName": "Perception Analysis",
+      "Type": "Existing Customer",
+      "LeadSource": "Cold Call",
+      "Description": "Diverse demo opportunity: Perception Analysis stage, $56,430",
+      "Probability": 58,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 32729.226886789715
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UWQAZ",
+      "Name": "Seed[MVP]-Opportunity 9faeb9b2746b9d7526aef5acb08e2aa0",
+      "Amount": 168983.0930996641,
+      "CloseDate": "2025-08-30",
+      "StageName": "Proposal/Price Quote",
+      "Type": "New Customer",
+      "LeadSource": "Advertisement",
+      "Description": "Diverse demo opportunity: Proposal/Price Quote stage, $168,983",
+      "Probability": 67,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 113218.67237677496
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UXQAZ",
+      "Name": "Seed[MVP]-Opportunity 641fb0752bf5b5940c376b3a8bb9dc52",
+      "Amount": 876252.9125214907,
+      "CloseDate": "2025-07-22",
+      "StageName": "Closed Won",
+      "Type": "New Customer",
+      "LeadSource": "Direct Mail",
+      "Description": "Diverse demo opportunity: Closed Won stage, $876,253",
+      "Probability": 100,
+      "ForecastCategory": "Closed",
+      "CampaignId": null,
+      "ExpectedRevenue": 876252.9125214907
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UYQAZ",
+      "Name": "Seed[MVP]-Opportunity e425680f760cbc130be3e53a9773c584",
+      "Amount": 36537.25003140833,
+      "CloseDate": "2026-06-16",
+      "StageName": "Needs Analysis",
+      "Type": "Upgrade",
+      "LeadSource": "Partner",
+      "Description": "Diverse demo opportunity: Needs Analysis stage, $36,537",
+      "Probability": 35,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 12788.037510992915
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UZQAZ",
+      "Name": "Seed[MVP]-Opportunity 40c5e18f7d112b59b3e5113a59a905b3",
+      "Amount": 785020.7790164846,
+      "CloseDate": "2026-02-27",
+      "StageName": "Prospecting",
+      "Type": "Renewal",
+      "LeadSource": "Advertisement",
+      "Description": "Diverse demo opportunity: Prospecting stage, $785,021",
+      "Probability": 15,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 117753.1168524727
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UaQAJ",
+      "Name": "Seed[MVP]-Opportunity 734e7d1bbaeb2ff82521ca0fe6fb6f79",
+      "Amount": 45081.17446860866,
+      "CloseDate": "2025-06-07",
+      "StageName": "Closed Won",
+      "Type": "Existing Customer",
+      "LeadSource": "Cold Call",
+      "Description": "Diverse demo opportunity: Closed Won stage, $45,081",
+      "Probability": 100,
+      "ForecastCategory": "Closed",
+      "CampaignId": null,
+      "ExpectedRevenue": 45081.17446860866
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UbQAJ",
+      "Name": "Seed[MVP]-Opportunity 66e4624ae69e7dc89bd50222b59f581f",
+      "Amount": 8811.282922245828,
+      "CloseDate": "2026-01-15",
+      "StageName": "Needs Analysis",
+      "Type": "Renewal",
+      "LeadSource": "Event",
+      "Description": "Diverse demo opportunity: Needs Analysis stage, $8,811",
+      "Probability": 29,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 2555.27204745129
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UcQAJ",
+      "Name": "Seed[MVP]-Opportunity a685d016c8a26f71a0bb67821070e398",
+      "Amount": 35037.101162677856,
+      "CloseDate": "2026-01-23",
+      "StageName": "Qualification",
+      "Type": "New Customer",
+      "LeadSource": "Phone",
+      "Description": "Diverse demo opportunity: Qualification stage, $35,037",
+      "Probability": 19,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 6657.049220908792
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UdQAJ",
+      "Name": "Seed[MVP]-Opportunity 2edfd6d1f0b4cd0db4bf37b1b224d855",
+      "Amount": 940187.1722570908,
+      "CloseDate": "2025-06-23",
+      "StageName": "Closed Lost",
+      "Type": "Upgrade",
+      "LeadSource": "Event",
+      "Description": "Diverse demo opportunity: Closed Lost stage, $940,187",
+      "Probability": 0,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 0.0
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UeQAJ",
+      "Name": "Seed[MVP]-Opportunity 68873cf91053cd11e6b49a766db5af1a",
+      "Amount": 676464.746463272,
+      "CloseDate": "2025-12-07",
+      "StageName": "Value Proposition",
+      "Type": "Renewal",
+      "LeadSource": "Phone",
+      "Description": "Diverse demo opportunity: Value Proposition stage, $676,465",
+      "Probability": 37,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 250291.95619141063
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UfQAJ",
+      "Name": "Seed[MVP]-Opportunity f346ad4ee8f630e5e4ddaf862a34e6dd",
+      "Amount": 941153.5606665274,
+      "CloseDate": "2025-10-19",
+      "StageName": "Perception Analysis",
+      "Type": "Upgrade",
+      "LeadSource": "Web",
+      "Description": "Diverse demo opportunity: Perception Analysis stage, $941,154",
+      "Probability": 56,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 527045.9939732554
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UgQAJ",
+      "Name": "Seed[MVP]-Opportunity 8f06cc6465925031568537b815f1198d",
+      "Amount": 31353.52018430669,
+      "CloseDate": "2025-12-06",
+      "StageName": "Qualification",
+      "Type": "Renewal",
+      "LeadSource": "Phone",
+      "Description": "Diverse demo opportunity: Qualification stage, $31,354",
+      "Probability": 22,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 6897.774440547471
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UiQAJ",
+      "Name": "Seed[MVP]-Opportunity ccbabeb0b02433bd0fcbac46e70339f2",
+      "Amount": 17615.31612045371,
+      "CloseDate": "2025-06-14",
+      "StageName": "Closed Won",
+      "Type": "Upgrade",
+      "LeadSource": "Social Media",
+      "Description": "Diverse demo opportunity: Closed Won stage, $17,615",
+      "Probability": 100,
+      "ForecastCategory": "Closed",
+      "CampaignId": null,
+      "ExpectedRevenue": 17615.31612045371
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UjQAJ",
+      "Name": "Seed[MVP]-Opportunity 688052146432ef8253587b930b01a06d",
+      "Amount": 41623.06161246512,
+      "CloseDate": "2025-08-11",
+      "StageName": "Closed Lost",
+      "Type": "Existing Customer",
+      "LeadSource": "Direct Mail",
+      "Description": "Diverse demo opportunity: Closed Lost stage, $41,623",
+      "Probability": 0,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 0.0
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UkQAJ",
+      "Name": "Seed[MVP]-Opportunity f271576bed568e896f99eb710cd3a6f8",
+      "Amount": 25914.28986381724,
+      "CloseDate": "2026-05-22",
+      "StageName": "Prospecting",
+      "Type": "Renewal",
+      "LeadSource": "Direct Mail",
+      "Description": "Diverse demo opportunity: Prospecting stage, $25,914",
+      "Probability": 12,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 3109.714783658069
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UlQAJ",
+      "Name": "Seed[MVP]-Opportunity 686541986ecfb7d9296eb67719973bf0",
+      "Amount": 31516.797061430323,
+      "CloseDate": "2026-03-29",
+      "StageName": "Value Proposition",
+      "Type": "New Customer",
+      "LeadSource": "Event",
+      "Description": "Diverse demo opportunity: Value Proposition stage, $31,517",
+      "Probability": 43,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 13552.222736415039
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UmQAJ",
+      "Name": "Seed[MVP]-Opportunity 68e48e68da1f50f7c5838ea75e3a20dd",
+      "Amount": 65216.69166900482,
+      "CloseDate": "2026-03-18",
+      "StageName": "Prospecting",
+      "Type": "Upgrade",
+      "LeadSource": "Web",
+      "Description": "Diverse demo opportunity: Prospecting stage, $65,217",
+      "Probability": 7,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 4565.168416830337
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UnQAJ",
+      "Name": "Seed[MVP]-Opportunity b52cc4919de82b4d696a4380d10804a3",
+      "Amount": 946070.6083544102,
+      "CloseDate": "2026-07-02",
+      "StageName": "Prospecting",
+      "Type": "New Customer",
+      "LeadSource": "Social Media",
+      "Description": "Diverse demo opportunity: Prospecting stage, $946,071",
+      "Probability": 14,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 132449.88516961742
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4V0QAJ",
+      "Name": "Seed[MVP]-Opportunity fdf128b3630c21adc9ca4fb8a51b68ec",
+      "Amount": 845734.9559424948,
+      "CloseDate": "2025-12-03",
+      "StageName": "Qualification",
+      "Type": "Existing Customer",
+      "LeadSource": "Partner",
+      "Description": "Diverse demo opportunity: Qualification stage, $845,735",
+      "Probability": 15,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 126860.24339137421
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UpQAJ",
+      "Name": "Seed[MVP]-Opportunity a6aeb116d2cb5013eb8a94585b71ffef",
+      "Amount": 34161.68902064448,
+      "CloseDate": "2025-08-25",
+      "StageName": "Proposal/Price Quote",
+      "Type": "Renewal",
+      "LeadSource": "Web",
+      "Description": "Diverse demo opportunity: Proposal/Price Quote stage, $34,162",
+      "Probability": 66,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 22546.714753625358
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UqQAJ",
+      "Name": "Seed[MVP]-Opportunity fa516182d28f96f5f5c651026b0749ee",
+      "Amount": 37367.543510037285,
+      "CloseDate": "2025-12-17",
+      "StageName": "Needs Analysis",
+      "Type": "Upgrade",
+      "LeadSource": "Partner",
+      "Description": "Diverse demo opportunity: Needs Analysis stage, $37,368",
+      "Probability": 34,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 12704.964793412679
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UtQAJ",
+      "Name": "Seed[MVP]-Opportunity 6abaad69b8b349c3a529b4b91ce18e46",
+      "Amount": 37792.47158373107,
+      "CloseDate": "2025-09-01",
+      "StageName": "Proposal/Price Quote",
+      "Type": "New Customer",
+      "LeadSource": "Advertisement",
+      "Description": "Diverse demo opportunity: Proposal/Price Quote stage, $37,792",
+      "Probability": 73,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 27588.50425612368
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UuQAJ",
+      "Name": "Seed[MVP]-Opportunity 974c1993ab8024d3ed16229183c2308d",
+      "Amount": 125687.18248749936,
+      "CloseDate": "2025-11-09",
+      "StageName": "Id. Decision Makers",
+      "Type": "Renewal",
+      "LeadSource": "Email",
+      "Description": "Diverse demo opportunity: Id. Decision Makers stage, $125,687",
+      "Probability": 55,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 69127.95036812466
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UwQAJ",
+      "Name": "Seed[MVP]-Opportunity 82bce245b1c9148f8d19a55b9ff70644",
+      "Amount": 35232.0722734726,
+      "CloseDate": "2026-01-24",
+      "StageName": "Prospecting",
+      "Type": "New Customer",
+      "LeadSource": "Web",
+      "Description": "Diverse demo opportunity: Prospecting stage, $35,232",
+      "Probability": 12,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 4227.848672816712
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UxQAJ",
+      "Name": "Seed[MVP]-Opportunity a910f58086d58b3ae6f37aa712d377b9",
+      "Amount": 487079.5803830591,
+      "CloseDate": "2025-08-28",
+      "StageName": "Negotiation/Review",
+      "Type": "New Customer",
+      "LeadSource": "Event",
+      "Description": "Diverse demo opportunity: Negotiation/Review stage, $487,080",
+      "Probability": 76,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 370180.48109112494
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UyQAJ",
+      "Name": "Seed[MVP]-Opportunity bd4bd0194d6d29f83b8557d4b89b572a",
+      "Amount": 161173.36823585193,
+      "CloseDate": "2026-06-04",
+      "StageName": "Prospecting",
+      "Type": "Upgrade",
+      "LeadSource": "Web",
+      "Description": "Diverse demo opportunity: Prospecting stage, $161,173",
+      "Probability": 13,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 20952.53787066075
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4UzQAJ",
+      "Name": "Seed[MVP]-Opportunity 634e8f4c0f6744a626f77f39770ac6aa",
+      "Amount": 87745.07553180242,
+      "CloseDate": "2025-10-18",
+      "StageName": "Perception Analysis",
+      "Type": "Renewal",
+      "LeadSource": "Event",
+      "Description": "Diverse demo opportunity: Perception Analysis stage, $87,745",
+      "Probability": 60,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 52647.04531908145
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4V1QAJ",
+      "Name": "Seed[MVP]-Opportunity 6d25592267349b322799e2beb687871e",
+      "Amount": 8476.38344777151,
+      "CloseDate": "2026-05-30",
+      "StageName": "Value Proposition",
+      "Type": "Renewal",
+      "LeadSource": "Partner",
+      "Description": "Diverse demo opportunity: Value Proposition stage, $8,476",
+      "Probability": 44,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 3729.6087170194646
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4V3QAJ",
+      "Name": "Seed[MVP]-Opportunity b8801cccd8068de30112e4f49903d74a",
+      "Amount": 509171.96059086145,
+      "CloseDate": "2025-12-10",
+      "StageName": "Qualification",
+      "Type": "Upgrade",
+      "LeadSource": "Web",
+      "Description": "Diverse demo opportunity: Qualification stage, $509,172",
+      "Probability": 23,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 117109.55093589814
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4V4QAJ",
+      "Name": "Seed[MVP]-Opportunity 2711a938db643b3f0b62ee2c8a2784aa",
+      "Amount": 42772.25133073317,
+      "CloseDate": "2025-08-08",
+      "StageName": "Closed Won",
+      "Type": "Upgrade",
+      "LeadSource": "Web",
+      "Description": "Diverse demo opportunity: Closed Won stage, $42,772",
+      "Probability": 100,
+      "ForecastCategory": "Closed",
+      "CampaignId": null,
+      "ExpectedRevenue": 42772.25133073317
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4V5QAJ",
+      "Name": "Seed[MVP]-Opportunity 3bc77ce8be27211bac313c2daa402d1a",
+      "Amount": 9237.256623843266,
+      "CloseDate": "2026-04-05",
+      "StageName": "Value Proposition",
+      "Type": "Upgrade",
+      "LeadSource": "Advertisement",
+      "Description": "Diverse demo opportunity: Value Proposition stage, $9,237",
+      "Probability": 42,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 3879.6477820141718
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000Hm4V6QAJ",
+      "Name": "Seed[MVP]-Opportunity 10c320f977c6a18f91b2d14be13128c6",
+      "Amount": 18849.933625752594,
+      "CloseDate": "2026-04-11",
+      "StageName": "Qualification",
+      "Type": "Existing Customer",
+      "LeadSource": "Advertisement",
+      "Description": "Diverse demo opportunity: Qualification stage, $18,850",
+      "Probability": 18,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 3392.988052635467
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmEkmQAF",
+      "Name": "Seed[MVP]-Opportunity 0a4a2fccb27bd83a892fa503987a595b",
+      "Amount": 7608.770512182262,
+      "CloseDate": "2026-01-08",
+      "StageName": "Prospecting",
+      "Type": "Renewal",
+      "LeadSource": "Trade Show",
+      "Description": "Diverse demo opportunity: Prospecting stage, $7,609",
+      "Probability": 8,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 608.701640974581
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmEknQAF",
+      "Name": "Seed[MVP]-Opportunity e4de6d53ecff736bc68804b0b6e9f635",
+      "Amount": 8890.255453064117,
+      "CloseDate": "2026-01-07",
+      "StageName": "Qualification",
+      "Type": "New Customer",
+      "LeadSource": "Partner",
+      "Description": "Diverse demo opportunity: Qualification stage, $8,890",
+      "Probability": 17,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 1511.3434270209
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmEkyQAF",
+      "Name": "Seed[MVP]-Opportunity 6b860b35691d486e45dc98e3514ec5f6",
+      "Amount": 482486.95232741925,
+      "CloseDate": "2026-06-18",
+      "StageName": "Prospecting",
+      "Type": "Renewal",
+      "LeadSource": "Cold Call",
+      "Description": "Diverse demo opportunity: Prospecting stage, $482,487",
+      "Probability": 8,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 38598.95618619354
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmEkpQAF",
+      "Name": "Seed[MVP]-Opportunity ec341c54a5ebf8ee0a67a8632aa7579b",
+      "Amount": 17303.570186926,
+      "CloseDate": "2025-08-27",
+      "StageName": "Negotiation/Review",
+      "Type": "Existing Customer",
+      "LeadSource": "Referral",
+      "Description": "Diverse demo opportunity: Negotiation/Review stage, $17,304",
+      "Probability": 85,
+      "ForecastCategory": "Closed",
+      "CampaignId": null,
+      "ExpectedRevenue": 14708.0346588871
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmEkqQAF",
+      "Name": "Seed[MVP]-Opportunity cadbb3657dac2dbbd5b84b12e7b78aad",
+      "Amount": 49842.319558471965,
+      "CloseDate": "2026-07-21",
+      "StageName": "Qualification",
+      "Type": "Existing Customer",
+      "LeadSource": "Social Media",
+      "Description": "Diverse demo opportunity: Qualification stage, $49,842",
+      "Probability": 20,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 9968.463911694394
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmEkrQAF",
+      "Name": "Seed[MVP]-Opportunity 9defaf92cff22420e4e8ef7784815a55",
+      "Amount": 69593.01039364141,
+      "CloseDate": "2025-09-27",
+      "StageName": "Id. Decision Makers",
+      "Type": "Existing Customer",
+      "LeadSource": "Email",
+      "Description": "Diverse demo opportunity: Id. Decision Makers stage, $69,593",
+      "Probability": 45,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 31316.854677138635
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElmQAF",
+      "Name": "Seed[MVP]-Opportunity 20e0101b20700188cadb288126949685",
+      "Amount": 40425.69790144697,
+      "CloseDate": "2025-10-13",
+      "StageName": "Perception Analysis",
+      "Type": "New Customer",
+      "LeadSource": "Phone",
+      "Description": "Diverse demo opportunity: Perception Analysis stage, $40,426",
+      "Probability": 62,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 25063.93269889712
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmEktQAF",
+      "Name": "Seed[MVP]-Opportunity 0e782c3705510e717d28907746cbda82",
+      "Amount": 35032.959777683645,
+      "CloseDate": "2025-08-29",
+      "StageName": "Proposal/Price Quote",
+      "Type": "New Customer",
+      "LeadSource": "Social Media",
+      "Description": "Diverse demo opportunity: Proposal/Price Quote stage, $35,033",
+      "Probability": 72,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 25223.731039932223
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmEkuQAF",
+      "Name": "Seed[MVP]-Opportunity d3d6788577c9592da441752e8a1dd5e3",
+      "Amount": 22906.222922844503,
+      "CloseDate": "2025-12-31",
+      "StageName": "Value Proposition",
+      "Type": "New Customer",
+      "LeadSource": "Web",
+      "Description": "Diverse demo opportunity: Value Proposition stage, $22,906",
+      "Probability": 44,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 10078.738086051582
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElfQAF",
+      "Name": "Seed[MVP]-Opportunity 86f21bf63784876b9fd6d35f46581d72",
+      "Amount": 245990.38009387293,
+      "CloseDate": "2025-07-03",
+      "StageName": "Closed Lost",
+      "Type": "New Customer",
+      "LeadSource": "Phone",
+      "Description": "Diverse demo opportunity: Closed Lost stage, $245,990",
+      "Probability": 0,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 0.0
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElnQAF",
+      "Name": "Seed[MVP]-Opportunity 8447ff843b2616c50c0ced28ab1dae03",
+      "Amount": 19578.297543237164,
+      "CloseDate": "2025-05-26",
+      "StageName": "Closed Won",
+      "Type": "New Customer",
+      "LeadSource": "Web",
+      "Description": "Diverse demo opportunity: Closed Won stage, $19,578",
+      "Probability": 100,
+      "ForecastCategory": "Closed",
+      "CampaignId": null,
+      "ExpectedRevenue": 19578.297543237164
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmEkxQAF",
+      "Name": "Seed[MVP]-Opportunity f169bd689fb8b32ccd62df9050aebc0b",
+      "Amount": 32661.793252489373,
+      "CloseDate": "2026-04-26",
+      "StageName": "Qualification",
+      "Type": "New Customer",
+      "LeadSource": "Phone",
+      "Description": "Diverse demo opportunity: Qualification stage, $32,662",
+      "Probability": 17,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 5552.5048529231935
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmEkzQAF",
+      "Name": "Seed[MVP]-Opportunity 77e9941864fc840be8e4b1ba5347c0f7",
+      "Amount": 821151.6921055646,
+      "CloseDate": "2025-10-01",
+      "StageName": "Id. Decision Makers",
+      "Type": "Renewal",
+      "LeadSource": "Referral",
+      "Description": "Diverse demo opportunity: Id. Decision Makers stage, $821,152",
+      "Probability": 52,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 426998.8798948936
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmEl0QAF",
+      "Name": "Seed[MVP]-Opportunity 41bb5cee06dbf170878a9ef93ac7e7f5",
+      "Amount": 45891.57112475774,
+      "CloseDate": "2026-03-06",
+      "StageName": "Value Proposition",
+      "Type": "New Customer",
+      "LeadSource": "Web",
+      "Description": "Diverse demo opportunity: Value Proposition stage, $45,892",
+      "Probability": 44,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 20192.291294893406
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmEl1QAF",
+      "Name": "Seed[MVP]-Opportunity 6a0a8bfbbe700284feb0845d95e0867f",
+      "Amount": 43534.64296900035,
+      "CloseDate": "2026-07-19",
+      "StageName": "Prospecting",
+      "Type": "New Customer",
+      "LeadSource": "Partner",
+      "Description": "Diverse demo opportunity: Prospecting stage, $43,535",
+      "Probability": 15,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 6530.196445350052
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmEl2QAF",
+      "Name": "Seed[MVP]-Opportunity f7959f8385f34c4f645327465a1c9fc4",
+      "Amount": 545766.582218792,
+      "CloseDate": "2026-01-04",
+      "StageName": "Needs Analysis",
+      "Type": "Existing Customer",
+      "LeadSource": "Cold Call",
+      "Description": "Diverse demo opportunity: Needs Analysis stage, $545,767",
+      "Probability": 35,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 191018.3037765772
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmEl3QAF",
+      "Name": "Seed[MVP]-Opportunity 23f553848a03aaab35bb3f9f87725125",
+      "Amount": 91983.0073682518,
+      "CloseDate": "2026-02-27",
+      "StageName": "Prospecting",
+      "Type": "Upgrade",
+      "LeadSource": "Referral",
+      "Description": "Diverse demo opportunity: Prospecting stage, $91,983",
+      "Probability": 14,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 12877.621031555253
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmEl4QAF",
+      "Name": "Seed[MVP]-Opportunity e3447938231fb6ba2fee0231b51eca59",
+      "Amount": 682493.9106852149,
+      "CloseDate": "2026-04-05",
+      "StageName": "Needs Analysis",
+      "Type": "Upgrade",
+      "LeadSource": "Advertisement",
+      "Description": "Diverse demo opportunity: Needs Analysis stage, $682,494",
+      "Probability": 33,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 225222.99052612094
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmEl5QAF",
+      "Name": "Seed[MVP]-Opportunity e346cd9299371b18c0b28e8e29a5e376",
+      "Amount": 26640.10740287709,
+      "CloseDate": "2025-06-17",
+      "StageName": "Closed Won",
+      "Type": "Renewal",
+      "LeadSource": "Trade Show",
+      "Description": "Diverse demo opportunity: Closed Won stage, $26,640",
+      "Probability": 100,
+      "ForecastCategory": "Closed",
+      "CampaignId": null,
+      "ExpectedRevenue": 26640.10740287709
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmEl6QAF",
+      "Name": "Seed[MVP]-Opportunity a5474c0071dd5d1074e12d417078bbd0",
+      "Amount": 741184.1378912521,
+      "CloseDate": "2025-11-09",
+      "StageName": "Id. Decision Makers",
+      "Type": "New Customer",
+      "LeadSource": "Referral",
+      "Description": "Diverse demo opportunity: Id. Decision Makers stage, $741,184",
+      "Probability": 47,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 348356.54480888846
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElQQAV",
+      "Name": "Seed[MVP]-Opportunity 0760a852e4e9d89eb77bf631eaaf1c84",
+      "Amount": 31090.276202979567,
+      "CloseDate": "2025-09-25",
+      "StageName": "Id. Decision Makers",
+      "Type": "Existing Customer",
+      "LeadSource": "Phone",
+      "Description": "Diverse demo opportunity: Id. Decision Makers stage, $31,090",
+      "Probability": 54,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 16788.749149608968
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmEl8QAF",
+      "Name": "Seed[MVP]-Opportunity bb7c5cf4dff9994daeab7c8ee9d287aa",
+      "Amount": 48233.79195103098,
+      "CloseDate": "2025-09-09",
+      "StageName": "Proposal/Price Quote",
+      "Type": "New Customer",
+      "LeadSource": "Advertisement",
+      "Description": "Diverse demo opportunity: Proposal/Price Quote stage, $48,234",
+      "Probability": 68,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 32798.97852670107
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmEl9QAF",
+      "Name": "Seed[MVP]-Opportunity 66d03fb3c4b0f80b5db04ef9c260336d",
+      "Amount": 26876.369666578077,
+      "CloseDate": "2026-01-25",
+      "StageName": "Qualification",
+      "Type": "Renewal",
+      "LeadSource": "Social Media",
+      "Description": "Diverse demo opportunity: Qualification stage, $26,876",
+      "Probability": 24,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 6450.328719978738
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElAQAV",
+      "Name": "Seed[MVP]-Opportunity a6cd683d4bd3b9b1f0aa37b27f8116d3",
+      "Amount": 48574.73008791351,
+      "CloseDate": "2026-01-28",
+      "StageName": "Needs Analysis",
+      "Type": "Existing Customer",
+      "LeadSource": "Partner",
+      "Description": "Diverse demo opportunity: Needs Analysis stage, $48,575",
+      "Probability": 33,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 16029.660929011457
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElBQAV",
+      "Name": "Seed[MVP]-Opportunity bfe42c22ecbf90bc9f35cf591270b6a7",
+      "Amount": 9705.411052142757,
+      "CloseDate": "2026-04-12",
+      "StageName": "Qualification",
+      "Type": "Renewal",
+      "LeadSource": "Trade Show",
+      "Description": "Diverse demo opportunity: Qualification stage, $9,705",
+      "Probability": 15,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 1455.8116578214135
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElrQAF",
+      "Name": "Seed[MVP]-Opportunity e1da8361c76cab67aa3588a1fbf1af54",
+      "Amount": 29014.78041837497,
+      "CloseDate": "2025-06-20",
+      "StageName": "Closed Won",
+      "Type": "New Customer",
+      "LeadSource": "Phone",
+      "Description": "Diverse demo opportunity: Closed Won stage, $29,015",
+      "Probability": 100,
+      "ForecastCategory": "Closed",
+      "CampaignId": null,
+      "ExpectedRevenue": 29014.78041837497
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElDQAV",
+      "Name": "Seed[MVP]-Opportunity af5b0604e113e1526593d505a26ef39d",
+      "Amount": 498927.8151788343,
+      "CloseDate": "2025-09-07",
+      "StageName": "Proposal/Price Quote",
+      "Type": "Upgrade",
+      "LeadSource": "Partner",
+      "Description": "Diverse demo opportunity: Proposal/Price Quote stage, $498,928",
+      "Probability": 66,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 329292.35801803065
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElEQAV",
+      "Name": "Seed[MVP]-Opportunity 9d531c565e28c3e0d756192f84d8731f",
+      "Amount": 841817.2024517375,
+      "CloseDate": "2025-11-07",
+      "StageName": "Id. Decision Makers",
+      "Type": "Existing Customer",
+      "LeadSource": "Trade Show",
+      "Description": "Diverse demo opportunity: Id. Decision Makers stage, $841,817",
+      "Probability": 55,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 462999.46134845563
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElFQAV",
+      "Name": "Seed[MVP]-Opportunity 4da3bd761ca73d692ae0f5c252495546",
+      "Amount": 12751.797379379794,
+      "CloseDate": "2025-09-16",
+      "StageName": "Proposal/Price Quote",
+      "Type": "Upgrade",
+      "LeadSource": "Event",
+      "Description": "Diverse demo opportunity: Proposal/Price Quote stage, $12,752",
+      "Probability": 70,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 8926.258165565854
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElGQAV",
+      "Name": "Seed[MVP]-Opportunity 80d817467dc3d0a4bb5ab8986c962b1f",
+      "Amount": 49192.380448981734,
+      "CloseDate": "2025-10-18",
+      "StageName": "Id. Decision Makers",
+      "Type": "Renewal",
+      "LeadSource": "Email",
+      "Description": "Diverse demo opportunity: Id. Decision Makers stage, $49,192",
+      "Probability": 51,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 25088.114028980686
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElHQAV",
+      "Name": "Seed[MVP]-Opportunity c75acba615d2db29345327974641467d",
+      "Amount": 432564.2246418032,
+      "CloseDate": "2025-10-23",
+      "StageName": "Perception Analysis",
+      "Type": "New Customer",
+      "LeadSource": "Referral",
+      "Description": "Diverse demo opportunity: Perception Analysis stage, $432,564",
+      "Probability": 63,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 272515.461524336
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElIQAV",
+      "Name": "Seed[MVP]-Opportunity 210e60465099814a1d2c7635e4065153",
+      "Amount": 44381.113478016676,
+      "CloseDate": "2026-06-16",
+      "StageName": "Prospecting",
+      "Type": "New Customer",
+      "LeadSource": "Advertisement",
+      "Description": "Diverse demo opportunity: Prospecting stage, $44,381",
+      "Probability": 12,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 5325.733617362001
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElgQAF",
+      "Name": "Seed[MVP]-Opportunity 8fc207e94fa91a7649c5a5dab690272a",
+      "Amount": 99718.3128777501,
+      "CloseDate": "2025-08-24",
+      "StageName": "Proposal/Price Quote",
+      "Type": "New Customer",
+      "LeadSource": "Email",
+      "Description": "Diverse demo opportunity: Proposal/Price Quote stage, $99,718",
+      "Probability": 68,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 67808.45275687007
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElKQAV",
+      "Name": "Seed[MVP]-Opportunity 4b3a605942f29d490cb74bd6ace6b9f0",
+      "Amount": 29916.08396795791,
+      "CloseDate": "2025-08-14",
+      "StageName": "Closed Won",
+      "Type": "New Customer",
+      "LeadSource": "Advertisement",
+      "Description": "Diverse demo opportunity: Closed Won stage, $29,916",
+      "Probability": 100,
+      "ForecastCategory": "Closed",
+      "CampaignId": null,
+      "ExpectedRevenue": 29916.08396795791
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElLQAV",
+      "Name": "Seed[MVP]-Opportunity 1c35ac660d7ef6691b25d20df3d6eccb",
+      "Amount": 16012.56387955499,
+      "CloseDate": "2026-04-06",
+      "StageName": "Needs Analysis",
+      "Type": "Upgrade",
+      "LeadSource": "Phone",
+      "Description": "Diverse demo opportunity: Needs Analysis stage, $16,013",
+      "Probability": 27,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 4323.392247479847
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElMQAV",
+      "Name": "Seed[MVP]-Opportunity 01a75ac3dd000b7628a684be97c29234",
+      "Amount": 957049.024879071,
+      "CloseDate": "2026-07-27",
+      "StageName": "Needs Analysis",
+      "Type": "Existing Customer",
+      "LeadSource": "Web",
+      "Description": "Diverse demo opportunity: Needs Analysis stage, $957,049",
+      "Probability": 31,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 296685.19771251205
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElOQAV",
+      "Name": "Seed[MVP]-Opportunity 0c6b011f8a4f87010c23995f5807d152",
+      "Amount": 825738.8577919212,
+      "CloseDate": "2025-06-12",
+      "StageName": "Closed Won",
+      "Type": "New Customer",
+      "LeadSource": "Referral",
+      "Description": "Diverse demo opportunity: Closed Won stage, $825,739",
+      "Probability": 100,
+      "ForecastCategory": "Closed",
+      "CampaignId": null,
+      "ExpectedRevenue": 825738.8577919212
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElSQAV",
+      "Name": "Seed[MVP]-Opportunity ee0c5c649e17808bc4a363d3a80ebf85",
+      "Amount": 927092.5029277754,
+      "CloseDate": "2025-08-24",
+      "StageName": "Proposal/Price Quote",
+      "Type": "New Customer",
+      "LeadSource": "Social Media",
+      "Description": "Diverse demo opportunity: Proposal/Price Quote stage, $927,093",
+      "Probability": 65,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 602610.1269030541
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElTQAV",
+      "Name": "Seed[MVP]-Opportunity f2fa3795760c35b8c05fa8e2f09d5143",
+      "Amount": 61096.15530321835,
+      "CloseDate": "2025-09-02",
+      "StageName": "Negotiation/Review",
+      "Type": "Upgrade",
+      "LeadSource": "Web",
+      "Description": "Diverse demo opportunity: Negotiation/Review stage, $61,096",
+      "Probability": 84,
+      "ForecastCategory": "Closed",
+      "CampaignId": null,
+      "ExpectedRevenue": 51320.770454703415
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElUQAV",
+      "Name": "Seed[MVP]-Opportunity 3923e3ade70348985bd2ca389905cf19",
+      "Amount": 28601.179475737947,
+      "CloseDate": "2025-05-25",
+      "StageName": "Closed Won",
+      "Type": "Upgrade",
+      "LeadSource": "Cold Call",
+      "Description": "Diverse demo opportunity: Closed Won stage, $28,601",
+      "Probability": 100,
+      "ForecastCategory": "Closed",
+      "CampaignId": null,
+      "ExpectedRevenue": 28601.179475737947
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElVQAV",
+      "Name": "Seed[MVP]-Opportunity e37797aedc7cd4ef82278fbc169eecaf",
+      "Amount": 305932.546077209,
+      "CloseDate": "2025-06-03",
+      "StageName": "Closed Won",
+      "Type": "Renewal",
+      "LeadSource": "Cold Call",
+      "Description": "Diverse demo opportunity: Closed Won stage, $305,933",
+      "Probability": 100,
+      "ForecastCategory": "Closed",
+      "CampaignId": null,
+      "ExpectedRevenue": 305932.546077209
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElWQAV",
+      "Name": "Seed[MVP]-Opportunity 35660aec0cc42b6257e24281ee0e6255",
+      "Amount": 280580.74295922567,
+      "CloseDate": "2026-05-06",
+      "StageName": "Value Proposition",
+      "Type": "Existing Customer",
+      "LeadSource": "Cold Call",
+      "Description": "Diverse demo opportunity: Value Proposition stage, $280,581",
+      "Probability": 43,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 120649.71947246704
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmEllQAF",
+      "Name": "Seed[MVP]-Opportunity b01875821b8dcb6abc61776f0f971bce",
+      "Amount": 16575.306157101855,
+      "CloseDate": "2026-01-03",
+      "StageName": "Prospecting",
+      "Type": "Upgrade",
+      "LeadSource": "Phone",
+      "Description": "Diverse demo opportunity: Prospecting stage, $16,575",
+      "Probability": 13,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 2154.789800423241
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElZQAV",
+      "Name": "Seed[MVP]-Opportunity 5164933efe0cd14f31424b9badf81f19",
+      "Amount": 30459.550171419032,
+      "CloseDate": "2025-09-25",
+      "StageName": "Id. Decision Makers",
+      "Type": "Existing Customer",
+      "LeadSource": "Trade Show",
+      "Description": "Diverse demo opportunity: Id. Decision Makers stage, $30,460",
+      "Probability": 55,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 16752.752594280468
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElaQAF",
+      "Name": "Seed[MVP]-Opportunity 06a6627d9cc91a04e9d146bf65fee0a2",
+      "Amount": 244974.32753889193,
+      "CloseDate": "2026-06-20",
+      "StageName": "Value Proposition",
+      "Type": "Renewal",
+      "LeadSource": "Web",
+      "Description": "Diverse demo opportunity: Value Proposition stage, $244,974",
+      "Probability": 44,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 107788.70411711244
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElcQAF",
+      "Name": "Seed[MVP]-Opportunity 15bed8e2fec7fdbadb186b57c46c92f2",
+      "Amount": 19674.389107161085,
+      "CloseDate": "2025-09-06",
+      "StageName": "Negotiation/Review",
+      "Type": "Existing Customer",
+      "LeadSource": "Email",
+      "Description": "Diverse demo opportunity: Negotiation/Review stage, $19,674",
+      "Probability": 78,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 15346.023503585648
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmEldQAF",
+      "Name": "Seed[MVP]-Opportunity 5447160f15621601fa9ba2b94f4906b3",
+      "Amount": 17767.39534845014,
+      "CloseDate": "2025-07-18",
+      "StageName": "Closed Won",
+      "Type": "Upgrade",
+      "LeadSource": "Phone",
+      "Description": "Diverse demo opportunity: Closed Won stage, $17,767",
+      "Probability": 100,
+      "ForecastCategory": "Closed",
+      "CampaignId": null,
+      "ExpectedRevenue": 17767.39534845014
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmEleQAF",
+      "Name": "Seed[MVP]-Opportunity 01855f880aae9a984c7c33b26fcf2e02",
+      "Amount": 6569.05806685699,
+      "CloseDate": "2026-03-24",
+      "StageName": "Qualification",
+      "Type": "New Customer",
+      "LeadSource": "Cold Call",
+      "Description": "Diverse demo opportunity: Qualification stage, $6,569",
+      "Probability": 17,
+      "ForecastCategory": "Omitted",
+      "CampaignId": null,
+      "ExpectedRevenue": 1116.7398713656885
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElhQAF",
+      "Name": "Seed[MVP]-Opportunity 65312c6e4ce03c0fb633a4ac541949d8",
+      "Amount": 27883.696591834807,
+      "CloseDate": "2026-05-13",
+      "StageName": "Qualification",
+      "Type": "Renewal",
+      "LeadSource": "Web",
+      "Description": "Diverse demo opportunity: Qualification stage, $27,884",
+      "Probability": 25,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 6970.924147958702
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmEliQAF",
+      "Name": "Seed[MVP]-Opportunity 741fd1b80f015f170a7f458cf86769b8",
+      "Amount": 30619.131087145714,
+      "CloseDate": "2026-01-25",
+      "StageName": "Needs Analysis",
+      "Type": "Existing Customer",
+      "LeadSource": "Trade Show",
+      "Description": "Diverse demo opportunity: Needs Analysis stage, $30,619",
+      "Probability": 30,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 9185.739326143714
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmEljQAF",
+      "Name": "Seed[MVP]-Opportunity b16cec67cb3f5a4bb31abe8988b43d19",
+      "Amount": 22303.478089006596,
+      "CloseDate": "2026-08-02",
+      "StageName": "Qualification",
+      "Type": "Renewal",
+      "LeadSource": "Phone",
+      "Description": "Diverse demo opportunity: Qualification stage, $22,303",
+      "Probability": 21,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 4683.730398691385
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElkQAF",
+      "Name": "Seed[MVP]-Opportunity e6190dea235662449d160357e46eaec8",
+      "Amount": 8146.882566051658,
+      "CloseDate": "2025-10-16",
+      "StageName": "Perception Analysis",
+      "Type": "New Customer",
+      "LeadSource": "Web",
+      "Description": "Diverse demo opportunity: Perception Analysis stage, $8,147",
+      "Probability": 59,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 4806.660713970477
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmEloQAF",
+      "Name": "Seed[MVP]-Opportunity 8eeda294fab8a5ed70259afb59a10ff8",
+      "Amount": 155335.5949261285,
+      "CloseDate": "2025-07-09",
+      "StageName": "Closed Won",
+      "Type": "Existing Customer",
+      "LeadSource": "Email",
+      "Description": "Diverse demo opportunity: Closed Won stage, $155,336",
+      "Probability": 100,
+      "ForecastCategory": "Closed",
+      "CampaignId": null,
+      "ExpectedRevenue": 155335.5949261285
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElpQAF",
+      "Name": "Seed[MVP]-Opportunity 89165e6d4c28047da0adf13ac8b3e1b3",
+      "Amount": 18075.019490201088,
+      "CloseDate": "2026-07-14",
+      "StageName": "Needs Analysis",
+      "Type": "Existing Customer",
+      "LeadSource": "Cold Call",
+      "Description": "Diverse demo opportunity: Needs Analysis stage, $18,075",
+      "Probability": 34,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 6145.506626668371
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElqQAF",
+      "Name": "Seed[MVP]-Opportunity f376081d7c5f1767fbc7fae2d19ca32e",
+      "Amount": 7002.381233228202,
+      "CloseDate": "2026-03-01",
+      "StageName": "Needs Analysis",
+      "Type": "Upgrade",
+      "LeadSource": "Advertisement",
+      "Description": "Diverse demo opportunity: Needs Analysis stage, $7,002",
+      "Probability": 31,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 2170.7381823007427
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmElsQAF",
+      "Name": "Seed[MVP]-Opportunity 4b87488fb6269f8321508923b95da4d6",
+      "Amount": 47938.320850383694,
+      "CloseDate": "2026-03-06",
+      "StageName": "Value Proposition",
+      "Type": "New Customer",
+      "LeadSource": "Web",
+      "Description": "Diverse demo opportunity: Value Proposition stage, $47,938",
+      "Probability": 37,
+      "ForecastCategory": "Best Case",
+      "CampaignId": null,
+      "ExpectedRevenue": 17737.178714641967
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmEltQAF",
+      "Name": "Seed[MVP]-Opportunity e9ce52cd563d0124dced659e69eab10a",
+      "Amount": 15147.635371200065,
+      "CloseDate": "2025-09-02",
+      "StageName": "Negotiation/Review",
+      "Type": "New Customer",
+      "LeadSource": "Event",
+      "Description": "Diverse demo opportunity: Negotiation/Review stage, $15,148",
+      "Probability": 83,
+      "ForecastCategory": "Closed",
+      "CampaignId": null,
+      "ExpectedRevenue": 12572.537358096053
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+      "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+      "fields": [
+        "ForecastCategory",
+        "ExpectedRevenue"
+      ]
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD_FOR_INSERT_UPDATE",
+          "message": "Unable to create/update fields: ForecastCategory, ExpectedRevenue. Please check the security settings of this field and verify that it is read/write for your profile or permission set.",
+          "fields": [
+            "ForecastCategory",
+            "ExpectedRevenue"
+          ]
+        }
+      ],
+      "AccountId": "001gL00000HmEluQAF",
+      "Name": "Seed[MVP]-Opportunity 9344ccd01ff5fa7ec2aef0ee7e1c49c3",
+      "Amount": 40923.04891311038,
+      "CloseDate": "2025-09-09",
+      "StageName": "Proposal/Price Quote",
+      "Type": "Existing Customer",
+      "LeadSource": "Trade Show",
+      "Description": "Diverse demo opportunity: Proposal/Price Quote stage, $40,923",
+      "Probability": 67,
+      "ForecastCategory": "Pipeline",
+      "CampaignId": null,
+      "ExpectedRevenue": 27418.442771783957
+    }
+  }
+]

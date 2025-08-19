@@ -1,0 +1,36 @@
+[
+  {
+    "error": {
+      "statusCode": "DUPLICATES_DETECTED",
+      "message": "Use one of these records?",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "DUPLICATES_DETECTED",
+          "message": "Use one of these records?",
+          "fields": []
+        }
+      ],
+      "FirstName": "Joshua",
+      "LastName": "Berger",
+      "Company": "Seed[Diverse]-Thompson Ltd",
+      "Email": "wallacewilliam@example.org",
+      "Phone": "494.499.9172x0089",
+      "Title": "Product Manager",
+      "LeadSource": "Web",
+      "Industry": "Real Estate",
+      "Status": "Contacted",
+      "Description": "Diverse demo lead: Contacted lead from Web",
+      "Rating": "Warm",
+      "AnnualRevenue": 5765340,
+      "NumberOfEmployees": 43,
+      "City": "Hillberg",
+      "Country": "United States"
+    }
+  }
+]

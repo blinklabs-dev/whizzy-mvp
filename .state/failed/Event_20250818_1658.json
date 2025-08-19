@@ -1,0 +1,1682 @@
+[
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-17 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-17 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Demo - When authority especially.",
+      "StartDateTime": "2025-10-17 16:58:32",
+      "EndDateTime": "2025-10-17 17:58:32",
+      "Description": "Diverse demo event: Demo",
+      "Type": "Demo",
+      "Location": "671 Stephanie Route\nWest Jimmy, PW 40606",
+      "IsAllDayEvent": false,
+      "ShowAs": "Free",
+      "WhoId": "003gL000009rGDaQAM"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-30 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-30 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Meeting - Forget collection.",
+      "StartDateTime": "2025-09-30 16:58:32",
+      "EndDateTime": "2025-09-30 20:58:32",
+      "Description": "Diverse demo event: Meeting",
+      "Type": "Meeting",
+      "Location": "05486 Rogers Square\nParkland, RI 54717",
+      "IsAllDayEvent": false,
+      "ShowAs": "Busy",
+      "WhoId": "003gL000009rGEmQAM"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-05 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-05 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Demo - Gas red arm operation.",
+      "StartDateTime": "2025-10-05 16:58:32",
+      "EndDateTime": "2025-10-05 19:58:32",
+      "Description": "Diverse demo event: Demo",
+      "Type": "Demo",
+      "Location": "2271 James Throughway\nKatieland, CO 47665",
+      "IsAllDayEvent": false,
+      "ShowAs": "Free",
+      "WhatId": "001gL00000HmM3EQAV"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-08-19 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-08-19 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-QBR - School national them.",
+      "StartDateTime": "2025-08-19 16:58:32",
+      "EndDateTime": "2025-08-19 17:58:32",
+      "Description": "Diverse demo event: QBR",
+      "Type": "QBR",
+      "Location": "0291 Clayton Ville\nNorth Penny, FM 18765",
+      "IsAllDayEvent": false,
+      "ShowAs": "Busy",
+      "WhatId": "001gL00000HmM3EQAV"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-25 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-25 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Lunch - Focus right.",
+      "StartDateTime": "2025-09-25 16:58:32",
+      "EndDateTime": "2025-09-25 18:58:32",
+      "Description": "Diverse demo event: Lunch",
+      "Type": "Lunch",
+      "Location": "Virtual Meeting",
+      "IsAllDayEvent": false,
+      "ShowAs": "Free",
+      "WhoId": "003gL000009rGDeQAM"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-07 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-07 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Webinar - Traditional need participant.",
+      "StartDateTime": "2025-09-07 16:58:32",
+      "EndDateTime": "2025-09-07 19:58:32",
+      "Description": "Diverse demo event: Webinar",
+      "Type": "Webinar",
+      "Location": "Virtual Meeting",
+      "IsAllDayEvent": false,
+      "ShowAs": "Free",
+      "WhoId": "003gL000009rGENQA2"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-01 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-01 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Conference - Lot school.",
+      "StartDateTime": "2025-09-01 16:58:32",
+      "EndDateTime": "2025-09-01 18:58:32",
+      "Description": "Diverse demo event: Conference",
+      "Type": "Conference",
+      "Location": "Virtual Meeting",
+      "IsAllDayEvent": false,
+      "ShowAs": "Busy",
+      "WhatId": "001gL00000HmM3UQAV"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-05 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-05 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-QBR - Very wonder test.",
+      "StartDateTime": "2025-09-05 16:58:32",
+      "EndDateTime": "2025-09-05 19:58:32",
+      "Description": "Diverse demo event: QBR",
+      "Type": "QBR",
+      "Location": "743 Derrick Shoal\nEllisbury, FM 69985",
+      "IsAllDayEvent": false,
+      "ShowAs": "Out of Office",
+      "WhoId": "003gL000009rGEXQA2"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-17 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-17 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Webinar - Management available.",
+      "StartDateTime": "2025-10-17 16:58:32",
+      "EndDateTime": "2025-10-17 19:58:32",
+      "Description": "Diverse demo event: Webinar",
+      "Type": "Webinar",
+      "Location": "53312 Melissa Route Apt. 896\nNew Erica, NM 15653",
+      "IsAllDayEvent": false,
+      "ShowAs": "Free",
+      "WhatId": "001gL00000HmM3HQAV"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-09 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-09 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Lunch - Vote five appear.",
+      "StartDateTime": "2025-09-09 16:58:32",
+      "EndDateTime": "2025-09-09 20:58:32",
+      "Description": "Diverse demo event: Lunch",
+      "Type": "Lunch",
+      "Location": "935 Randolph Trail Suite 787\nEast Alec, IL 05114",
+      "IsAllDayEvent": false,
+      "ShowAs": "Out of Office",
+      "WhatId": "001gL00000HmM3PQAV"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-11 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-11 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Demo - Speak pass.",
+      "StartDateTime": "2025-10-11 16:58:32",
+      "EndDateTime": "2025-10-11 19:58:32",
+      "Description": "Diverse demo event: Demo",
+      "Type": "Demo",
+      "Location": "USS Li\nFPO AA 30162",
+      "IsAllDayEvent": false,
+      "ShowAs": "Free",
+      "WhatId": "001gL00000HmM2tQAF"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-08-30 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-08-30 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Call - Recent trouble.",
+      "StartDateTime": "2025-08-30 16:58:32",
+      "EndDateTime": "2025-08-30 17:58:32",
+      "Description": "Diverse demo event: Call",
+      "Type": "Call",
+      "Location": "86545 Walker Station Apt. 816\nLake Theresahaven, PR 91109",
+      "IsAllDayEvent": false,
+      "ShowAs": "Free",
+      "WhatId": "001gL00000HmM3IQAV"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-22 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-22 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Call - Energy course.",
+      "StartDateTime": "2025-09-22 16:58:32",
+      "EndDateTime": "2025-09-22 18:58:32",
+      "Description": "Diverse demo event: Call",
+      "Type": "Call",
+      "Location": "4110 Dawson Ferry Suite 588\nHeidiport, OK 69988",
+      "IsAllDayEvent": false,
+      "ShowAs": "Out of Office",
+      "WhoId": "003gL000009rGCsQAM"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-24 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-24 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Call - Receive certain campaign.",
+      "StartDateTime": "2025-09-24 16:58:32",
+      "EndDateTime": "2025-09-24 18:58:32",
+      "Description": "Diverse demo event: Call",
+      "Type": "Call",
+      "Location": "195 Krista Common Suite 095\nNew Melissafort, ND 80406",
+      "IsAllDayEvent": false,
+      "ShowAs": "Free",
+      "WhatId": "001gL00000HmM39QAF"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-08-27 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-08-27 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Trade Show - Station necessary much.",
+      "StartDateTime": "2025-08-27 16:58:32",
+      "EndDateTime": "2025-08-27 17:58:32",
+      "Description": "Diverse demo event: Trade Show",
+      "Type": "Trade Show",
+      "Location": "Virtual Meeting",
+      "IsAllDayEvent": false,
+      "ShowAs": "Out of Office",
+      "WhoId": "003gL000009rGCoQAM"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-01 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-01 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-QBR - Wonder per.",
+      "StartDateTime": "2025-10-01 16:58:32",
+      "EndDateTime": "2025-10-01 19:58:32",
+      "Description": "Diverse demo event: QBR",
+      "Type": "QBR",
+      "Location": "0039 Kayla Prairie\nWest Andrew, DC 31100",
+      "IsAllDayEvent": false,
+      "ShowAs": "Free",
+      "WhoId": "003gL000009rGDlQAM"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-08 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-08 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Training Session - Situation happen.",
+      "StartDateTime": "2025-10-08 16:58:32",
+      "EndDateTime": "2025-10-08 18:58:32",
+      "Description": "Diverse demo event: Training Session",
+      "Type": "Training Session",
+      "Location": "080 John Circles Apt. 806\nBryanside, LA 16061",
+      "IsAllDayEvent": false,
+      "ShowAs": "Busy",
+      "WhatId": "001gL00000HmM3GQAV"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-10 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-10 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Lunch - Give rather.",
+      "StartDateTime": "2025-09-10 16:58:32",
+      "EndDateTime": "2025-09-10 18:58:32",
+      "Description": "Diverse demo event: Lunch",
+      "Type": "Lunch",
+      "Location": "86189 Justin Plain Apt. 641\nNorth Russellland, NC 80428",
+      "IsAllDayEvent": false,
+      "ShowAs": "Busy",
+      "WhatId": "001gL00000HmM2xQAF"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-08-28 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-08-28 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Lunch - Blood say sure direction.",
+      "StartDateTime": "2025-08-28 16:58:32",
+      "EndDateTime": "2025-08-28 19:58:32",
+      "Description": "Diverse demo event: Lunch",
+      "Type": "Lunch",
+      "Location": "5004 Martinez Forest Apt. 869\nMeganhaven, KS 74687",
+      "IsAllDayEvent": false,
+      "ShowAs": "Out of Office",
+      "WhatId": "001gL00000HmM3EQAV"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-14 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-14 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Product Launch - They order mention.",
+      "StartDateTime": "2025-09-14 16:58:32",
+      "EndDateTime": "2025-09-14 17:58:32",
+      "Description": "Diverse demo event: Product Launch",
+      "Type": "Product Launch",
+      "Location": "Virtual Meeting",
+      "IsAllDayEvent": false,
+      "ShowAs": "Free",
+      "WhatId": "001gL00000HmM3HQAV"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-25 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-25 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Product Launch - Again mind.",
+      "StartDateTime": "2025-09-25 16:58:32",
+      "EndDateTime": "2025-09-25 19:58:32",
+      "Description": "Diverse demo event: Product Launch",
+      "Type": "Product Launch",
+      "Location": "077 Ortega Route\nEast Bryan, HI 45549",
+      "IsAllDayEvent": false,
+      "ShowAs": "Free",
+      "WhatId": "001gL00000HmM3DQAV"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-08-19 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-08-19 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Conference - News way.",
+      "StartDateTime": "2025-08-19 16:58:32",
+      "EndDateTime": "2025-08-19 19:58:32",
+      "Description": "Diverse demo event: Conference",
+      "Type": "Conference",
+      "Location": "Virtual Meeting",
+      "IsAllDayEvent": false,
+      "ShowAs": "Out of Office",
+      "WhatId": "001gL00000HmM2sQAF"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-19 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-19 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-QBR - Bring.",
+      "StartDateTime": "2025-09-19 16:58:32",
+      "EndDateTime": "2025-09-19 20:58:32",
+      "Description": "Diverse demo event: QBR",
+      "Type": "QBR",
+      "Location": "627 Sawyer Rapid Apt. 234\nJonesport, MA 92598",
+      "IsAllDayEvent": false,
+      "ShowAs": "Out of Office",
+      "WhatId": "001gL00000HmM38QAF"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-26 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-26 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Trade Show - Page account score.",
+      "StartDateTime": "2025-09-26 16:58:32",
+      "EndDateTime": "2025-09-26 18:58:32",
+      "Description": "Diverse demo event: Trade Show",
+      "Type": "Trade Show",
+      "Location": "Virtual Meeting",
+      "IsAllDayEvent": false,
+      "ShowAs": "Free",
+      "WhoId": "003gL000009rGClQAM"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-06 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-06 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Meeting - Hair camera.",
+      "StartDateTime": "2025-09-06 16:58:32",
+      "EndDateTime": "2025-09-06 17:58:32",
+      "Description": "Diverse demo event: Meeting",
+      "Type": "Meeting",
+      "Location": "56246 Elizabeth Mews Suite 077\nRyanmouth, PW 65003",
+      "IsAllDayEvent": false,
+      "ShowAs": "Busy",
+      "WhatId": "001gL00000HmM34QAF"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-05 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-05 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-QBR - Miss management seat administration.",
+      "StartDateTime": "2025-10-05 16:58:32",
+      "EndDateTime": "2025-10-05 18:58:32",
+      "Description": "Diverse demo event: QBR",
+      "Type": "QBR",
+      "Location": "43266 Gordon Meadow Suite 846\nEast Jamesmouth, VA 27883",
+      "IsAllDayEvent": false,
+      "ShowAs": "Out of Office",
+      "WhoId": "003gL000009rGEUQA2"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-02 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-02 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Training Session - Machine score onto.",
+      "StartDateTime": "2025-10-02 16:58:32",
+      "EndDateTime": "2025-10-02 17:58:32",
+      "Description": "Diverse demo event: Training Session",
+      "Type": "Training Session",
+      "Location": "Virtual Meeting",
+      "IsAllDayEvent": false,
+      "ShowAs": "Busy",
+      "WhoId": "003gL000009rGDQQA2"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-08-19 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-08-19 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Training Session - Difference quality impact.",
+      "StartDateTime": "2025-08-19 16:58:32",
+      "EndDateTime": "2025-08-19 18:58:32",
+      "Description": "Diverse demo event: Training Session",
+      "Type": "Training Session",
+      "Location": "Virtual Meeting",
+      "IsAllDayEvent": false,
+      "ShowAs": "Busy",
+      "WhatId": "001gL00000HmM3MQAV"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-10 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-10 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Lunch - Fear deep.",
+      "StartDateTime": "2025-09-10 16:58:32",
+      "EndDateTime": "2025-09-10 19:58:32",
+      "Description": "Diverse demo event: Lunch",
+      "Type": "Lunch",
+      "Location": "Virtual Meeting",
+      "IsAllDayEvent": false,
+      "ShowAs": "Out of Office",
+      "WhatId": "001gL00000HmM3DQAV"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-16 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-16 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Lunch - Wonder a hope.",
+      "StartDateTime": "2025-10-16 16:58:32",
+      "EndDateTime": "2025-10-16 17:58:32",
+      "Description": "Diverse demo event: Lunch",
+      "Type": "Lunch",
+      "Location": "Virtual Meeting",
+      "IsAllDayEvent": false,
+      "ShowAs": "Free",
+      "WhatId": "001gL00000HmM33QAF"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-05 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-05 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Webinar - Maintain enter often movement.",
+      "StartDateTime": "2025-10-05 16:58:32",
+      "EndDateTime": "2025-10-05 17:58:32",
+      "Description": "Diverse demo event: Webinar",
+      "Type": "Webinar",
+      "Location": "Virtual Meeting",
+      "IsAllDayEvent": false,
+      "ShowAs": "Busy",
+      "WhoId": "003gL000009rGEtQAM"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-08-21 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-08-21 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Meeting - Month then seek.",
+      "StartDateTime": "2025-08-21 16:58:32",
+      "EndDateTime": "2025-08-21 20:58:32",
+      "Description": "Diverse demo event: Meeting",
+      "Type": "Meeting",
+      "Location": "4859 Foster Pike\nSouth Elizabeth, AR 32369",
+      "IsAllDayEvent": false,
+      "ShowAs": "Free",
+      "WhatId": "001gL00000HmM3ZQAV"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-04 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-04 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Product Launch - Act you.",
+      "StartDateTime": "2025-09-04 16:58:32",
+      "EndDateTime": "2025-09-04 20:58:32",
+      "Description": "Diverse demo event: Product Launch",
+      "Type": "Product Launch",
+      "Location": "461 Lori Valley\nLake Ralph, ME 95372",
+      "IsAllDayEvent": false,
+      "ShowAs": "Free",
+      "WhatId": "001gL00000HmM3PQAV"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-03 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-03 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Product Launch - Employee yes.",
+      "StartDateTime": "2025-09-03 16:58:32",
+      "EndDateTime": "2025-09-03 19:58:32",
+      "Description": "Diverse demo event: Product Launch",
+      "Type": "Product Launch",
+      "Location": "98341 Daniel Camp Suite 064\nWilliamsfurt, MD 77132",
+      "IsAllDayEvent": false,
+      "ShowAs": "Free",
+      "WhatId": "001gL00000HmM2sQAF"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-19 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-19 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Meeting - After.",
+      "StartDateTime": "2025-09-19 16:58:32",
+      "EndDateTime": "2025-09-19 17:58:32",
+      "Description": "Diverse demo event: Meeting",
+      "Type": "Meeting",
+      "Location": "4782 Villarreal Squares Apt. 841\nDunnborough, AZ 05360",
+      "IsAllDayEvent": false,
+      "ShowAs": "Busy",
+      "WhatId": "001gL00000HmM3AQAV"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-14 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-14 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Trade Show - Middle.",
+      "StartDateTime": "2025-09-14 16:58:32",
+      "EndDateTime": "2025-09-14 19:58:32",
+      "Description": "Diverse demo event: Trade Show",
+      "Type": "Trade Show",
+      "Location": "27563 Adams Meadows Apt. 649\nNorth Tonya, ID 66496",
+      "IsAllDayEvent": false,
+      "ShowAs": "Busy",
+      "WhatId": "001gL00000HmM32QAF"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-08-19 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-08-19 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Training Session - Where theory.",
+      "StartDateTime": "2025-08-19 16:58:32",
+      "EndDateTime": "2025-08-19 19:58:32",
+      "Description": "Diverse demo event: Training Session",
+      "Type": "Training Session",
+      "Location": "Virtual Meeting",
+      "IsAllDayEvent": false,
+      "ShowAs": "Free",
+      "WhatId": "001gL00000HmM3IQAV"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-02 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-02 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Training Session - Just.",
+      "StartDateTime": "2025-10-02 16:58:32",
+      "EndDateTime": "2025-10-02 20:58:32",
+      "Description": "Diverse demo event: Training Session",
+      "Type": "Training Session",
+      "Location": "Virtual Meeting",
+      "IsAllDayEvent": false,
+      "ShowAs": "Free",
+      "WhoId": "003gL000009rGD0QAM"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-08-27 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-08-27 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-QBR - Pass character.",
+      "StartDateTime": "2025-08-27 16:58:32",
+      "EndDateTime": "2025-08-27 20:58:32",
+      "Description": "Diverse demo event: QBR",
+      "Type": "QBR",
+      "Location": "7888 Brendan Parkways Suite 897\nWest Douglasville, ID 12405",
+      "IsAllDayEvent": false,
+      "ShowAs": "Busy",
+      "WhoId": "003gL000009rGDqQAM"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-04 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-04 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Conference - Him fund civil.",
+      "StartDateTime": "2025-09-04 16:58:32",
+      "EndDateTime": "2025-09-04 19:58:32",
+      "Description": "Diverse demo event: Conference",
+      "Type": "Conference",
+      "Location": "4080 Stewart Plaza\nBaileystad, MO 11438",
+      "IsAllDayEvent": false,
+      "ShowAs": "Free",
+      "WhoId": "003gL000009rGEVQA2"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-14 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-14 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Meeting - Process wall.",
+      "StartDateTime": "2025-10-14 16:58:32",
+      "EndDateTime": "2025-10-14 19:58:32",
+      "Description": "Diverse demo event: Meeting",
+      "Type": "Meeting",
+      "Location": "104 Valerie Camp\nNorth Patrickmouth, MA 12314",
+      "IsAllDayEvent": false,
+      "ShowAs": "Busy",
+      "WhoId": "003gL000009rGF7QAM"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-10 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-10 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Product Launch - Art gas speech.",
+      "StartDateTime": "2025-10-10 16:58:32",
+      "EndDateTime": "2025-10-10 17:58:32",
+      "Description": "Diverse demo event: Product Launch",
+      "Type": "Product Launch",
+      "Location": "8378 Anderson Mills Suite 268\nLake Troy, VT 39758",
+      "IsAllDayEvent": false,
+      "ShowAs": "Free",
+      "WhoId": "003gL000009rGEsQAM"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-22 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-22 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Trade Show - Which.",
+      "StartDateTime": "2025-09-22 16:58:32",
+      "EndDateTime": "2025-09-22 17:58:32",
+      "Description": "Diverse demo event: Trade Show",
+      "Type": "Trade Show",
+      "Location": "Virtual Meeting",
+      "IsAllDayEvent": false,
+      "ShowAs": "Out of Office",
+      "WhoId": "003gL000009rGDvQAM"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-08-23 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-08-23 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-QBR - Language kid character.",
+      "StartDateTime": "2025-08-23 16:58:32",
+      "EndDateTime": "2025-08-23 18:58:32",
+      "Description": "Diverse demo event: QBR",
+      "Type": "QBR",
+      "Location": "Virtual Meeting",
+      "IsAllDayEvent": false,
+      "ShowAs": "Free",
+      "WhatId": "001gL00000HmM3JQAV"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-28 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-28 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Training Session - Knowledge.",
+      "StartDateTime": "2025-09-28 16:58:32",
+      "EndDateTime": "2025-09-28 20:58:32",
+      "Description": "Diverse demo event: Training Session",
+      "Type": "Training Session",
+      "Location": "5786 Lane Camp\nJuliabury, MA 20870",
+      "IsAllDayEvent": false,
+      "ShowAs": "Out of Office",
+      "WhatId": "001gL00000HmM2tQAF"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-09 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-09 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Call - Attorney son.",
+      "StartDateTime": "2025-09-09 16:58:32",
+      "EndDateTime": "2025-09-09 20:58:32",
+      "Description": "Diverse demo event: Call",
+      "Type": "Call",
+      "Location": "78410 James Green Apt. 411\nTaylorville, ND 06934",
+      "IsAllDayEvent": false,
+      "ShowAs": "Free",
+      "WhatId": "001gL00000HmM2yQAF"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-11 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-11 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Demo - Meet likely in.",
+      "StartDateTime": "2025-10-11 16:58:32",
+      "EndDateTime": "2025-10-11 17:58:32",
+      "Description": "Diverse demo event: Demo",
+      "Type": "Demo",
+      "Location": "0094 Schneider Stravenue\nNew Luistown, TX 69453",
+      "IsAllDayEvent": false,
+      "ShowAs": "Free",
+      "WhoId": "003gL000009rGEyQAM"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-07 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-07 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Meeting - Partner music near.",
+      "StartDateTime": "2025-10-07 16:58:32",
+      "EndDateTime": "2025-10-07 18:58:32",
+      "Description": "Diverse demo event: Meeting",
+      "Type": "Meeting",
+      "Location": "4953 Veronica Green Apt. 838\nLake Shane, LA 41549",
+      "IsAllDayEvent": false,
+      "ShowAs": "Busy",
+      "WhatId": "001gL00000HmM3PQAV"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-19 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-19 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Meeting - Technology someone keep all.",
+      "StartDateTime": "2025-09-19 16:58:32",
+      "EndDateTime": "2025-09-19 20:58:32",
+      "Description": "Diverse demo event: Meeting",
+      "Type": "Meeting",
+      "Location": "252 Rachel Dam\nEast Timothy, MH 99122",
+      "IsAllDayEvent": false,
+      "ShowAs": "Out of Office",
+      "WhatId": "001gL00000HmM3IQAV"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-08-29 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-08-29 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Meeting - Return work.",
+      "StartDateTime": "2025-08-29 16:58:32",
+      "EndDateTime": "2025-08-29 20:58:32",
+      "Description": "Diverse demo event: Meeting",
+      "Type": "Meeting",
+      "Location": "Virtual Meeting",
+      "IsAllDayEvent": false,
+      "ShowAs": "Out of Office",
+      "WhatId": "001gL00000HmM33QAF"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-17 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-10-17 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Training Session - Street life.",
+      "StartDateTime": "2025-10-17 16:58:32",
+      "EndDateTime": "2025-10-17 17:58:32",
+      "Description": "Diverse demo event: Training Session",
+      "Type": "Training Session",
+      "Location": "Virtual Meeting",
+      "IsAllDayEvent": false,
+      "ShowAs": "Free",
+      "WhoId": "003gL000009rGE5QAM"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-17 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-17 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Trade Show - Area top nearly skill.",
+      "StartDateTime": "2025-09-17 16:58:32",
+      "EndDateTime": "2025-09-17 19:58:32",
+      "Description": "Diverse demo event: Trade Show",
+      "Type": "Trade Show",
+      "Location": "Virtual Meeting",
+      "IsAllDayEvent": false,
+      "ShowAs": "Busy",
+      "WhoId": "003gL000009rGCqQAM"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-12 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-12 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Trade Show - Message school fire everyone.",
+      "StartDateTime": "2025-09-12 16:58:32",
+      "EndDateTime": "2025-09-12 18:58:32",
+      "Description": "Diverse demo event: Trade Show",
+      "Type": "Trade Show",
+      "Location": "0488 Howell Estate\nLake Evanmouth, CO 47940",
+      "IsAllDayEvent": false,
+      "ShowAs": "Busy",
+      "WhoId": "003gL000009rGDqQAM"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-01 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-01 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Webinar - Control where eat.",
+      "StartDateTime": "2025-09-01 16:58:32",
+      "EndDateTime": "2025-09-01 18:58:32",
+      "Description": "Diverse demo event: Webinar",
+      "Type": "Webinar",
+      "Location": "Virtual Meeting",
+      "IsAllDayEvent": false,
+      "ShowAs": "Free",
+      "WhoId": "003gL000009rGCnQAM"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-24 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-24 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Trade Show - Up third better.",
+      "StartDateTime": "2025-09-24 16:58:32",
+      "EndDateTime": "2025-09-24 19:58:32",
+      "Description": "Diverse demo event: Trade Show",
+      "Type": "Trade Show",
+      "Location": "25345 Tammy Manor\nWatsonhaven, OR 96624",
+      "IsAllDayEvent": false,
+      "ShowAs": "Free",
+      "WhatId": "001gL00000HmM3QQAV"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-08-19 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-08-19 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Meeting - Knowledge help.",
+      "StartDateTime": "2025-08-19 16:58:32",
+      "EndDateTime": "2025-08-19 18:58:32",
+      "Description": "Diverse demo event: Meeting",
+      "Type": "Meeting",
+      "Location": "8595 Rhonda Manors\nJonathanfort, AR 35117",
+      "IsAllDayEvent": false,
+      "ShowAs": "Out of Office",
+      "WhoId": "003gL000009rGEDQA2"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-12 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-12 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Webinar - Already yard upon deep.",
+      "StartDateTime": "2025-09-12 16:58:32",
+      "EndDateTime": "2025-09-12 20:58:32",
+      "Description": "Diverse demo event: Webinar",
+      "Type": "Webinar",
+      "Location": "Virtual Meeting",
+      "IsAllDayEvent": false,
+      "ShowAs": "Busy",
+      "WhatId": "001gL00000HmM3LQAV"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-09 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-09 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Training Session - Direction grow ago suggest.",
+      "StartDateTime": "2025-09-09 16:58:32",
+      "EndDateTime": "2025-09-09 20:58:32",
+      "Description": "Diverse demo event: Training Session",
+      "Type": "Training Session",
+      "Location": "84528 Howard Canyon\nDrakeburgh, CT 72541",
+      "IsAllDayEvent": false,
+      "ShowAs": "Out of Office",
+      "WhatId": "001gL00000HmM3ZQAV"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-09 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-09 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Demo - Place.",
+      "StartDateTime": "2025-09-09 16:58:32",
+      "EndDateTime": "2025-09-09 19:58:32",
+      "Description": "Diverse demo event: Demo",
+      "Type": "Demo",
+      "Location": "Virtual Meeting",
+      "IsAllDayEvent": false,
+      "ShowAs": "Out of Office",
+      "WhatId": "001gL00000HmM3dQAF"
+    }
+  },
+  {
+    "error": {
+      "statusCode": "INVALID_FIELD",
+      "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-02 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+      "fields": []
+    },
+    "row_data": {
+      "success": false,
+      "created": false,
+      "id": null,
+      "errors": [
+        {
+          "statusCode": "INVALID_FIELD",
+          "message": "Unexpected JsonMappingException: Cannot deserialize instance of datetime from VALUE_STRING value 2025-09-02 16:58:32 or request may be missing a required field\n at [Source: N/A; line: -1, column: -1]",
+          "fields": []
+        }
+      ],
+      "Subject": "Seed[Diverse]-Webinar - Western finish law.",
+      "StartDateTime": "2025-09-02 16:58:32",
+      "EndDateTime": "2025-09-02 18:58:32",
+      "Description": "Diverse demo event: Webinar",
+      "Type": "Webinar",
+      "Location": "PSC 3850, Box 6111\nAPO AA 32276",
+      "IsAllDayEvent": false,
+      "ShowAs": "Free",
+      "WhatId": "001gL00000HmM34QAF"
+    }
+  }
+]
