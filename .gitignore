@@ -52,11 +52,43 @@ Thumbs.db
 # Logs
 *.log
 logs/
+log/
 
-# Testing
+# Analytics
+analytics/target/
+analytics/dbt_packages/
+analytics/logs/
+analytics/profiles.yml
+
+# Backup files
+backup/
+*.backup
+*.bak
+
+# Test coverage
 .coverage
-.pytest_cache/
 htmlcov/
+.pytest_cache/
+.tox/
 
-# MCP
-.mcp/
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Configuration files with secrets
+config.json
+secrets.json
+credentials.json
+
+# Slack
+.slack/
+
+# Salesforce
+.salesforce/

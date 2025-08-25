@@ -1,0 +1,131 @@
+version: 2
+
+sources:
+  - name: raw
+    description: Raw Salesforce data loaded into Snowflake
+    tables:
+      - name: raw_opportunity
+        description: Raw opportunity data from Salesforce
+        columns:
+          - name: id
+            description: Opportunity ID
+            tests:
+              - not_null
+              - unique
+          - name: name
+            description: Opportunity name
+          - name: amount
+            description: Opportunity amount
+          - name: stagename
+            description: Current stage name
+          - name: closedate
+            description: Close date
+          - name: accountid
+            description: Associated account ID
+          - name: ownerid
+            description: Opportunity owner ID
+          - name: type
+            description: Opportunity type
+          - name: createddate
+            description: Creation date
+          - name: lastmodifieddate
+            description: Last modified date
+      
+      - name: raw_opportunity_history
+        description: Raw opportunity history data from Salesforce
+        columns:
+          - name: id
+            description: History record ID
+            tests:
+              - not_null
+              - unique
+          - name: opportunityid
+            description: Associated opportunity ID
+            tests:
+              - not_null
+          - name: stagename
+            description: Stage name at this point in history
+          - name: amount
+            description: Amount at this point in history
+          - name: closedate
+            description: Close date at this point in history
+          - name: createddate
+            description: When this history record was created
+      
+      - name: raw_account
+        description: Raw account data from Salesforce
+        columns:
+          - name: id
+            description: Account ID
+            tests:
+              - not_null
+              - unique
+          - name: name
+            description: Account name
+          - name: annualrevenue
+            description: Annual revenue
+          - name: industry
+            description: Industry
+          - name: type
+            description: Account type
+          - name: billingcountry
+            description: Billing country
+      
+      - name: raw_contact
+        description: Raw contact data from Salesforce
+        columns:
+          - name: id
+            description: Contact ID
+            tests:
+              - not_null
+              - unique
+          - name: firstname
+            description: First name
+          - name: lastname
+            description: Last name
+          - name: email
+            description: Email address
+          - name: phone
+            description: Phone number
+          - name: accountid
+            description: Associated account ID
+      
+      - name: raw_campaign
+        description: Raw campaign data from Salesforce
+        columns:
+          - name: id
+            description: Campaign ID
+            tests:
+              - not_null
+              - unique
+          - name: name
+            description: Campaign name
+          - name: status
+            description: Campaign status
+          - name: type
+            description: Campaign type
+          - name: numberofleads
+            description: Number of leads
+          - name: numberofopportunities
+            description: Number of opportunities
+          - name: actualcost
+            description: Actual cost
+      
+      - name: raw_campaign_member
+        description: Raw campaign member data from Salesforce
+        columns:
+          - name: id
+            description: Campaign member ID
+            tests:
+              - not_null
+              - unique
+          - name: campaignid
+            description: Associated campaign ID
+            tests:
+              - not_null
+          - name: leadid
+            description: Associated lead ID
+          - name: contactid
+            description: Associated contact ID
+          - name: status
+            description: Member status
