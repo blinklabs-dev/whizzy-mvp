@@ -1,0 +1,22 @@
+[
+  {
+    "question": "what is our win rate?",
+    "soql": "SELECT COUNT(Id) FROM Opportunity WHERE StageName = 'Closed Won'"
+  },
+  {
+    "question": "show me the top 5 biggest deals in the pipeline",
+    "soql": "SELECT Name, Amount FROM Opportunity WHERE IsClosed = false ORDER BY Amount DESC LIMIT 5"
+  },
+  {
+    "question": "Which accounts in California have more than 500 employees?",
+    "soql": "SELECT Name, NumberOfEmployees FROM Account WHERE BillingState = 'CA' AND NumberOfEmployees > 500"
+  },
+  {
+    "question": "what was the total value of closed won opportunities last month?",
+    "soql": "SELECT SUM(Amount) FROM Opportunity WHERE StageName = 'Closed Won' AND CloseDate = LAST_MONTH"
+  },
+  {
+    "question": "show me deals from fiscal year 2023",
+    "soql": "SELECT Name, Amount FROM Opportunity WHERE FiscalYear = 2023"
+  }
+]

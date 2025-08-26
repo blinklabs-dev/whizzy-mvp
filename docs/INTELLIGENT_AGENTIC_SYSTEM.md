@@ -88,21 +88,21 @@ The **Enhanced Intelligent Agentic System** is a sophisticated AI-powered analyt
 async def _execute_thinking_process(self, query: str, context_state: ContextState) -> ChainOfThought:
     """Execute advanced thinking process with chain of thought reasoning"""
     prompt = self._load_chain_of_thought_prompt()
-    
+
     # Enhanced prompt with context awareness
     enhanced_prompt = f"""
     {prompt}
-    
+
     User Context:
     - Previous interactions: {len(context_state.conversation_history)}
     - Preferred data sources: {[ds.value for ds in context_state.data_source_preferences]}
     - Current session duration: {(time.time() - context_state.session_start.timestamp()):.0f} seconds
-    
+
     Query: {query}
-    
+
     Please provide step-by-step reasoning with confidence levels.
     """
-    
+
     # Execute with enhanced reasoning
     response = await self._call_llm(enhanced_prompt)
     return self._parse_thinking_steps(response)
@@ -146,26 +146,26 @@ def get_enhanced_quality_metrics(self) -> Dict[str, float]:
 ```python
 async def _handle_thinking_query(self, query: str, context_state: ContextState) -> AgentResponse:
     """Handle complex reasoning queries with enhanced thinking"""
-    
+
     # Execute thinking process
     chain_of_thought = await self._execute_thinking_process(query, context_state)
-    
+
     # Generate comprehensive response
     reasoning_prompt = self._load_reasoning_prompt()
     enhanced_prompt = f"""
     {reasoning_prompt}
-    
+
     Chain of Thought Analysis:
     {chain_of_thought.reasoning_path}
-    
+
     User Context:
     {self._format_context_for_prompt(context_state)}
-    
+
     Query: {query}
     """
-    
+
     response = await self._call_llm(enhanced_prompt)
-    
+
     return AgentResponse(
         response_text=response,
         confidence_score=chain_of_thought.final_confidence,
@@ -185,14 +185,14 @@ async def _handle_thinking_query(self, query: str, context_state: ContextState) 
 ```python
 class TestIntelligentAgenticSystemUAT(unittest.TestCase):
     """Enhanced UAT test suite with thinking capabilities"""
-    
+
     def test_thinking_process_execution(self):
         """Test chain of thought processing"""
         query = "Why are our Q4 sales declining and what should we do about it?"
         context_state = self._create_test_context_state()
-        
+
         chain_of_thought = self.system._execute_thinking_process(query, context_state)
-        
+
         self.assertIsNotNone(chain_of_thought)
         self.assertGreater(len(chain_of_thought.thinking_steps), 0)
         self.assertGreater(chain_of_thought.final_confidence, 0.7)
@@ -204,10 +204,10 @@ def test_context_awareness_integration(self):
     """Test context-aware response generation"""
     # First query
     response1 = self.system.process_query("Show me sales data", {}, "user1")
-    
+
     # Second query with context
     response2 = self.system.process_query("Compare with last month", {}, "user1")
-    
+
     # Verify context was used
     self.assertIn("previous", response2.response_text.lower())
     self.assertGreater(response2.quality_metrics.get("context_awareness", 0), 0.6)
@@ -218,9 +218,9 @@ def test_context_awareness_integration(self):
 def test_thinking_quality_assessment(self):
     """Test thinking process quality"""
     query = "Analyze our customer churn patterns and recommend retention strategies"
-    
+
     response = self.system.process_query(query, {}, "user1")
-    
+
     # Verify thinking process
     self.assertIsNotNone(response.chain_of_thought)
     self.assertGreater(len(response.chain_of_thought.thinking_steps), 2)
@@ -245,10 +245,10 @@ def test_thinking_quality_assessment(self):
 ```python
 async def _generate_enhanced_coffee_briefing(self, persona: PersonaType, frequency: str, context_state: Optional[ContextState] = None) -> CoffeeBriefing:
     """Generate context-aware coffee briefing"""
-    
+
     # Enhanced prompt with context
     prompt = self._load_coffee_briefing_prompt(persona, frequency)
-    
+
     if context_state:
         context_enhancement = f"""
         User Context:
@@ -257,9 +257,9 @@ async def _generate_enhanced_coffee_briefing(self, persona: PersonaType, frequen
         - Recent queries: {[q.last_query for q in context_state.conversation_history[-3:]]}
         """
         prompt += context_enhancement
-    
+
     response = await self._call_llm(prompt)
-    
+
     return CoffeeBriefing(
         persona=persona,
         frequency=frequency,

@@ -24,8 +24,13 @@ import uuid
 from concurrent.futures import ThreadPoolExecutor
 import openai
 from simple_salesforce import Salesforce
+import snowflake.connector
 import os
 from dotenv import load_dotenv
+
+from app.tools.base_tool import BaseTool
+from app.tools.salesforce_tool import SalesforceTool
+from app.tools.snowflake_tool import SnowflakeTool
 
 load_dotenv()
 
@@ -148,346 +153,142 @@ class ContextState:
 
 class EnhancedIntelligentAgenticSystem:
     """Enhanced intelligent agentic system with advanced thinking and reasoning"""
-    
+
     def __init__(self):
         self.openai_client = openai.OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
-        self.salesforce_client = self._initialize_salesforce()
         self.executor = ThreadPoolExecutor(max_workers=5)
         self.conversation_history = []
         self.quality_metrics = {}
         self.context_states = {}  # Track context per user
-        
+
+        # Initialize REAL clients
+        self.salesforce_client = self._initialize_salesforce()
+        self.snowflake_connection = self._initialize_snowflake()
+
+        # Cost optimization setup
+        self.environment = os.getenv("ENVIRONMENT", "development")
+        self.models = {
+            "development": {
+                "ultra_fast": "gpt-4o-mini",           # Fastest & cheapest
+                "fast": "gpt-3.5-turbo",               # Fast & cheap
+                "balanced": "gpt-4o",                  # Balanced performance
+                "accurate": "gpt-4-turbo"              # High accuracy
+            },
+            "production": {
+                "ultra_fast": "gpt-4o-mini",           # Fastest & cheapest
+                "fast": "gpt-4o",                      # Fast & good quality
+                "balanced": "gpt-4-turbo",             # Balanced performance
+                "accurate": "gpt-4"                    # Highest accuracy
+            }
+        }
+
+        # Initialize tools
+        self.tools: Dict[str, BaseTool] = {
+            "salesforce": SalesforceTool(self.salesforce_client, self.openai_client, self.executor),
+            "snowflake": SnowflakeTool(self.snowflake_connection, self.openai_client, self.executor),
+        }
+
         # Load enhanced prompts
         self.persona_prompts = self._load_persona_prompts()
         self.intent_classification_prompt = self._load_intent_classification_prompt()
         self.reasoning_prompt = self._load_reasoning_prompt()
         self.thinking_prompt = self._load_thinking_prompt()
         self.chain_of_thought_prompt = self._load_chain_of_thought_prompt()
-        
-        logger.info("🧠 Enhanced Intelligent Agentic System initialized")
-    
+        self.summarize_simple_prompt = self._load_prompt_from_file(os.path.join(os.path.dirname(__file__), '..', 'prompts', 'system', 'summarize_simple.txt'))
+        self.summarize_full_prompt = self._load_prompt_from_file(os.path.join(os.path.dirname(__file__), '..', 'prompts', 'system', 'summarize_full.txt'))
+
+        logger.info(f"🧠 Enhanced Intelligent Agentic System initialized with REAL data connections and cost optimization ({self.environment})")
+
     def _initialize_salesforce(self) -> Optional[Salesforce]:
-        """Initialize Salesforce connection"""
+        """Initialize REAL Salesforce connection"""
         try:
-            return Salesforce(
+            client = Salesforce(
                 username=os.getenv('SALESFORCE_USERNAME'),
                 password=os.getenv('SALESFORCE_PASSWORD'),
                 security_token=os.getenv('SALESFORCE_SECURITY_TOKEN'),
                 domain=os.getenv('SALESFORCE_DOMAIN', 'login')
             )
+            # Test the connection
+            test_result = client.query('SELECT Id FROM Opportunity LIMIT 1')
+            logger.info(f"✅ REAL Salesforce connection established - {test_result['totalSize']} test records found")
+            return client
         except Exception as e:
-            logger.error(f"❌ Failed to initialize Salesforce: {e}")
+            logger.error(f"❌ Failed to initialize REAL Salesforce: {e}")
             return None
-    
+
+    def _initialize_snowflake(self) -> Optional[snowflake.connector.SnowflakeConnection]:
+        """Initialize REAL Snowflake connection."""
+        try:
+            conn = snowflake.connector.connect(
+                user=os.getenv('SNOWFLAKE_USER'),
+                password=os.getenv('SNOWFLAKE_PASSWORD'),
+                account=os.getenv('SNOWFLAKE_ACCOUNT'),
+                warehouse=os.getenv('SNOWFLAKE_WAREHOUSE'),
+                database=os.getenv('SNOWFLAKE_DATABASE'),
+                schema=os.getenv('SNOWFLAKE_SCHEMA'),
+                role=os.getenv('SNOWFLAKE_ROLE'),
+            )
+            # Test the connection
+            cursor = conn.cursor()
+            cursor.execute("SELECT COUNT(*) as total_opportunities FROM stg_sf__opportunity")
+            test_result = cursor.fetchone()
+            cursor.close()
+            logger.info(f"✅ REAL Snowflake connection established - {test_result[0]} opportunities in staging")
+            return conn
+        except Exception as e:
+            logger.warning(f"⚠️ Failed to initialize REAL Snowflake (this may be expected if not configured): {e}")
+            return None
+
+    def _load_prompt_from_file(self, file_path: str) -> str:
+        """Helper function to load a prompt from a file."""
+        try:
+            with open(file_path, 'r') as f:
+                return f.read()
+        except FileNotFoundError:
+            logger.error(f"Prompt file not found at {file_path}")
+            return f"Error: Prompt file not found at {file_path}"
+        except Exception as e:
+            logger.error(f"Error loading prompt from {file_path}: {e}")
+            return f"Error: Could not load prompt from {file_path}"
+
     def _load_chain_of_thought_prompt(self) -> str:
-        """Load chain of thought reasoning prompt"""
-        return """
-You are an expert business analyst with advanced reasoning capabilities. Use chain of thought reasoning to break down complex queries into logical steps.
+        """Load chain of thought reasoning prompt from file."""
+        file_path = os.path.join(os.path.dirname(__file__), '..', 'prompts', 'system', 'chain_of_thought.txt')
+        return self._load_prompt_from_file(file_path)
 
-QUERY: {query}
-PERSONA: {persona}
-CONTEXT: {context}
-
-Think through this step by step:
-
-1. INTENT ANALYSIS:
-   - What is the user really asking for?
-   - What type of analysis is needed?
-   - What data sources should be consulted?
-
-2. CONTEXT GATHERING:
-   - What historical context is relevant?
-   - What user preferences should be considered?
-   - What business context applies?
-
-3. DATA SOURCE SELECTION:
-   - Which data sources are most appropriate?
-   - What specific queries are needed?
-   - How should data be combined?
-
-4. ANALYSIS APPROACH:
-   - What analytical methods should be used?
-   - What patterns should be looked for?
-   - What insights are most valuable?
-
-5. INSIGHT SYNTHESIS:
-   - How do the pieces fit together?
-   - What are the key findings?
-   - What recommendations emerge?
-
-6. RESPONSE FORMULATION:
-   - How should insights be presented?
-   - What action items are needed?
-   - How should this be tailored to the persona?
-
-Provide your reasoning in this format:
-
-THINKING PROCESS:
-[Your step-by-step reasoning]
-
-CHAIN OF THOUGHT:
-1. [First reasoning step]
-2. [Second reasoning step]
-3. [Third reasoning step]
-...
-
-FINAL ANALYSIS:
-[Your comprehensive analysis]
-
-RECOMMENDATIONS:
-[Your recommendations]
-
-CONFIDENCE: [0.0-1.0]
-"""
-    
     def _load_thinking_prompt(self) -> str:
-        """Load thinking and reasoning prompt"""
-        return """
-You are an advanced AI analyst with deep business intelligence capabilities. Use sophisticated thinking to analyze complex business queries.
+        """Load thinking and reasoning prompt from file."""
+        file_path = os.path.join(os.path.dirname(__file__), '..', 'prompts', 'system', 'thinking.txt')
+        return self._load_prompt_from_file(file_path)
 
-QUERY: {query}
-PERSONA: {persona}
-CONTEXT: {context}
-AVAILABLE_DATA: {available_data}
-
-Apply advanced thinking techniques:
-
-1. CRITICAL THINKING:
-   - Question assumptions
-   - Identify biases
-   - Consider alternative perspectives
-   - Evaluate evidence quality
-
-2. SYSTEMS THINKING:
-   - Understand interconnections
-   - Identify root causes
-   - Consider feedback loops
-   - Analyze emergent properties
-
-3. STRATEGIC THINKING:
-   - Long-term implications
-   - Competitive analysis
-   - Risk assessment
-   - Opportunity identification
-
-4. CREATIVE THINKING:
-   - Novel insights
-   - Pattern recognition
-   - Hypothesis generation
-   - Innovation opportunities
-
-5. ANALYTICAL THINKING:
-   - Data interpretation
-   - Statistical reasoning
-   - Trend analysis
-   - Predictive modeling
-
-Provide your analysis in this format:
-
-THINKING PROCESS:
-[Your advanced thinking process]
-
-CRITICAL INSIGHTS:
-[Key insights from critical thinking]
-
-SYSTEMS ANALYSIS:
-[Systems-level understanding]
-
-STRATEGIC IMPLICATIONS:
-[Strategic considerations]
-
-CREATIVE OPPORTUNITIES:
-[Innovative insights]
-
-ANALYTICAL FINDINGS:
-[Data-driven conclusions]
-
-CONFIDENCE: [0.0-1.0]
-"""
-    
     def _load_intent_classification_prompt(self) -> str:
-        """Load enhanced intent classification prompt"""
-        return """
-You are an expert intent classifier for a sophisticated Salesforce analytics bot. Analyze the user query with advanced understanding.
+        """Load enhanced intent classification prompt from file."""
+        file_path = os.path.join(os.path.dirname(__file__), '..', 'prompts', 'system', 'intent_classification.txt')
+        return self._load_prompt_from_file(file_path)
 
-Available intents:
-- DIRECT_ANSWER: Simple questions that can be answered directly
-- SALESFORCE_QUERY: Questions requiring Salesforce data (win rates, pipeline, accounts)
-- BUSINESS_INTELLIGENCE: Questions requiring analysis and insights
-- COMPLEX_ANALYTICS: Questions requiring multiple data sources and advanced analytics
-- DBT_MODEL: Questions about creating or modifying dbt models
-- COFFEE_BRIEFING: Requests for regular briefings (daily/weekly/monthly)
-- REASONING_LOOP: Questions requiring multi-step reasoning
-- MULTI_SOURCE: Questions requiring data from multiple sources
-- THINKING_ANALYSIS: Questions requiring deep thinking and analysis
-
-Personas:
-- VP_SALES: Strategic insights, team performance, resource allocation
-- ACCOUNT_EXECUTIVE: Deal preparation, customer insights, personal performance
-- SALES_MANAGER: Team coaching, performance management, process optimization
-- CDO: Data strategy, analytics infrastructure, governance
-- DATA_ENGINEER: Technical implementation, data pipelines, model development
-- SALES_OPERATIONS: Process optimization, data quality, reporting
-- CUSTOMER_SUCCESS: Customer health, retention, engagement
-
-Analyze the query and respond with JSON:
-{
-    "primary_intent": "intent_type",
-    "confidence": 0.95,
-    "persona": "persona_type",
-    "data_sources": ["salesforce", "snowflake", "dbt"],
-    "complexity_level": "low|medium|high",
-    "reasoning_required": true/false,
-    "coffee_briefing": true/false,
-    "dbt_model_required": true/false,
-    "thinking_required": true/false,
-    "explanation": "Detailed explanation of classification"
-}
-
-Query: {query}
-"""
-    
     def _load_reasoning_prompt(self) -> str:
-        """Load enhanced reasoning prompt for complex queries"""
-        return """
-You are an expert business analyst with advanced reasoning capabilities. Given a complex query, use sophisticated reasoning to provide comprehensive analysis.
+        """Load enhanced reasoning prompt for complex queries from file."""
+        file_path = os.path.join(os.path.dirname(__file__), '..', 'prompts', 'system', 'reasoning.txt')
+        return self._load_prompt_from_file(file_path)
 
-Query: {query}
-Context: {context}
-Available Data: {available_data}
-Chain of Thought: {chain_of_thought}
-
-Apply advanced reasoning techniques:
-
-1. LOGICAL REASONING:
-   - Deductive reasoning
-   - Inductive reasoning
-   - Abductive reasoning
-   - Causal inference
-
-2. QUANTITATIVE REASONING:
-   - Statistical analysis
-   - Mathematical modeling
-   - Probability assessment
-   - Risk quantification
-
-3. QUALITATIVE REASONING:
-   - Pattern recognition
-   - Trend analysis
-   - Comparative analysis
-   - Contextual understanding
-
-4. STRATEGIC REASONING:
-   - Long-term thinking
-   - Competitive analysis
-   - Resource optimization
-   - Risk management
-
-Provide your analysis in this format:
-
-REASONING PROCESS:
-[Your sophisticated reasoning process]
-
-LOGICAL ANALYSIS:
-[Logical reasoning steps]
-
-QUANTITATIVE INSIGHTS:
-[Data-driven analysis]
-
-QUALITATIVE ASSESSMENT:
-[Pattern and trend analysis]
-
-STRATEGIC IMPLICATIONS:
-[Strategic considerations]
-
-RECOMMENDATIONS:
-[Actionable recommendations]
-
-CONFIDENCE: [0.0-1.0]
-"""
-    
     def _load_persona_prompts(self) -> Dict[str, str]:
-        """Load enhanced persona-specific prompts"""
-        return {
-            "vp_sales": """
-You are responding to a VP of Sales with advanced strategic thinking. Focus on:
-- Strategic insights and business impact
-- Team performance and resource allocation
-- High-level trends and opportunities
-- Executive-level recommendations
-- Revenue and pipeline insights
-- Competitive analysis and market positioning
-- Long-term strategic planning
-- Risk assessment and mitigation
-""",
-            "account_executive": """
-You are responding to an Account Executive with tactical thinking. Focus on:
-- Deal preparation and customer insights
-- Personal performance metrics
-- Account-specific information
-- Call preparation guidance
-- Deal strategy and next steps
-- Customer relationship management
-- Competitive positioning
-- Sales technique optimization
-""",
-            "sales_manager": """
-You are responding to a Sales Manager with operational thinking. Focus on:
-- Team performance and coaching opportunities
-- Process optimization and efficiency
-- Individual rep performance
-- Pipeline management
-- Resource allocation and training needs
-- Performance metrics and KPIs
-- Team dynamics and motivation
-- Process improvement opportunities
-""",
-            "cdo": """
-You are responding to a Chief Data Officer with technical and strategic thinking. Focus on:
-- Data strategy and governance
-- Analytics infrastructure and capabilities
-- Data quality and reliability
-- Strategic data initiatives
-- Technical architecture decisions
-- Data pipeline optimization
-- Analytics adoption and ROI
-- Data security and compliance
-""",
-            "data_engineer": """
-You are responding to a Data Engineer with technical thinking. Focus on:
-- Technical implementation details
-- Data pipeline optimization
-- Model development and deployment
-- Performance and scalability
-- Best practices and standards
-- Infrastructure optimization
-- Code quality and maintainability
-- System architecture decisions
-""",
-            "sales_operations": """
-You are responding to a Sales Operations professional with analytical thinking. Focus on:
-- Process optimization and efficiency
-- Data quality and reporting
-- System configuration and automation
-- Performance metrics and KPIs
-- Operational improvements
-- Workflow optimization
-- Data analysis and insights
-- Process standardization
-""",
-            "customer_success": """
-You are responding to a Customer Success professional with relationship thinking. Focus on:
-- Customer health and satisfaction
-- Retention and expansion opportunities
-- Customer engagement and support
-- Success metrics and outcomes
-- Customer lifecycle management
-- Relationship building strategies
-- Customer feedback analysis
-- Proactive support initiatives
-"""
-        }
-    
+        """Load enhanced persona-specific prompts from files."""
+        prompts = {}
+        persona_dir = os.path.join(os.path.dirname(__file__), '..', 'prompts', 'personas')
+        try:
+            for filename in os.listdir(persona_dir):
+                if filename.endswith(".txt"):
+                    persona_name = filename[:-4]  # Remove .txt extension
+                    file_path = os.path.join(persona_dir, filename)
+                    prompts[persona_name] = self._load_prompt_from_file(file_path)
+            return prompts
+        except FileNotFoundError:
+            logger.error(f"Personas directory not found at {persona_dir}")
+            return {}
+        except Exception as e:
+            logger.error(f"Error loading persona prompts: {e}")
+            return {}
+
     async def _execute_thinking_process(self, query: str, persona: PersonaType, context: Dict[str, Any], available_data: Dict[str, Any]) -> ChainOfThought:
         """Execute advanced thinking process with chain of thought reasoning"""
         try:
@@ -498,7 +299,7 @@ You are responding to a Customer Success professional with relationship thinking
                 context=json.dumps(context, indent=2),
                 available_data=json.dumps(available_data, indent=2)
             )
-            
+
             # Execute thinking process
             response = await asyncio.get_event_loop().run_in_executor(
                 self.executor,
@@ -511,12 +312,12 @@ You are responding to a Customer Success professional with relationship thinking
                     temperature=0.3
                 )
             )
-            
+
             thinking_response = response.choices[0].message.content
-            
+
             # Parse thinking steps
             thinking_steps = self._parse_thinking_steps(thinking_response)
-            
+
             # Create chain of thought
             chain_of_thought = ChainOfThought(
                 query=query,
@@ -527,27 +328,27 @@ You are responding to a Customer Success professional with relationship thinking
                 context_used=context,
                 data_sources_accessed=self._extract_data_sources(thinking_response)
             )
-            
+
             return chain_of_thought
-            
+
         except Exception as e:
             logger.error(f"❌ Error in thinking process: {e}")
             return self._create_fallback_chain_of_thought(query, persona, context)
-    
+
     def _parse_thinking_steps(self, thinking_response: str) -> List[ThinkingStep]:
         """Parse thinking steps from response"""
         steps = []
-        
+
         # Extract different thinking phases
         phases = {
             ReasoningStep.INTENT_ANALYSIS: "THINKING PROCESS",
-            ReasoningStep.CONTEXT_GATHERING: "CRITICAL INSIGHTS", 
+            ReasoningStep.CONTEXT_GATHERING: "CRITICAL INSIGHTS",
             ReasoningStep.DATA_SOURCE_SELECTION: "SYSTEMS ANALYSIS",
             ReasoningStep.QUERY_GENERATION: "STRATEGIC IMPLICATIONS",
             ReasoningStep.DATA_ANALYSIS: "CREATIVE OPPORTUNITIES",
             ReasoningStep.INSIGHT_SYNTHESIS: "ANALYTICAL FINDINGS"
         }
-        
+
         for step_type, phase_name in phases.items():
             if phase_name in thinking_response:
                 # Extract content for this phase
@@ -561,9 +362,9 @@ You are responding to a Customer Success professional with relationship thinking
                             content_lines.append(line.strip())
                         elif line.strip() and line.strip().endswith(':'):
                             break
-                    
+
                     content = '\n'.join(content_lines)
-                    
+
                     step = ThinkingStep(
                         step_type=step_type,
                         description=f"{phase_name} analysis",
@@ -573,9 +374,9 @@ You are responding to a Customer Success professional with relationship thinking
                         reasoning=content
                     )
                     steps.append(step)
-        
+
         return steps
-    
+
     def _extract_confidence(self, response: str) -> float:
         """Extract confidence score from response"""
         try:
@@ -585,21 +386,21 @@ You are responding to a Customer Success professional with relationship thinking
         except:
             pass
         return 0.8  # Default confidence
-    
+
     def _extract_data_sources(self, response: str) -> List[DataSourceType]:
         """Extract data sources mentioned in response"""
         sources = []
         response_lower = response.lower()
-        
+
         if 'salesforce' in response_lower:
             sources.append(DataSourceType.SALESFORCE)
         if 'snowflake' in response_lower:
             sources.append(DataSourceType.SNOWFLAKE)
         if 'dbt' in response_lower:
             sources.append(DataSourceType.DBT)
-        
+
         return sources if sources else [DataSourceType.SALESFORCE]
-    
+
     def _create_fallback_chain_of_thought(self, query: str, persona: PersonaType, context: Dict[str, Any]) -> ChainOfThought:
         """Create fallback chain of thought when thinking process fails"""
         return ChainOfThought(
@@ -620,13 +421,13 @@ You are responding to a Customer Success professional with relationship thinking
             context_used=context,
             data_sources_accessed=[DataSourceType.SALESFORCE]
         )
-    
+
     async def classify_intent(self, query: str, user_context: Dict[str, Any] = None) -> IntentAnalysis:
         """Enhanced intent classification with thinking capabilities"""
         try:
             # Add context to query
             contextualized_query = f"{query}\nUser Context: {user_context or {}}"
-            
+
             response = await asyncio.get_event_loop().run_in_executor(
                 self.executor,
                 lambda: self.openai_client.chat.completions.create(
@@ -638,9 +439,9 @@ You are responding to a Customer Success professional with relationship thinking
                     temperature=0.1
                 )
             )
-            
+
             result = json.loads(response.choices[0].message.content)
-            
+
             return IntentAnalysis(
                 primary_intent=IntentType(result["primary_intent"]),
                 confidence=result["confidence"],
@@ -653,15 +454,15 @@ You are responding to a Customer Success professional with relationship thinking
                 thinking_required=result.get("thinking_required", False),
                 explanation=result["explanation"]
             )
-            
+
         except Exception as e:
             logger.error(f"❌ Error in intent classification: {e}")
             return self._fallback_intent_classification(query)
-    
+
     def _fallback_intent_classification(self, query: str) -> IntentAnalysis:
         """Enhanced fallback intent classification"""
         query_lower = query.lower()
-        
+
         # Enhanced rule-based classification
         if any(word in query_lower for word in ["think", "analyze", "reason", "why", "how", "complex"]):
             intent = IntentType.THINKING_ANALYSIS
@@ -681,7 +482,7 @@ You are responding to a Customer Success professional with relationship thinking
         else:
             intent = IntentType.DIRECT_ANSWER
             thinking_required = False
-        
+
         return IntentAnalysis(
             primary_intent=intent,
             confidence=0.7,
@@ -694,13 +495,29 @@ You are responding to a Customer Success professional with relationship thinking
             thinking_required=thinking_required,
             explanation="Enhanced fallback classification"
         )
-    
+
     async def orchestrate_response(self, query: str, intent_analysis: IntentAnalysis, user_id: str = None) -> AgentResponse:
         """Enhanced orchestration with thinking and context management"""
+        logger.info(f"Orchestrating response for intent: {intent_analysis.primary_intent.value} with confidence {intent_analysis.confidence:.2f}")
+
+        # Confidence Gate: If intent confidence is too low, ask for clarification.
+        CONFIDENCE_THRESHOLD = 0.65
+        if intent_analysis.confidence < CONFIDENCE_THRESHOLD:
+            logger.warning(f"Intent confidence ({intent_analysis.confidence:.2f}) is below threshold ({CONFIDENCE_THRESHOLD}). Asking for clarification.")
+            return AgentResponse(
+                response_text="I'm not entirely sure what you're asking. Could you please try rephrasing your question?",
+                data_sources_used=[],
+                reasoning_steps=["Low confidence routing"],
+                confidence_score=intent_analysis.confidence,
+                persona_alignment=0.5,
+                actionability_score=0.1,
+                quality_metrics={"clarification_needed": 1.0}
+            )
+
         try:
             # Get or create context state
             context_state = self._get_context_state(user_id or "default")
-            
+
             # Update context with current query
             context_state.last_query = query
             context_state.current_context.update({
@@ -708,34 +525,84 @@ You are responding to a Customer Success professional with relationship thinking
                 "current_persona": intent_analysis.persona.value,
                 "timestamp": datetime.now().isoformat()
             })
-            
+
             # Execute thinking process if required
+            logger.info(f"Thinking required: {intent_analysis.thinking_required}")
             chain_of_thought = None
             if intent_analysis.thinking_required or intent_analysis.primary_intent == IntentType.THINKING_ANALYSIS:
+                logger.info("Executing advanced thinking process...")
                 chain_of_thought = await self._execute_thinking_process(
                     query, intent_analysis.persona, context_state.current_context, {}
                 )
-            
+
             # Route to appropriate handler
+            logger.info("Routing to specialized handler...")
             if intent_analysis.reasoning_required or chain_of_thought:
+                logger.info("--> Handling as Thinking Query")
                 return await self._handle_thinking_query(query, intent_analysis, chain_of_thought, context_state)
             elif intent_analysis.coffee_briefing:
+                logger.info("--> Handling as Coffee Briefing")
                 return await self._handle_coffee_briefing(query, intent_analysis, context_state)
             elif intent_analysis.dbt_model_required:
+                logger.info("--> Handling as dbt Model Request")
                 return await self._handle_dbt_model_request(query, intent_analysis, context_state)
             elif intent_analysis.primary_intent == IntentType.COMPLEX_ANALYTICS:
+                logger.info("--> Handling as Complex Analytics")
                 return await self._handle_complex_analytics(query, intent_analysis, context_state)
             elif intent_analysis.primary_intent == IntentType.SALESFORCE_QUERY:
-                return await self._handle_salesforce_query(query, intent_analysis, context_state)
+                logger.info("--> Handling as Salesforce Query")
+                sf_result = await self.tools["salesforce"].run(query)
+                summary = await self._summarize_data(query, sf_result, self.summarize_simple_prompt)
+                return AgentResponse(
+                    response_text=summary,
+                    data_sources_used=[DataSourceType.SALESFORCE],
+                    reasoning_steps=["Tool Execution: Salesforce", "Simple Summarization"],
+                    confidence_score=0.95, persona_alignment=0.85, actionability_score=0.8,
+                    quality_metrics={"data_accuracy": 0.98}
+                )
             elif intent_analysis.primary_intent == IntentType.BUSINESS_INTELLIGENCE:
-                return await self._handle_business_intelligence(query, intent_analysis, context_state)
+                logger.info("--> Handling as Business Intelligence")
+                sf_result = await self.tools["salesforce"].run(query)
+                summary = await self._summarize_data(query, sf_result, self.summarize_full_prompt)
+                return AgentResponse(
+                    response_text=summary,
+                    data_sources_used=[DataSourceType.SALESFORCE],
+                    reasoning_steps=["Tool Execution: Salesforce", "Full Analysis & Summarization"],
+                    confidence_score=0.90, persona_alignment=0.9, actionability_score=0.85,
+                    quality_metrics={"insight_quality": 0.85}
+                )
             else:
+                logger.info("--> Handling as Direct Answer")
                 return await self._handle_direct_answer(query, intent_analysis, context_state)
-                
+
         except Exception as e:
-            logger.error(f"❌ Error in orchestration: {e}")
+            logger.error("❌ Error in orchestration", exc_info=e)
             return self._create_error_response(str(e))
-    
+
+    def _get_salesforce_schema(self) -> str:
+        """
+        Fetches a simplified schema for key Salesforce objects.
+        This is a critical piece of context for the LLM to generate accurate SOQL.
+        """
+        # Caching this schema would be a good performance optimization
+        object_names = ['Opportunity', 'Account', 'User']
+        schema_description = "Salesforce Schema:\n"
+        for obj_name in object_names:
+            try:
+                obj_desc = getattr(self.salesforce_client, obj_name).describe()
+                schema_description += f"Object: {obj_desc['name']}\n"
+                schema_description += "Fields:\n"
+                for field in obj_desc['fields']:
+                    # Limiting to a subset of fields to keep the prompt concise
+                    if field['createable'] or field['nillable'] is False:
+                         schema_description += f"- {field['name']} ({field['type']})\n"
+                schema_description += "\n"
+            except Exception as e:
+                logger.error(f"Failed to describe object {obj_name}", error=e)
+
+        logger.info("Salesforce schema loaded for prompt.")
+        return schema_description
+
     def _get_context_state(self, user_id: str) -> ContextState:
         """Get or create context state for user"""
         if user_id not in self.context_states:
@@ -750,70 +617,64 @@ You are responding to a Customer Success professional with relationship thinking
                 session_start=datetime.now()
             )
         return self.context_states[user_id]
-    
+
     async def _handle_thinking_query(self, query: str, intent_analysis: IntentAnalysis, chain_of_thought: ChainOfThought, context_state: ContextState) -> AgentResponse:
-        """Handle queries requiring advanced thinking and reasoning"""
+        """Handles complex queries by generating and executing a DAG."""
         try:
-            # Gather data from multiple sources
-            data_sources = await self._gather_data_sources(intent_analysis.data_sources)
-            
-            # Create enhanced reasoning prompt
-            reasoning_prompt = self.reasoning_prompt.format(
-                query=query,
-                context=json.dumps(context_state.current_context, indent=2),
-                available_data=json.dumps(data_sources, indent=2),
-                chain_of_thought=chain_of_thought.reasoning_path if chain_of_thought else "No chain of thought available"
-            )
-            
-            # Get reasoning response
+            # Step 1: Generate the DAG using the 'thinking' prompt
+            thinking_prompt = self.thinking_prompt.format(query=query)
+
             response = await asyncio.get_event_loop().run_in_executor(
                 self.executor,
                 lambda: self.openai_client.chat.completions.create(
                     model="gpt-4",
-                    messages=[
-                        {"role": "system", "content": reasoning_prompt},
-                        {"role": "user", "content": query}
-                    ],
-                    temperature=0.3
+                    messages=[{"role": "system", "content": thinking_prompt}],
+                    temperature=0.0,
+                    response_format={"type": "json_object"}
                 )
             )
-            
-            reasoning_response = response.choices[0].message.content
-            
-            # Update context with reasoning results
-            context_state.current_context.update({
-                "last_reasoning": reasoning_response,
-                "thinking_steps": len(chain_of_thought.thinking_steps) if chain_of_thought else 0
-            })
-            
+            dag_json_str = response.choices[0].message.content
+            dag = json.loads(dag_json_str)
+            logger.info(f"Generated DAG: {dag}")
+
+            # Step 2: Execute the DAG
+            dag_results = await self._execute_dag(dag)
+            logger.info(f"DAG execution results: {dag_results}")
+
+            # Step 3: Summarize the final results for the user
+            final_summary = await self._summarize_data(query, dag_results, self.summarize_full_prompt)
+
             return AgentResponse(
-                response_text=reasoning_response,
+                response_text=final_summary,
                 data_sources_used=intent_analysis.data_sources,
-                reasoning_steps=self._extract_reasoning_steps(reasoning_response),
-                confidence_score=intent_analysis.confidence,
-                persona_alignment=0.95,
+                reasoning_steps=[f"Step {s['id']}: {s['tool']}({s['query']})" for s in dag.get("steps", [])],
+                confidence_score=0.9,
+                persona_alignment=0.9,
                 actionability_score=0.9,
-                quality_metrics={"reasoning_quality": 0.9, "completeness": 0.95, "thinking_depth": 0.9},
-                chain_of_thought=chain_of_thought,
-                thinking_process=reasoning_response
+                quality_metrics={"dag_execution_success": 1.0},
+                chain_of_thought=chain_of_thought, # This could be updated with DAG info
+                thinking_process=json.dumps(dag, indent=2)
             )
-            
+
+        except json.JSONDecodeError as e:
+            logger.error(f"Failed to decode DAG JSON from LLM response: {e}")
+            return self._create_error_response("I had trouble planning out the steps to answer your question. The model returned invalid JSON.")
         except Exception as e:
-            logger.error(f"❌ Error in thinking query: {e}")
+            logger.error(f"❌ Error in thinking query (DAG execution): {e}")
             return self._create_error_response(str(e))
-    
+
     async def _handle_coffee_briefing(self, query: str, intent_analysis: IntentAnalysis, context_state: ContextState) -> AgentResponse:
         """Handle coffee briefing requests"""
         try:
             # Determine briefing frequency and persona
             frequency = self._extract_briefing_frequency(query)
-            
+
             # Generate coffee briefing
             briefing = await self._generate_coffee_briefing(intent_analysis.persona, frequency)
-            
+
             # Format response
             response_text = self._format_coffee_briefing(briefing)
-            
+
             return AgentResponse(
                 response_text=response_text,
                 data_sources_used=[DataSourceType.SALESFORCE, DataSourceType.SNOWFLAKE],
@@ -823,20 +684,20 @@ You are responding to a Customer Success professional with relationship thinking
                 actionability_score=0.9,
                 quality_metrics={"relevance": 0.95, "actionability": 0.9, "completeness": 0.85}
             )
-            
+
         except Exception as e:
             logger.error(f"❌ Error in coffee briefing: {e}")
             return self._create_error_response(str(e))
-    
+
     async def _handle_dbt_model_request(self, query: str, intent_analysis: IntentAnalysis, context_state: ContextState) -> AgentResponse:
         """Handle dbt model creation/modification requests"""
         try:
             # Extract dbt model requirements from query
             model_requirements = self._extract_dbt_requirements(query)
-            
+
             # Generate dbt model
             dbt_model = await self._generate_dbt_model(model_requirements)
-            
+
             response_text = f"""
 🔧 **dbt Model Generated**
 
@@ -865,7 +726,7 @@ You are responding to a Customer Success professional with relationship thinking
 - ✅ Best practices compliance
 - ✅ Performance optimization
 """
-            
+
             return AgentResponse(
                 response_text=response_text,
                 data_sources_used=[DataSourceType.DBT],
@@ -875,24 +736,25 @@ You are responding to a Customer Success professional with relationship thinking
                 actionability_score=0.95,
                 quality_metrics={"technical_accuracy": 0.9, "completeness": 0.85, "best_practices": 0.95}
             )
-            
+
         except Exception as e:
             logger.error(f"❌ Error in dbt model request: {e}")
             return self._create_error_response(str(e))
-    
+
     async def _handle_complex_analytics(self, query: str, intent_analysis: IntentAnalysis, context_state: ContextState) -> AgentResponse:
         """Handle complex analytics requiring multiple data sources"""
         try:
             # Gather data from all sources
-            salesforce_data = await self._get_salesforce_data(query)
-            snowflake_data = await self._get_snowflake_data(query)
-            dbt_insights = await self._get_dbt_insights(query)
-            
+            all_data = await self._gather_data_sources(intent_analysis.data_sources, query)
+
             # Combine and analyze
             combined_analysis = await self._analyze_combined_data(
-                salesforce_data, snowflake_data, dbt_insights, query
+                all_data.get("salesforce", {}),
+                all_data.get("snowflake", {}),
+                all_data.get("dbt", {}),
+                query
             )
-            
+
             return AgentResponse(
                 response_text=combined_analysis,
                 data_sources_used=[DataSourceType.SALESFORCE, DataSourceType.SNOWFLAKE, DataSourceType.DBT],
@@ -902,122 +764,37 @@ You are responding to a Customer Success professional with relationship thinking
                 actionability_score=0.85,
                 quality_metrics={"data_quality": 0.9, "insight_relevance": 0.85, "actionability": 0.8}
             )
-            
+
         except Exception as e:
             logger.error(f"❌ Error in complex analytics: {e}")
             return self._create_error_response(str(e))
-    
-    async def _handle_salesforce_query(self, query: str, intent_analysis: IntentAnalysis, context_state: ContextState) -> AgentResponse:
-        """Handle Salesforce-specific queries"""
+
+    async def _summarize_data(self, query: str, data: dict, prompt_template: str) -> str:
+        """Generic method to summarize data using a specified prompt."""
+        data_str = json.dumps(data, indent=2, default=str)
+
+        messages = [
+            {"role": "system", "content": prompt_template},
+            {"role": "user", "content": f"The user's original request was: '{query}'\n\nHere is the data I retrieved in JSON format:\n\n{data_str}"}
+        ]
+
+        logger.info("Summarizing data with specified prompt.")
         try:
-            if not self.salesforce_client:
-                return self._create_error_response("Salesforce connection not available")
-            
-            # Generate SOQL query
-            soql_query = await self._generate_soql_query(query)
-            
-            # Execute query
-            result = self.salesforce_client.query(soql_query)
-            
-            # Format response
-            response_text = self._format_salesforce_response(result, query, intent_analysis)
-            
-            return AgentResponse(
-                response_text=response_text,
-                data_sources_used=[DataSourceType.SALESFORCE],
-                reasoning_steps=["SOQL generation", "Query execution", "Data formatting", "Insight extraction"],
-                confidence_score=0.9,
-                persona_alignment=0.85,
-                actionability_score=0.8,
-                quality_metrics={"data_accuracy": 0.95, "relevance": 0.9, "completeness": 0.85}
-            )
-            
-        except Exception as e:
-            logger.error(f"❌ Error in Salesforce query: {e}")
-            return self._create_error_response(str(e))
-    
-    async def _handle_business_intelligence(self, query: str, intent_analysis: IntentAnalysis, context_state: ContextState) -> AgentResponse:
-        """Handle business intelligence queries"""
-        try:
-            # Get base data
-            base_data = await self._get_salesforce_data(query)
-            
-            # Generate business insights
-            insights = await self._generate_business_insights(base_data, query, intent_analysis)
-            
-            # Format with persona-specific styling
-            response_text = self._format_business_intelligence_response(insights, intent_analysis)
-            
-            return AgentResponse(
-                response_text=response_text,
-                data_sources_used=[DataSourceType.SALESFORCE],
-                reasoning_steps=["Data analysis", "Pattern recognition", "Insight generation", "Recommendation creation"],
-                confidence_score=0.85,
-                persona_alignment=0.9,
-                actionability_score=0.85,
-                quality_metrics={"insight_quality": 0.85, "relevance": 0.9, "actionability": 0.8}
-            )
-            
-        except Exception as e:
-            logger.error(f"❌ Error in business intelligence: {e}")
-            return self._create_error_response(str(e))
-    
-    async def _generate_business_insights(self, base_data: Dict[str, Any], query: str, intent_analysis: IntentAnalysis) -> Dict[str, Any]:
-        """Generate business insights from base data"""
-        try:
-            # Generate insights using LLM
-            insights_prompt = f"""
-            Generate business insights for the following query and data:
-            
-            Query: {query}
-            Persona: {intent_analysis.persona.value}
-            Data: {base_data}
-            
-            Provide insights in this format:
-            {{
-                "insight1": "First insight",
-                "insight2": "Second insight", 
-                "insight3": "Third insight",
-                "action_items": ["Action 1", "Action 2"],
-                "recommendations": ["Recommendation 1", "Recommendation 2"]
-            }}
-            """
-            
             response = await asyncio.get_event_loop().run_in_executor(
                 self.executor,
                 lambda: self.openai_client.chat.completions.create(
                     model="gpt-4",
-                    messages=[
-                        {"role": "system", "content": "You are a business analyst providing insights."},
-                        {"role": "user", "content": insights_prompt}
-                    ],
-                    temperature=0.3
+                    messages=messages,
+                    temperature=0.5,
+                    max_tokens=1000
                 )
             )
-            
-            insights_text = response.choices[0].message.content
-            # Try to parse JSON, fallback to simple format if needed
-            try:
-                return json.loads(insights_text)
-            except:
-                return {
-                    "insight1": "Data analysis complete",
-                    "insight2": "Trends identified", 
-                    "insight3": "Recommendations generated",
-                    "action_items": ["Review insights", "Implement recommendations"],
-                    "recommendations": ["Focus on high-value deals", "Optimize sales process"]
-                }
-                
+            return response.choices[0].message.content.strip()
         except Exception as e:
-            logger.error(f"❌ Error generating business insights: {e}")
-            return {
-                "insight1": "Analysis completed",
-                "insight2": "Key trends identified",
-                "insight3": "Actionable recommendations available",
-                "action_items": ["Review the data", "Take action"],
-                "recommendations": ["Focus on priorities", "Monitor progress"]
-            }
-    
+            logger.error("Data summarization API call failed", error=e)
+            return "Error: Failed to generate a summary for the data."
+
+
     async def _handle_direct_answer(self, query: str, intent_analysis: IntentAnalysis, context_state: ContextState) -> AgentResponse:
         """Handle direct answer queries with context awareness"""
         try:
@@ -1030,7 +807,7 @@ User History: {len(context_state.conversation_history)} previous interactions
 
 Provide a context-aware response that builds on previous interactions.
 """
-            
+
             # Generate direct answer using LLM
             response = await asyncio.get_event_loop().run_in_executor(
                 self.executor,
@@ -1043,9 +820,9 @@ Provide a context-aware response that builds on previous interactions.
                     temperature=0.3
                 )
             )
-            
+
             direct_answer = response.choices[0].message.content
-            
+
             # Update context with this interaction
             context_state.conversation_history.append({
                 "query": query,
@@ -1053,11 +830,11 @@ Provide a context-aware response that builds on previous interactions.
                 "timestamp": datetime.now().isoformat(),
                 "intent": intent_analysis.primary_intent.value
             })
-            
+
             # Maintain context window
             if len(context_state.conversation_history) > context_state.context_window:
                 context_state.conversation_history = context_state.conversation_history[-context_state.context_window:]
-            
+
             return AgentResponse(
                 response_text=direct_answer,
                 data_sources_used=[],
@@ -1067,27 +844,27 @@ Provide a context-aware response that builds on previous interactions.
                 actionability_score=0.7,
                 quality_metrics={"accuracy": 0.8, "relevance": 0.85, "helpfulness": 0.8, "context_awareness": 0.9}
             )
-            
+
         except Exception as e:
             logger.error(f"❌ Error in direct answer: {e}")
             return self._create_error_response(str(e))
-    
+
     async def process_query(self, query: str, user_context: Dict[str, Any] = None, user_id: str = None) -> AgentResponse:
         """Enhanced main entry point for processing queries with context management"""
         try:
             logger.info(f"🧠 Processing enhanced query: {query}")
-            
+
             # Get or create context state
             context_state = self._get_context_state(user_id or "default")
-            
+
             # Step 1: Enhanced intent classification
             intent_analysis = await self.classify_intent(query, user_context)
             logger.info(f"🎯 Intent classified: {intent_analysis.primary_intent.value} (thinking_required: {intent_analysis.thinking_required})")
-            
+
             # Step 2: Enhanced orchestration with context
             response = await self.orchestrate_response(query, intent_analysis, user_id)
             logger.info(f"✅ Enhanced response generated with confidence: {response.confidence_score}")
-            
+
             # Step 3: Update context state
             context_state.last_response = response
             context_state.current_context.update({
@@ -1097,7 +874,7 @@ Provide a context-aware response that builds on previous interactions.
                 "last_confidence": response.confidence_score,
                 "has_thinking": response.chain_of_thought is not None
             })
-            
+
             # Step 4: Store conversation history
             self.conversation_history.append({
                 "query": query,
@@ -1110,24 +887,24 @@ Provide a context-aware response that builds on previous interactions.
                     "session_duration": (datetime.now() - context_state.session_start).total_seconds()
                 }
             })
-            
+
             return response
-            
+
         except Exception as e:
             logger.error(f"❌ Error in enhanced query processing: {e}")
             return self._create_error_response(str(e))
-    
+
     def get_enhanced_quality_metrics(self) -> Dict[str, Any]:
         """Get enhanced quality metrics with thinking and context analysis"""
         if not self.conversation_history:
             return {"message": "No conversations yet"}
-        
+
         # Calculate basic metrics
         total_confidence = 0
         successful_queries = 0
         thinking_queries = 0
         context_awareness_scores = []
-        
+
         for conv in self.conversation_history:
             if isinstance(conv, dict):
                 response = conv.get("response")
@@ -1135,20 +912,20 @@ Provide a context-aware response that builds on previous interactions.
                     total_confidence += response.confidence_score
                     if response.confidence_score > 0.5:
                         successful_queries += 1
-                    
+
                     # Check for thinking capabilities
                     if hasattr(response, 'chain_of_thought') and response.chain_of_thought:
                         thinking_queries += 1
-                    
+
                     # Check for context awareness
                     if hasattr(response, 'quality_metrics') and 'context_awareness' in response.quality_metrics:
                         context_awareness_scores.append(response.quality_metrics['context_awareness'])
-        
+
         avg_confidence = total_confidence / len(self.conversation_history) if self.conversation_history else 0
         success_rate = successful_queries / len(self.conversation_history) if self.conversation_history else 0
         thinking_rate = thinking_queries / len(self.conversation_history) if self.conversation_history else 0
         avg_context_awareness = sum(context_awareness_scores) / len(context_awareness_scores) if context_awareness_scores else 0
-        
+
         return {
             "total_queries": len(self.conversation_history),
             "average_confidence": avg_confidence,
@@ -1159,7 +936,7 @@ Provide a context-aware response that builds on previous interactions.
             "intent_distribution": self._get_intent_distribution(),
             "context_analysis": self._analyze_context_usage()
         }
-    
+
     def _analyze_context_usage(self) -> Dict[str, Any]:
         """Analyze context usage patterns"""
         context_analysis = {
@@ -1168,19 +945,19 @@ Provide a context-aware response that builds on previous interactions.
             "context_retention_rate": 0,
             "user_engagement_patterns": {}
         }
-        
+
         if self.context_states:
             total_conversations = 0
             total_retention = 0
-            
+
             for user_id, context_state in self.context_states.items():
                 conv_count = len(context_state.conversation_history)
                 total_conversations += conv_count
-                
+
                 # Calculate retention (users with multiple conversations)
                 if conv_count > 1:
                     total_retention += 1
-                
+
                 # Track engagement patterns
                 context_analysis["user_engagement_patterns"][user_id] = {
                     "conversation_count": conv_count,
@@ -1188,74 +965,98 @@ Provide a context-aware response that builds on previous interactions.
                     "preferred_persona": context_state.current_context.get("last_persona", "unknown"),
                     "data_source_preferences": [ds.value for ds in context_state.data_source_preferences]
                 }
-            
+
             context_analysis["average_conversation_length"] = total_conversations / len(self.context_states)
             context_analysis["context_retention_rate"] = total_retention / len(self.context_states)
-        
+
         return context_analysis
-    
+
     # Helper methods for data gathering and processing
-    async def _gather_data_sources(self, data_sources: List[DataSourceType]) -> Dict[str, Any]:
-        """Gather data from multiple sources"""
+    async def _gather_data_sources(self, data_sources: List[DataSourceType], query: str) -> Dict[str, Any]:
+        """Gather data from multiple sources using the new tool architecture."""
         data = {}
-        
+
+        # This can be parallelized in the future
         for source in data_sources:
-            if source == DataSourceType.SALESFORCE:
-                data['salesforce'] = await self._get_salesforce_data("general overview")
-            elif source == DataSourceType.SNOWFLAKE:
-                data['snowflake'] = await self._get_snowflake_data("general overview")
-            elif source == DataSourceType.DBT:
+            tool_name = source.value
+            if tool_name in self.tools:
+                logger.info(f"Using tool: {tool_name} for query: {query}")
+                data[tool_name] = await self.tools[tool_name].run(query)
+            elif tool_name == "dbt": # Keep placeholder for dbt
                 data['dbt'] = await self._get_dbt_insights("general overview")
-        
+
         return data
-    
-    async def _get_salesforce_data(self, query: str) -> Dict[str, Any]:
-        """Get data from Salesforce"""
-        if not self.salesforce_client:
-            return {"error": "Salesforce not available"}
-        
-        try:
-            # Basic Salesforce queries
-            opportunities = self.salesforce_client.query("SELECT COUNT(Id), SUM(Amount) FROM Opportunity")
-            accounts = self.salesforce_client.query("SELECT COUNT(Id) FROM Account")
-            
-            return {
-                "opportunities": opportunities['records'][0],
-                "accounts": accounts['records'][0]
-            }
-        except Exception as e:
-            return {"error": str(e)}
-    
-    async def _get_snowflake_data(self, query: str) -> Dict[str, Any]:
-        """Get data from Snowflake (placeholder)"""
-        # This would connect to Snowflake in production
-        return {"message": "Snowflake integration pending"}
-    
+
+    async def _execute_dag(self, dag: Dict[str, Any]) -> Dict[int, Any]:
+        """
+        Executes a DAG of tool calls.
+
+        Args:
+            dag: The JSON object representing the DAG.
+
+        Returns:
+            A dictionary mapping step IDs to their results.
+        """
+        step_results: Dict[int, Any] = {}
+        completed_ids: set[int] = set()
+        steps = dag.get("steps", [])
+
+        # A simple, iterative approach to resolve dependencies.
+        # A more advanced version could use a topological sort.
+        for _ in range(len(steps)): # Loop enough times to resolve all steps
+            steps_to_run = []
+            for step in steps:
+                step_id = step["id"]
+                if step_id in completed_ids:
+                    continue
+
+                dependencies_met = all(dep_id in completed_ids for dep_id in step["dependencies"])
+
+                if dependencies_met:
+                    tool_name = step["tool"]
+                    query = step["query"]
+                    if tool_name in self.tools:
+                        # For now, we don't pass results between steps, the LLM must craft the query
+                        # with the necessary info.
+                        task = self.tools[tool_name].run(query)
+                        steps_to_run.append((step_id, task))
+
+            if not steps_to_run:
+                # Either all done or a deadlock/unmet dependency
+                break
+
+            # Run all steps that are ready in parallel
+            results = await asyncio.gather(*(task for _, task in steps_to_run))
+
+            for (step_id, _), result in zip(steps_to_run, results):
+                step_results[step_id] = result
+                completed_ids.add(step_id)
+
+        if len(completed_ids) != len(steps):
+            logger.error("Could not complete all steps in DAG, check for cycles or missing dependencies.")
+
+        return step_results
+
     async def _get_dbt_insights(self, query: str) -> Dict[str, Any]:
         """Get insights from dbt models (placeholder)"""
         # This would query dbt models in production
         return {"message": "dbt integration pending"}
-    
-    async def _generate_soql_query(self, query: str) -> str:
-        """Generate SOQL query from natural language"""
+
+    def _load_text_to_soql_prompt(self) -> str:
+        """Load the system prompt for text-to-SOQL conversion."""
+        file_path = os.path.join(os.path.dirname(__file__), '..', 'prompts', 'system', 'text_to_soql.txt')
+        return self._load_prompt_from_file(file_path)
+
+    def _load_few_shot_examples(self, file_path: str) -> List[Dict[str, str]]:
+        """Loads few-shot examples from a JSON file."""
         try:
-            response = await asyncio.get_event_loop().run_in_executor(
-                self.executor,
-                lambda: self.openai_client.chat.completions.create(
-                    model="gpt-4",
-                    messages=[
-                        {"role": "system", "content": "Generate SOQL queries for Salesforce. Return only the SOQL query, no explanation."},
-                        {"role": "user", "content": query}
-                    ],
-                    temperature=0.1
-                )
-            )
-            
-            return response.choices[0].message.content.strip()
+            full_path = os.path.join(os.path.dirname(__file__), '..', file_path)
+            with open(full_path, 'r') as f:
+                return json.load(f)
         except Exception as e:
-            logger.error(f"❌ Error generating SOQL: {e}")
-            return "SELECT Id FROM Opportunity LIMIT 1"
-    
+            logger.error(f"Error loading few-shot examples from {file_path}: {e}")
+            return []
+
     async def _generate_coffee_briefing(self, persona: PersonaType, frequency: str) -> CoffeeBriefing:
         """Generate coffee briefing for specific persona and frequency"""
         # This would generate personalized briefings based on persona and frequency
@@ -1268,7 +1069,7 @@ Provide a context-aware response that builds on previous interactions.
             risks=["Pipeline concentration", "Seasonal fluctuations"],
             opportunities=["Expansion in existing accounts", "New market penetration"]
         )
-    
+
     async def _generate_dbt_model(self, requirements: Dict[str, Any]) -> Dict[str, Any]:
         """Generate dbt model based on requirements"""
         # This would generate dbt models based on requirements
@@ -1278,7 +1079,7 @@ Provide a context-aware response that builds on previous interactions.
             "sql": "SELECT * FROM {{ ref('stg_salesforce_opportunities') }} WHERE amount > 0",
             "config": "materialized: table\nunique_key: id"
         }
-    
+
     async def _analyze_combined_data(self, salesforce_data: Dict, snowflake_data: Dict, dbt_insights: Dict, query: str) -> str:
         """Analyze combined data from multiple sources"""
         # This would perform complex analysis combining multiple data sources
@@ -1288,7 +1089,7 @@ Provide a context-aware response that builds on previous interactions.
 **Query**: {query}
 
 **Salesforce Data**: {len(salesforce_data)} records available
-**Snowflake Data**: {len(snowflake_data)} records available  
+**Snowflake Data**: {len(snowflake_data)} records available
 **dbt Insights**: {len(dbt_insights)} insights available
 
 **Combined Analysis**:
@@ -1302,7 +1103,7 @@ Provide a context-aware response that builds on previous interactions.
 2. Validate cross-platform data consistency
 3. Implement recommended actions
 """
-    
+
     def _extract_briefing_frequency(self, query: str) -> str:
         """Extract briefing frequency from query"""
         query_lower = query.lower()
@@ -1314,7 +1115,7 @@ Provide a context-aware response that builds on previous interactions.
             return "monthly"
         else:
             return "daily"  # default
-    
+
     def _extract_dbt_requirements(self, query: str) -> Dict[str, Any]:
         """Extract dbt model requirements from query"""
         return {
@@ -1322,7 +1123,7 @@ Provide a context-aware response that builds on previous interactions.
             "data_sources": ["salesforce"],
             "complexity": "medium"
         }
-    
+
     def _extract_reasoning_steps(self, response: str) -> List[str]:
         """Extract reasoning steps from response"""
         steps = []
@@ -1331,7 +1132,7 @@ Provide a context-aware response that builds on previous interactions.
             if line.strip().startswith(('1.', '2.', '3.', '4.', '5.')):
                 steps.append(line.strip())
         return steps
-    
+
     def _format_salesforce_response(self, result: Dict, query: str, intent_analysis: IntentAnalysis) -> str:
         """Format Salesforce response"""
         return f"""
@@ -1346,7 +1147,7 @@ Provide a context-aware response that builds on previous interactions.
 **Persona Insights**: {intent_analysis.persona.value}
 **Confidence**: {intent_analysis.confidence:.2f}
 """
-    
+
     def _format_business_intelligence_response(self, insights: Dict, intent_analysis: IntentAnalysis) -> str:
         """Format business intelligence response"""
         return f"""
@@ -1360,7 +1161,7 @@ Provide a context-aware response that builds on previous interactions.
 **Persona**: {intent_analysis.persona.value}
 **Action Items**: {insights.get('action_items', ['Review insights', 'Implement recommendations'])}
 """
-    
+
     def _format_coffee_briefing(self, briefing: CoffeeBriefing) -> str:
         """Format coffee briefing"""
         return f"""
@@ -1381,7 +1182,7 @@ Provide a context-aware response that builds on previous interactions.
 🎯 **Opportunities**:
 {chr(10).join(f'• {opportunity}' for opportunity in briefing.opportunities)}
 """
-    
+
     def _create_error_response(self, error_message: str) -> AgentResponse:
         """Create error response"""
         return AgentResponse(
@@ -1393,20 +1194,20 @@ Provide a context-aware response that builds on previous interactions.
             actionability_score=0.0,
             quality_metrics={"error": 1.0}
         )
-    
-    async def process_query(self, query: str, user_context: Dict[str, Any] = None) -> AgentResponse:
+
+    async def process_query(self, query: str, user_context: Dict[str, Any] = None, user_id: str = None) -> AgentResponse:
         """Main entry point for processing queries"""
         try:
             logger.info(f"🧠 Processing query: {query}")
-            
+
             # Step 1: Intent classification
             intent_analysis = await self.classify_intent(query, user_context)
             logger.info(f"🎯 Intent classified: {intent_analysis.primary_intent.value}")
-            
+
             # Step 2: Orchestrate response
             response = await self.orchestrate_response(query, intent_analysis)
             logger.info(f"✅ Response generated with confidence: {response.confidence_score}")
-            
+
             # Step 3: Store conversation history
             self.conversation_history.append({
                 "query": query,
@@ -1414,22 +1215,22 @@ Provide a context-aware response that builds on previous interactions.
                 "response": response,
                 "timestamp": datetime.now().isoformat()
             })
-            
+
             return response
-            
+
         except Exception as e:
             logger.error(f"❌ Error in query processing: {e}")
             return self._create_error_response(str(e))
-    
+
     def get_quality_metrics(self) -> Dict[str, Any]:
         """Get overall quality metrics"""
         if not self.conversation_history:
             return {"message": "No conversations yet"}
-        
+
         # Fix: Handle both dict and object structures
         total_confidence = 0
         successful_queries = 0
-        
+
         for conv in self.conversation_history:
             if isinstance(conv, dict):
                 # Handle dict structure
@@ -1444,17 +1245,17 @@ Provide a context-aware response that builds on previous interactions.
                     total_confidence += conv.response.confidence_score
                     if conv.response.confidence_score > 0.5:
                         successful_queries += 1
-        
+
         avg_confidence = total_confidence / len(self.conversation_history) if self.conversation_history else 0
         success_rate = successful_queries / len(self.conversation_history) if self.conversation_history else 0
-        
+
         return {
             "total_queries": len(self.conversation_history),
             "average_confidence": avg_confidence,
             "success_rate": success_rate,
             "intent_distribution": self._get_intent_distribution()
         }
-    
+
     def _get_intent_distribution(self) -> Dict[str, int]:
         """Get distribution of intent types"""
         distribution = {}

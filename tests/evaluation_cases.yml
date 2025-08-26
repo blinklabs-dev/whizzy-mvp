@@ -27,3 +27,13 @@
   persona: Sales Operations
   question: "Are there any opportunities with a close date in the past that are still open?"
   intent: "Find opportunities where IsClosed is false but the CloseDate is before today."
+
+- id: AEQ003
+  persona: Account Executive
+  question: "Show me the details for the 'GenePoint' account."
+  intent: "A simple lookup for a single Account record by name. Should be classified as SALESFORCE_QUERY with low complexity."
+
+- id: VQ004
+  persona: VP of Sales
+  question: "What is the average deal size for each industry?"
+  intent: "An analytical query requiring grouping by Industry and calculating the average of the Amount field. Should be classified as BUSINESS_INTELLIGENCE with medium complexity."

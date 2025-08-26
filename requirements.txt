@@ -1,29 +1,21 @@
-# Whizzy Bot - Core Dependencies
-# Production-ready Salesforce analytics bot
-
-# Core Framework
-slack-sdk>=3.20.0
-simple-salesforce>=1.12.0
+# Core dependencies
+slack-sdk>=3.21.0
 python-dotenv>=1.0.0
+simple-salesforce>=1.12.0
 openai>=1.0.0
 
-# Analytics Infrastructure (for future use)
-dbt-core>=1.7.0
+# Data Source Dependencies
 snowflake-connector-python>=3.0.0
 
-# MCP and LangChain support (FREE)
-mcp>=0.1.0
-langchain>=0.1.0
-langchain-community>=0.0.10
-snowflake-connector-python>=3.0.0
-dbt-core>=1.5.0
-dbt-snowflake>=1.5.0
-
-# Utilities
+# Enhanced intelligent agentic system dependencies
 pydantic>=2.0.0
 structlog>=23.0.0
 
-# Development (optional)
+# Testing dependencies
 pytest>=7.0.0
+pytest-asyncio>=0.21.0
+
+# Development dependencies
 black>=23.0.0
 flake8>=6.0.0
+mypy>=1.0.0
