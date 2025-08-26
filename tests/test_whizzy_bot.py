@@ -145,7 +145,7 @@ class TestWhizzyBot(unittest.TestCase):
             {'records': [{'won': 25}]},
             {'records': [{'lost': 15}]}
         ]
-        response = self.bot._generate_response("What's our win rate?", "test_user")
+        response = self.bot._generate_fallback_response("What's our win rate?")
         self.assertIn('Win Rate Analysis', response)
 
         # Test pipeline query - need to mock the Salesforce client
@@ -155,24 +155,24 @@ class TestWhizzyBot(unittest.TestCase):
             {'StageName': 'Qualification', 'total_count': 5, 'total_amount': 50000}
         ]
         self.bot.salesforce_client.query.return_value = {'records': mock_records}
-        response = self.bot._generate_response("Show me the pipeline", "test_user")
+        response = self.bot._generate_fallback_response("Show me the pipeline")
         self.assertIn('Pipeline Overview', response)
 
         # Test help query
-        response = self.bot._generate_response("help", "test_user")
+        response = self.bot._handle_static_commands("help")
         self.assertIn('Whizzy Bot - Salesforce Analytics', response)
 
     def test_error_handling(self):
         """Test error handling"""
         # Test with no Salesforce client
         self.bot.salesforce_client = None
-        response = self.bot._generate_response("What's our win rate?", "test_user")
+        response = self.bot._generate_fallback_response("What's our win rate?")
         self.assertIn('Salesforce connection not available', response)
 
         # Test with Salesforce query error
         self.bot.salesforce_client = Mock()
         self.bot.salesforce_client.query.side_effect = Exception("Connection error")
-        response = self.bot._generate_response("What's our win rate?", "test_user")
+        response = self.bot._generate_fallback_response("What's our win rate?")
         self.assertIn('Unable to retrieve win rate data', response)
 
 
@@ -201,7 +201,7 @@ class TestWhizzyBotIntegration(unittest.TestCase):
             ]
 
             # Test complete flow
-            response = bot._generate_response("What's our win rate?", "test_user")
+            response = bot._generate_fallback_response("What's our win rate?")
             self.assertIsInstance(response, str)
             self.assertIn('Win Rate', response)
 
