@@ -1222,6 +1222,34 @@ Provide a context-aware response that builds on previous interactions.
             logger.error(f"❌ Error in query processing: {e}")
             return self._create_error_response(str(e))
 
+    async def process_complex_query(self, query: str, user_context: Dict[str, Any] = None, user_id: str = None) -> AgentResponse:
+        """Process complex queries with enhanced reasoning"""
+        try:
+            logger.info(f"🧠 Processing complex query: {query}")
+
+            # Step 1: Enhanced intent classification with reasoning
+            intent_analysis = await self.classify_intent(query, user_context)
+            logger.info(f"🎯 Complex intent classified: {intent_analysis.primary_intent.value}")
+
+            # Step 2: Enhanced orchestration with chain of thought
+            response = await self.orchestrate_response(query, intent_analysis)
+            logger.info(f"✅ Complex response generated with confidence: {response.confidence_score}")
+
+            # Step 3: Store conversation history
+            self.conversation_history.append({
+                "query": query,
+                "intent": intent_analysis,
+                "response": response,
+                "timestamp": datetime.now().isoformat(),
+                "complex": True
+            })
+
+            return response
+
+        except Exception as e:
+            logger.error(f"❌ Error in complex query processing: {e}")
+            return self._create_error_response(str(e))
+
     def get_quality_metrics(self) -> Dict[str, Any]:
         """Get overall quality metrics"""
         if not self.conversation_history:

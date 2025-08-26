@@ -161,23 +161,25 @@ class WhizzyBot:
                     
                     logger.info(f"📨 Channel: {channel}, User: {user}, Text: '{text}'")
                     
-                    # Send immediate response
+                    # Send immediate response and get thread timestamp
                     immediate_response = "🤖 **Whizzy**: Processing your request..."
                     try:
-                        self.web_client.chat_postMessage(channel=channel, text=immediate_response)
+                        response = self.web_client.chat_postMessage(channel=channel, text=immediate_response)
+                        thread_ts = response['ts']  # Get the timestamp for threading
                         logger.info("✅ Sent immediate response")
                     except Exception as e:
                         logger.error(f"❌ Error sending immediate response: {e}")
+                        thread_ts = None
                     
                     # Process in background with smart routing
-                    threading.Thread(target=self._process_query, args=(text, channel, user)).start()
+                    threading.Thread(target=self._process_query, args=(text, channel, user, thread_ts)).start()
             else:
                 logger.info(f"⏭️ Non-events_api request: {req.type}")
                 
         except Exception as e:
             logger.error(f"❌ Error handling request: {e}")
     
-    def _process_query(self, text: str, channel: str, user: str):
+    def _process_query(self, text: str, channel: str, user: str, thread_ts: str = None):
         """Process user query with smart routing"""
         try:
             if not text.strip():
@@ -190,7 +192,7 @@ class WhizzyBot:
             if static_response:
                 logger.info("⚡ Using fast path for static command")
                 try:
-                    self.web_client.chat_postMessage(channel=channel, text=static_response)
+                    self.web_client.chat_postMessage(channel=channel, text=static_response, thread_ts=thread_ts)
                     logger.info("✅ Sent static response")
                 except Exception as e:
                     logger.error(f"❌ Error sending static response: {e}")
@@ -201,7 +203,7 @@ class WhizzyBot:
             
             # Send response
             try:
-                self.web_client.chat_postMessage(channel=channel, text=response)
+                self.web_client.chat_postMessage(channel=channel, text=response, thread_ts=thread_ts)
                 logger.info("✅ Sent intelligent response")
             except Exception as e:
                 logger.error(f"❌ Error sending response: {e}")
@@ -210,7 +212,7 @@ class WhizzyBot:
             logger.error(f"❌ Error in query processing: {e}")
             error_response = "🤖 **Whizzy**: I encountered an error processing your request. Please try again."
             try:
-                self.web_client.chat_postMessage(channel=channel, text=error_response)
+                self.web_client.chat_postMessage(channel=channel, text=error_response, thread_ts=thread_ts)
             except Exception as send_error:
                 logger.error(f"❌ Error sending error response: {send_error}")
     
@@ -386,9 +388,9 @@ Just ask me anything about your Salesforce data! 🚀"""
         """Get pipeline overview from Salesforce"""
         try:
             result = self.salesforce_client.query(
-                "SELECT StageName, COUNT(Id) total_count, SUM(Amount) total_amount "
+                "SELECT StageName, COUNT(Id) total_count, SUM(Amount) total_value "
                 "FROM Opportunity WHERE IsClosed = false "
-                "GROUP BY StageName ORDER BY total_amount DESC"
+                "GROUP BY StageName ORDER BY total_value DESC"
             )
 
             pipeline_data = []
@@ -398,7 +400,7 @@ Just ask me anything about your Salesforce data! 🚀"""
             for record in result['records']:
                 stage = record['StageName']
                 count = record['total_count']
-                amount = record['total_amount'] or 0
+                amount = record['total_value'] or 0
                 total_value += amount
                 total_opportunities += count
                 pipeline_data.append(f"• **{stage}**: {count:,} opportunities, ${amount:,.0f}")
