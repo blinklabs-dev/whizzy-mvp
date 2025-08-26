@@ -769,7 +769,23 @@ class EnhancedIntelligentAgenticSystem:
                 return self._create_error_response("I had trouble processing your request. Please try rephrasing your question.")
         except Exception as e:
             logger.error(f"❌ Error in thinking query (DAG execution): {e}")
-            return self._create_error_response(str(e))
+            # Enhanced fallback for any error
+            try:
+                # Try direct Salesforce query as ultimate fallback
+                sf_result = await self.tools["salesforce"].run(query)
+                summary = await self._summarize_data(query, sf_result, self.summarize_simple_prompt)
+                return AgentResponse(
+                    response_text=summary,
+                    data_sources_used=[DataSourceType.SALESFORCE],
+                    reasoning_steps=["Enhanced Fallback: Direct Salesforce query"],
+                    confidence_score=0.6,
+                    persona_alignment=0.7,
+                    actionability_score=0.6,
+                    quality_metrics={"fallback_used": True, "error_recovered": True}
+                )
+            except Exception as final_error:
+                logger.error(f"Final fallback also failed: {final_error}")
+                return self._create_error_response("I encountered an error processing your request. Please try rephrasing your question.")
 
     async def _handle_coffee_briefing(self, query: str, intent_analysis: IntentAnalysis, context_state: ContextState) -> AgentResponse:
         """Handle coffee briefing requests with persona-specific structured output"""
@@ -787,8 +803,13 @@ class EnhancedIntelligentAgenticSystem:
             
             logger.info(f"Detected persona: {persona.value} for query: {query}")
             
+            # Handle None context_state
+            context = {}
+            if context_state and hasattr(context_state, 'current_context'):
+                context = context_state.current_context
+            
             # Generate structured briefing
-            briefing_contract = await briefing_system.generate_briefing(query, persona, context_state.current_context)
+            briefing_contract = await briefing_system.generate_briefing(query, persona, context)
             
             # Get both JSON and Slack markdown
             json_output = briefing_contract.to_json()
@@ -921,15 +942,15 @@ class EnhancedIntelligentAgenticSystem:
             # Use cheaper model for summarization to avoid rate limits
             model_to_use = "gpt-3.5-turbo" if self.environment == "development" else "gpt-4"
             
-            response = await asyncio.get_event_loop().run_in_executor(
-                self.executor,
-                lambda: self.openai_client.chat.completions.create(
-                    model=model_to_use,
-                    messages=messages,
-                    temperature=0.5,
-                    max_tokens=300  # Reduced for more concise responses
-                )
-            )
+                                response = await asyncio.get_event_loop().run_in_executor(
+                        self.executor,
+                        lambda: self.openai_client.chat.completions.create(
+                            model=model_to_use,
+                            messages=messages,
+                            temperature=0.5,
+                            max_tokens=200  # Further reduced for more concise responses
+                        )
+                    )
             return response.choices[0].message.content.strip()
         except Exception as e:
             logger.error(f"Data summarization API call failed: {e}")
