@@ -4,6 +4,10 @@ import sys
 import json
 from typing import Dict, Any, List
 from datetime import datetime
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # Add the root directory to the Python path to allow importing 'app'
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -95,7 +99,7 @@ def run_evaluation():
 
     mock_sf_client = create_mock_salesforce_client()
     try:
-        agent = SalesforceAgent(salesforce_client=mock_sf_client)
+        agent = SalesforceAgent(mock_sf_client)
     except ValueError as e:
         print(f"Failed to initialize SalesforceAgent: {e}")
         print("Please ensure your OPENAI_API_KEY is set in your environment.")

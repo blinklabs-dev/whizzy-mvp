@@ -11,6 +11,14 @@ openai>=1.0.0
 dbt-core>=1.7.0
 snowflake-connector-python>=3.0.0
 
+# MCP and LangChain support (FREE)
+mcp>=0.1.0
+langchain>=0.1.0
+langchain-community>=0.0.10
+snowflake-connector-python>=3.0.0
+dbt-core>=1.5.0
+dbt-snowflake>=1.5.0
+
 # Utilities
 pydantic>=2.0.0
 structlog>=23.0.0

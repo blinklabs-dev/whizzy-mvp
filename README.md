@@ -61,11 +61,11 @@ PYTHONPATH=. python app/whizzy_bot.py
 
 ## 🏗️ **Architecture**
 
-### **System Overview**
+### **Multi-Agent DAG System**
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Slack User    │───▶│  Whizzy Bot     │───▶│   Salesforce    │
-│   (Natural      │    │  (Socket Mode)  │    │   (Real Data)   │
+│   Slack User    │───▶│  Multi-Agent    │───▶│   Salesforce    │
+│   (Natural      │    │     DAG         │    │   (Real Data)   │
 │   Language)     │    │                 │    │                 │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
                                 │
@@ -73,29 +73,39 @@ PYTHONPATH=. python app/whizzy_bot.py
                        ┌─────────────────┐
                        │   Analytics     │
                        │  (dbt/Snowflake)│
-                       │   (Future)      │
+                       │   (Real Data)   │
                        └─────────────────┘
 ```
 
 ### **Core Components**
 
-#### **1. Whizzy Bot (`app/whizzy_bot.py`)**
-- **Slack Integration**: Socket Mode for real-time communication
-- **Salesforce Connection**: Direct API queries for live data
-- **Query Processing**: Natural language to structured queries
-- **Response Generation**: Professional, persona-specific insights
-- **Error Handling**: Graceful fallbacks and logging
+#### **1. Multi-Agent DAG (`app/multi_agent_dag.py`)**
+- **Intent Router**: Classifies user queries intelligently
+- **SOQL Generator**: Converts natural language to Salesforce queries
+- **DBT Selector**: Chooses appropriate analytics models
+- **Data Fetcher**: Executes real Salesforce queries
+- **DBT Executor**: Runs real dbt models against Snowflake
+- **Snowflake MCP**: Executes complex analytics queries
+- **Data Fusion**: Combines multiple data sources
+- **Response Generator**: Creates professional insights
 
-#### **2. Analytics Infrastructure (`analytics/`)**
+#### **2. Cost-Optimized LLM (`app/cost_optimized_llm.py`)**
+- **Smart Model Selection**: Uses most cost-effective models
+- **Ultra-Cheap Options**: gpt-4o-mini for simple tasks (120x cheaper)
+- **Quality Preservation**: gpt-4 for complex analysis
+- **Environment Control**: Development vs Production modes
+
+#### **3. Real Data Integration**
+- **Salesforce**: Direct API queries with real data
+- **Snowflake**: Real analytics warehouse integration
+- **DBT Models**: Real model execution and deployment
+- **Dynamic DBT**: On-the-fly model generation
+
+#### **4. Analytics Infrastructure (`analytics/`)**
 - **dbt Models**: Staging, facts, dimensions, and marts
-- **Snowflake Integration**: Data warehouse for advanced analytics
+- **Snowflake Integration**: Real data warehouse for analytics
 - **Forecasting Models**: Pipeline and revenue predictions
 - **Performance Metrics**: KPIs and business intelligence
-
-#### **3. Configuration**
-- **Environment Variables**: Secure credential management
-- **Logging**: Comprehensive request and error tracking
-- **Signal Handling**: Graceful shutdown and restart
 
 ## 📊 **Features**
 
@@ -117,6 +127,28 @@ PYTHONPATH=. python app/whizzy_bot.py
 - **Persona-Specific**: Role-appropriate insights
 - **Actionable**: Clear next steps and recommendations
 - **Visual**: Easy-to-read data presentation
+
+## 💰 **Cost Optimization**
+
+### **Ultra-Cost Effective**
+- **120x Cost Reduction**: Simple tasks use gpt-4o-mini
+- **26x Cost Reduction**: SOQL generation uses gpt-3.5-turbo
+- **4.5x Cost Reduction**: Complex analytics use gpt-4o
+- **Smart Model Selection**: Right model for each task
+
+### **Environment Control**
+```bash
+# Development (Ultra Cheap)
+export ENVIRONMENT=development
+
+# Production (Quality + Cost)
+export ENVIRONMENT=production
+```
+
+### **Cost Transparency**
+- **Token Usage Tracking**: Monitor costs per request
+- **Model Selection Logging**: See which models are used
+- **Cost Estimation**: Predict expenses before execution
 
 ## 🎯 **Use Cases**
 
@@ -140,18 +172,25 @@ PYTHONPATH=. python app/whizzy_bot.py
 ```
 whizzy-mvp/
 ├── app/
-│   └── whizzy_bot.py              # Main bot application
+│   ├── whizzy_bot.py              # Main Slack bot application
+│   ├── multi_agent_dag.py         # Multi-agent DAG orchestrator
+│   ├── cost_optimized_llm.py      # Cost-optimized LLM manager
+│   ├── real_dbt_executor.py       # Real DBT execution
+│   ├── real_snowflake_mcp.py      # Real Snowflake integration
+│   └── dynamic_dbt_generator.py   # Dynamic DBT model generation
 ├── analytics/                     # dbt models and analytics
 │   ├── models/
 │   │   ├── staging/              # Raw data staging
 │   │   ├── facts/                # Fact tables
 │   │   ├── dims/                 # Dimension tables
-│   │   └── marts/                # Business marts
+│   │   ├── marts/                # Business marts
+│   │   └── analytics/            # Advanced analytics
 │   └── dbt_project.yml           # dbt configuration
 ├── docs/                         # Documentation
 ├── tests/                        # Test suite
 ├── .env                          # Environment variables
 ├── requirements.txt              # Python dependencies
+├── COST_ANALYSIS.md              # Cost optimization analysis
 └── README.md                     # Project documentation
 ```
 

@@ -26,7 +26,10 @@ from slack_sdk.web import WebClient
 from slack_sdk.socket_mode.request import SocketModeRequest
 from slack_sdk.socket_mode.response import SocketModeResponse
 from dotenv import load_dotenv
-from app.agent import SalesforceAgent
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from app.multi_agent_dag import MultiAgentDAG
 
 # Load environment variables
 load_dotenv()
@@ -63,11 +66,15 @@ class WhizzyBot:
         # Initialize Salesforce connection
         self.salesforce_client = None
         self._initialize_salesforce()
-        self.salesforce_agent = None
+        
+        # Initialize multi-agent DAG
+        self.dag = None
         if self.salesforce_client:
-            self.salesforce_agent = SalesforceAgent(self.salesforce_client)
+            schema = self._get_salesforce_schema()
+            self.dag = MultiAgentDAG()
+            logger.info("✅ Multi-agent DAG initialized")
         else:
-            logger.warning("Salesforce client not available, agent not initialized.")
+            logger.warning("Salesforce client not available, DAG not initialized.")
         
         logger.info("🚀 Whizzy Bot initialized successfully")
         logger.info(f"🔍 App Token: {self.app_token[:30]}...")
@@ -92,6 +99,28 @@ class WhizzyBot:
         except Exception as e:
             logger.error(f"❌ Failed to initialize Salesforce: {e}")
             self.salesforce_client = None
+    
+    def _get_salesforce_schema(self) -> str:
+        """Get Salesforce schema for intelligent agents"""
+        try:
+            schema_description = "Salesforce Schema:\n"
+            object_names = ['Opportunity', 'Account', 'User']
+            
+            for obj_name in object_names:
+                try:
+                    obj_desc = getattr(self.salesforce_client, obj_name).describe()
+                    schema_description += f"Object: {obj_desc['name']}\n"
+                    schema_description += "Fields:\n"
+                    for field in obj_desc['fields']:
+                        schema_description += f"- {field['name']} ({field['type']})\n"
+                    schema_description += "\n"
+                except Exception as e:
+                    logger.error(f"Failed to describe object {obj_name}: {e}")
+            
+            return schema_description
+        except Exception as e:
+            logger.error(f"Failed to get schema: {e}")
+            return "Basic Salesforce schema (Opportunity, Account, User objects available)"
     
     def _signal_handler(self, signum, frame):
         """Graceful shutdown handler"""
@@ -128,8 +157,10 @@ class WhizzyBot:
                         return
 
                     if event_type == "app_mention":
-                        bot_id = f"<@{client.current_bot_id}>"
-                        text = text.replace(bot_id, "").strip()
+                        # Extract bot mention from text and remove it
+                        import re
+                        bot_mention_pattern = r'<@[A-Z0-9]+>'
+                        text = re.sub(bot_mention_pattern, '', text).strip()
                     
                     logger.info(f"📨 Received message: Channel={channel}, User={user}, Text='{text}', ConversationID={conversation_id}")
                     
@@ -141,16 +172,17 @@ class WhizzyBot:
                     except Exception as e:
                         logger.error(f"❌ Error sending immediate response: {e}")
                     
-                    # Process in background
-                    threading.Thread(target=self._process_query, args=(text, channel, user, conversation_id, ts)).start()
+                    # Process in background with async support
+                    import asyncio
+                    asyncio.create_task(self._process_query_async(text, channel, user, conversation_id, ts))
             else:
                 logger.info(f"⏭️ Non-events_api request: {req.type}")
                 
         except Exception as e:
             logger.error(f"❌ Error handling request: {e}")
     
-    def _process_query(self, text: str, channel: str, user: str, conversation_id: str, thread_ts: str):
-        """Process user query and generate response"""
+    async def _process_query_async(self, text: str, channel: str, user: str, conversation_id: str, thread_ts: str):
+        """Process user query and generate response asynchronously"""
         try:
             if not text.strip():
                 return
@@ -161,7 +193,7 @@ class WhizzyBot:
             history = self.conversation_history.get(conversation_id, [])
             
             # Get response based on query type
-            response = self._generate_response(text, user, history)
+            response = await self._generate_response(text, user, history)
             
             # Update history
             history.append({"role": "user", "content": text})
@@ -184,56 +216,33 @@ class WhizzyBot:
             except Exception as send_error:
                 logger.error(f"❌ Error sending error response: {send_error}")
     
-    def _generate_response(self, text: str, user: str, history: list[dict]) -> str:
-        """Generate response using the Salesforce Agent."""
-        text_lower = text.lower()
+    def _process_query(self, text: str, channel: str, user: str, conversation_id: str, thread_ts: str):
+        """Process user query and generate response (sync wrapper for async)"""
+        import asyncio
+        asyncio.run(self._process_query_async(text, channel, user, conversation_id, thread_ts))
+    
+    async def _generate_response(self, text: str, user: str, history: list[dict]) -> str:
+        """Generate response using multi-agent DAG orchestration."""
+        
+        if not self.dag:
+            return "🤖 **Whizzy**: The multi-agent DAG system is not available. Please check the configuration."
 
-        # Add a backdoor for help
-        if "help" in text_lower:
-            return self._get_help_response()
+        # Convert history format for DAG
+        conversation_history = []
+        for msg in history:
+            conversation_history.append({
+                "role": msg.get("role", "user"),
+                "content": msg.get("content", "")
+            })
 
-        # --- Subscription Management ---
-        if text_lower.startswith("subscribe"):
-            return self._handle_subscribe(user, text)
+        # Get Salesforce schema
+        schema = self._get_salesforce_schema()
 
-        if text_lower.startswith("unsubscribe"):
-            return self._handle_unsubscribe(user)
-
-        if text_lower.startswith("subscriptions"):
-            return self._handle_list_subscriptions(user)
-
-        if not self.salesforce_agent:
-            return "🤖 **Whizzy**: The Salesforce Agent is not available. Please check the configuration."
-
-        logger.info("Handing query to Salesforce Agent", user_query=text)
-        soql_query = self.salesforce_agent.generate_soql_query(text, history)
-
-        if soql_query.startswith("Error:"):
-            logger.warning("Agent failed to generate SOQL", error=soql_query)
-            return f"🤖 **Whizzy**: I had trouble generating a Salesforce query for that. {soql_query}"
-
-        # If the agent returns a non-query response, it might be a clarifying question or a direct answer.
-        if not soql_query.upper().startswith("SELECT"):
-            logger.info("Agent returned a conversational response", response=soql_query)
-            return soql_query
-
-        try:
-            logger.info("Executing generated SOQL", soql_query=soql_query)
-            result = self.salesforce_client.query_all(soql_query)
-            
-            if result['totalSize'] == 0:
-                return "I found no results for that query."
-            
-            # Convert the raw data to a string for the summarizer
-            raw_data_str = json.dumps(result['records'], indent=2, default=str)
-
-            # Summarize the data using the agent
-            summary = self.salesforce_agent.summarize_data_with_llm(text, raw_data_str)
-            return summary
-
-        except Exception as e:
-            logger.error("Error executing SOQL query", soql_query=soql_query, error=e)
-            return f"🤖 **Whizzy**: I tried to run a query, but it failed: `{soql_query}`. \nError: `{e}`"
+        # Use multi-agent DAG orchestration
+        logger.info(f"Processing query with multi-agent DAG: {text}")
+        response = await self.dag.execute(text, conversation_history, schema)
+        
+        return response
     
     def _load_subscriptions(self) -> List[Dict[str, Any]]:
         """Loads subscriptions from the JSON file."""
