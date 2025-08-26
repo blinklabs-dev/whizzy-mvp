@@ -28,6 +28,10 @@ import snowflake.connector
 import os
 from dotenv import load_dotenv
 
+from app.tools.base_tool import BaseTool
+from app.tools.salesforce_tool import SalesforceTool
+from app.tools.snowflake_tool import SnowflakeTool
+
 load_dotenv()
 
 # Configure logging
@@ -152,12 +156,20 @@ class EnhancedIntelligentAgenticSystem:
 
     def __init__(self):
         self.openai_client = openai.OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
-        self.salesforce_client = self._initialize_salesforce()
-        self.snowflake_connection = self._initialize_snowflake()
         self.executor = ThreadPoolExecutor(max_workers=5)
         self.conversation_history = []
         self.quality_metrics = {}
         self.context_states = {}  # Track context per user
+
+        # Initialize clients
+        self.salesforce_client = self._initialize_salesforce()
+        self.snowflake_connection = self._initialize_snowflake()
+
+        # Initialize tools
+        self.tools: Dict[str, BaseTool] = {
+            "salesforce": SalesforceTool(self.salesforce_client, self.openai_client, self.executor),
+            "snowflake": SnowflakeTool(self.snowflake_connection, self.openai_client, self.executor),
+        }
 
         # Load enhanced prompts
         self.persona_prompts = self._load_persona_prompts()
@@ -165,7 +177,6 @@ class EnhancedIntelligentAgenticSystem:
         self.reasoning_prompt = self._load_reasoning_prompt()
         self.thinking_prompt = self._load_thinking_prompt()
         self.chain_of_thought_prompt = self._load_chain_of_thought_prompt()
-        self.text_to_soql_prompt = self._load_text_to_soql_prompt()
         self.summarize_simple_prompt = self._load_prompt_from_file(os.path.join(os.path.dirname(__file__), '..', 'prompts', 'system', 'summarize_simple.txt'))
         self.summarize_full_prompt = self._load_prompt_from_file(os.path.join(os.path.dirname(__file__), '..', 'prompts', 'system', 'summarize_full.txt'))
 
@@ -514,10 +525,26 @@ class EnhancedIntelligentAgenticSystem:
                 return await self._handle_complex_analytics(query, intent_analysis, context_state)
             elif intent_analysis.primary_intent == IntentType.SALESFORCE_QUERY:
                 logger.info("--> Handling as Salesforce Query")
-                return await self._handle_salesforce_query(query, intent_analysis, context_state)
+                sf_result = await self.tools["salesforce"].run(query)
+                summary = await self._summarize_data(query, sf_result, self.summarize_simple_prompt)
+                return AgentResponse(
+                    response_text=summary,
+                    data_sources_used=[DataSourceType.SALESFORCE],
+                    reasoning_steps=["Tool Execution: Salesforce", "Simple Summarization"],
+                    confidence_score=0.95, persona_alignment=0.85, actionability_score=0.8,
+                    quality_metrics={"data_accuracy": 0.98}
+                )
             elif intent_analysis.primary_intent == IntentType.BUSINESS_INTELLIGENCE:
                 logger.info("--> Handling as Business Intelligence")
-                return await self._handle_business_intelligence(query, intent_analysis, context_state)
+                sf_result = await self.tools["salesforce"].run(query)
+                summary = await self._summarize_data(query, sf_result, self.summarize_full_prompt)
+                return AgentResponse(
+                    response_text=summary,
+                    data_sources_used=[DataSourceType.SALESFORCE],
+                    reasoning_steps=["Tool Execution: Salesforce", "Full Analysis & Summarization"],
+                    confidence_score=0.90, persona_alignment=0.9, actionability_score=0.85,
+                    quality_metrics={"insight_quality": 0.85}
+                )
             else:
                 logger.info("--> Handling as Direct Answer")
                 return await self._handle_direct_answer(query, intent_analysis, context_state)
@@ -566,54 +593,48 @@ class EnhancedIntelligentAgenticSystem:
         return self.context_states[user_id]
 
     async def _handle_thinking_query(self, query: str, intent_analysis: IntentAnalysis, chain_of_thought: ChainOfThought, context_state: ContextState) -> AgentResponse:
-        """Handle queries requiring advanced thinking and reasoning"""
+        """Handles complex queries by generating and executing a DAG."""
         try:
-            # Gather data from multiple sources
-            data_sources = await self._gather_data_sources(intent_analysis.data_sources)
+            # Step 1: Generate the DAG using the 'thinking' prompt
+            thinking_prompt = self.thinking_prompt.format(query=query)
 
-            # Create enhanced reasoning prompt
-            reasoning_prompt = self.reasoning_prompt.format(
-                query=query,
-                context=json.dumps(context_state.current_context, indent=2),
-                available_data=json.dumps(data_sources, indent=2),
-                chain_of_thought=chain_of_thought.reasoning_path if chain_of_thought else "No chain of thought available"
-            )
-
-            # Get reasoning response
             response = await asyncio.get_event_loop().run_in_executor(
                 self.executor,
                 lambda: self.openai_client.chat.completions.create(
                     model="gpt-4",
-                    messages=[
-                        {"role": "system", "content": reasoning_prompt},
-                        {"role": "user", "content": query}
-                    ],
-                    temperature=0.3
+                    messages=[{"role": "system", "content": thinking_prompt}],
+                    temperature=0.0,
+                    response_format={"type": "json_object"}
                 )
             )
+            dag_json_str = response.choices[0].message.content
+            dag = json.loads(dag_json_str)
+            logger.info(f"Generated DAG: {dag}")
 
-            reasoning_response = response.choices[0].message.content
+            # Step 2: Execute the DAG
+            dag_results = await self._execute_dag(dag)
+            logger.info(f"DAG execution results: {dag_results}")
 
-            # Update context with reasoning results
-            context_state.current_context.update({
-                "last_reasoning": reasoning_response,
-                "thinking_steps": len(chain_of_thought.thinking_steps) if chain_of_thought else 0
-            })
+            # Step 3: Summarize the final results for the user
+            final_summary = await self._summarize_data(query, dag_results, self.summarize_full_prompt)
 
             return AgentResponse(
-                response_text=reasoning_response,
+                response_text=final_summary,
                 data_sources_used=intent_analysis.data_sources,
-                reasoning_steps=self._extract_reasoning_steps(reasoning_response),
-                confidence_score=intent_analysis.confidence,
-                persona_alignment=0.95,
+                reasoning_steps=[f"Step {s['id']}: {s['tool']}({s['query']})" for s in dag.get("steps", [])],
+                confidence_score=0.9,
+                persona_alignment=0.9,
                 actionability_score=0.9,
-                quality_metrics={"reasoning_quality": 0.9, "completeness": 0.95, "thinking_depth": 0.9},
-                chain_of_thought=chain_of_thought,
-                thinking_process=reasoning_response
+                quality_metrics={"dag_execution_success": 1.0},
+                chain_of_thought=chain_of_thought, # This could be updated with DAG info
+                thinking_process=json.dumps(dag, indent=2)
             )
 
+        except json.JSONDecodeError as e:
+            logger.error(f"Failed to decode DAG JSON from LLM response: {e}")
+            return self._create_error_response("I had trouble planning out the steps to answer your question. The model returned invalid JSON.")
         except Exception as e:
-            logger.error(f"❌ Error in thinking query: {e}")
+            logger.error(f"❌ Error in thinking query (DAG execution): {e}")
             return self._create_error_response(str(e))
 
     async def _handle_coffee_briefing(self, query: str, intent_analysis: IntentAnalysis, context_state: ContextState) -> AgentResponse:
@@ -698,13 +719,14 @@ class EnhancedIntelligentAgenticSystem:
         """Handle complex analytics requiring multiple data sources"""
         try:
             # Gather data from all sources
-            salesforce_data = await self._get_salesforce_data(query)
-            snowflake_data = await self._get_snowflake_data(query)
-            dbt_insights = await self._get_dbt_insights(query)
+            all_data = await self._gather_data_sources(intent_analysis.data_sources, query)
 
             # Combine and analyze
             combined_analysis = await self._analyze_combined_data(
-                salesforce_data, snowflake_data, dbt_insights, query
+                all_data.get("salesforce", {}),
+                all_data.get("snowflake", {}),
+                all_data.get("dbt", {}),
+                query
             )
 
             return AgentResponse(
@@ -746,73 +768,6 @@ class EnhancedIntelligentAgenticSystem:
             logger.error("Data summarization API call failed", error=e)
             return "Error: Failed to generate a summary for the data."
 
-    async def _handle_salesforce_query(self, query: str, intent_analysis: IntentAnalysis, context_state: ContextState) -> AgentResponse:
-        """
-        Handle Salesforce-specific queries using an enhanced few-shot learning prompt.
-        This handler uses the 'simple' summarization prompt for direct data presentation.
-        """
-        try:
-            if not self.salesforce_client:
-                return self._create_error_response("Salesforce connection not available")
-
-            schema = self._get_salesforce_schema()
-            examples = self._load_few_shot_examples('prompts/examples/text_to_soql.json')
-            few_shot_text = "\n".join([f"Question: {ex['question']}\nSOQL: {ex['soql']}" for ex in examples])
-            system_prompt = self.text_to_soql_prompt.format(few_shot_examples=few_shot_text, query=query, schema=schema)
-
-            response = await asyncio.get_event_loop().run_in_executor(
-                self.executor,
-                lambda: self.openai_client.chat.completions.create(
-                    model="gpt-4", messages=[{"role": "system", "content": system_prompt}], temperature=0.0
-                )
-            )
-            soql_query = response.choices[0].message.content.strip()
-
-            result = self.salesforce_client.query(soql_query)
-
-            # Use the simple summarizer for direct queries
-            summary = await self._summarize_data(query, result, self.summarize_simple_prompt)
-
-            return AgentResponse(
-                response_text=summary,
-                data_sources_used=[DataSourceType.SALESFORCE],
-                reasoning_steps=["Schema Loading", "Few-Shot SOQL Generation", "Query Execution", "Simple Summarization"],
-                confidence_score=0.95,
-                persona_alignment=0.85,
-                actionability_score=0.8,
-                quality_metrics={"data_accuracy": 0.98, "relevance": 0.9, "completeness": 0.85}
-            )
-
-        except Exception as e:
-            logger.error(f"❌ Error in Salesforce query: {e}")
-            return self._create_error_response(str(e))
-
-    async def _handle_business_intelligence(self, query: str, intent_analysis: IntentAnalysis, context_state: ContextState) -> AgentResponse:
-        """
-        Handle business intelligence queries.
-        This handler uses the 'full' summarization prompt for deep analysis.
-        """
-        try:
-            # For BI queries, we might need to get broader data or run multiple queries.
-            # For now, we'll get a general overview of opportunities as the base data.
-            base_data = await self._get_salesforce_data("a general overview of recent opportunities")
-
-            # Use the full summarizer for BI and analysis
-            summary = await self._summarize_data(query, base_data, self.summarize_full_prompt)
-
-            return AgentResponse(
-                response_text=summary,
-                data_sources_used=[DataSourceType.SALESFORCE],
-                reasoning_steps=["Data Analysis", "Insight Generation", "Full Summarization"],
-                confidence_score=0.85,
-                persona_alignment=0.9,
-                actionability_score=0.85,
-                quality_metrics={"insight_quality": 0.85, "relevance": 0.9, "actionability": 0.8}
-            )
-
-        except Exception as e:
-            logger.error(f"❌ Error in business intelligence: {e}")
-            return self._create_error_response(str(e))
 
     async def _handle_direct_answer(self, query: str, intent_analysis: IntentAnalysis, context_state: ContextState) -> AgentResponse:
         """Handle direct answer queries with context awareness"""
@@ -991,77 +946,70 @@ Provide a context-aware response that builds on previous interactions.
         return context_analysis
 
     # Helper methods for data gathering and processing
-    async def _gather_data_sources(self, data_sources: List[DataSourceType]) -> Dict[str, Any]:
-        """Gather data from multiple sources"""
+    async def _gather_data_sources(self, data_sources: List[DataSourceType], query: str) -> Dict[str, Any]:
+        """Gather data from multiple sources using the new tool architecture."""
         data = {}
 
+        # This can be parallelized in the future
         for source in data_sources:
-            if source == DataSourceType.SALESFORCE:
-                data['salesforce'] = await self._get_salesforce_data("general overview")
-            elif source == DataSourceType.SNOWFLAKE:
-                data['snowflake'] = await self._get_snowflake_data("general overview")
-            elif source == DataSourceType.DBT:
+            tool_name = source.value
+            if tool_name in self.tools:
+                logger.info(f"Using tool: {tool_name} for query: {query}")
+                data[tool_name] = await self.tools[tool_name].run(query)
+            elif tool_name == "dbt": # Keep placeholder for dbt
                 data['dbt'] = await self._get_dbt_insights("general overview")
 
         return data
 
-    async def _get_salesforce_data(self, query: str) -> Dict[str, Any]:
-        """Get data from Salesforce"""
-        if not self.salesforce_client:
-            return {"error": "Salesforce not available"}
+    async def _execute_dag(self, dag: Dict[str, Any]) -> Dict[int, Any]:
+        """
+        Executes a DAG of tool calls.
 
-        try:
-            # Basic Salesforce queries
-            opportunities = self.salesforce_client.query("SELECT COUNT(Id), SUM(Amount) FROM Opportunity")
-            accounts = self.salesforce_client.query("SELECT COUNT(Id) FROM Account")
+        Args:
+            dag: The JSON object representing the DAG.
 
-            return {
-                "opportunities": opportunities['records'][0],
-                "accounts": accounts['records'][0]
-            }
-        except Exception as e:
-            return {"error": str(e)}
+        Returns:
+            A dictionary mapping step IDs to their results.
+        """
+        step_results: Dict[int, Any] = {}
+        completed_ids: set[int] = set()
+        steps = dag.get("steps", [])
 
-    async def _get_snowflake_data(self, query: str) -> Dict[str, Any]:
-        """Gets data from Snowflake by converting a natural language query to SQL."""
-        if not self.snowflake_connection:
-            return {"error": "Snowflake connection not available."}
+        # A simple, iterative approach to resolve dependencies.
+        # A more advanced version could use a topological sort.
+        for _ in range(len(steps)): # Loop enough times to resolve all steps
+            steps_to_run = []
+            for step in steps:
+                step_id = step["id"]
+                if step_id in completed_ids:
+                    continue
 
-        try:
-            # Step 1: Convert natural language to Snowflake SQL
-            system_prompt = "You are a Snowflake SQL expert. Convert the user's question into a single, valid Snowflake SQL query. Only return the SQL query."
+                dependencies_met = all(dep_id in completed_ids for dep_id in step["dependencies"])
 
-            response = await asyncio.get_event_loop().run_in_executor(
-                self.executor,
-                lambda: self.openai_client.chat.completions.create(
-                    model="gpt-4",
-                    messages=[
-                        {"role": "system", "content": system_prompt},
-                        {"role": "user", "content": query}
-                    ],
-                    temperature=0.0
-                )
-            )
-            sql_query = response.choices[0].message.content.strip()
-            logger.info(f"Generated Snowflake SQL: {sql_query}")
+                if dependencies_met:
+                    tool_name = step["tool"]
+                    query = step["query"]
+                    if tool_name in self.tools:
+                        # For now, we don't pass results between steps, the LLM must craft the query
+                        # with the necessary info.
+                        task = self.tools[tool_name].run(query)
+                        steps_to_run.append((step_id, task))
 
-            # Step 2: Execute the query in a thread to avoid blocking
-            def execute_sync_query():
-                cursor = self.snowflake_connection.cursor(snowflake.connector.DictCursor)
-                cursor.execute(sql_query)
-                return cursor.fetchall()
+            if not steps_to_run:
+                # Either all done or a deadlock/unmet dependency
+                break
 
-            results = await asyncio.get_event_loop().run_in_executor(
-                self.executor,
-                execute_sync_query
-            )
+            # Run all steps that are ready in parallel
+            results = await asyncio.gather(*(task for _, task in steps_to_run))
 
-            logger.info(f"Successfully fetched {len(results)} records from Snowflake.")
-            return {"records": results}
+            for (step_id, _), result in zip(steps_to_run, results):
+                step_results[step_id] = result
+                completed_ids.add(step_id)
 
-        except Exception as e:
-            logger.error(f"Error querying Snowflake: {e}")
-            return {"error": str(e)}
+        if len(completed_ids) != len(steps):
+            logger.error("Could not complete all steps in DAG, check for cycles or missing dependencies.")
+
+        return step_results
 
     async def _get_dbt_insights(self, query: str) -> Dict[str, Any]:
         """Get insights from dbt models (placeholder)"""

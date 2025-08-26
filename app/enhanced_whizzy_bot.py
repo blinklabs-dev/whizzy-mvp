@@ -18,7 +18,8 @@ import json
 import time
 import asyncio
 import threading
-from typing import Dict, Any, Optional
+from datetime import datetime
+from typing import Dict, Any, Optional, List
 from slack_sdk.socket_mode import SocketModeClient
 from slack_sdk.web import WebClient
 from slack_sdk.socket_mode.request import SocketModeRequest
@@ -26,7 +27,7 @@ from slack_sdk.socket_mode.response import SocketModeResponse
 from dotenv import load_dotenv
 
 # Import enhanced intelligent agentic system
-from intelligent_agentic_system import (
+from .intelligent_agentic_system import (
     EnhancedIntelligentAgenticSystem, IntentType, PersonaType,
     DataSourceType, IntentAnalysis, AgentResponse, CoffeeBriefing,
     ChainOfThought, ContextState
@@ -41,6 +42,9 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
+
+SUBSCRIPTIONS_FILE = os.path.join(os.path.dirname(__file__), '..', 'data', 'subscriptions.json')
+
 
 class EnhancedWhizzyBot:
     """Enhanced Whizzy Bot with Advanced Intelligent Agentic System"""
@@ -64,6 +68,7 @@ class EnhancedWhizzyBot:
 
         # User context tracking (now handled by the enhanced system)
         self.user_mapping = {}  # Map Slack user IDs to internal user IDs
+        self.subscriptions = self._load_subscriptions()
 
         logger.info("🚀 Enhanced Whizzy Bot initialized with Advanced Intelligent Agentic System")
         logger.info(f"🔍 App Token: {self.app_token[:30]}...")
@@ -138,6 +143,21 @@ class EnhancedWhizzyBot:
             internal_user_id = self.user_mapping.get(user, f"slack_user_{user}")
             if user not in self.user_mapping:
                 self.user_mapping[user] = internal_user_id
+
+            # Check for subscription commands before calling the agent
+            text_lower = text.lower()
+            if text_lower.startswith("subscribe"):
+                response_text = self._handle_subscribe(user, text)
+                self._send_enhanced_response(channel, response_text)
+                return
+            elif text_lower.startswith("unsubscribe"):
+                response_text = self._handle_unsubscribe(user)
+                self._send_enhanced_response(channel, response_text)
+                return
+            elif text_lower.startswith("subscriptions"):
+                response_text = self._handle_list_subscriptions(user)
+                self._send_enhanced_response(channel, response_text)
+                return
 
             # Get user context from enhanced system
             context_state = self.enhanced_system._get_context_state(internal_user_id)
@@ -330,6 +350,87 @@ class EnhancedWhizzyBot:
 
         except Exception as e:
             logger.error(f"❌ Error sending enhanced coffee briefing: {e}")
+
+    def _load_subscriptions(self) -> List[Dict[str, Any]]:
+        """Loads subscriptions from the JSON file."""
+        try:
+            if os.path.exists(SUBSCRIPTIONS_FILE):
+                with open(SUBSCRIPTIONS_FILE, 'r') as f:
+                    return json.load(f)
+        except Exception as e:
+            logger.error(f"Error loading subscriptions: {e}")
+        return []
+
+    def _save_subscriptions(self):
+        """Saves the current subscriptions to the JSON file."""
+        try:
+            with open(SUBSCRIPTIONS_FILE, 'w') as f:
+                json.dump(self.subscriptions, f, indent=2)
+        except Exception as e:
+            logger.error(f"Error saving subscriptions: {e}")
+
+    def _handle_subscribe(self, user_id: str, text: str) -> str:
+        """Handles a user's request to subscribe to a briefing."""
+        parts = text.lower().split()
+        if len(parts) != 3:
+            return "Sorry, I didn't understand that. Please use the format: `subscribe <frequency> <persona>` (e.g., `subscribe daily vp`)."
+
+        _, frequency, persona_short = parts
+
+        valid_freqs = ['daily', 'weekly']
+        if frequency not in valid_freqs:
+            return f"Invalid frequency. Please choose from: {', '.join(valid_freqs)}."
+
+        valid_personas = {'vp': 'VP_SALES', 'ae': 'ACCOUNT_EXECUTIVE'}
+        if persona_short not in valid_personas:
+            return f"Invalid persona. Please choose from: {', '.join(valid_personas.keys())} (vp or ae)."
+
+        persona = valid_personas[persona_short]
+
+        try:
+            im_response = self.web_client.conversations_open(users=user_id)
+            channel_id = im_response['channel']['id']
+        except Exception as e:
+            logger.error(f"Failed to open DM with user {user_id}: {e}")
+            return "I couldn't open a direct message channel with you to send briefings."
+
+        self.subscriptions = [s for s in self.subscriptions if s['user_id'] != user_id]
+
+        new_subscription = {
+            "user_id": user_id,
+            "channel_id": channel_id,
+            "persona": persona,
+            "frequency": frequency,
+            "subscribed_at": datetime.now().isoformat()
+        }
+        self.subscriptions.append(new_subscription)
+        self._save_subscriptions()
+
+        logger.info(f"User {user_id} subscribed to {frequency} {persona} briefings.")
+        return f"✅ You've been subscribed to **{frequency} {persona.replace('_', ' ').title()}** briefings!"
+
+    def _handle_unsubscribe(self, user_id: str) -> str:
+        """Handles a user's request to unsubscribe."""
+        original_count = len(self.subscriptions)
+        self.subscriptions = [s for s in self.subscriptions if s['user_id'] != user_id]
+
+        if len(self.subscriptions) < original_count:
+            self._save_subscriptions()
+            logger.info(f"User {user_id} unsubscribed.")
+            return "You have been successfully unsubscribed from all briefings."
+        else:
+            return "You don't seem to have any active subscriptions."
+
+    def _handle_list_subscriptions(self, user_id: str) -> str:
+        """Lists the current user's subscriptions."""
+        user_subs = [s for s in self.subscriptions if s['user_id'] == user_id]
+        if not user_subs:
+            return "You are not subscribed to any briefings."
+
+        response = "Here are your current subscriptions:\n"
+        for sub in user_subs:
+            response += f"- **{sub['frequency'].capitalize()} {sub['persona'].replace('_', ' ').title()} Briefing**\n"
+        return response
 
     def get_enhanced_system_metrics(self) -> Dict[str, Any]:
         """Get enhanced system performance metrics with thinking analysis"""

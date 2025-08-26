@@ -33,9 +33,15 @@ class TestIntelligentAgenticSystemUAT(unittest.TestCase):
             'SALESFORCE_SECURITY_TOKEN': 'testtoken',
             'SALESFORCE_DOMAIN': 'login'
         })
-        self.mock_os_patcher = patch('app.intelligent_agentic_system.os.listdir', MagicMock(return_value=['vp_sales.txt', 'account_executive.txt', 'cdo.txt', 'data_engineer.txt']))
+        self.mock_os_patcher = patch('app.intelligent_agentic_system.os.listdir', MagicMock(return_value=['vp_sales.txt', 'account_executive.txt', 'cdo.txt', 'data_engineer.txt', 'sales_manager.txt', 'sales_operations.txt', 'customer_success.txt']))
 
-        self.mock_open_patcher = patch('builtins.open', new_callable=mock_open, read_data="mock prompt content")
+        def open_side_effect(file, mode='r'):
+            if 'text_to_soql.json' in file:
+                return mock_open(read_data='[{"question": "test", "soql": "SELECT"}]').return_value
+            else:
+                return mock_open(read_data='mock prompt').return_value
+
+        self.mock_open_patcher = patch('builtins.open', side_effect=open_side_effect)
         self.openai_patcher = patch('app.intelligent_agentic_system.openai.OpenAI')
         self.sf_patcher = patch('app.intelligent_agentic_system.Salesforce')
         self.snow_patcher = patch('app.intelligent_agentic_system.snowflake.connector')
@@ -93,7 +99,7 @@ class TestIntelligentAgenticSystemUAT(unittest.TestCase):
         """Test data source gathering"""
         data_sources = [DataSourceType.SALESFORCE, DataSourceType.SNOWFLAKE]
 
-        result = asyncio.run(self.system._gather_data_sources(data_sources))
+        result = asyncio.run(self.system._gather_data_sources(data_sources, "test query"))
 
         self.assertIn("salesforce", result)
         self.assertIn("snowflake", result)
@@ -166,26 +172,35 @@ class TestIntelligentAgenticSystemUAT(unittest.TestCase):
         # You could also add more specific assertions here about the arguments
         # used in the connect call if you had set more specific env vars.
 
-    def test_get_snowflake_data_handler(self):
-        """Test the snowflake data handler's logic."""
-        # Mock the LLM response for SQL generation
-        mock_llm_response = MagicMock()
-        mock_llm_response.choices[0].message.content = "SELECT * FROM MOCK_TABLE"
-        self.mock_openai.return_value.chat.completions.create.return_value = mock_llm_response
 
-        # Mock the snowflake cursor and results
-        mock_cursor = MagicMock()
-        mock_cursor.fetchall.return_value = [{"col1": "data1"}]
-        self.system.snowflake_connection = MagicMock()
-        self.system.snowflake_connection.cursor.return_value = mock_cursor
+    def test_dag_executor(self):
+        """Test the DAG executor logic."""
+        # Mock tools
+        mock_sf_tool = AsyncMock()
+        mock_sf_tool.run.return_value = {"data": "salesforce_data"}
+        mock_snow_tool = AsyncMock()
+        mock_snow_tool.run.return_value = {"data": "snowflake_data"}
+        self.system.tools = {
+            "salesforce": mock_sf_tool,
+            "snowflake": mock_snow_tool
+        }
 
-        # Run the method
-        result = asyncio.run(self.system._get_snowflake_data("get me snowflake data"))
+        dag = {
+            "steps": [
+                {"id": 1, "tool": "salesforce", "query": "q1", "dependencies": []},
+                {"id": 2, "tool": "snowflake", "query": "q2", "dependencies": [1]}
+            ]
+        }
 
-        # Assertions
-        self.system.snowflake_connection.cursor.assert_called_once()
-        mock_cursor.execute.assert_called_once_with("SELECT * FROM MOCK_TABLE")
-        self.assertEqual(result, {"records": [{"col1": "data1"}]})
+        results = asyncio.run(self.system._execute_dag(dag))
+
+        # Assert that both tools were called
+        mock_sf_tool.run.assert_called_once_with("q1")
+        mock_snow_tool.run.assert_called_once_with("q2")
+
+        # Assert results are stored correctly
+        self.assertEqual(results[1], {"data": "salesforce_data"})
+        self.assertEqual(results[2], {"data": "snowflake_data"})
 
 
 class TestQualityEvaluation(unittest.TestCase):
@@ -201,7 +216,12 @@ class TestQualityEvaluation(unittest.TestCase):
             'SALESFORCE_DOMAIN': 'login'
         })
         self.mock_os_patcher = patch('app.intelligent_agentic_system.os.listdir', MagicMock(return_value=[]))
-        self.mock_open_patcher = patch('builtins.open', new_callable=mock_open, read_data="mock prompt content")
+        def open_side_effect(file, mode='r'):
+            if 'text_to_soql.json' in file:
+                return mock_open(read_data='[{"question": "test", "soql": "SELECT"}]').return_value
+            else:
+                return mock_open(read_data='mock prompt').return_value
+        self.mock_open_patcher = patch('builtins.open', side_effect=open_side_effect)
         self.openai_patcher = patch('app.intelligent_agentic_system.openai.OpenAI')
         self.sf_patcher = patch('app.intelligent_agentic_system.Salesforce')
 
