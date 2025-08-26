@@ -67,7 +67,7 @@ class SalesforceTool(BaseTool):
             response = await asyncio.get_event_loop().run_in_executor(
                 self.executor,
                 lambda: self.openai.chat.completions.create(
-                    model="gpt-4", messages=[{"role": "system", "content": system_prompt}], temperature=0.0
+                    model="gpt-4o-mini", messages=[{"role": "system", "content": system_prompt}], temperature=0.0
                 )
             )
             soql_query = response.choices[0].message.content.strip()

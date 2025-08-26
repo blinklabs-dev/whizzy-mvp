@@ -53,7 +53,16 @@ class WhizzyBot:
         self.client = None
         self.request_count = 0
         
-        # Initialize Salesforce connection
+        # Initialize Enhanced Intelligent Agentic System
+        try:
+            from intelligent_agentic_system import EnhancedIntelligentAgenticSystem
+            self.enhanced_system = EnhancedIntelligentAgenticSystem()
+            logger.info("🧠 Enhanced Intelligent Agentic System initialized")
+        except Exception as e:
+            logger.error(f"❌ Failed to initialize Enhanced System: {e}")
+            self.enhanced_system = None
+        
+        # Initialize Salesforce connection (fallback)
         self.salesforce_client = None
         self._initialize_salesforce()
         
@@ -158,10 +167,39 @@ class WhizzyBot:
                 logger.error(f"❌ Error sending error response: {send_error}")
     
     def _generate_response(self, text: str, user: str) -> str:
-        """Generate response based on query type"""
-        text_lower = text.lower()
-
+        """Generate response using Enhanced Intelligent Agentic System"""
         try:
+            # Use Enhanced Intelligent Agentic System if available
+            if self.enhanced_system:
+                logger.info("🧠 Using Enhanced Intelligent Agentic System")
+                
+                # Import required components
+                from intelligent_agentic_system import PersonaType
+                import asyncio
+                
+                # Create event loop for async execution
+                loop = asyncio.new_event_loop()
+                asyncio.set_event_loop(loop)
+                
+                try:
+                    # Execute query with enhanced system
+                    response = loop.run_until_complete(
+                        self.enhanced_system.execute_query(text, PersonaType.VP_SALES, user)
+                    )
+                    
+                    # Format response
+                    if hasattr(response, 'response_text'):
+                        return f"🤖 **Whizzy**: {response.response_text}"
+                    else:
+                        return f"🤖 **Whizzy**: {str(response)}"
+                        
+                finally:
+                    loop.close()
+            
+            # Fallback to old system if enhanced system not available
+            logger.info("⚠️ Using fallback system")
+            text_lower = text.lower()
+
             if not self.salesforce_client:
                 return "🤖 **Whizzy**: Salesforce connection not available. Please check configuration."
 

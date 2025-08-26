@@ -34,7 +34,7 @@ class SnowflakeTool(BaseTool):
             response = await asyncio.get_event_loop().run_in_executor(
                 self.executor,
                 lambda: self.openai.chat.completions.create(
-                    model="gpt-4",
+                    model="gpt-4o-mini",
                     messages=[
                         {"role": "system", "content": system_prompt},
                         {"role": "user", "content": query}

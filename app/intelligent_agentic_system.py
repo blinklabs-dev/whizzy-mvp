@@ -161,9 +161,26 @@ class EnhancedIntelligentAgenticSystem:
         self.quality_metrics = {}
         self.context_states = {}  # Track context per user
 
-        # Initialize clients
+        # Initialize REAL clients
         self.salesforce_client = self._initialize_salesforce()
         self.snowflake_connection = self._initialize_snowflake()
+
+        # Cost optimization setup
+        self.environment = os.getenv("ENVIRONMENT", "development")
+        self.models = {
+            "development": {
+                "ultra_fast": "gpt-4o-mini",           # Fastest & cheapest
+                "fast": "gpt-3.5-turbo",               # Fast & cheap
+                "balanced": "gpt-4o",                  # Balanced performance
+                "accurate": "gpt-4-turbo"              # High accuracy
+            },
+            "production": {
+                "ultra_fast": "gpt-4o-mini",           # Fastest & cheapest
+                "fast": "gpt-4o",                      # Fast & good quality
+                "balanced": "gpt-4-turbo",             # Balanced performance
+                "accurate": "gpt-4"                    # Highest accuracy
+            }
+        }
 
         # Initialize tools
         self.tools: Dict[str, BaseTool] = {
@@ -180,23 +197,27 @@ class EnhancedIntelligentAgenticSystem:
         self.summarize_simple_prompt = self._load_prompt_from_file(os.path.join(os.path.dirname(__file__), '..', 'prompts', 'system', 'summarize_simple.txt'))
         self.summarize_full_prompt = self._load_prompt_from_file(os.path.join(os.path.dirname(__file__), '..', 'prompts', 'system', 'summarize_full.txt'))
 
-        logger.info("🧠 Enhanced Intelligent Agentic System initialized")
+        logger.info(f"🧠 Enhanced Intelligent Agentic System initialized with REAL data connections and cost optimization ({self.environment})")
 
     def _initialize_salesforce(self) -> Optional[Salesforce]:
-        """Initialize Salesforce connection"""
+        """Initialize REAL Salesforce connection"""
         try:
-            return Salesforce(
+            client = Salesforce(
                 username=os.getenv('SALESFORCE_USERNAME'),
                 password=os.getenv('SALESFORCE_PASSWORD'),
                 security_token=os.getenv('SALESFORCE_SECURITY_TOKEN'),
                 domain=os.getenv('SALESFORCE_DOMAIN', 'login')
             )
+            # Test the connection
+            test_result = client.query('SELECT Id FROM Opportunity LIMIT 1')
+            logger.info(f"✅ REAL Salesforce connection established - {test_result['totalSize']} test records found")
+            return client
         except Exception as e:
-            logger.error(f"❌ Failed to initialize Salesforce: {e}")
+            logger.error(f"❌ Failed to initialize REAL Salesforce: {e}")
             return None
 
     def _initialize_snowflake(self) -> Optional[snowflake.connector.SnowflakeConnection]:
-        """Initialize Snowflake connection."""
+        """Initialize REAL Snowflake connection."""
         try:
             conn = snowflake.connector.connect(
                 user=os.getenv('SNOWFLAKE_USER'),
@@ -207,10 +228,15 @@ class EnhancedIntelligentAgenticSystem:
                 schema=os.getenv('SNOWFLAKE_SCHEMA'),
                 role=os.getenv('SNOWFLAKE_ROLE'),
             )
-            logger.info("✅ Snowflake connection initialized")
+            # Test the connection
+            cursor = conn.cursor()
+            cursor.execute("SELECT COUNT(*) as total_opportunities FROM stg_sf__opportunity")
+            test_result = cursor.fetchone()
+            cursor.close()
+            logger.info(f"✅ REAL Snowflake connection established - {test_result[0]} opportunities in staging")
             return conn
         except Exception as e:
-            logger.warning(f"⚠️ Failed to initialize Snowflake (this may be expected if not configured): {e}")
+            logger.warning(f"⚠️ Failed to initialize REAL Snowflake (this may be expected if not configured): {e}")
             return None
 
     def _load_prompt_from_file(self, file_path: str) -> str:
