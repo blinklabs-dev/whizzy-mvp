@@ -1,7 +1,7 @@
 [
   {
-    "question": "what is our win rate?",
-    "soql": "SELECT COUNT(Id) FROM Opportunity WHERE StageName = 'Closed Won'"
+    "question": "What is our win rate for all closed deals?",
+    "soql": "SELECT IsWon, COUNT(Id) FROM Opportunity WHERE IsClosed = true GROUP BY IsWon"
   },
   {
     "question": "show me the top 5 biggest deals in the pipeline",

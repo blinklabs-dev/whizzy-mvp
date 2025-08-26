@@ -177,20 +177,88 @@ class EnhancedWhizzyBot:
                     self.enhanced_system.process_query(text, {}, internal_user_id)
                 )
 
-                # Format and send enhanced response
-                formatted_response = self._format_enhanced_response(agent_response, text, context_state)
-                self._send_enhanced_response(channel, formatted_response)
+                # The agent system now returns a JSON string for briefing cards.
+                # We need to detect this and format it into markdown.
+                response_text = agent_response.response_text
+
+                try:
+                    # Attempt to parse the response as JSON. If it works, it's a briefing card.
+                    briefing_card_json = json.loads(response_text)
+                    if isinstance(briefing_card_json, dict) and "headline" in briefing_card_json:
+                        logger.info("Detected a Briefing Card JSON response. Formatting for Slack.")
+                        response_text = self._format_briefing_card(briefing_card_json)
+                except json.JSONDecodeError:
+                    # It's not a JSON object, so it's a direct answer or an error.
+                    # Pass it through as-is.
+                    logger.info("Response is not a briefing card. Sending as plain text.")
+
+                self._send_enhanced_response(channel, response_text)
 
             finally:
                 loop.close()
 
         except Exception as e:
-            logger.error(f"❌ Error in enhanced intelligent response processing: {e}")
+            logger.error(f"❌ Error in enhanced intelligent response processing: {e}", exc_info=True)
             error_response = "🤖 **Enhanced Whizzy**: I encountered an error processing your request. Please try again."
             try:
                 self.web_client.chat_postMessage(channel=channel, text=error_response)
             except Exception as send_error:
                 logger.error(f"❌ Error sending error response: {send_error}")
+
+    def _format_briefing_card(self, card: Dict[str, Any]) -> str:
+        """
+        Formats the JSON briefing card into Slack Markdown.
+        This is a generic renderer for the different card types.
+        """
+        markdown_parts = []
+
+        # Headline
+        if card.get("headline"):
+            markdown_parts.append(f"*{card['headline']}*")
+
+        # Pipeline Metrics
+        if card.get("pipeline"):
+            pipeline_parts = []
+            pipeline_data = card["pipeline"]
+            if "total_pipeline" in pipeline_data:
+                pipeline_parts.append(f"  • *Total Pipeline:* ${pipeline_data['total_pipeline']:,}")
+            if "quota_coverage" in pipeline_data:
+                pipeline_parts.append(f"  • *Quota Coverage:* {pipeline_data['quota_coverage']}x")
+            if "win_rate" in pipeline_data:
+                pipeline_parts.append(f"  • *Win Rate:* {pipeline_data['win_rate']}")
+            if "risks" in pipeline_data:
+                pipeline_parts.append(f"  • *Risks:* {pipeline_data['risks']}")
+            if "stuck_deals" in pipeline_data:
+                 pipeline_parts.append(f"  • *Stuck Deals:* {pipeline_data['stuck_deals']}")
+            if "total_value" in pipeline_data:
+                 pipeline_parts.append(f"  • *Total Value at Risk:* ${pipeline_data['total_value']:,}")
+            if "accuracy" in pipeline_data:
+                # Custom rendering for forecast accuracy
+                q_parts = []
+                for i, acc in enumerate(pipeline_data["accuracy"]):
+                    q_parts.append(f"{pipeline_data['quarters'][i]}: {acc}")
+                pipeline_parts.append(f"  • *Accuracy by Quarter:* {' | '.join(q_parts)}")
+
+
+            if pipeline_parts:
+                markdown_parts.append("\n:bar_chart: *Pipeline*")
+                markdown_parts.extend(pipeline_parts)
+
+        # Insights
+        if card.get("insights"):
+            insight_parts = [f"  - {insight}" for insight in card["insights"]]
+            if insight_parts:
+                markdown_parts.append("\n:dart: *Insights*")
+                markdown_parts.extend(insight_parts)
+
+        # Actions
+        if card.get("actions"):
+            action_parts = [f"  {i+1}. {action}" for i, action in enumerate(card["actions"])]
+            if action_parts:
+                markdown_parts.append("\n:rocket: *Recommended Actions*")
+                markdown_parts.extend(action_parts)
+
+        return "\n".join(markdown_parts)
 
     def _format_enhanced_response(self, agent_response: AgentResponse, original_query: str, context_state: ContextState) -> str:
         """Format enhanced response with thinking and context insights"""
