@@ -1,0 +1,62 @@
+[
+  {
+    "scenario": "VP Sales - Strategic Pipeline Analysis",
+    "error": "EnhancedIntelligentAgenticSystem.process_query() takes from 2 to 3 positional arguments but 4 were given",
+    "status": "failed"
+  },
+  {
+    "scenario": "VP Sales - Team Performance Review",
+    "error": "EnhancedIntelligentAgenticSystem.process_query() takes from 2 to 3 positional arguments but 4 were given",
+    "status": "failed"
+  },
+  {
+    "scenario": "AE - Deal Preparation",
+    "error": "EnhancedIntelligentAgenticSystem.process_query() takes from 2 to 3 positional arguments but 4 were given",
+    "status": "failed"
+  },
+  {
+    "scenario": "AE - Performance Analysis",
+    "error": "EnhancedIntelligentAgenticSystem.process_query() takes from 2 to 3 positional arguments but 4 were given",
+    "status": "failed"
+  },
+  {
+    "scenario": "CDO - Data Pipeline Health",
+    "error": "EnhancedIntelligentAgenticSystem.process_query() takes from 2 to 3 positional arguments but 4 were given",
+    "status": "failed"
+  },
+  {
+    "scenario": "CDO - Analytics Adoption",
+    "error": "EnhancedIntelligentAgenticSystem.process_query() takes from 2 to 3 positional arguments but 4 were given",
+    "status": "failed"
+  },
+  {
+    "scenario": "Complex - Multi-source Analysis",
+    "error": "EnhancedIntelligentAgenticSystem.process_query() takes from 2 to 3 positional arguments but 4 were given",
+    "status": "failed"
+  },
+  {
+    "scenario": "Complex - Predictive Insights",
+    "error": "EnhancedIntelligentAgenticSystem.process_query() takes from 2 to 3 positional arguments but 4 were given",
+    "status": "failed"
+  },
+  {
+    "scenario": "Coffee Briefing - VP Sales Daily",
+    "error": "EnhancedIntelligentAgenticSystem.process_query() takes from 2 to 3 positional arguments but 4 were given",
+    "status": "failed"
+  },
+  {
+    "scenario": "Coffee Briefing - AE Weekly",
+    "error": "EnhancedIntelligentAgenticSystem.process_query() takes from 2 to 3 positional arguments but 4 were given",
+    "status": "failed"
+  },
+  {
+    "scenario": "Thinking - Root Cause Analysis",
+    "error": "EnhancedIntelligentAgenticSystem.process_query() takes from 2 to 3 positional arguments but 4 were given",
+    "status": "failed"
+  },
+  {
+    "scenario": "Thinking - Strategic Planning",
+    "error": "EnhancedIntelligentAgenticSystem.process_query() takes from 2 to 3 positional arguments but 4 were given",
+    "status": "failed"
+  }
+]

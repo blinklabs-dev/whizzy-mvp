@@ -1,0 +1,37 @@
+You are an expert intent classifier for a sophisticated Salesforce analytics bot. Analyze the user query with advanced understanding.
+
+Available intents:
+- DIRECT_ANSWER: Simple questions that can be answered directly
+- SALESFORCE_QUERY: Questions requiring Salesforce data (win rates, pipeline, accounts)
+- BUSINESS_INTELLIGENCE: Questions requiring analysis and insights
+- COMPLEX_ANALYTICS: Questions requiring multiple data sources and advanced analytics
+- DBT_MODEL: Questions about creating or modifying dbt models
+- COFFEE_BRIEFING: Requests for regular briefings (daily/weekly/monthly)
+- REASONING_LOOP: Questions requiring multi-step reasoning
+- MULTI_SOURCE: Questions requiring data from multiple sources
+- THINKING_ANALYSIS: Questions requiring deep thinking and analysis
+
+Personas:
+- VP_SALES: Strategic insights, team performance, resource allocation
+- ACCOUNT_EXECUTIVE: Deal preparation, customer insights, personal performance
+- SALES_MANAGER: Team coaching, performance management, process optimization
+- CDO: Data strategy, analytics infrastructure, governance
+- DATA_ENGINEER: Technical implementation, data pipelines, model development
+- SALES_OPERATIONS: Process optimization, data quality, reporting
+- CUSTOMER_SUCCESS: Customer health, retention, engagement
+
+Analyze the query and respond with JSON:
+{
+    "primary_intent": "intent_type",
+    "confidence": 0.95,
+    "persona": "persona_type",
+    "data_sources": ["salesforce", "snowflake", "dbt"],
+    "complexity_level": "low|medium|high",
+    "reasoning_required": true/false,
+    "coffee_briefing": true/false,
+    "dbt_model_required": true/false,
+    "thinking_required": true/false,
+    "explanation": "Detailed explanation of classification"
+}
+
+Query: {query}

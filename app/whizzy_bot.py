@@ -19,14 +19,12 @@ import json
 import time
 import asyncio
 import threading
-from datetime import datetime
-from typing import Dict, Any, Optional, List
+from typing import Dict, Any, Optional
 from slack_sdk.socket_mode import SocketModeClient
 from slack_sdk.web import WebClient
 from slack_sdk.socket_mode.request import SocketModeRequest
 from slack_sdk.socket_mode.response import SocketModeResponse
 from dotenv import load_dotenv
-from app.agent import SalesforceAgent
 
 # Load environment variables
 load_dotenv()
@@ -38,14 +36,10 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-SUBSCRIPTIONS_FILE = os.path.join(os.path.dirname(__file__), '..', 'data', 'subscriptions.json')
-
-
 class WhizzyBot:
     """Whizzy Bot - Salesforce Analytics Bot"""
     
     def __init__(self):
-        self.subscriptions = self._load_subscriptions()
         # Load tokens from environment
         self.app_token = os.getenv('SLACK_APP_TOKEN')
         self.bot_token = os.getenv('SLACK_BOT_TOKEN')
@@ -58,16 +52,10 @@ class WhizzyBot:
         self.web_client = WebClient(token=self.bot_token)
         self.client = None
         self.request_count = 0
-        self.conversation_history: Dict[str, list] = {}
         
         # Initialize Salesforce connection
         self.salesforce_client = None
         self._initialize_salesforce()
-        self.salesforce_agent = None
-        if self.salesforce_client:
-            self.salesforce_agent = SalesforceAgent(self.salesforce_client)
-        else:
-            logger.warning("Salesforce client not available, agent not initialized.")
         
         logger.info("🚀 Whizzy Bot initialized successfully")
         logger.info(f"🔍 App Token: {self.app_token[:30]}...")
@@ -120,59 +108,44 @@ class WhizzyBot:
                     channel = event.get("channel")
                     text = event.get("text", "")
                     user = event.get("user", "")
-                    ts = event.get("ts", "")
-                    thread_ts = event.get("thread_ts", ts)
-                    conversation_id = f"{channel}-{thread_ts}"
-
-                    if "bot_id" in event: # Ignore messages from bots, including self
-                        return
 
                     if event_type == "app_mention":
-                        bot_id = f"<@{client.current_bot_id}>"
+                        bot_id = f"<@{event.get('bot_id', 'U09CPBX5T1N')}>"
                         text = text.replace(bot_id, "").strip()
                     
-                    logger.info(f"📨 Received message: Channel={channel}, User={user}, Text='{text}', ConversationID={conversation_id}")
+                    logger.info(f"📨 Channel: {channel}, User: {user}, Text: '{text}'")
                     
-                    # Send immediate response in a thread
+                    # Send immediate response
                     immediate_response = "🤖 **Whizzy**: Processing your request..."
                     try:
-                        self.web_client.chat_postMessage(channel=channel, text=immediate_response, thread_ts=ts)
-                        logger.info("✅ Sent immediate response to thread")
+                        self.web_client.chat_postMessage(channel=channel, text=immediate_response)
+                        logger.info("✅ Sent immediate response")
                     except Exception as e:
                         logger.error(f"❌ Error sending immediate response: {e}")
                     
                     # Process in background
-                    threading.Thread(target=self._process_query, args=(text, channel, user, conversation_id, ts)).start()
+                    threading.Thread(target=self._process_query, args=(text, channel, user)).start()
             else:
                 logger.info(f"⏭️ Non-events_api request: {req.type}")
                 
         except Exception as e:
             logger.error(f"❌ Error handling request: {e}")
     
-    def _process_query(self, text: str, channel: str, user: str, conversation_id: str, thread_ts: str):
+    def _process_query(self, text: str, channel: str, user: str):
         """Process user query and generate response"""
         try:
             if not text.strip():
                 return
             
-            logger.info(f"🤖 Processing query: '{text}' for conversation {conversation_id}")
-
-            # For now, we are just storing history. In the next step, we'll pass it to the agent.
-            history = self.conversation_history.get(conversation_id, [])
+            logger.info(f"🤖 Processing query: '{text}'")
             
             # Get response based on query type
-            response = self._generate_response(text, user, history)
+            response = self._generate_response(text, user)
             
-            # Update history
-            history.append({"role": "user", "content": text})
-            history.append({"role": "assistant", "content": response})
-            self.conversation_history[conversation_id] = history[-10:]  # Keep last 5 pairs
-            logger.info(f"📓 Updated conversation history for {conversation_id}")
-
             # Send response
             try:
-                self.web_client.chat_postMessage(channel=channel, text=response, thread_ts=thread_ts)
-                logger.info("✅ Sent response to thread")
+                self.web_client.chat_postMessage(channel=channel, text=response)
+                logger.info("✅ Sent response")
             except Exception as e:
                 logger.error(f"❌ Error sending response: {e}")
                 
@@ -180,143 +153,338 @@ class WhizzyBot:
             logger.error(f"❌ Error in query processing: {e}")
             error_response = "🤖 **Whizzy**: I encountered an error processing your request. Please try again."
             try:
-                self.web_client.chat_postMessage(channel=channel, text=error_response, thread_ts=thread_ts)
+                self.web_client.chat_postMessage(channel=channel, text=error_response)
             except Exception as send_error:
                 logger.error(f"❌ Error sending error response: {send_error}")
     
-    def _generate_response(self, text: str, user: str, history: list[dict]) -> str:
-        """Generate response using the Salesforce Agent."""
+    def _generate_response(self, text: str, user: str) -> str:
+        """Generate response based on query type"""
         text_lower = text.lower()
 
-        # Add a backdoor for help
-        if "help" in text_lower:
-            return self._get_help_response()
-
-        # --- Subscription Management ---
-        if text_lower.startswith("subscribe"):
-            return self._handle_subscribe(user, text)
-
-        if text_lower.startswith("unsubscribe"):
-            return self._handle_unsubscribe(user)
-
-        if text_lower.startswith("subscriptions"):
-            return self._handle_list_subscriptions(user)
-
-        if not self.salesforce_agent:
-            return "🤖 **Whizzy**: The Salesforce Agent is not available. Please check the configuration."
-
-        logger.info("Handing query to Salesforce Agent", user_query=text)
-        soql_query = self.salesforce_agent.generate_soql_query(text, history)
-
-        if soql_query.startswith("Error:"):
-            logger.warning("Agent failed to generate SOQL", error=soql_query)
-            return f"🤖 **Whizzy**: I had trouble generating a Salesforce query for that. {soql_query}"
-
-        # If the agent returns a non-query response, it might be a clarifying question or a direct answer.
-        if not soql_query.upper().startswith("SELECT"):
-            logger.info("Agent returned a conversational response", response=soql_query)
-            return soql_query
-
         try:
-            logger.info("Executing generated SOQL", soql_query=soql_query)
-            result = self.salesforce_client.query_all(soql_query)
-            
-            if result['totalSize'] == 0:
-                return "I found no results for that query."
-            
-            # Convert the raw data to a string for the summarizer
-            raw_data_str = json.dumps(result['records'], indent=2, default=str)
+            if not self.salesforce_client:
+                return "🤖 **Whizzy**: Salesforce connection not available. Please check configuration."
 
-            # Summarize the data using the agent
-            summary = self.salesforce_agent.summarize_data_with_llm(text, raw_data_str)
-            return summary
+            # Win rate analysis
+            if "win rate" in text_lower:
+                return self._get_win_rate_analysis()
+
+            # Pipeline overview
+            elif "pipeline" in text_lower:
+                return self._get_pipeline_overview()
+
+            # Top accounts
+            elif any(phrase in text_lower for phrase in ["top 10 accounts", "accounts by revenue", "top accounts"]):
+                return self._get_top_accounts()
+
+            # Executive briefing
+            elif "briefing" in text_lower:
+                return self._get_executive_briefing()
+
+            # Deal analysis
+            elif any(phrase in text_lower for phrase in ["biggest deals", "deal analysis", "top deals"]):
+                return self._get_deal_analysis()
+
+            # Performance metrics
+            elif any(phrase in text_lower for phrase in ["performance", "metrics", "kpi"]):
+                return self._get_performance_metrics()
+
+            # Default response
+            else:
+                return self._get_help_response()
 
         except Exception as e:
-            logger.error("Error executing SOQL query", soql_query=soql_query, error=e)
-            return f"🤖 **Whizzy**: I tried to run a query, but it failed: `{soql_query}`. \nError: `{e}`"
+            logger.error(f"❌ Error generating response: {e}")
+            return "🤖 **Whizzy**: I encountered an error accessing Salesforce data. Please try again."
+
+    def _get_win_rate_analysis(self) -> str:
+        """Get win rate analysis from Salesforce"""
+        try:
+            total_result = self.salesforce_client.query("SELECT COUNT(Id) total FROM Opportunity")
+            won_result = self.salesforce_client.query("SELECT COUNT(Id) won FROM Opportunity WHERE StageName = 'Closed Won'")
+            lost_result = self.salesforce_client.query("SELECT COUNT(Id) lost FROM Opportunity WHERE StageName = 'Closed Lost'")
+
+            total = total_result['records'][0]['total']
+            won = won_result['records'][0]['won']
+            lost = lost_result['records'][0]['lost']
+            win_rate = (won / total * 100) if total > 0 else 0
+
+            return f"""🎯 **Win Rate Analysis**
+
+📊 **Overall Performance:**
+• Win Rate: {win_rate:.1f}%
+• Total Opportunities: {total:,}
+• Won: {won:,}
+• Lost: {lost:,}
+
+💡 **Insights:**
+• Conversion ratio: {won}:{lost} (won:lost)
+• Success rate: {win_rate:.1f}% of all opportunities
+• Pipeline efficiency: {total - won - lost:,} opportunities still active
+
+🎯 **Recommendations:**
+• Focus on opportunities in negotiation stage
+• Review lost deals for improvement opportunities
+• Monitor pipeline velocity for forecasting"""
+
+        except Exception as e:
+            logger.error(f"❌ Error getting win rate: {e}")
+            return "🤖 **Whizzy**: Unable to retrieve win rate data at this time."
+
+    def _get_pipeline_overview(self) -> str:
+        """Get pipeline overview from Salesforce"""
+        try:
+            result = self.salesforce_client.query(
+                "SELECT StageName, COUNT(Id) total_count, SUM(Amount) total_amount "
+                "FROM Opportunity WHERE IsClosed = false "
+                "GROUP BY StageName ORDER BY total_amount DESC"
+            )
+
+            pipeline_data = []
+            total_value = 0
+            total_opportunities = 0
+
+            for record in result['records']:
+                stage = record['StageName']
+                count = record['total_count']
+                amount = record['total_amount'] or 0
+                total_value += amount
+                total_opportunities += count
+                pipeline_data.append(f"• **{stage}**: {count:,} opportunities, ${amount:,.0f}")
+
+            return f"""📊 **Pipeline Overview**
+
+💰 **Total Pipeline Value**: ${total_value:,.0f}
+📈 **Total Opportunities**: {total_opportunities:,}
+
+**Stage Breakdown:**
+{chr(10).join(pipeline_data[:5])}
+
+💡 **Key Insights:**
+• Average deal size: ${total_value / total_opportunities:,.0f} per opportunity
+• Pipeline health: {len(pipeline_data)} active stages
+• Focus areas: Top 3 stages represent highest value
+
+🎯 **Strategic Actions:**
+• Prioritize high-value stages
+• Monitor pipeline velocity
+• Forecast based on historical win rates"""
+
+        except Exception as e:
+            logger.error(f"❌ Error getting pipeline: {e}")
+            return "🤖 **Whizzy**: Unable to retrieve pipeline data at this time."
+
+    def _get_top_accounts(self) -> str:
+        """Get top accounts by revenue"""
+        try:
+            result = self.salesforce_client.query(
+                "SELECT Name, AnnualRevenue, Industry, BillingCity, BillingState "
+                "FROM Account WHERE AnnualRevenue > 0 "
+                "ORDER BY AnnualRevenue DESC LIMIT 10"
+            )
+            
+            accounts = []
+            total_revenue = 0
+            
+            for i, record in enumerate(result['records'], 1):
+                name = record['Name']
+                revenue = record['AnnualRevenue'] or 0
+                industry = record['Industry'] or 'Unknown'
+                city = record['BillingCity'] or 'Unknown'
+                state = record['BillingState'] or 'Unknown'
+                total_revenue += revenue
+
+                accounts.append(f"{i}. **{name}**")
+                accounts.append(f"   💰 Revenue: ${revenue:,.0f}")
+                accounts.append(f"   🏭 Industry: {industry}")
+                accounts.append(f"   📍 Location: {city}, {state}")
+                accounts.append("")
+
+            return f"""🏆 **Top 10 Accounts by Revenue**
+
+💰 **Total Revenue**: ${total_revenue:,.0f}
+📊 **Average Revenue**: ${total_revenue / len(result['records']):,.0f}
+
+{chr(10).join(accounts)}
+
+💡 **Insights:**
+• Top account represents {result['records'][0]['AnnualRevenue'] / total_revenue * 100:.1f}% of total revenue
+• Geographic distribution across {len(set(r['BillingState'] for r in result['records'] if r['BillingState']))} states
+• Industry diversity: {len(set(r['Industry'] for r in result['records'] if r['Industry']))} industries
+
+🎯 **Strategic Focus:**
+• Nurture relationships with top accounts
+• Identify expansion opportunities
+• Target similar companies in same industries"""
+
+        except Exception as e:
+            logger.error(f"❌ Error getting top accounts: {e}")
+            return "🤖 **Whizzy**: Unable to retrieve account data at this time."
     
-    def _load_subscriptions(self) -> List[Dict[str, Any]]:
-        """Loads subscriptions from the JSON file."""
+    def _get_executive_briefing(self) -> str:
+        """Get executive briefing with strategic insights"""
         try:
-            if os.path.exists(SUBSCRIPTIONS_FILE):
-                with open(SUBSCRIPTIONS_FILE, 'r') as f:
-                    return json.load(f)
-        except Exception as e:
-            logger.error(f"Error loading subscriptions: {e}")
-        return []
+            # Get key metrics
+            opp_result = self.salesforce_client.query(
+                "SELECT COUNT(Id) total, SUM(Amount) total_value "
+                "FROM Opportunity WHERE IsClosed = false"
+            )
 
-    def _save_subscriptions(self):
-        """Saves the current subscriptions to the JSON file."""
+            win_rate_result = self.salesforce_client.query(
+                "SELECT COUNT(Id) total, SUM(CASE WHEN StageName = 'Closed Won' THEN 1 ELSE 0 END) won "
+                "FROM Opportunity"
+            )
+
+            opp_data = opp_result['records'][0]
+            win_data = win_rate_result['records'][0]
+
+            total_opps = opp_data['total']
+            total_value = opp_data['total_value'] or 0
+            total_all = win_data['total']
+            won_all = win_data['won']
+            win_rate = (won_all / total_all * 100) if total_all > 0 else 0
+
+            return f"""📋 **Executive Briefing**
+
+📊 **Key Metrics:**
+• **Open Opportunities**: {total_opps:,}
+• **Pipeline Value**: ${total_value:,.0f}
+• **Overall Win Rate**: {win_rate:.1f}%
+• **Total Historical**: {total_all:,} opportunities
+
+🎯 **Strategic Insights:**
+• Pipeline health: {total_opps:,} active opportunities
+• Average deal size: ${total_value / total_opps:,.0f}
+• Conversion potential: ${total_value * (win_rate / 100):,.0f} based on historical rates
+
+📈 **Focus Areas:**
+• High-value opportunities in negotiation stage
+• Accounts with expansion potential
+• Pipeline velocity optimization
+
+🚀 **Action Items:**
+• Review top 10 opportunities weekly
+• Monitor win rate trends
+• Forecast Q4 pipeline performance
+• Identify resource allocation needs
+
+💡 **Risk Assessment:**
+• Pipeline concentration risk
+• Win rate volatility
+• Resource constraints
+
+🎯 **Next Steps:**
+• Weekly pipeline reviews
+• Monthly forecasting updates
+• Quarterly strategic planning"""
+
+        except Exception as e:
+            logger.error(f"❌ Error getting executive briefing: {e}")
+            return "🤖 **Whizzy**: Unable to generate executive briefing at this time."
+
+    def _get_deal_analysis(self) -> str:
+        """Get deal analysis and insights"""
         try:
-            with open(SUBSCRIPTIONS_FILE, 'w') as f:
-                json.dump(self.subscriptions, f, indent=2)
+            result = self.salesforce_client.query(
+                "SELECT Name, Amount, StageName, CloseDate, Account.Name, Owner.Name "
+                "FROM Opportunity WHERE Amount > 0 "
+                "ORDER BY Amount DESC LIMIT 10"
+            )
+
+            deals = []
+            total_value = 0
+
+            for i, record in enumerate(result['records'], 1):
+                name = record['Name']
+                amount = record['Amount'] or 0
+                stage = record['StageName']
+                close_date = record['CloseDate']
+                account = record['Account']['Name'] if record['Account'] else 'Unknown'
+                owner = record['Owner']['Name'] if record['Owner'] else 'Unknown'
+                total_value += amount
+
+                deals.append(f"{i}. **{name}**")
+                deals.append(f"   💰 Amount: ${amount:,.0f}")
+                deals.append(f"   📊 Stage: {stage}")
+                deals.append(f"   🏢 Account: {account}")
+                deals.append(f"   👤 Owner: {owner}")
+                if close_date:
+                    deals.append(f"   📅 Close Date: {close_date}")
+                deals.append("")
+
+            return f"""💼 **Top Deals Analysis**
+
+💰 **Total Value**: ${total_value:,.0f}
+📊 **Average Deal Size**: ${total_value / len(result['records']):,.0f}
+
+{chr(10).join(deals)}
+
+💡 **Key Insights:**
+• Largest deal: ${result['records'][0]['Amount']:,.0f} ({result['records'][0]['Name']})
+• Deal size range: ${result['records'][-1]['Amount']:,.0f} - ${result['records'][0]['Amount']:,.0f}
+• Stage distribution: {len(set(r['StageName'] for r in result['records']))} active stages
+
+🎯 **Strategic Actions:**
+• Focus resources on high-value deals
+• Monitor deal velocity
+• Identify expansion opportunities
+• Coach owners on deal management
+
+📈 **Forecasting:**
+• Pipeline potential: ${total_value:,.0f}
+• Risk assessment: Monitor close dates
+• Resource allocation: Prioritize by value"""
+
         except Exception as e:
-            logger.error(f"Error saving subscriptions: {e}")
+            logger.error(f"❌ Error getting deal analysis: {e}")
+            return "🤖 **Whizzy**: Unable to retrieve deal data at this time."
 
-    def _handle_subscribe(self, user_id: str, text: str) -> str:
-        """Handles a user's request to subscribe to a briefing."""
-        parts = text.lower().split()
-        if len(parts) != 3:
-            return "Sorry, I didn't understand that. Please use the format: `subscribe <frequency> <persona>` (e.g., `subscribe daily vp`)."
-
-        _, frequency, persona_short = parts
-
-        valid_freqs = ['daily', 'weekly']
-        if frequency not in valid_freqs:
-            return f"Invalid frequency. Please choose from: {', '.join(valid_freqs)}."
-
-        valid_personas = {'vp': 'VP of Sales', 'ae': 'Account Executive'}
-        if persona_short not in valid_personas:
-            return f"Invalid persona. Please choose from: {', '.join(valid_personas.keys())}."
-
-        persona = valid_personas[persona_short]
-
-        # Get user's DM channel
+    def _get_performance_metrics(self) -> str:
+        """Get performance metrics and KPIs"""
         try:
-            im_response = self.web_client.conversations_open(users=user_id)
-            channel_id = im_response['channel']['id']
+            # Get various performance metrics
+            opp_count = self.salesforce_client.query("SELECT COUNT(Id) total FROM Opportunity")
+            won_count = self.salesforce_client.query("SELECT COUNT(Id) won FROM Opportunity WHERE StageName = 'Closed Won'")
+            open_count = self.salesforce_client.query("SELECT COUNT(Id) open FROM Opportunity WHERE IsClosed = false")
+
+            total = opp_count['records'][0]['total']
+            won = won_count['records'][0]['won']
+            open_opps = open_count['records'][0]['open']
+            win_rate = (won / total * 100) if total > 0 else 0
+
+            return f"""📊 **Performance Metrics**
+
+🎯 **Key Performance Indicators:**
+• **Total Opportunities**: {total:,}
+• **Won Opportunities**: {won:,}
+• **Open Opportunities**: {open_opps:,}
+• **Win Rate**: {win_rate:.1f}%
+• **Conversion Rate**: {won / (total - open_opps) * 100:.1f}% (of closed deals)
+
+📈 **Pipeline Metrics:**
+• **Pipeline Coverage**: {open_opps:,} active opportunities
+• **Pipeline Health**: {open_opps / total * 100:.1f}% of total opportunities
+• **Deal Velocity**: Monitor average days in each stage
+
+💡 **Performance Insights:**
+• Success rate: {win_rate:.1f}% overall
+• Pipeline efficiency: {open_opps:,} opportunities in progress
+• Conversion optimization: Focus on closing open deals
+
+🎯 **Improvement Areas:**
+• Increase win rate through better qualification
+• Reduce time in pipeline stages
+• Improve deal velocity
+• Enhance forecasting accuracy
+
+📊 **Benchmarks:**
+• Industry average win rate: 20-30%
+• Target win rate: 25%+
+• Pipeline coverage: 3-4x quota"""
+
         except Exception as e:
-            logger.error(f"Failed to open DM with user {user_id}: {e}")
-            return "I couldn't open a direct message channel with you to send briefings."
-
-        # Remove existing subscription for the user, if any
-        self.subscriptions = [s for s in self.subscriptions if s['user_id'] != user_id]
-
-        new_subscription = {
-            "user_id": user_id,
-            "channel_id": channel_id,
-            "persona": persona,
-            "frequency": frequency,
-            "subscribed_at": datetime.now().isoformat()
-        }
-        self.subscriptions.append(new_subscription)
-        self._save_subscriptions()
-
-        logger.info(f"User {user_id} subscribed to {frequency} {persona} briefings.")
-        return f"✅ You've been subscribed to **{frequency} {persona}** briefings! I'll send them to you via DM."
-
-    def _handle_unsubscribe(self, user_id: str) -> str:
-        """Handles a user's request to unsubscribe."""
-        original_count = len(self.subscriptions)
-        self.subscriptions = [s for s in self.subscriptions if s['user_id'] != user_id]
-
-        if len(self.subscriptions) < original_count:
-            self._save_subscriptions()
-            logger.info(f"User {user_id} unsubscribed.")
-            return "You have been successfully unsubscribed from all briefings."
-        else:
-            return "You don't seem to have any active subscriptions."
-
-    def _handle_list_subscriptions(self, user_id: str) -> str:
-        """Lists the current user's subscriptions."""
-        user_subs = [s for s in self.subscriptions if s['user_id'] == user_id]
-        if not user_subs:
-            return "You are not subscribed to any briefings."
-
-        response = "Here are your current subscriptions:\n"
-        for sub in user_subs:
-            response += f"- **{sub['frequency'].capitalize()} {sub['persona']} Briefing**\n"
-        return response
+            logger.error(f"❌ Error getting performance metrics: {e}")
+            return "🤖 **Whizzy**: Unable to retrieve performance data at this time."
 
     def _get_help_response(self) -> str:
         """Get help response with available commands"""
