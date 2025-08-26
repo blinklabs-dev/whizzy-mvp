@@ -17,7 +17,7 @@ import logging
 import json
 import re
 from typing import Dict, Any, List, Optional, Tuple, Union
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, asdict
 from enum import Enum
 from datetime import datetime, timedelta
 import uuid
@@ -661,6 +661,22 @@ class EnhancedIntelligentAgenticSystem:
                 queries = await self._builder_agent(plan)
                 data = await self._runner_agent(queries, plan)
                 narrator_output = await self._narrator_agent(data, plan, query)
+            elif intent == IntentType.COFFEE_BRIEFING.value:
+                logger.info("Routing to Coffee Briefing creation flow.")
+                # For now, use the old coffee briefing method until we implement the four-agent pipeline
+                intent_analysis_obj = IntentAnalysis(
+                    primary_intent=IntentType(intent),
+                    confidence=plan.get('confidence'),
+                    persona=PersonaType(plan.get('persona')),
+                    data_sources=[DataSourceType(ds) for ds in plan.get("data_sources", [])],
+                    complexity_level=plan.get('complexity_level'),
+                    reasoning_required=plan.get('reasoning_required'),
+                    coffee_briefing=True,
+                    dbt_model_required=plan.get('dbt_model_required'),
+                    thinking_required=plan.get('thinking_required'),
+                    explanation=plan.get('explanation')
+                )
+                return await self._handle_coffee_briefing(query, intent_analysis_obj, self._get_context_state(user_id))
             else:
                 # Fallback for other queries until they are implemented
                 logger.info(f"Fallback for intent: {intent}")
@@ -668,6 +684,22 @@ class EnhancedIntelligentAgenticSystem:
 
 
             # The final AgentResponse will be built from the Narrator's JSON output.
+            # Convert enums to strings for JSON serialization
+            serializable_plan = {}
+            for key, value in plan.items():
+                if hasattr(value, 'value'):  # Enum
+                    serializable_plan[key] = value.value
+                elif isinstance(value, list):
+                    # Handle lists that might contain enums
+                    serializable_plan[key] = []
+                    for item in value:
+                        if hasattr(item, 'value'):  # Enum
+                            serializable_plan[key].append(item.value)
+                        else:
+                            serializable_plan[key].append(item)
+                else:
+                    serializable_plan[key] = value
+            
             return AgentResponse(
                 response_text=json.dumps(narrator_output, indent=2), # For now, just show the raw JSON
                 data_sources_used=[DataSourceType(ds) for ds in plan.get("data_sources", [])],
@@ -676,7 +708,7 @@ class EnhancedIntelligentAgenticSystem:
                 persona_alignment=0.9, # Placeholder
                 actionability_score=0.9, # Placeholder
                 quality_metrics={},
-                thinking_process=json.dumps(plan, indent=2)
+                thinking_process=json.dumps(serializable_plan, indent=2)
             )
 
         except Exception as e:
