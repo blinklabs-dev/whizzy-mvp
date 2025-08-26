@@ -816,7 +816,8 @@ class EnhancedIntelligentAgenticSystem:
             slack_markdown = briefing_contract.to_slack_markdown()
             
             # Store structured data in context for potential use
-            context_state.current_context['briefing_contract'] = json_output
+            if context_state and hasattr(context_state, 'current_context'):
+                context_state.current_context['briefing_contract'] = json_output
             
             return AgentResponse(
                 response_text=slack_markdown,
@@ -942,15 +943,15 @@ class EnhancedIntelligentAgenticSystem:
             # Use cheaper model for summarization to avoid rate limits
             model_to_use = "gpt-3.5-turbo" if self.environment == "development" else "gpt-4"
             
-                                response = await asyncio.get_event_loop().run_in_executor(
-                        self.executor,
-                        lambda: self.openai_client.chat.completions.create(
-                            model=model_to_use,
-                            messages=messages,
-                            temperature=0.5,
-                            max_tokens=200  # Further reduced for more concise responses
-                        )
-                    )
+            response = await asyncio.get_event_loop().run_in_executor(
+                self.executor,
+                lambda: self.openai_client.chat.completions.create(
+                    model=model_to_use,
+                    messages=messages,
+                    temperature=0.5,
+                    max_tokens=200  # Further reduced for more concise responses
+                )
+            )
             return response.choices[0].message.content.strip()
         except Exception as e:
             logger.error(f"Data summarization API call failed: {e}")
