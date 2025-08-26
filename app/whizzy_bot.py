@@ -19,7 +19,8 @@ import json
 import time
 import asyncio
 import threading
-from typing import Dict, Any, Optional
+from datetime import datetime
+from typing import Dict, Any, Optional, List
 from slack_sdk.socket_mode import SocketModeClient
 from slack_sdk.web import WebClient
 from slack_sdk.socket_mode.request import SocketModeRequest
@@ -37,10 +38,14 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+SUBSCRIPTIONS_FILE = os.path.join(os.path.dirname(__file__), '..', 'data', 'subscriptions.json')
+
+
 class WhizzyBot:
     """Whizzy Bot - Salesforce Analytics Bot"""
     
     def __init__(self):
+        self.subscriptions = self._load_subscriptions()
         # Load tokens from environment
         self.app_token = os.getenv('SLACK_APP_TOKEN')
         self.bot_token = os.getenv('SLACK_BOT_TOKEN')
@@ -187,6 +192,16 @@ class WhizzyBot:
         if "help" in text_lower:
             return self._get_help_response()
 
+        # --- Subscription Management ---
+        if text_lower.startswith("subscribe"):
+            return self._handle_subscribe(user, text)
+
+        if text_lower.startswith("unsubscribe"):
+            return self._handle_unsubscribe(user)
+
+        if text_lower.startswith("subscriptions"):
+            return self._handle_list_subscriptions(user)
+
         if not self.salesforce_agent:
             return "🤖 **Whizzy**: The Salesforce Agent is not available. Please check the configuration."
 
@@ -220,6 +235,89 @@ class WhizzyBot:
             logger.error("Error executing SOQL query", soql_query=soql_query, error=e)
             return f"🤖 **Whizzy**: I tried to run a query, but it failed: `{soql_query}`. \nError: `{e}`"
     
+    def _load_subscriptions(self) -> List[Dict[str, Any]]:
+        """Loads subscriptions from the JSON file."""
+        try:
+            if os.path.exists(SUBSCRIPTIONS_FILE):
+                with open(SUBSCRIPTIONS_FILE, 'r') as f:
+                    return json.load(f)
+        except Exception as e:
+            logger.error(f"Error loading subscriptions: {e}")
+        return []
+
+    def _save_subscriptions(self):
+        """Saves the current subscriptions to the JSON file."""
+        try:
+            with open(SUBSCRIPTIONS_FILE, 'w') as f:
+                json.dump(self.subscriptions, f, indent=2)
+        except Exception as e:
+            logger.error(f"Error saving subscriptions: {e}")
+
+    def _handle_subscribe(self, user_id: str, text: str) -> str:
+        """Handles a user's request to subscribe to a briefing."""
+        parts = text.lower().split()
+        if len(parts) != 3:
+            return "Sorry, I didn't understand that. Please use the format: `subscribe <frequency> <persona>` (e.g., `subscribe daily vp`)."
+
+        _, frequency, persona_short = parts
+
+        valid_freqs = ['daily', 'weekly']
+        if frequency not in valid_freqs:
+            return f"Invalid frequency. Please choose from: {', '.join(valid_freqs)}."
+
+        valid_personas = {'vp': 'VP of Sales', 'ae': 'Account Executive'}
+        if persona_short not in valid_personas:
+            return f"Invalid persona. Please choose from: {', '.join(valid_personas.keys())}."
+
+        persona = valid_personas[persona_short]
+
+        # Get user's DM channel
+        try:
+            im_response = self.web_client.conversations_open(users=user_id)
+            channel_id = im_response['channel']['id']
+        except Exception as e:
+            logger.error(f"Failed to open DM with user {user_id}: {e}")
+            return "I couldn't open a direct message channel with you to send briefings."
+
+        # Remove existing subscription for the user, if any
+        self.subscriptions = [s for s in self.subscriptions if s['user_id'] != user_id]
+
+        new_subscription = {
+            "user_id": user_id,
+            "channel_id": channel_id,
+            "persona": persona,
+            "frequency": frequency,
+            "subscribed_at": datetime.now().isoformat()
+        }
+        self.subscriptions.append(new_subscription)
+        self._save_subscriptions()
+
+        logger.info(f"User {user_id} subscribed to {frequency} {persona} briefings.")
+        return f"✅ You've been subscribed to **{frequency} {persona}** briefings! I'll send them to you via DM."
+
+    def _handle_unsubscribe(self, user_id: str) -> str:
+        """Handles a user's request to unsubscribe."""
+        original_count = len(self.subscriptions)
+        self.subscriptions = [s for s in self.subscriptions if s['user_id'] != user_id]
+
+        if len(self.subscriptions) < original_count:
+            self._save_subscriptions()
+            logger.info(f"User {user_id} unsubscribed.")
+            return "You have been successfully unsubscribed from all briefings."
+        else:
+            return "You don't seem to have any active subscriptions."
+
+    def _handle_list_subscriptions(self, user_id: str) -> str:
+        """Lists the current user's subscriptions."""
+        user_subs = [s for s in self.subscriptions if s['user_id'] == user_id]
+        if not user_subs:
+            return "You are not subscribed to any briefings."
+
+        response = "Here are your current subscriptions:\n"
+        for sub in user_subs:
+            response += f"- **{sub['frequency'].capitalize()} {sub['persona']} Briefing**\n"
+        return response
+
     def _get_help_response(self) -> str:
         """Get help response with available commands"""
         return """🤖 **Whizzy Bot - Salesforce Analytics**
