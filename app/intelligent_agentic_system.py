@@ -605,7 +605,6 @@ class EnhancedIntelligentAgenticSystem:
                 logger.info("Routing to dbt model creation flow.")
                 return await self._handle_dbt_model_request(query, intent_analysis, self._get_context_state(user_id))
 
-            # Default flow for Salesforce and Business Intelligence queries
             elif intent in [IntentType.SALESFORCE_QUERY.value, IntentType.BUSINESS_INTELLIGENCE.value]:
                 logger.info("Routing to dynamic SOQL generation flow.")
                 soql_query = await self._builder_agent(plan)
@@ -631,9 +630,8 @@ class EnhancedIntelligentAgenticSystem:
                 )
             else:
                 # Fallback for other intents like DIRECT_ANSWER
-                logger.info(f"Fallback for intent: {intent}")
-                # This can be improved to call a direct answer agent
-                return self._create_error_response("I can only answer questions about Salesforce or create dbt models right now.")
+                logger.info(f"Fallback for intent: {intent}, handling with direct answer.")
+                return await self._handle_direct_answer(query, intent_analysis, self._get_context_state(user_id))
 
 
         except Exception as e:

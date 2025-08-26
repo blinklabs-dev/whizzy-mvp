@@ -18,5 +18,17 @@
   {
     "question": "show me deals from fiscal year 2023",
     "soql": "SELECT Name, Amount FROM Opportunity WHERE FiscalYear = 2023"
+  },
+  {
+    "question": "who is the contact for the Burlington Textiles account?",
+    "soql": "SELECT Name, Email, Phone FROM Contact WHERE Account.Name LIKE 'Burlington Textiles%'"
+  },
+  {
+    "question": "what cases are open for Burlington Textiles Corp of America?",
+    "soql": "SELECT CaseNumber, Subject, Status FROM Case WHERE Account.Name LIKE 'Burlington Textiles Corp of America%' AND IsClosed = false"
+  },
+  {
+    "question": "show me my open deals owned by sfdc playground",
+    "soql": "SELECT Name, Amount FROM Opportunity WHERE Owner.Name = 'sfdc playground' AND IsClosed = false"
   }
 ]

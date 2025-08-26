@@ -63,8 +63,9 @@ class EnhancedWhizzyBot:
         self.client = None
         self.request_count = 0
 
-        # Initialize Enhanced Intelligent Agentic System
-        self.enhanced_system = EnhancedIntelligentAgenticSystem()
+        # NOTE: The EnhancedIntelligentAgenticSystem is now instantiated per-request
+        # to ensure statelessness between different user queries.
+        self.enhanced_system = None
 
         # User context tracking (now handled by the enhanced system)
         self.user_mapping = {}  # Map Slack user IDs to internal user IDs
@@ -165,8 +166,12 @@ class EnhancedWhizzyBot:
                 self._send_enhanced_response(channel, response_text)
                 return
 
+            # Create a new, stateless instance of the agentic system for each request.
+            # This is the fix for the state management bug.
+            enhanced_system = EnhancedIntelligentAgenticSystem()
+
             # Get user context from enhanced system
-            context_state = self.enhanced_system._get_context_state(internal_user_id)
+            context_state = enhanced_system._get_context_state(internal_user_id)
 
             # Process with enhanced intelligent system
             loop = asyncio.new_event_loop()
@@ -174,7 +179,7 @@ class EnhancedWhizzyBot:
 
             try:
                 agent_response = loop.run_until_complete(
-                    self.enhanced_system.process_query(text, {}, internal_user_id)
+                    enhanced_system.process_query(text, {}, internal_user_id)
                 )
 
                 # The agent system now returns a JSON string for briefing cards.
