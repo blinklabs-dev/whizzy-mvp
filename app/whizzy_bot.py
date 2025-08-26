@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
-Whizzy Bot - Consolidated Salesforce Analytics Bot
+Whizzy Bot - Intelligent Salesforce Analytics Bot
 A production-ready Slack bot that provides real-time Salesforce analytics through natural language queries.
 
 Features:
 - Real-time Salesforce integration
+- Smart routing (fast path for simple queries, AI for complex)
 - Persona-specific responses
 - Professional formatting
 - Error handling and logging
@@ -19,7 +20,8 @@ import json
 import time
 import asyncio
 import threading
-from typing import Dict, Any, Optional
+from datetime import datetime
+from typing import Dict, Any, Optional, List
 from slack_sdk.socket_mode import SocketModeClient
 from slack_sdk.web import WebClient
 from slack_sdk.socket_mode.request import SocketModeRequest
@@ -36,10 +38,14 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+SUBSCRIPTIONS_FILE = os.path.join(os.path.dirname(__file__), '..', 'data', 'subscriptions.json')
+
+
 class WhizzyBot:
-    """Whizzy Bot - Salesforce Analytics Bot"""
+    """Whizzy Bot - Intelligent Salesforce Analytics Bot"""
     
     def __init__(self):
+        self.subscriptions = self._load_subscriptions()
         # Load tokens from environment
         self.app_token = os.getenv('SLACK_APP_TOKEN')
         self.bot_token = os.getenv('SLACK_BOT_TOKEN')
@@ -52,19 +58,28 @@ class WhizzyBot:
         self.web_client = WebClient(token=self.bot_token)
         self.client = None
         self.request_count = 0
+        self.conversation_history: Dict[str, list] = {}
         
-        # Initialize Enhanced Intelligent Agentic System
-        try:
-            from app.intelligent_agentic_system import EnhancedIntelligentAgenticSystem
-            self.enhanced_system = EnhancedIntelligentAgenticSystem()
-            logger.info("🧠 Enhanced Intelligent Agentic System initialized")
-        except Exception as e:
-            logger.error(f"❌ Failed to initialize Enhanced System: {e}")
-            self.enhanced_system = None
-        
-        # Initialize Salesforce connection (fallback)
+        # Initialize Salesforce connection
         self.salesforce_client = None
         self._initialize_salesforce()
+        
+        # Initialize intelligent routing system
+        self.router = None
+        self.intelligent_system = None
+        if self.salesforce_client:
+            try:
+                from app.spectrum_aware_router import SpectrumAwareRouter
+                from app.intelligent_agentic_system import EnhancedIntelligentAgenticSystem
+                self.router = SpectrumAwareRouter()
+                self.intelligent_system = EnhancedIntelligentAgenticSystem()
+                logger.info("✅ Intelligent routing system initialized")
+            except Exception as e:
+                logger.error(f"❌ Failed to initialize intelligent system: {e}")
+                self.router = None
+                self.intelligent_system = None
+        else:
+            logger.warning("Salesforce client not available, intelligent system not initialized.")
         
         logger.info("🚀 Whizzy Bot initialized successfully")
         logger.info(f"🔍 App Token: {self.app_token[:30]}...")
@@ -98,7 +113,7 @@ class WhizzyBot:
         sys.exit(0)
     
     def handle_socket_mode_request(self, client: SocketModeClient, req: SocketModeRequest):
-        """Handle Socket Mode requests"""
+        """Handle Socket Mode requests with smart routing"""
         self.request_count += 1
         try:
             logger.info(f"🎯 REQUEST #{self.request_count} RECEIVED!")
@@ -132,7 +147,7 @@ class WhizzyBot:
                     except Exception as e:
                         logger.error(f"❌ Error sending immediate response: {e}")
                     
-                    # Process in background
+                    # Process in background with smart routing
                     threading.Thread(target=self._process_query, args=(text, channel, user)).start()
             else:
                 logger.info(f"⏭️ Non-events_api request: {req.type}")
@@ -141,20 +156,31 @@ class WhizzyBot:
             logger.error(f"❌ Error handling request: {e}")
     
     def _process_query(self, text: str, channel: str, user: str):
-        """Process user query and generate response"""
+        """Process user query with smart routing"""
         try:
             if not text.strip():
                 return
             
             logger.info(f"🤖 Processing query: '{text}'")
             
-            # Get response based on query type
-            response = self._generate_response(text, user)
+            # First check for static commands (fast path)
+            static_response = self._handle_static_commands(text)
+            if static_response:
+                logger.info("⚡ Using fast path for static command")
+                try:
+                    self.web_client.chat_postMessage(channel=channel, text=static_response)
+                    logger.info("✅ Sent static response")
+                except Exception as e:
+                    logger.error(f"❌ Error sending static response: {e}")
+                return
+            
+            # Use intelligent routing for complex queries
+            response = self._generate_intelligent_response(text, user)
             
             # Send response
             try:
                 self.web_client.chat_postMessage(channel=channel, text=response)
-                logger.info("✅ Sent response")
+                logger.info("✅ Sent intelligent response")
             except Exception as e:
                 logger.error(f"❌ Error sending response: {e}")
                 
@@ -166,39 +192,71 @@ class WhizzyBot:
             except Exception as send_error:
                 logger.error(f"❌ Error sending error response: {send_error}")
     
-    def _generate_response(self, text: str, user: str) -> str:
-        """Generate response using Enhanced Intelligent Agentic System"""
+    def _handle_static_commands(self, text: str) -> Optional[str]:
+        """Handle static commands (fast path)"""
+        text_lower = text.lower().strip()
+        
+        # Help commands
+        help_phrases = [
+            "what all can you do", "help", "what can you do", "capabilities", 
+            "features", "commands", "how to use", "what do you do"
+        ]
+        if any(phrase in text_lower for phrase in help_phrases):
+            return self._get_help_response()
+        
+        # Greeting commands
+        greeting_phrases = ["hello", "hi", "hey", "good morning", "good afternoon", "good evening"]
+        if any(phrase in text_lower for phrase in greeting_phrases):
+            return "🤖 **Whizzy**: Hello! I'm your Salesforce analytics assistant. Ask me anything about your data!"
+        
+        # Status commands
+        status_phrases = ["status", "are you working", "bot status"]
+        if any(phrase in text_lower for phrase in status_phrases):
+            return "🤖 **Whizzy**: I'm up and running! Ready to help with your Salesforce analytics."
+        
+        # Subscription commands
+        if text_lower.startswith("subscribe"):
+            return self._handle_subscribe(user, text)
+        elif text_lower.startswith("unsubscribe"):
+            return self._handle_unsubscribe(user)
+        elif text_lower.startswith("list subscriptions"):
+            return self._handle_list_subscriptions(user)
+        
+        return None  # Not a static command, use intelligent routing
+    
+    def _generate_intelligent_response(self, text: str, user: str) -> str:
+        """Generate response using intelligent spectrum-aware routing"""
         try:
-            # Use Enhanced Intelligent Agentic System if available
-            if self.enhanced_system:
-                logger.info("🧠 Using Enhanced Intelligent Agentic System")
-                
-                # Import required components
-                from app.intelligent_agentic_system import PersonaType
-                import asyncio
-                
-                # Create event loop for async execution
-                loop = asyncio.new_event_loop()
-                asyncio.set_event_loop(loop)
-                
-                try:
-                    # Execute query with enhanced system
-                    response = loop.run_until_complete(
-                        self.enhanced_system.execute_query(text, PersonaType.VP_SALES, user)
-                    )
-                    
-                    # Format response
-                    if hasattr(response, 'response_text'):
-                        return f"🤖 **Whizzy**: {response.response_text}"
-                    else:
-                        return f"🤖 **Whizzy**: {str(response)}"
-                        
-                finally:
-                    loop.close()
+            if not self.router or not self.intelligent_system:
+                logger.warning("⚠️ Intelligent system not available, using fallback")
+                return self._generate_fallback_response(text)
             
-            # Fallback to old system if enhanced system not available
-            logger.info("⚠️ Using fallback system")
-            text_lower = text.lower()
+            # Use spectrum-aware routing
+            routing_decision = self.router.route_query(text)
+            logger.info(f"🎯 Layer: {routing_decision.layer.value}, Intent: {routing_decision.specific_intent}, Complexity: {routing_decision.complexity_score:.1f}")
+            
+            if routing_decision.layer.value == "fast_path":
+                response = self.router._get_fast_path_response(routing_decision.specific_intent)
+            elif routing_decision.layer.value == "smart_data_path":
+                # Use async wrapper for intelligent system
+                response = asyncio.run(self.intelligent_system.process_query(text, {}))
+            else:  # deep_thinking_path
+                response = asyncio.run(self.intelligent_system.process_complex_query(text, {}))
+            
+            # Format response
+            if hasattr(response, 'response_text'):
+                return f"🤖 **Whizzy**: {response.response_text}"
+            else:
+                return f"🤖 **Whizzy**: {str(response)}"
+                
+        except Exception as e:
+            logger.error(f"❌ Error in intelligent routing: {e}")
+            return self._generate_fallback_response(text)
+    
+    def _generate_fallback_response(self, text: str) -> str:
+        """Generate fallback response using simple Salesforce queries"""
+        try:
+            text_lower = text.lower().strip()
 
             if not self.salesforce_client:
                 return "🤖 **Whizzy**: Salesforce connection not available. Please check configuration."
@@ -232,8 +290,40 @@ class WhizzyBot:
                 return self._get_help_response()
 
         except Exception as e:
-            logger.error(f"❌ Error generating response: {e}")
+            logger.error(f"❌ Error generating fallback response: {e}")
             return "🤖 **Whizzy**: I encountered an error accessing Salesforce data. Please try again."
+
+    def _get_help_response(self) -> str:
+        """Get help response with available commands"""
+        return """🤖 **Whizzy Bot - Salesforce Analytics**
+
+I can help you with real-time Salesforce analytics! Here are some things you can ask me:
+
+📊 **Data Queries:**
+• "What's our win rate?"
+• "Show me the pipeline"
+• "Top 10 accounts by revenue"
+• "Analyze our biggest deals"
+• "Sales performance metrics"
+
+📋 **Strategic Insights:**
+• "Give me an executive briefing"
+• "What deals are at risk?"
+• "Where should we focus resources?"
+
+💡 **Examples:**
+• "What's our win rate this quarter?"
+• "Show pipeline breakdown by stage"
+• "Top accounts by revenue"
+• "Executive briefing for Q4"
+
+🎯 **I provide:**
+• Real-time Salesforce data
+• Persona-specific insights
+• Actionable recommendations
+• Professional formatting
+
+Just ask me anything about your Salesforce data! 🚀"""
 
     def _get_win_rate_analysis(self) -> str:
         """Get win rate analysis from Salesforce"""
@@ -399,6 +489,7 @@ class WhizzyBot:
 • High-value opportunities in negotiation stage
 • Accounts with expansion potential
 • Pipeline velocity optimization
+• Win rate improvement initiatives
 
 🚀 **Action Items:**
 • Review top 10 opportunities weekly
@@ -524,37 +615,105 @@ class WhizzyBot:
             logger.error(f"❌ Error getting performance metrics: {e}")
             return "🤖 **Whizzy**: Unable to retrieve performance data at this time."
 
-    def _get_help_response(self) -> str:
-        """Get help response with available commands"""
-        return """🤖 **Whizzy Bot - Salesforce Analytics**
+    def _load_subscriptions(self) -> List[Dict[str, Any]]:
+        """Loads subscriptions from the JSON file."""
+        try:
+            if os.path.exists(SUBSCRIPTIONS_FILE):
+                with open(SUBSCRIPTIONS_FILE, 'r') as f:
+                    return json.load(f)
+        except Exception as e:
+            logger.error(f"Error loading subscriptions: {e}")
+        return []
 
-I can help you with real-time Salesforce analytics! Here are some things you can ask me:
+    def _save_subscriptions(self):
+        """Saves the current subscriptions to the JSON file."""
+        try:
+            with open(SUBSCRIPTIONS_FILE, 'w') as f:
+                json.dump(self.subscriptions, f, indent=2)
+        except Exception as e:
+            logger.error(f"Error saving subscriptions: {e}")
 
-📊 **Data Queries:**
-• "What's our win rate?"
-• "Show me the pipeline"
-• "Top 10 accounts by revenue"
-• "Analyze our biggest deals"
-• "Sales performance metrics"
+    def _handle_subscribe(self, user_id: str, text: str) -> str:
+        """Handles a user's request to subscribe to a briefing."""
+        parts = text.lower().split()
+        if len(parts) != 3:
+            return "Sorry, I didn't understand that. Please use the format: `subscribe <frequency> <persona>` (e.g., `subscribe daily vp`)."
 
-📋 **Strategic Insights:**
-• "Give me an executive briefing"
-• "What deals are at risk?"
-• "Where should we focus resources?"
+        _, frequency, persona_short = parts
 
-💡 **Examples:**
-• "What's our win rate this quarter?"
-• "Show pipeline breakdown by stage"
-• "Top accounts by revenue"
-• "Executive briefing for Q4"
+        valid_freqs = ['daily', 'weekly']
+        if frequency not in valid_freqs:
+            return f"Invalid frequency. Please choose from: {', '.join(valid_freqs)}."
 
-🎯 **I provide:**
-• Real-time Salesforce data
-• Persona-specific insights
-• Actionable recommendations
-• Professional formatting
+        valid_personas = {'vp': 'VP of Sales', 'ae': 'Account Executive'}
+        if persona_short not in valid_personas:
+            return f"Invalid persona. Please choose from: {', '.join(valid_personas.keys())}."
 
-Just ask me anything about your Salesforce data! 🚀"""
+        persona = valid_personas[persona_short]
+
+        # Get user's DM channel
+        try:
+            im_response = self.web_client.conversations_open(users=user_id)
+            channel_id = im_response['channel']['id']
+        except Exception as e:
+            logger.error(f"Failed to open DM with user {user_id}: {e}")
+            return "I couldn't open a direct message channel with you to send briefings."
+
+        # Remove existing subscription for the user, if any
+        self.subscriptions = [s for s in self.subscriptions if s['user_id'] != user_id]
+
+        new_subscription = {
+            "user_id": user_id,
+            "channel_id": channel_id,
+            "persona": persona,
+            "frequency": frequency,
+            "subscribed_at": datetime.now().isoformat()
+        }
+        self.subscriptions.append(new_subscription)
+        self._save_subscriptions()
+
+        logger.info(f"User {user_id} subscribed to {frequency} {persona} briefings.")
+        return f"✅ You've been subscribed to **{frequency} {persona}** briefings! I'll send them to you via DM."
+
+    def _handle_unsubscribe(self, user_id: str) -> str:
+        """Handles a user's request to unsubscribe."""
+        original_count = len(self.subscriptions)
+        self.subscriptions = [s for s in self.subscriptions if s['user_id'] != user_id]
+
+        if len(self.subscriptions) < original_count:
+            self._save_subscriptions()
+            logger.info(f"User {user_id} unsubscribed.")
+            return "You have been successfully unsubscribed from all briefings."
+        else:
+            return "You don't seem to have any active subscriptions."
+
+    def _handle_list_subscriptions(self, user_id: str) -> str:
+        """Lists the current user's subscriptions."""
+        user_subs = [s for s in self.subscriptions if s['user_id'] == user_id]
+        if not user_subs:
+            return "You are not subscribed to any briefings."
+
+        response = "Here are your current subscriptions:\n"
+        for sub in user_subs:
+            response += f"- **{sub['frequency'].capitalize()} {sub['persona']} Briefing**\n"
+        return response
+
+    def _get_salesforce_schema(self) -> Dict[str, Any]:
+        """Get Salesforce schema for intelligent routing"""
+        try:
+            if not self.salesforce_client:
+                return {}
+            
+            # Get basic schema information
+            schema = {
+                "objects": ["Opportunity", "Account", "Contact", "Lead"],
+                "opportunity_fields": ["Id", "Name", "Amount", "StageName", "CloseDate", "AccountId", "OwnerId"],
+                "account_fields": ["Id", "Name", "AnnualRevenue", "Industry", "BillingCity", "BillingState"]
+            }
+            return schema
+        except Exception as e:
+            logger.error(f"Error getting schema: {e}")
+            return {}
     
     def start(self):
         """Start the Whizzy bot"""
