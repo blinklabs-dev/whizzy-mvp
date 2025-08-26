@@ -209,14 +209,12 @@ class WhizzyBot:
             if result['totalSize'] == 0:
                 return "I found no results for that query."
             
-            # For now, just dump the JSON result. Better formatting is a future improvement.
-            pretty_result = json.dumps(result['records'], indent=2, default=str)
-            
-            # Check for large results and truncate if necessary
-            if len(pretty_result) > 3800:
-                pretty_result = pretty_result[:3800] + "\n... (result truncated)"
+            # Convert the raw data to a string for the summarizer
+            raw_data_str = json.dumps(result['records'], indent=2, default=str)
 
-            return f"Here is the data I found for your query `{soql_query}`:\n```{pretty_result}```"
+            # Summarize the data using the agent
+            summary = self.salesforce_agent.summarize_data_with_llm(text, raw_data_str)
+            return summary
 
         except Exception as e:
             logger.error("Error executing SOQL query", soql_query=soql_query, error=e)

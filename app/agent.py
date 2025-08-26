@@ -112,3 +112,53 @@ The Salesforce schema you have access to is:
         except Exception as e:
             logger.error("OpenAI API call failed", error=e)
             return f"Error: Failed to communicate with OpenAI API: {e}"
+
+    def summarize_data_with_llm(self, user_query: str, data: str) -> str:
+        """
+        Summarizes raw data using an LLM into a user-friendly format.
+
+        Args:
+            user_query: The original user query for context.
+            data: The raw JSON data from the Salesforce query.
+
+        Returns:
+            A formatted string with a summary of the data.
+        """
+        if not data:
+            return "There was no data to summarize."
+
+        system_prompt = """
+You are a senior business analyst. Your task is to interpret a raw JSON dataset from Salesforce and present it as a clear, insightful, and professionally formatted summary for a business executive.
+
+**Instructions:**
+1.  **Analyze the Data:** Understand the data provided in the JSON.
+2.  **Summarize Key Insights:** Extract the most important insights. Don't just list the data; explain what it means.
+3.  **Use Professional Formatting:** Use Markdown for clear presentation. This includes:
+    - A clear, concise title (e.g., "**🏆 Top 10 Accounts by Revenue**").
+    - Bullet points (•) for key metrics and insights.
+    - Bold text (`**`) to highlight important terms and numbers.
+    - Emojis to add visual cues (e.g., 📊, 💰, 🎯).
+4.  **Maintain a Professional Tone:** The language should be appropriate for an executive audience.
+5.  **Do Not Include the Raw JSON:** Your output should only be the formatted summary.
+"""
+
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": f"Here is the user's original request: '{user_query}'\n\nAnd here is the data I retrieved from Salesforce in JSON format:\n\n{data}"}
+        ]
+
+        logger.info("Summarizing data with LLM", original_query=user_query)
+
+        try:
+            response = self.client.chat.completions.create(
+                model="gpt-4",
+                messages=messages,
+                temperature=0.5,
+                max_tokens=1000
+            )
+            summary = response.choices[0].message.content.strip()
+            logger.info("Successfully generated summary.")
+            return summary
+        except Exception as e:
+            logger.error("Summarization API call failed", error=e)
+            return "Error: Failed to generate a summary for the data."

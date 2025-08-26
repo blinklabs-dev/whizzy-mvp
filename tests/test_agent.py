@@ -131,6 +131,33 @@ class TestSalesforceAgent(unittest.TestCase):
         soql = self.agent.generate_soql_query("tell me a joke")
         self.assertIn("Error: Could not generate a valid SOQL query", soql)
 
+    @patch('openai.resources.chat.completions.Completions.create')
+    def test_summarize_data_with_llm(self, mock_openai_create):
+        """Test the data summarization feature."""
+        mock_summary = "This is a great summary."
+        mock_response = MagicMock()
+        mock_response.choices[0].message.content = mock_summary
+        mock_openai_create.return_value = mock_response
+
+        user_query = "top accounts"
+        json_data = '[{"Name": "ABC Corp", "Revenue": 5000000}]'
+
+        summary = self.agent.summarize_data_with_llm(user_query, json_data)
+
+        # Check that the OpenAI client was called with the summarization prompt
+        mock_openai_create.assert_called_once()
+        call_args = mock_openai_create.call_args
+        messages = call_args.kwargs['messages']
+
+        self.assertEqual(messages[0]['role'], 'system')
+        self.assertIn("You are a senior business analyst", messages[0]['content'])
+        self.assertEqual(messages[1]['role'], 'user')
+        self.assertIn(user_query, messages[1]['content'])
+        self.assertIn(json_data, messages[1]['content'])
+
+        # Verify the result
+        self.assertEqual(summary, mock_summary)
+
 
 if __name__ == '__main__':
     unittest.main()
