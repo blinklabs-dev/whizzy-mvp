@@ -911,6 +911,21 @@ Provide a context-aware response that builds on previous interactions.
             "context_analysis": self._analyze_context_usage()
         }
 
+    def _get_intent_distribution(self) -> Dict[str, int]:
+        """Get distribution of intent types"""
+        distribution = {}
+        for conv in self.conversation_history:
+            if isinstance(conv, dict):
+                intent = conv.get("intent")
+                if intent and hasattr(intent, 'primary_intent'):
+                    intent_type = intent.primary_intent.value
+                    distribution[intent_type] = distribution.get(intent_type, 0) + 1
+            else:
+                if hasattr(conv, 'intent') and hasattr(conv.intent, 'primary_intent'):
+                    intent_type = conv.intent.primary_intent.value
+                    distribution[intent_type] = distribution.get(intent_type, 0) + 1
+        return distribution
+
     def _analyze_context_usage(self) -> Dict[str, Any]:
         """Analyze context usage patterns"""
         context_analysis = {
@@ -1168,79 +1183,3 @@ Provide a context-aware response that builds on previous interactions.
             actionability_score=0.0,
             quality_metrics={"error": 1.0}
         )
-
-    async def process_query(self, query: str, user_context: Dict[str, Any] = None, user_id: str = None) -> AgentResponse:
-        """Main entry point for processing queries"""
-        try:
-            logger.info(f"🧠 Processing query: {query}")
-
-            # Step 1: Intent classification
-            intent_analysis = await self.classify_intent(query, user_context)
-            logger.info(f"🎯 Intent classified: {intent_analysis.primary_intent.value}")
-
-            # Step 2: Orchestrate response
-            response = await self.orchestrate_response(query, intent_analysis)
-            logger.info(f"✅ Response generated with confidence: {response.confidence_score}")
-
-            # Step 3: Store conversation history
-            self.conversation_history.append({
-                "query": query,
-                "intent": intent_analysis,
-                "response": response,
-                "timestamp": datetime.now().isoformat()
-            })
-
-            return response
-
-        except Exception as e:
-            logger.error(f"❌ Error in query processing: {e}")
-            return self._create_error_response(str(e))
-
-    def get_quality_metrics(self) -> Dict[str, Any]:
-        """Get overall quality metrics"""
-        if not self.conversation_history:
-            return {"message": "No conversations yet"}
-
-        # Fix: Handle both dict and object structures
-        total_confidence = 0
-        successful_queries = 0
-
-        for conv in self.conversation_history:
-            if isinstance(conv, dict):
-                # Handle dict structure
-                response = conv.get("response")
-                if response and hasattr(response, 'confidence_score'):
-                    total_confidence += response.confidence_score
-                    if response.confidence_score > 0.5:
-                        successful_queries += 1
-            else:
-                # Handle object structure
-                if hasattr(conv, 'response') and hasattr(conv.response, 'confidence_score'):
-                    total_confidence += conv.response.confidence_score
-                    if conv.response.confidence_score > 0.5:
-                        successful_queries += 1
-
-        avg_confidence = total_confidence / len(self.conversation_history) if self.conversation_history else 0
-        success_rate = successful_queries / len(self.conversation_history) if self.conversation_history else 0
-
-        return {
-            "total_queries": len(self.conversation_history),
-            "average_confidence": avg_confidence,
-            "success_rate": success_rate,
-            "intent_distribution": self._get_intent_distribution()
-        }
-
-    def _get_intent_distribution(self) -> Dict[str, int]:
-        """Get distribution of intent types"""
-        distribution = {}
-        for conv in self.conversation_history:
-            if isinstance(conv, dict):
-                intent = conv.get("intent")
-                if intent and hasattr(intent, 'primary_intent'):
-                    intent_type = intent.primary_intent.value
-                    distribution[intent_type] = distribution.get(intent_type, 0) + 1
-            else:
-                if hasattr(conv, 'intent') and hasattr(conv.intent, 'primary_intent'):
-                    intent_type = conv.intent.primary_intent.value
-                    distribution[intent_type] = distribution.get(intent_type, 0) + 1
-        return distribution

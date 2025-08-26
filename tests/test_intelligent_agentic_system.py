@@ -135,7 +135,7 @@ class TestIntelligentAgenticSystemUAT(unittest.TestCase):
             }
         ]
 
-        metrics = self.system.get_quality_metrics()
+        metrics = self.system.get_enhanced_quality_metrics()
 
         self.assertEqual(metrics["total_queries"], 1)
         self.assertEqual(metrics["average_confidence"], 0.9)
