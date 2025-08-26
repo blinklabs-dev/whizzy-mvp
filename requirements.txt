@@ -1,25 +1,27 @@
-# Whizzy Bot - Enhanced Dependencies
-# Production-ready Salesforce analytics bot with intelligent agentic system
-
-# Core Framework
-slack-sdk>=3.20.0
-simple-salesforce>=1.12.0
+# Core dependencies
+slack-sdk>=3.21.0
 python-dotenv>=1.0.0
-
-# Intelligent Agentic System
+simple-salesforce>=1.12.0
 openai>=1.0.0
+
+# Enhanced intelligent agentic system dependencies
 asyncio
 concurrent.futures
+dataclasses
+enum
+json
+logging
+threading
+time
+datetime
+typing
 
-# Analytics Infrastructure (for future use)
-dbt-core>=1.7.0
-snowflake-connector-python>=3.0.0
-
-# Utilities
-pydantic>=2.0.0
-structlog>=23.0.0
-
-# Development (optional)
+# Testing dependencies
 pytest>=7.0.0
+pytest-asyncio>=0.21.0
+unittest-mock>=1.0.0
+
+# Development dependencies
 black>=23.0.0
 flake8>=6.0.0
+mypy>=1.0.0

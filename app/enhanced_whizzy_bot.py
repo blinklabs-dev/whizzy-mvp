@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """
-Enhanced Whizzy Bot - Intelligent Agentic Integration
+Enhanced Whizzy Bot - Intelligent Agentic Integration with Advanced Thinking
 Features:
-- Advanced intent classification and orchestration
+- Advanced intent classification and orchestration with thinking capabilities
 - Multi-source analytics (Salesforce, Snowflake, dbt)
-- Persona-specific coffee briefings
+- Persona-specific coffee briefings with context awareness
 - Text-to-SOQL, Text-to-dbt, Text-to-Business Intelligence
-- Comprehensive quality evaluation
+- Comprehensive quality evaluation with thinking metrics
+- Chain of thought reasoning and context management
 """
 
 import os
@@ -24,10 +25,11 @@ from slack_sdk.socket_mode.request import SocketModeRequest
 from slack_sdk.socket_mode.response import SocketModeResponse
 from dotenv import load_dotenv
 
-# Import intelligent agentic system
+# Import enhanced intelligent agentic system
 from intelligent_agentic_system import (
-    IntelligentAgenticSystem, IntentType, PersonaType, 
-    DataSourceType, IntentAnalysis, AgentResponse, CoffeeBriefing
+    EnhancedIntelligentAgenticSystem, IntentType, PersonaType, 
+    DataSourceType, IntentAnalysis, AgentResponse, CoffeeBriefing,
+    ChainOfThought, ContextState
 )
 
 # Load environment variables
@@ -41,7 +43,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 class EnhancedWhizzyBot:
-    """Enhanced Whizzy Bot with Intelligent Agentic System"""
+    """Enhanced Whizzy Bot with Advanced Intelligent Agentic System"""
     
     def __init__(self):
         # Load tokens from environment
@@ -57,15 +59,18 @@ class EnhancedWhizzyBot:
         self.client = None
         self.request_count = 0
         
-        # Initialize Intelligent Agentic System
-        self.intelligent_system = IntelligentAgenticSystem()
+        # Initialize Enhanced Intelligent Agentic System
+        self.enhanced_system = EnhancedIntelligentAgenticSystem()
         
-        # User context tracking
-        self.user_contexts = {}
+        # User context tracking (now handled by the enhanced system)
+        self.user_mapping = {}  # Map Slack user IDs to internal user IDs
         
-        logger.info("🚀 Enhanced Whizzy Bot initialized with Intelligent Agentic System")
+        logger.info("🚀 Enhanced Whizzy Bot initialized with Advanced Intelligent Agentic System")
         logger.info(f"🔍 App Token: {self.app_token[:30]}...")
         logger.info(f"🔍 Bot Token: {self.bot_token[:30]}...")
+        logger.info("🧠 Advanced Thinking and Reasoning: ENABLED")
+        logger.info("🔗 Chain of Thought Processing: ENABLED")
+        logger.info("📊 Context Management: ENABLED")
         
         # Set up signal handlers for graceful shutdown
         signal.signal(signal.SIGINT, self._signal_handler)
@@ -79,7 +84,7 @@ class EnhancedWhizzyBot:
         sys.exit(0)
     
     def handle_socket_mode_request(self, client: SocketModeClient, req: SocketModeRequest):
-        """Handle Socket Mode requests with intelligent processing"""
+        """Handle Socket Mode requests with enhanced intelligent processing"""
         self.request_count += 1
         try:
             logger.info(f"🎯 ENHANCED REQUEST #{self.request_count} RECEIVED!")
@@ -106,77 +111,84 @@ class EnhancedWhizzyBot:
                     logger.info(f"📨 Channel: {channel}, User: {user}, Text: '{text}'")
                     
                     # Send immediate response
-                    immediate_response = "🧠 **Enhanced Whizzy**: Processing your request with intelligent analysis..."
+                    immediate_response = "🧠 **Enhanced Whizzy**: Processing your request with advanced thinking and reasoning..."
                     try:
                         self.web_client.chat_postMessage(channel=channel, text=immediate_response)
                         logger.info("✅ Sent immediate response")
                     except Exception as e:
                         logger.error(f"❌ Error sending immediate response: {e}")
                     
-                    # Process in background with intelligent system
-                    threading.Thread(target=self._process_intelligent_response, args=(text, channel, user)).start()
+                    # Process in background with enhanced intelligent system
+                    threading.Thread(target=self._process_enhanced_response, args=(text, channel, user)).start()
             else:
                 logger.info(f"⏭️ Non-events_api request: {req.type}")
                 
         except Exception as e:
             logger.error(f"❌ Error handling request: {e}")
     
-    def _process_intelligent_response(self, text: str, channel: str, user: str):
-        """Process query with intelligent agentic system"""
+    def _process_enhanced_response(self, text: str, channel: str, user: str):
+        """Process query with enhanced intelligent agentic system"""
         try:
             if not text.strip():
                 return
             
-            logger.info(f"🧠 Processing intelligent response: '{text}'")
+            logger.info(f"🧠 Processing enhanced intelligent response: '{text}'")
             
-            # Get user context
-            user_context = self.user_contexts.get(user, {})
+            # Get or create user mapping
+            internal_user_id = self.user_mapping.get(user, f"slack_user_{user}")
+            if user not in self.user_mapping:
+                self.user_mapping[user] = internal_user_id
             
-            # Process with intelligent system
+            # Get user context from enhanced system
+            context_state = self.enhanced_system._get_context_state(internal_user_id)
+            
+            # Process with enhanced intelligent system
             loop = asyncio.new_event_loop()
             asyncio.set_event_loop(loop)
             
             try:
                 agent_response = loop.run_until_complete(
-                    self.intelligent_system.process_query(text, user_context)
+                    self.enhanced_system.process_query(text, {}, internal_user_id)
                 )
                 
-                # Update user context
-                self.user_contexts[user] = {
-                    "last_query": text,
-                    "persona": agent_response.persona_alignment,
-                    "confidence": agent_response.confidence_score,
-                    "timestamp": time.time()
-                }
-                
-                # Format and send response
-                formatted_response = self._format_enhanced_response(agent_response, text)
+                # Format and send enhanced response
+                formatted_response = self._format_enhanced_response(agent_response, text, context_state)
                 self._send_enhanced_response(channel, formatted_response)
                 
             finally:
                 loop.close()
                 
         except Exception as e:
-            logger.error(f"❌ Error in intelligent response processing: {e}")
+            logger.error(f"❌ Error in enhanced intelligent response processing: {e}")
             error_response = "🤖 **Enhanced Whizzy**: I encountered an error processing your request. Please try again."
             try:
                 self.web_client.chat_postMessage(channel=channel, text=error_response)
             except Exception as send_error:
                 logger.error(f"❌ Error sending error response: {send_error}")
     
-    def _format_enhanced_response(self, agent_response: AgentResponse, original_query: str) -> str:
-        """Format enhanced response with quality metrics and insights"""
+    def _format_enhanced_response(self, agent_response: AgentResponse, original_query: str, context_state: ContextState) -> str:
+        """Format enhanced response with thinking and context insights"""
         try:
             # Base response
             response_parts = [agent_response.response_text]
             
+            # Add thinking process if available
+            if agent_response.chain_of_thought:
+                response_parts.append(f"""
+🧠 **Thinking Process**:
+**Chain of Thought Steps**: {len(agent_response.chain_of_thought.thinking_steps)}
+**Reasoning Path**: {agent_response.chain_of_thought.reasoning_path[:200]}...
+**Final Confidence**: {agent_response.chain_of_thought.final_confidence:.1%}
+""")
+            
             # Add quality metrics if confidence is high
             if agent_response.confidence_score > 0.8:
                 response_parts.append(f"""
-📊 **Quality Metrics**:
+📊 **Enhanced Quality Metrics**:
 • Confidence: {agent_response.confidence_score:.1%}
 • Persona Alignment: {agent_response.persona_alignment:.1%}
 • Actionability: {agent_response.actionability_score:.1%}
+• Context Awareness: {agent_response.quality_metrics.get('context_awareness', 0):.1%}
 """)
             
             # Add data sources used
@@ -189,6 +201,15 @@ class EnhancedWhizzyBot:
                 response_parts.append(f"""
 🧠 **Analysis Steps**:
 {chr(10).join(f'• {step}' for step in agent_response.reasoning_steps[:3])}
+""")
+            
+            # Add context insights
+            if context_state.conversation_history:
+                response_parts.append(f"""
+📈 **Context Insights**:
+• Conversation History: {len(context_state.conversation_history)} interactions
+• Session Duration: {(time.time() - context_state.session_start.timestamp()):.0f} seconds
+• Preferred Persona: {context_state.current_context.get('last_persona', 'Unknown')}
 """)
             
             # Add quality insights
@@ -254,66 +275,89 @@ class EnhancedWhizzyBot:
         return chunks
     
     def _schedule_coffee_briefings(self):
-        """Schedule coffee briefings for different personas"""
+        """Schedule enhanced coffee briefings with context awareness"""
         try:
             # This would integrate with a scheduler like APScheduler
             # For now, we'll just log the capability
-            logger.info("☕ Coffee briefing scheduler initialized")
+            logger.info("☕ Enhanced coffee briefing scheduler initialized")
+            logger.info("🧠 Context-aware briefings enabled")
             
-            # Example briefing schedule:
-            # - VP Sales: Daily at 8 AM
-            # - Account Executives: Weekly on Monday
-            # - CDO: Monthly on first Monday
-            # - Sales Managers: Daily at 9 AM
+            # Example briefing schedule with context:
+            # - VP Sales: Daily at 8 AM with strategic context
+            # - Account Executives: Weekly on Monday with deal context
+            # - CDO: Monthly on first Monday with technical context
+            # - Sales Managers: Daily at 9 AM with team context
             
         except Exception as e:
-            logger.error(f"❌ Error setting up coffee briefings: {e}")
+            logger.error(f"❌ Error setting up enhanced coffee briefings: {e}")
     
-    def _send_coffee_briefing(self, channel: str, persona: PersonaType, frequency: str):
-        """Send scheduled coffee briefing"""
+    def _send_enhanced_coffee_briefing(self, channel: str, persona: PersonaType, frequency: str, user_id: str = None):
+        """Send scheduled enhanced coffee briefing with context"""
         try:
             loop = asyncio.new_event_loop()
             asyncio.set_event_loop(loop)
             
             try:
-                # Generate coffee briefing
+                # Get context state for personalized briefing
+                context_state = None
+                if user_id:
+                    context_state = self.enhanced_system._get_context_state(user_id)
+                
+                # Generate enhanced coffee briefing
                 briefing = loop.run_until_complete(
-                    self.intelligent_system._generate_coffee_briefing(persona, frequency)
+                    self.enhanced_system._generate_coffee_briefing(persona, frequency)
                 )
                 
-                # Format and send
-                formatted_briefing = self.intelligent_system._format_coffee_briefing(briefing)
+                # Format with context awareness
+                formatted_briefing = self.enhanced_system._format_coffee_briefing(briefing)
+                
+                # Add context insights if available
+                if context_state:
+                    context_insights = f"""
+📊 **Personalized Context**:
+• Previous Interactions: {len(context_state.conversation_history)}
+• Preferred Data Sources: {[ds.value for ds in context_state.data_source_preferences]}
+• Session Duration: {(time.time() - context_state.session_start.timestamp()):.0f} seconds
+"""
+                    formatted_briefing += context_insights
+                
                 self.web_client.chat_postMessage(channel=channel, text=formatted_briefing)
                 
-                logger.info(f"☕ Sent {frequency} coffee briefing for {persona.value}")
+                logger.info(f"☕ Sent {frequency} enhanced coffee briefing for {persona.value}")
                 
             finally:
                 loop.close()
                 
         except Exception as e:
-            logger.error(f"❌ Error sending coffee briefing: {e}")
+            logger.error(f"❌ Error sending enhanced coffee briefing: {e}")
     
-    def get_system_metrics(self) -> Dict[str, Any]:
-        """Get system performance metrics"""
+    def get_enhanced_system_metrics(self) -> Dict[str, Any]:
+        """Get enhanced system performance metrics with thinking analysis"""
         try:
-            # Get intelligent system metrics
-            intelligent_metrics = self.intelligent_system.get_quality_metrics()
+            # Get enhanced intelligent system metrics
+            enhanced_metrics = self.enhanced_system.get_enhanced_quality_metrics()
             
             # Get bot metrics
             bot_metrics = {
                 "total_requests": self.request_count,
-                "active_users": len(self.user_contexts),
+                "active_users": len(self.user_mapping),
                 "uptime": time.time() - getattr(self, '_start_time', time.time())
             }
             
             return {
-                "intelligent_system": intelligent_metrics,
+                "enhanced_intelligent_system": enhanced_metrics,
                 "bot_performance": bot_metrics,
-                "overall_health": "healthy" if self.request_count > 0 else "initializing"
+                "thinking_capabilities": {
+                    "thinking_rate": enhanced_metrics.get("thinking_rate", 0),
+                    "context_awareness": enhanced_metrics.get("average_context_awareness", 0),
+                    "chain_of_thought_enabled": True,
+                    "context_management": True
+                },
+                "overall_health": "enhanced_healthy" if self.request_count > 0 else "initializing"
             }
             
         except Exception as e:
-            logger.error(f"❌ Error getting system metrics: {e}")
+            logger.error(f"❌ Error getting enhanced system metrics: {e}")
             return {"error": str(e)}
     
     def start(self):
@@ -324,7 +368,7 @@ class EnhancedWhizzyBot:
             # Set start time for metrics
             self._start_time = time.time()
             
-            # Initialize coffee briefing scheduler
+            # Initialize enhanced coffee briefing scheduler
             self._schedule_coffee_briefings()
             
             self.client = SocketModeClient(
@@ -335,9 +379,11 @@ class EnhancedWhizzyBot:
             self.client.socket_mode_request_listeners.append(self.handle_socket_mode_request)
             
             logger.info("✅ Enhanced Whizzy Bot is now listening for requests!")
-            logger.info("🧠 Intelligent Agentic System: ACTIVE")
-            logger.info("☕ Coffee Briefings: SCHEDULED")
-            logger.info("📊 Quality Evaluation: ENABLED")
+            logger.info("🧠 Enhanced Intelligent Agentic System: ACTIVE")
+            logger.info("🔗 Chain of Thought Processing: ENABLED")
+            logger.info("📊 Context Management: ENABLED")
+            logger.info("☕ Enhanced Coffee Briefings: SCHEDULED")
+            logger.info("📈 Enhanced Quality Evaluation: ENABLED")
             logger.info("📱 Try mentioning @whizzy or sending a DM")
             logger.info("🛑 Press Ctrl+C to stop")
             
