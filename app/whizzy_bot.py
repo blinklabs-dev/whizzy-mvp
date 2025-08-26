@@ -55,7 +55,7 @@ class WhizzyBot:
         
         # Initialize Enhanced Intelligent Agentic System
         try:
-            from intelligent_agentic_system import EnhancedIntelligentAgenticSystem
+            from app.intelligent_agentic_system import EnhancedIntelligentAgenticSystem
             self.enhanced_system = EnhancedIntelligentAgenticSystem()
             logger.info("🧠 Enhanced Intelligent Agentic System initialized")
         except Exception as e:
@@ -174,7 +174,7 @@ class WhizzyBot:
                 logger.info("🧠 Using Enhanced Intelligent Agentic System")
                 
                 # Import required components
-                from intelligent_agentic_system import PersonaType
+                from app.intelligent_agentic_system import PersonaType
                 import asyncio
                 
                 # Create event loop for async execution
