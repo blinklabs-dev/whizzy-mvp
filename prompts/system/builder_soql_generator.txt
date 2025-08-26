@@ -11,11 +11,12 @@ You MUST ONLY output a single, valid SOQL query. Do not include any explanatory 
 **User's Question:**
 {query}
 
-**Instructions:**
-1.  **Analyze the Question:** Carefully read the user's question to understand the desired data.
-2.  **Use the Schema:** Refer to the provided Salesforce schema to ensure you are using correct object and field names.
-3.  **Use Examples:** Refer to the few-shot examples to understand the desired query patterns.
-4.  **Be Performant:** Use `WHERE` clauses to filter data as much as possible. Avoid overly broad queries.
-5.  **Return Only SOQL:** Your entire output should be only the SOQL query.
+**CRITICAL Instructions:**
+1.  **Analyze the Question:** Carefully read the user's question to identify the core entities and constraints. Pay close attention to which object is being queried (e.g., `Case`, `Contact`, `Opportunity`).
+2.  **Use the Schema:** You MUST ensure that all object names and field names in your query exactly match the provided Salesforce schema. Do not guess field names.
+3.  **Use Examples:** Refer to the few-shot examples to understand the desired query patterns for different types of questions.
+4.  **Filter by Name Correctly:** When a user asks to filter by a name (e.g., an Account name), you should ALWAYS use the `LIKE` operator with a trailing wildcard (`%`). For example: `WHERE Account.Name LIKE 'Burlington Textiles%'`. This is critical for robustness.
+5.  **Be Performant:** Use `WHERE` clauses to filter data as much as possible. Avoid overly broad queries.
+6.  **Return ONLY SOQL:** Your entire output must be only the SOQL query. Do not add `SOQL:` before it or put it in a code block.
 
 SOQL Query:

@@ -53,6 +53,20 @@ class TestBotRouting(unittest.TestCase):
         MockAgentSystem.assert_called_once()
         mock_agent_instance.process_query.assert_called_once()
 
+    @patch('app.enhanced_whizzy_bot.EnhancedIntelligentAgenticSystem')
+    def test_multiple_requests_are_stateless(self, MockAgentSystem):
+        """Test that two separate requests get two separate, new agent instances."""
+        self.bot._handle_static_commands = MagicMock(return_value=None) # No static match
+
+        # Act
+        self.bot._process_enhanced_response("first query", "C123", "U123")
+        self.bot._process_enhanced_response("second query", "C123", "U123")
+
+        # Assert
+        # Check that the EnhancedIntelligentAgenticSystem class was instantiated twice.
+        # This proves that we are creating a new, stateless agent for each request.
+        self.assertEqual(MockAgentSystem.call_count, 2)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -199,7 +199,59 @@ class TestIntelligentAgenticSystemUAT(unittest.TestCase):
         # You could also add more specific assertions here about the arguments
         # used in the connect call if you had set more specific env vars.
 
+    def test_orchestration_handles_simple_contact_query(self):
+        """Test that a simple query for a contact is routed correctly and returns a summary."""
+        # Arrange
+        query = "who is my contact on Burlington Textiles Corp of America account"
+        plan = {
+            "primary_intent": IntentType.SALESFORCE_QUERY.value,
+            "confidence": 0.98,
+            "explanation": query,
+            "data_sources": [DataSourceType.SALESFORCE.value]
+        }
+        self.system._planner_agent = AsyncMock(return_value=plan)
+        self.system._builder_agent = AsyncMock(return_value="SELECT Name, Email FROM Contact WHERE Account.Name LIKE 'Burlington%'")
+        self.system._runner_agent = AsyncMock(return_value={"records": [{"Name": "John Doe", "Email": "john.doe@burlington.com"}]})
+        self.system._summarize_data = AsyncMock(return_value="The contact is John Doe.")
 
+        intent = IntentAnalysis(primary_intent=IntentType.SALESFORCE_QUERY, confidence=0.98, persona=PersonaType.ACCOUNT_EXECUTIVE, data_sources=[DataSourceType.SALESFORCE], complexity_level="low", reasoning_required=False, coffee_briefing=False, dbt_model_required=False, thinking_required=False, explanation=query)
+
+        # Act
+        response = asyncio.run(self.system.orchestrate_response(query, intent, "user1"))
+
+        # Assert
+        self.system._builder_agent.assert_called_once()
+        self.system._runner_agent.assert_called_once()
+        self.system._summarize_data.assert_called_once()
+        self.assertEqual(response.response_text, "The contact is John Doe.")
+
+    def test_orchestration_handles_case_query(self):
+        """Test that a query for open cases is routed correctly."""
+        # Arrange
+        query = "what cases are open with Burlington Textiles Corp of America account"
+        plan = {
+            "primary_intent": IntentType.SALESFORCE_QUERY.value,
+            "confidence": 0.97,
+            "explanation": query,
+            "data_sources": [DataSourceType.SALESFORCE.value]
+        }
+        # We mock the entire pipeline to test the routing and final output
+        self.system._planner_agent = AsyncMock(return_value=plan)
+        self.system._builder_agent = AsyncMock(return_value="SELECT CaseNumber, Subject, Status FROM Case WHERE Account.Name LIKE 'Burlington%' AND IsClosed = false")
+        self.system._runner_agent = AsyncMock(return_value={"records": [{"CaseNumber": "001", "Subject": "Test Case"}]})
+        self.system._summarize_data = AsyncMock(return_value="There is 1 open case.")
+
+        intent = IntentAnalysis(primary_intent=IntentType.SALESFORCE_QUERY, confidence=0.97, persona=PersonaType.ACCOUNT_EXECUTIVE, data_sources=[DataSourceType.SALESFORCE], complexity_level="low", reasoning_required=False, coffee_briefing=False, dbt_model_required=False, thinking_required=False, explanation=query)
+
+        # Act
+        response = asyncio.run(self.system.orchestrate_response(query, intent, "user1"))
+
+        # Assert
+        # This test currently will pass because we are mocking the whole pipeline.
+        # It serves as a good regression test for the orchestration path.
+        # In the next step, we will improve the *real* builder and can write a more
+        # targeted integration test if needed.
+        self.assertEqual(response.response_text, "There is 1 open case.")
 
 
 class TestQualityEvaluation(unittest.TestCase):
