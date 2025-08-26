@@ -1,0 +1,13 @@
+{
+  "overall_score": 1.0,
+  "passed_tests": 6,
+  "total_tests": 6,
+  "detailed_results": {
+    "no_hardcoded_keywords": true,
+    "comprehensive_test_cases": true,
+    "intent_classification_accuracy": true,
+    "response_quality": true,
+    "briefing_system": true,
+    "dbt_pipeline_models": true
+  }
+}

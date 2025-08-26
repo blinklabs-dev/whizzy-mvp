@@ -161,25 +161,23 @@ class WhizzyBot:
                     
                     logger.info(f"📨 Channel: {channel}, User: {user}, Text: '{text}'")
                     
-                    # Send immediate response and get thread timestamp
+                    # Send immediate response
                     immediate_response = "🤖 **Whizzy**: Processing your request..."
                     try:
-                        response = self.web_client.chat_postMessage(channel=channel, text=immediate_response)
-                        thread_ts = response['ts']  # Get the timestamp for threading
+                        self.web_client.chat_postMessage(channel=channel, text=immediate_response)
                         logger.info("✅ Sent immediate response")
                     except Exception as e:
                         logger.error(f"❌ Error sending immediate response: {e}")
-                        thread_ts = None
                     
                     # Process in background with smart routing
-                    threading.Thread(target=self._process_query, args=(text, channel, user, thread_ts)).start()
+                    threading.Thread(target=self._process_query, args=(text, channel, user)).start()
             else:
                 logger.info(f"⏭️ Non-events_api request: {req.type}")
                 
         except Exception as e:
             logger.error(f"❌ Error handling request: {e}")
     
-    def _process_query(self, text: str, channel: str, user: str, thread_ts: str = None):
+    def _process_query(self, text: str, channel: str, user: str):
         """Process user query with smart routing"""
         try:
             if not text.strip():
@@ -192,7 +190,7 @@ class WhizzyBot:
             if static_response:
                 logger.info("⚡ Using fast path for static command")
                 try:
-                    self.web_client.chat_postMessage(channel=channel, text=static_response, thread_ts=thread_ts)
+                    self.web_client.chat_postMessage(channel=channel, text=static_response)
                     logger.info("✅ Sent static response")
                 except Exception as e:
                     logger.error(f"❌ Error sending static response: {e}")
@@ -203,7 +201,7 @@ class WhizzyBot:
             
             # Send response
             try:
-                self.web_client.chat_postMessage(channel=channel, text=response, thread_ts=thread_ts)
+                self.web_client.chat_postMessage(channel=channel, text=response)
                 logger.info("✅ Sent intelligent response")
             except Exception as e:
                 logger.error(f"❌ Error sending response: {e}")
@@ -212,7 +210,7 @@ class WhizzyBot:
             logger.error(f"❌ Error in query processing: {e}")
             error_response = "🤖 **Whizzy**: I encountered an error processing your request. Please try again."
             try:
-                self.web_client.chat_postMessage(channel=channel, text=error_response, thread_ts=thread_ts)
+                self.web_client.chat_postMessage(channel=channel, text=error_response)
             except Exception as send_error:
                 logger.error(f"❌ Error sending error response: {send_error}")
     
@@ -241,11 +239,11 @@ class WhizzyBot:
         
         # Subscription commands
         if text_lower.startswith("subscribe"):
-            return self._handle_subscribe(user, text)
+            return self._handle_subscribe("user", text)
         elif text_lower.startswith("unsubscribe"):
-            return self._handle_unsubscribe(user)
+            return self._handle_unsubscribe("user")
         elif text_lower.startswith("list subscriptions"):
-            return self._handle_list_subscriptions(user)
+            return self._handle_list_subscriptions("user")
         
         return None  # Not a static command, use intelligent routing
     
@@ -279,40 +277,28 @@ class WhizzyBot:
             return self._generate_fallback_response(text)
     
     def _generate_fallback_response(self, text: str) -> str:
-        """Generate fallback response using simple Salesforce queries"""
+        """Generate fallback response using intelligent routing"""
         try:
             text_lower = text.lower().strip()
 
             if not self.salesforce_client:
                 return "🤖 **Whizzy**: Salesforce connection not available. Please check configuration."
 
-            # Win rate analysis
-            if "win rate" in text_lower:
-                return self._get_win_rate_analysis()
-
-            # Pipeline overview
-            elif "pipeline" in text_lower:
-                return self._get_pipeline_overview()
-
-            # Top accounts
-            elif any(phrase in text_lower for phrase in ["top 10 accounts", "accounts by revenue", "top accounts"]):
-                return self._get_top_accounts()
-
-            # Executive briefing
-            elif "briefing" in text_lower:
-                return self._get_executive_briefing()
-
-            # Deal analysis
-            elif any(phrase in text_lower for phrase in ["biggest deals", "deal analysis", "top deals"]):
-                return self._get_deal_analysis()
-
-            # Performance metrics
-            elif any(phrase in text_lower for phrase in ["performance", "metrics", "kpi"]):
-                return self._get_performance_metrics()
-
-            # Default response
-            else:
-                return self._get_help_response()
+            # Use intelligent routing instead of hardcoded keywords
+            if self.intelligent_system:
+                try:
+                    # Use intelligent system for all data queries
+                    response = asyncio.run(self.intelligent_system.process_query(text, {}))
+                    if hasattr(response, 'response_text'):
+                        return f"🤖 **Whizzy**: {response.response_text}"
+                    else:
+                        return f"🤖 **Whizzy**: {str(response)}"
+                except Exception as e:
+                    logger.error(f"Intelligent system failed: {e}")
+                    # Fall through to simple response
+            
+            # Simple fallback response
+            return "🤖 **Whizzy**: I can help you analyze your Salesforce data. Try asking about win rates, pipeline, accounts, or performance metrics."
 
         except Exception as e:
             logger.error(f"❌ Error generating fallback response: {e}")
@@ -388,9 +374,9 @@ Just ask me anything about your Salesforce data! 🚀"""
         """Get pipeline overview from Salesforce"""
         try:
             result = self.salesforce_client.query(
-                "SELECT StageName, COUNT(Id) total_count, SUM(Amount) total_value "
+                "SELECT StageName, COUNT(Id) total_count, SUM(Amount) total_amount "
                 "FROM Opportunity WHERE IsClosed = false "
-                "GROUP BY StageName ORDER BY total_value DESC"
+                "GROUP BY StageName ORDER BY total_amount DESC"
             )
 
             pipeline_data = []
@@ -400,7 +386,7 @@ Just ask me anything about your Salesforce data! 🚀"""
             for record in result['records']:
                 stage = record['StageName']
                 count = record['total_count']
-                amount = record['total_value'] or 0
+                amount = record['total_amount'] or 0
                 total_value += amount
                 total_opportunities += count
                 pipeline_data.append(f"• **{stage}**: {count:,} opportunities, ${amount:,.0f}")

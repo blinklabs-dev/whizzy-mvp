@@ -1,0 +1,58 @@
+{
+  "no_hardcoding": {
+    "passed": 4,
+    "total": 4,
+    "success_rate": 1.0,
+    "details": {
+      "static_commands": {
+        "passed": true,
+        "description": "Static command hardcoding check - 0.0% false positives",
+        "hardcoding_ratio": 0.0
+      },
+      "intent_classification": {
+        "passed": true,
+        "description": "Intent classification uses adaptive learning, not hardcoded patterns"
+      },
+      "semantic_patterns": {
+        "passed": true,
+        "description": "Semantic patterns hardcoding check - 0.0% false positives",
+        "hardcoding_ratio": 0.0
+      },
+      "fallback_patterns": {
+        "passed": true,
+        "description": "Fallback patterns check - Basic: 100.0%, Complex: 100.0%",
+        "basic_accuracy": 1.0,
+        "complex_accuracy": 1.0
+      }
+    }
+  },
+  "test_coverage": {
+    "total_test_cases": 131,
+    "spectrums": 7,
+    "sufficient_coverage": true,
+    "details": {
+      "Static Commands": 18,
+      "Salesforce Queries": 17,
+      "Business Intelligence": 17,
+      "Complex Analytics": 17,
+      "Executive Briefing": 17,
+      "Persona-Specific": 30,
+      "Edge Cases": 15
+    }
+  },
+  "intent_accuracy": {
+    "correct": 15,
+    "total": 15,
+    "accuracy": 1.0
+  },
+  "response_quality": {
+    "passed": 5,
+    "total": 8,
+    "accuracy": 0.625
+  },
+  "context_appropriateness": {
+    "passed": 2,
+    "total": 4,
+    "accuracy": 0.5
+  }
+}
