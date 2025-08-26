@@ -1,314 +1,242 @@
-# Whizzy Bot - Salesforce Analytics Bot
+# Whizzy Bot - Intelligent Agentic Analytics System
 
-A production-ready Slack bot that provides real-time Salesforce analytics through natural language queries. Whizzy Bot transforms complex Salesforce data into actionable business insights with professional formatting and persona-specific responses.
+> **Advanced AI-powered Salesforce analytics bot with intelligent orchestration, multi-source analytics, and persona-specific insights**
+
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen.svg)]()
 
 ## 🚀 **Quick Start**
 
-### **1. Setup Environment**
 ```bash
-# Clone the repository
-git clone <repository-url>
-cd whizzy-mvp
-
 # Install dependencies
 pip install -r requirements.txt
 
-# Copy environment template
+# Set up environment variables
 cp env.example .env
-
 # Edit .env with your credentials
-nano .env
+
+# Run the enhanced bot
+python app/enhanced_whizzy_bot.py
 ```
 
-### **2. Configure Environment Variables**
-```bash
-# Slack Configuration
-SLACK_APP_TOKEN=xapp-your-app-token
-SLACK_BOT_TOKEN=xoxb-your-bot-token
+## 🧠 **Intelligent Agentic System Features**
 
-# Salesforce Configuration
-SALESFORCE_USERNAME=your_username@example.com
-SALESFORCE_PASSWORD=your_password
-SALESFORCE_SECURITY_TOKEN=your_security_token
-SALESFORCE_DOMAIN=login  # 'login' for production, 'test' for sandbox
+### **Advanced Intent Classification**
+- **LLM-powered understanding** of natural language queries
+- **8 intent types**: Direct answers, Salesforce queries, Business Intelligence, Complex Analytics, dbt models, Coffee briefings, Reasoning loops, Multi-source analysis
+- **7 persona types**: VP Sales, Account Executive, Sales Manager, CDO, Data Engineer, Sales Operations, Customer Success
+- **Confidence scoring** and fallback mechanisms
 
-# Optional: Analytics Infrastructure
-SNOWFLAKE_ACCOUNT=your_account
-SNOWFLAKE_USER=your_username
-SNOWFLAKE_PASSWORD=your_password
-SNOWFLAKE_ROLE=your_role
-SNOWFLAKE_WAREHOUSE=XSMALL
-SNOWFLAKE_DATABASE=your_database
-SNOWFLAKE_SCHEMA=your_schema
-```
+### **Multi-Agent Orchestration**
+- **Intelligent routing** based on query complexity and intent
+- **Parallel processing** with ThreadPoolExecutor
+- **Reasoning loops** for complex multi-step analysis
+- **Quality evaluation** with comprehensive metrics
 
-### **3. Start the Bot**
-```bash
-# Run the bot
-python app/whizzy_bot.py
+### **Text-to-Technical Conversion**
+- **Text-to-SOQL**: Natural language to Salesforce queries
+- **Text-to-dbt**: Natural language to dbt model generation
+- **Text-to-Business Intelligence**: Natural language to analytics insights
 
-# Or with environment path
-PYTHONPATH=. python app/whizzy_bot.py
-```
+### **Multi-Source Analytics**
+- **Salesforce Integration**: Real-time data queries and analysis
+- **Snowflake Integration**: Data warehouse analytics (placeholder)
+- **dbt Integration**: Model deployment and management (placeholder)
+- **Cross-platform correlation** and insights
 
-### **4. Test in Slack**
-- Mention `@whizzy` in any channel
-- Ask questions like:
-  - "What's our win rate?"
-  - "Show me the pipeline"
-  - "Top 10 accounts by revenue"
-  - "Give me an executive briefing"
+### **Coffee Briefing System**
+- **Automated scheduling** for different personas
+- **Personalized insights** based on role and frequency
+- **Action items** and recommendations
+- **Risk assessment** and opportunity identification
+
+## 📊 **Quality Evaluation Framework**
+
+### **Response Quality Metrics**
+- **Confidence Score**: Overall response confidence (0.0-1.0)
+- **Persona Alignment**: Role-specific relevance (0.0-1.0)
+- **Actionability Score**: Practical recommendations (0.0-1.0)
+- **Technical Accuracy**: SOQL/dbt correctness
+- **Reasoning Quality**: Logical analysis steps
+
+### **Performance Targets**
+- **Simple queries**: < 2 seconds
+- **Complex analytics**: < 5 seconds
+- **Coffee briefings**: < 3 seconds
+- **dbt model generation**: < 10 seconds
+- **Overall success rate**: > 90%
 
 ## 🏗️ **Architecture**
 
-### **System Overview**
 ```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Slack User    │───▶│  Whizzy Bot     │───▶│   Salesforce    │
-│   (Natural      │    │  (Socket Mode)  │    │   (Real Data)   │
-│   Language)     │    │                 │    │                 │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-                                │
-                                ▼
-                       ┌─────────────────┐
-                       │   Analytics     │
-                       │  (dbt/Snowflake)│
-                       │   (Future)      │
-                       └─────────────────┘
+┌─────────────────────────────────────────────────────────────┐
+│                INTELLIGENT AGENTIC SYSTEM                   │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌─────────────────┐    ┌─────────────────┐                │
+│  │   User Query    │───▶│  Intent         │                │
+│  │   (Natural      │    │  Classification │                │
+│  │   Language)     │    │  (LLM)          │                │
+│  └─────────────────┘    └─────────┬───────┘                │
+│                                   │                        │
+│                                   ▼                        │
+│                          ┌─────────────────┐                │
+│                          │   Orchestration │                │
+│                          │   Engine        │                │
+│                          └─────────┬───────┘                │
+│                                   │                        │
+│                                   ▼                        │
+│  ┌─────────────────┐    ┌─────────────────┐                │
+│  │   Response      │◀───│   Multi-Agent   │                │
+│  │   Generation    │    │   Processing    │                │
+│  │   (Formatted)   │    │   (Parallel)    │                │
+│  └─────────────────┘    └─────────────────┘                │
+│                                   │                        │
+│                                   ▼                        │
+│                          ┌─────────────────┐                │
+│                          │   Data Sources  │                │
+│                          │  (Salesforce,   │                │
+│                          │   Snowflake,    │                │
+│                          │   dbt)          │                │
+│                          └─────────────────┘                │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
 ```
-
-### **Core Components**
-
-#### **1. Whizzy Bot (`app/whizzy_bot.py`)**
-- **Slack Integration**: Socket Mode for real-time communication
-- **Salesforce Connection**: Direct API queries for live data
-- **Query Processing**: Natural language to structured queries
-- **Response Generation**: Professional, persona-specific insights
-- **Error Handling**: Graceful fallbacks and logging
-
-#### **2. Analytics Infrastructure (`analytics/`)**
-- **dbt Models**: Staging, facts, dimensions, and marts
-- **Snowflake Integration**: Data warehouse for advanced analytics
-- **Forecasting Models**: Pipeline and revenue predictions
-- **Performance Metrics**: KPIs and business intelligence
-
-#### **3. Configuration**
-- **Environment Variables**: Secure credential management
-- **Logging**: Comprehensive request and error tracking
-- **Signal Handling**: Graceful shutdown and restart
-
-## 📊 **Features**
-
-### **Real-Time Analytics**
-- **Win Rate Analysis**: Current performance metrics
-- **Pipeline Overview**: Stage-by-stage breakdown
-- **Top Accounts**: Revenue-based rankings
-- **Deal Analysis**: High-value opportunity insights
-- **Performance Metrics**: KPIs and benchmarks
-
-### **Strategic Insights**
-- **Executive Briefings**: High-level strategic overview
-- **Action Items**: Specific recommendations
-- **Risk Assessment**: Pipeline and performance risks
-- **Forecasting**: Data-driven predictions
-
-### **Professional Formatting**
-- **Rich Text**: Emojis and structured formatting
-- **Persona-Specific**: Role-appropriate insights
-- **Actionable**: Clear next steps and recommendations
-- **Visual**: Easy-to-read data presentation
 
 ## 🎯 **Use Cases**
 
-### **Sales Teams**
-- **Account Executives**: Deal preparation and customer insights
-- **Sales Managers**: Team performance and coaching opportunities
-- **Sales Operations**: Process optimization and data quality
+### **VP Sales**
+- Strategic resource allocation analysis
+- Team performance insights
+- Pipeline health assessment
+- Executive-level recommendations
 
-### **Leadership**
-- **VP Sales**: Strategic insights and resource allocation
-- **Executives**: High-level business intelligence
-- **Finance**: Revenue forecasting and pipeline analysis
+### **Account Executive**
+- Deal preparation assistance
+- Customer insights and trends
+- Personal performance metrics
+- Call preparation guidance
 
-### **Customer Success**
-- **Customer Success Managers**: Account health and retention
-- **Support Teams**: Customer insights and engagement
+### **CDO**
+- Data strategy and governance
+- dbt model creation and deployment
+- Analytics infrastructure insights
+- Technical architecture decisions
+
+### **Sales Manager**
+- Team coaching opportunities
+- Process optimization insights
+- Individual rep performance
+- Resource allocation guidance
 
 ## 🔧 **Development**
 
-### **Project Structure**
-```
-whizzy-mvp/
-├── app/
-│   └── whizzy_bot.py              # Main bot application
-├── analytics/                     # dbt models and analytics
-│   ├── models/
-│   │   ├── staging/              # Raw data staging
-│   │   ├── facts/                # Fact tables
-│   │   ├── dims/                 # Dimension tables
-│   │   └── marts/                # Business marts
-│   └── dbt_project.yml           # dbt configuration
-├── docs/                         # Documentation
-├── tests/                        # Test suite
-├── .env                          # Environment variables
-├── requirements.txt              # Python dependencies
-└── README.md                     # Project documentation
-```
-
-### **Adding New Features**
-
-#### **1. New Query Type**
-```python
-def _generate_response(self, text: str, user: str) -> str:
-    text_lower = text.lower()
-    
-    # Add new condition
-    if "your new query" in text_lower:
-        return self._get_new_analysis()
-    
-    # ... existing code ...
-
-def _get_new_analysis(self) -> str:
-    """Get new analysis from Salesforce"""
-    # Implement your analysis logic
-    pass
-```
-
-#### **2. New Analytics Model**
-```sql
--- analytics/models/your_new_model.sql
-{{
-  config(
-    materialized='table'
-  )
-}}
-
-SELECT 
-  -- Your analysis logic
-FROM {{ ref('your_source_table') }}
-```
-
-### **Testing**
+### **Setup Development Environment**
 ```bash
-# Run tests
-pytest tests/
+# Install development dependencies
+pip install -r requirements.txt
 
-# Test specific functionality
-python -m pytest tests/test_whizzy_bot.py -v
+# Run tests
+python -m pytest tests/ -v
+
+# Run linting
+black app/ tests/
+flake8 app/ tests/
 ```
+
+### **Testing Strategy**
+- **Unit Tests**: Core functionality validation
+- **Integration Tests**: End-to-end workflow testing
+- **Quality Tests**: Response quality assessment
+- **Persona Tests**: Role-specific scenario testing
+- **Performance Tests**: System performance validation
+
+### **Code Quality**
+- **Type Hints**: Full type annotation coverage
+- **Documentation**: Comprehensive docstrings
+- **Error Handling**: Graceful fallbacks and recovery
+- **Logging**: Structured logging with different levels
 
 ## 📈 **Analytics Infrastructure**
 
 ### **dbt Models**
-- **Staging**: Raw Salesforce data preparation
-- **Facts**: Core business metrics (opportunities, accounts)
-- **Dimensions**: Reference data (owners, industries)
-- **Marts**: Business-ready analytics (forecasting, performance)
+- **Staging Models**: Data cleaning and standardization
+- **Dimension Models**: Customer, product, and time dimensions
+- **Fact Models**: Sales, pipeline, and performance facts
+- **Mart Models**: Business-ready aggregated data
 
-### **Key Models**
-- `fct_opportunity`: Core opportunity metrics
-- `m_forecast`: Revenue forecasting
-- `m_slippage_impact_quarter`: Pipeline analysis
-- `m_stage_velocity_quarter`: Performance metrics
+### **Snowflake Integration**
+- **Data Warehouse**: Centralized analytics platform
+- **Performance Optimization**: Query optimization and caching
+- **Data Governance**: Security, access control, and audit trails
 
-### **Running Analytics**
-```bash
-cd analytics
+### **Advanced Analytics**
+- **Predictive Modeling**: Win rate prediction, churn analysis
+- **Customer Segmentation**: RFM analysis, behavior clustering
+- **Performance Attribution**: Campaign effectiveness, channel analysis
 
-# Install dbt dependencies
-dbt deps
+## 🔐 **Security & Compliance**
 
-# Run all models
-dbt run
+### **Data Protection**
+- **Encryption**: Data in transit and at rest
+- **Access Control**: Role-based permissions
+- **Audit Logging**: Complete activity tracking
+- **GDPR Compliance**: Data privacy and consent management
 
-# Run specific model
-dbt run --select m_forecast
-
-# Test models
-dbt test
-```
-
-## 🔒 **Security**
-
-### **Best Practices**
-- **Environment Variables**: Never hardcode credentials
-- **Token Management**: Secure Slack and Salesforce tokens
-- **Access Control**: Limit Salesforce API permissions
-- **Logging**: Avoid logging sensitive data
-- **Error Handling**: Sanitize error messages
-
-### **Configuration**
-```bash
-# Required permissions
-- Salesforce: Read access to Opportunities, Accounts, Users
-- Slack: App mentions, message reading, posting
-- Snowflake: Read access to analytics tables (future)
-```
+### **Integration Security**
+- **OAuth 2.0**: Secure API authentication
+- **API Rate Limiting**: Protection against abuse
+- **Input Validation**: SQL injection prevention
+- **Error Handling**: Secure error messages
 
 ## 🚀 **Deployment**
 
 ### **Production Setup**
 ```bash
-# 1. Set up environment
-cp env.example .env
-# Edit .env with production credentials
+# Environment configuration
+export SLACK_APP_TOKEN=xapp-your-token
+export SLACK_BOT_TOKEN=xoxb-your-token
+export OPENAI_API_KEY=your-openai-key
+export SALESFORCE_USERNAME=your-username
+export SALESFORCE_PASSWORD=your-password
+export SALESFORCE_SECURITY_TOKEN=your-token
 
-# 2. Install dependencies
-pip install -r requirements.txt
-
-# 3. Test connection
-python -c "from app.whizzy_bot import WhizzyBot; bot = WhizzyBot()"
-
-# 4. Start bot
-python app/whizzy_bot.py
+# Run with process manager
+pm2 start app/enhanced_whizzy_bot.py --name whizzy-bot
 ```
 
-### **Process Management**
-```bash
-# Using systemd (Linux)
-sudo systemctl enable whizzy-bot
-sudo systemctl start whizzy-bot
-
-# Using PM2 (Node.js process manager)
-pm2 start app/whizzy_bot.py --name whizzy-bot
-pm2 save
-pm2 startup
-```
-
-### **Monitoring**
-- **Logs**: Check application logs for errors
-- **Performance**: Monitor response times
-- **Uptime**: Ensure bot stays connected
-- **Usage**: Track query patterns and volume
+### **Monitoring & Observability**
+- **Health Checks**: System status monitoring
+- **Performance Metrics**: Response times and throughput
+- **Quality Metrics**: Confidence scores and success rates
+- **Error Tracking**: Comprehensive error logging and alerting
 
 ## 🤝 **Contributing**
 
-### **Development Workflow**
+### **Development Guidelines**
 1. **Fork** the repository
 2. **Create** a feature branch
-3. **Develop** your changes
-4. **Test** thoroughly
-5. **Submit** a pull request
+3. **Implement** with tests
+4. **Submit** a pull request
 
 ### **Code Standards**
-- **Python**: Follow PEP 8 guidelines
-- **SQL**: Use dbt best practices
-- **Documentation**: Update README and docstrings
-- **Testing**: Add tests for new features
+- **Python**: PEP 8 compliance
+- **Testing**: >90% coverage
+- **Documentation**: Clear and comprehensive
+- **Performance**: Optimized for production
 
 ## 📞 **Support**
 
-### **Common Issues**
-- **Connection Errors**: Check Salesforce credentials
-- **Slack Issues**: Verify bot tokens and permissions
-- **Data Issues**: Confirm Salesforce data access
-- **Performance**: Monitor query response times
+### **Documentation**
+- [Architecture Guide](docs/INTELLIGENT_AGENTIC_SYSTEM.md)
+- [API Reference](docs/API_REFERENCE.md)
+- [Deployment Guide](docs/DEPLOYMENT.md)
 
-### **Getting Help**
-- **Documentation**: Check this README and architecture docs
-- **Issues**: Create GitHub issues for bugs
-- **Discussions**: Use GitHub discussions for questions
-- **Contributions**: Submit pull requests for improvements
+### **Community**
+- **Issues**: GitHub issue tracker
+- **Discussions**: GitHub discussions
+- **Wiki**: Project documentation
 
 ## 📄 **License**
 
@@ -316,11 +244,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 **Acknowledgments**
 
-- **Salesforce**: For the robust API and data platform
-- **Slack**: For the excellent bot framework
-- **dbt**: For the analytics transformation framework
-- **Community**: For feedback and contributions
+- **OpenAI**: GPT-4 integration for intelligent processing
+- **Salesforce**: API integration and data access
+- **Slack**: Real-time communication platform
+- **dbt**: Data transformation and modeling
+- **Snowflake**: Cloud data warehouse platform
 
 ---
 
-**Whizzy Bot** - Making Salesforce analytics accessible to everyone! 🚀
+**Built with ❤️ for intelligent business analytics**
