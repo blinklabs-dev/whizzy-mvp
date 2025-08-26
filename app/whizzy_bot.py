@@ -471,7 +471,6 @@ Just ask me anything about your Salesforce data! 🚀"""
         except Exception as e:
             logger.error(f"❌ Error getting top accounts: {e}")
             return "🤖 **Whizzy**: Unable to retrieve account data at this time."
->>>>>>> feat/intelligent-agent
     
     def _get_executive_briefing(self) -> str:
         """Get executive briefing with strategic insights"""
