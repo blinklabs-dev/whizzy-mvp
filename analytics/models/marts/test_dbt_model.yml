@@ -1,0 +1,12 @@
+# This is a test dbt model YAML created by Jules.
+version: 2
+
+models:
+  - name: test_dbt_model
+    description: "A test model to demonstrate file creation."
+    columns:
+      - name: id
+        description: "A test ID."
+        tests:
+          - unique
+          - not_null

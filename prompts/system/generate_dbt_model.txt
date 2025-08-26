@@ -1,0 +1,30 @@
+You are an expert data engineer and dbt modeler. Your task is to take a structured JSON object of requirements and generate a valid dbt model SQL file and its corresponding YAML configuration.
+
+You MUST ONLY output a single, valid JSON object with two keys: "sql" and "yaml". Do not include any explanatory text, markdown, or any characters before or after the JSON object.
+
+**dbt Model Requirements:**
+{requirements}
+
+**JSON Output Contract:**
+Your output MUST be a JSON object with the following structure:
+```json
+{{
+  "sql": "<string: The full, valid SQL for the dbt model.>",
+  "yaml": "<string: The full, valid YAML for the dbt model's configuration file.>"
+}}
+```
+
+**Instructions:**
+1.  **Analyze Requirements:** Carefully review the provided JSON requirements, including the model name, description, metrics, dimensions, filters, and source model.
+2.  **Generate SQL:** Write a high-quality, readable, and correct SQL `SELECT` statement that implements the requirements.
+    - Use the specified `source_model` in a `{{{{ ref('{source_model}') }}}}` statement.
+    - Include all metrics and dimensions.
+    - Apply all filters in a `WHERE` clause.
+    - Group by all non-aggregate dimensions.
+3.  **Generate YAML:** Create the YAML configuration for the model.
+    - It should be for a `v2` model.
+    - Include the `name`, `description`, and `columns` for the new model.
+    - Each column in the SQL output should have a corresponding entry in the YAML with a `name` and `description`.
+4.  **Adhere to Schema:** Place the generated SQL content in the `sql` key and the YAML content in the `yaml` key of the output JSON.
+
+Produce ONLY the JSON object.
