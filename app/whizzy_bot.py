@@ -29,7 +29,8 @@ from dotenv import load_dotenv
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from app.multi_agent_dag import MultiAgentDAG
+from app.spectrum_aware_router import SpectrumAwareRouter
+from app.intelligent_agentic_system import EnhancedIntelligentAgenticSystem
 
 # Load environment variables
 load_dotenv()
@@ -67,14 +68,16 @@ class WhizzyBot:
         self.salesforce_client = None
         self._initialize_salesforce()
         
-        # Initialize multi-agent DAG
-        self.dag = None
+        # Initialize intelligent routing system
+        self.router = None
+        self.intelligent_system = None
         if self.salesforce_client:
             schema = self._get_salesforce_schema()
-            self.dag = MultiAgentDAG()
-            logger.info("✅ Multi-agent DAG initialized")
+            self.router = SpectrumAwareRouter()
+            self.intelligent_system = EnhancedIntelligentAgenticSystem()
+            logger.info("✅ Intelligent routing system initialized")
         else:
-            logger.warning("Salesforce client not available, DAG not initialized.")
+            logger.warning("Salesforce client not available, intelligent system not initialized.")
         
         logger.info("🚀 Whizzy Bot initialized successfully")
         logger.info(f"🔍 App Token: {self.app_token[:30]}...")
@@ -222,12 +225,12 @@ class WhizzyBot:
         asyncio.run(self._process_query_async(text, channel, user, conversation_id, thread_ts))
     
     async def _generate_response(self, text: str, user: str, history: list[dict]) -> str:
-        """Generate response using multi-agent DAG orchestration."""
+                """Generate response using intelligent spectrum-aware routing."""
         
-        if not self.dag:
-            return "🤖 **Whizzy**: The multi-agent DAG system is not available. Please check the configuration."
-
-        # Convert history format for DAG
+        if not self.router or not self.intelligent_system:
+            return "🤖 **Whizzy**: The intelligent routing system is not available. Please check the configuration."
+        
+        # Convert history format
         conversation_history = []
         for msg in history:
             conversation_history.append({
@@ -238,9 +241,16 @@ class WhizzyBot:
         # Get Salesforce schema
         schema = self._get_salesforce_schema()
 
-        # Use multi-agent DAG orchestration
-        logger.info(f"Processing query with multi-agent DAG: {text}")
-        response = await self.dag.execute(text, conversation_history, schema)
+        # Use spectrum-aware intelligent routing
+        logger.info(f"Processing query with spectrum-aware router: {text}")
+        routing_decision = self.router.route_query(text)
+        
+        if routing_decision.layer.value == "fast_path":
+            response = self.router._get_fast_path_response(routing_decision.specific_intent)
+        elif routing_decision.layer.value == "smart_data_path":
+            response = await self.intelligent_system.process_query(text, {})
+        else:  # deep_thinking_path
+            response = await self.intelligent_system.process_complex_query(text, {})
         
         return response
     
