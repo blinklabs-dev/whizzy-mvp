@@ -12,36 +12,26 @@ from app.tools.snowflake_tool import SnowflakeTool
 
 class TestSalesforceTool(unittest.TestCase):
 
-    def test_run_salesforce_tool(self):
-        """Test the SalesforceTool's run method."""
-        def open_side_effect(file, mode='r'):
-            if 'text_to_soql.json' in file:
-                return unittest.mock.mock_open(read_data='[{"question": "test", "soql": "SELECT"}]').return_value
-            else:
-                return unittest.mock.mock_open(read_data='mock prompt').return_value
+    def test_run_salesforce_tool_as_runner(self):
+        """Test the refactored SalesforceTool's run method, which now only executes SOQL."""
+        # Arrange
+        mock_sf_client = MagicMock()
+        mock_sf_client.query_all.return_value = {"records": ["sf_record"]}
 
-        with patch('builtins.open', side_effect=open_side_effect):
-            mock_sf_client = MagicMock()
-            mock_sf_client.query_all.return_value = {"records": ["sf_record"]}
+        # The tool no longer needs openai_client or executor
+        tool = SalesforceTool(sf_client=mock_sf_client)
 
-            mock_openai_client = MagicMock()
-            mock_llm_response = MagicMock()
-            mock_llm_response.choices[0].message.content = "SELECT Id FROM Account"
-            mock_openai_client.chat.completions.create.return_value = mock_llm_response
+        # Act
+        soql_query = "SELECT Id FROM Account"
+        result = tool.run(soql_query) # The method is now synchronous
 
-            from concurrent.futures import ThreadPoolExecutor
-            executor = ThreadPoolExecutor(max_workers=1)
-
-            tool = SalesforceTool(sf_client=mock_sf_client, openai_client=mock_openai_client, executor=executor)
-
-            result = asyncio.run(tool.run("get all accounts"))
-
-            # Check that the LLM was called to generate SOQL
-            mock_openai_client.chat.completions.create.assert_called_once()
-            # Check that the SOQL was executed
-            mock_sf_client.query_all.assert_called_once_with("SELECT Id FROM Account")
-            # Check the result
-            self.assertEqual(result, {"records": ["sf_record"]})
+        # Assert
+        # Check that the SOQL was executed directly
+        mock_sf_client.query_all.assert_called_once_with(soql_query)
+        # Check that the LLM was NOT called
+        # (The mock_openai_client doesn't exist, so this is implicitly tested)
+        # Check the result
+        self.assertEqual(result, {"records": ["sf_record"]})
 
 
 class TestSnowflakeTool(unittest.TestCase):

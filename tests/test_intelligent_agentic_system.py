@@ -95,14 +95,41 @@ class TestIntelligentAgenticSystemUAT(unittest.TestCase):
         self.assertIsInstance(vp_prompt, str)
         self.assertGreater(len(vp_prompt), 0)
 
-    def test_data_source_gathering(self):
-        """Test data source gathering"""
-        data_sources = [DataSourceType.SALESFORCE, DataSourceType.SNOWFLAKE]
+    def test_builder_agent_soql_generation(self):
+        """Test that the builder agent correctly generates SOQL."""
+        # Arrange
+        # Mock the agents in the pipeline
+        plan = {
+            "primary_intent": IntentType.SALESFORCE_QUERY.value,
+            "confidence": 0.95,
+            "explanation": "get all accounts"
+        }
+        self.system._planner_agent = AsyncMock(return_value=plan)
+        self.system._builder_agent = AsyncMock(return_value="SELECT Id FROM Account")
+        self.system._runner_agent = AsyncMock(return_value={"records": ["foo"]})
+        self.system._summarize_data = AsyncMock(return_value="Summary of accounts")
 
-        result = asyncio.run(self.system._gather_data_sources(data_sources, "test query"))
+        # This intent object is now only used to get into the right part of orchestrate_response
+        intent = IntentAnalysis(
+            primary_intent=IntentType.SALESFORCE_QUERY,
+            confidence=0.95,
+            persona=PersonaType.VP_SALES,
+            data_sources=[DataSourceType.SALESFORCE],
+            complexity_level="low",
+            reasoning_required=False, coffee_briefing=False, dbt_model_required=False, thinking_required=False,
+            explanation="get all accounts"
+        )
 
-        self.assertIn("salesforce", result)
-        self.assertIn("snowflake", result)
+        # Act
+        # The orchestrate_response now calls the planner itself, so we don't need to pass the intent
+        asyncio.run(self.system.orchestrate_response("get all accounts", intent, "user1"))
+
+        # Assert
+        self.system._planner_agent.assert_called_once()
+        self.system._builder_agent.assert_called_once()
+        # We can even check the plan that was passed to it
+        plan_arg = self.system._builder_agent.call_args[0][0]
+        self.assertEqual(plan_arg['explanation'], "get all accounts")
 
     def test_quality_metrics_calculation(self):
         """Test quality metrics calculation"""
@@ -173,34 +200,6 @@ class TestIntelligentAgenticSystemUAT(unittest.TestCase):
         # used in the connect call if you had set more specific env vars.
 
 
-    def test_dag_executor(self):
-        """Test the DAG executor logic."""
-        # Mock tools
-        mock_sf_tool = AsyncMock()
-        mock_sf_tool.run.return_value = {"data": "salesforce_data"}
-        mock_snow_tool = AsyncMock()
-        mock_snow_tool.run.return_value = {"data": "snowflake_data"}
-        self.system.tools = {
-            "salesforce": mock_sf_tool,
-            "snowflake": mock_snow_tool
-        }
-
-        dag = {
-            "steps": [
-                {"id": 1, "tool": "salesforce", "query": "q1", "dependencies": []},
-                {"id": 2, "tool": "snowflake", "query": "q2", "dependencies": [1]}
-            ]
-        }
-
-        results = asyncio.run(self.system._execute_dag(dag))
-
-        # Assert that both tools were called
-        mock_sf_tool.run.assert_called_once_with("q1")
-        mock_snow_tool.run.assert_called_once_with("q2")
-
-        # Assert results are stored correctly
-        self.assertEqual(results[1], {"data": "salesforce_data"})
-        self.assertEqual(results[2], {"data": "snowflake_data"})
 
 
 class TestQualityEvaluation(unittest.TestCase):

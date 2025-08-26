@@ -17,7 +17,7 @@ import logging
 import json
 import re
 from typing import Dict, Any, List, Optional, Tuple, Union
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, asdict
 from enum import Enum
 from datetime import datetime, timedelta
 import uuid
@@ -167,7 +167,7 @@ class EnhancedIntelligentAgenticSystem:
 
         # Initialize tools
         self.tools: Dict[str, BaseTool] = {
-            "salesforce": SalesforceTool(self.salesforce_client, self.openai_client, self.executor),
+            "salesforce": SalesforceTool(self.salesforce_client),
             "snowflake": SnowflakeTool(self.snowflake_connection, self.openai_client, self.executor),
         }
 
@@ -182,8 +182,19 @@ class EnhancedIntelligentAgenticSystem:
         self.narrator_briefing_vp_sales_prompt = self._load_prompt_from_file(os.path.join(os.path.dirname(__file__), '..', 'prompts', 'system', 'narrator_briefing_vp_sales.txt'))
         self.extract_dbt_requirements_prompt = self._load_prompt_from_file(os.path.join(os.path.dirname(__file__), '..', 'prompts', 'system', 'extract_dbt_requirements.txt'))
         self.generate_dbt_model_prompt = self._load_prompt_from_file(os.path.join(os.path.dirname(__file__), '..', 'prompts', 'system', 'generate_dbt_model.txt'))
+        self.builder_soql_generator_prompt = self._load_prompt_from_file(os.path.join(os.path.dirname(__file__), '..', 'prompts', 'system', 'builder_soql_generator.txt'))
+        self.soql_few_shot_examples = self._load_few_shot_examples(os.path.join(os.path.dirname(__file__), '..', 'prompts', 'examples', 'text_to_soql.json'))
 
         logger.info("🧠 Enhanced Intelligent Agentic System initialized")
+
+    def _load_few_shot_examples(self, file_path: str) -> List[Dict[str, str]]:
+        """Loads few-shot examples from a JSON file."""
+        try:
+            with open(file_path, 'r') as f:
+                return json.load(f)
+        except Exception as e:
+            logger.error(f"Error loading few-shot examples from {file_path}: {e}")
+            return []
 
     def _initialize_salesforce(self) -> Optional[Salesforce]:
         """Initialize Salesforce connection"""
@@ -483,45 +494,57 @@ class EnhancedIntelligentAgenticSystem:
         logger.info(f"✔️ Planner Agent completed. Intent: {plan.primary_intent.value}")
         return asdict(plan)
 
-    async def _builder_agent(self, plan: Dict[str, Any]) -> Dict[str, str]:
+    async def _builder_agent(self, plan: Dict[str, Any]) -> str:
         """
-        Builder Agent: Generates the necessary queries for the VP Sales Pipeline Briefing.
+        Builder Agent: Generates a SOQL query from a natural language request.
         """
-        logger.info(" menjalankan Builder Agent...")
-        # For this specific briefing, we know the queries we need.
-        queries = {
-            "pipeline_value": "SELECT SUM(Amount) FROM Opportunity WHERE IsClosed = false AND CloseDate = THIS_QUARTER",
-            "win_rate": "SELECT IsWon, COUNT(Id) FROM Opportunity WHERE IsClosed = true AND CloseDate = THIS_QUARTER GROUP BY IsWon",
-            "stuck_deals": "SELECT COUNT(Id) FROM Opportunity WHERE IsClosed = false AND StageName != 'Closed Lost' AND LastModifiedDate < N_DAYS_AGO:14"
-        }
-        logger.info("✔️ Builder Agent completed. Generated 3 queries.")
-        return queries
+        logger.info(" menjalankan Builder Agent to generate SOQL...")
+        query = plan.get("explanation", "") # The original user query
 
-    async def _runner_agent(self, queries: Dict[str, str], plan: Dict[str, Any]) -> Dict[str, Any]:
+        schema = self._get_salesforce_schema()
+        few_shot_text = "\n".join([f"Question: {ex['question']}\nSOQL: {ex['soql']}" for ex in self.soql_few_shot_examples])
+
+        prompt = self.builder_soql_generator_prompt.format(
+            schema=schema,
+            few_shot_examples=few_shot_text,
+            query=query
+        )
+
+        try:
+            response = await asyncio.get_event_loop().run_in_executor(
+                self.executor,
+                lambda: self.openai_client.chat.completions.create(
+                    model="gpt-4-turbo",
+                    messages=[{"role": "system", "content": prompt}],
+                    temperature=0.0,
+                )
+            )
+            soql_query = response.choices[0].message.content.strip()
+            logger.info(f"✔️ Builder Agent completed. Generated SOQL: {soql_query}")
+            return soql_query
+        except Exception as e:
+            logger.error("Failed to generate SOQL from LLM", exc_info=e)
+            return "ERROR: Could not generate SOQL query."
+
+
+    async def _runner_agent(self, query: str, plan: Dict[str, Any]) -> Dict[str, Any]:
         """
-        Runner Agent: Executes a dictionary of queries in parallel.
+        Runner Agent: Executes the query against the correct data source.
         """
         logger.info(" menjalankan Runner Agent...")
+        data_source = plan.get("data_sources", [DataSourceType.SALESFORCE.value])[0]
 
-        async def run_query(key: str, soql: str):
-            # The SalesforceTool's `run` method expects a natural language query
-            # and does its own text-to-soql. This is inefficient for our new flow.
-            # We will bypass it and call the sf client directly.
-            try:
-                result = self.salesforce_client.query_all(soql)
-                return key, result
-            except Exception as e:
-                logger.error(f"Error running query for '{key}': {soql}", exc_info=e)
-                return key, {"error": str(e)}
+        if data_source == DataSourceType.SALESFORCE.value:
+            # The new SalesforceTool just takes a SOQL query directly.
+            result = self.tools["salesforce"].run(soql_query=query)
+        elif data_source == DataSourceType.SNOWFLAKE.value:
+            # Snowflake tool still does its own SQL generation, which can be refactored later.
+            result = await self.tools["snowflake"].run(query=plan.get("explanation", ""))
+        else:
+            raise ValueError(f"Unsupported data source: {data_source}")
 
-        tasks = [run_query(key, soql) for key, soql in queries.items()]
-        results = await asyncio.gather(*tasks)
-
-        # Restructure results into a dictionary
-        structured_results = {key: result for key, result in results}
-
-        logger.info("✔️ Runner Agent completed.")
-        return structured_results
+        logger.info(f"✔️ Runner Agent completed. Records received: {len(result.get('records', []))}")
+        return result
 
     async def _narrator_agent(self, data: Dict[str, Any], plan: Dict[str, Any], query: str) -> Dict[str, Any]:
         """
@@ -554,7 +577,7 @@ class EnhancedIntelligentAgenticSystem:
 
     async def orchestrate_response(self, query: str, intent_analysis: IntentAnalysis, user_id: str = None) -> AgentResponse:
         """
-        Enhanced orchestration using the four-agent pipeline to generate a structured Briefing Card.
+        Enhanced orchestration using the four-agent pipeline.
         """
         logger.info(f"Orchestrating response for intent: {intent_analysis.primary_intent.value} with confidence {intent_analysis.confidence:.2f}")
 
@@ -580,45 +603,38 @@ class EnhancedIntelligentAgenticSystem:
             # Route to the correct handler based on the intent
             if intent == IntentType.DBT_MODEL.value:
                 logger.info("Routing to dbt model creation flow.")
-                # The _handle_dbt_model_request was not removed, we can call it directly.
-                # We need to reconstruct the IntentAnalysis object for it.
-                # This is a temporary bridge until all features use the new pipeline.
-                intent_analysis_obj = IntentAnalysis(
-                    primary_intent=IntentType(intent),
-                    confidence=plan.get('confidence'),
-                    persona=PersonaType(plan.get('persona')),
-                    data_sources=[DataSourceType(ds) for ds in plan.get("data_sources", [])],
-                    complexity_level=plan.get('complexity_level'),
-                    reasoning_required=plan.get('reasoning_required'),
-                    coffee_briefing=plan.get('coffee_briefing'),
-                    dbt_model_required=plan.get('dbt_model_required'),
-                    thinking_required=plan.get('thinking_required'),
-                    explanation=plan.get('explanation')
+                return await self._handle_dbt_model_request(query, intent_analysis, self._get_context_state(user_id))
+
+            # Default flow for Salesforce and Business Intelligence queries
+            elif intent in [IntentType.SALESFORCE_QUERY.value, IntentType.BUSINESS_INTELLIGENCE.value]:
+                logger.info("Routing to dynamic SOQL generation flow.")
+                soql_query = await self._builder_agent(plan)
+
+                if "ERROR" in soql_query:
+                    return self._create_error_response(soql_query)
+
+                data = await self._runner_agent(soql_query, plan)
+
+                # Use the simple summarizer for simple queries, and the full one for BI
+                summarizer_prompt = self.summarize_simple_prompt if intent == IntentType.SALESFORCE_QUERY.value else self.summarize_full_prompt
+                summary = await self._summarize_data(query, data, summarizer_prompt)
+
+                return AgentResponse(
+                    response_text=summary,
+                    data_sources_used=[DataSourceType(ds) for ds in plan.get("data_sources", [])],
+                    reasoning_steps=["Planner", "Builder (SOQL)", "Runner", "Summarizer"],
+                    confidence_score=plan.get("confidence", 0.9),
+                    persona_alignment=0.9,
+                    actionability_score=0.9,
+                    quality_metrics={},
+                    thinking_process=json.dumps(plan, indent=2)
                 )
-                return await self._handle_dbt_model_request(query, intent_analysis_obj, self._get_context_state(user_id))
-
-            elif intent == IntentType.BUSINESS_INTELLIGENCE.value:
-                logger.info("Routing to Briefing Card creation flow.")
-                queries = await self._builder_agent(plan)
-                data = await self._runner_agent(queries, plan)
-                narrator_output = await self._narrator_agent(data, plan, query)
             else:
-                # Fallback for other queries until they are implemented
+                # Fallback for other intents like DIRECT_ANSWER
                 logger.info(f"Fallback for intent: {intent}")
-                narrator_output = {"headline": "This feature is still under construction.", "pipeline": {}, "insights": [], "actions": []}
+                # This can be improved to call a direct answer agent
+                return self._create_error_response("I can only answer questions about Salesforce or create dbt models right now.")
 
-
-            # The final AgentResponse will be built from the Narrator's JSON output.
-            return AgentResponse(
-                response_text=json.dumps(narrator_output, indent=2), # For now, just show the raw JSON
-                data_sources_used=[DataSourceType(ds) for ds in plan.get("data_sources", [])],
-                reasoning_steps=["Planner", "Builder", "Runner", "Narrator"],
-                confidence_score=plan.get("confidence", 0.9),
-                persona_alignment=0.9, # Placeholder
-                actionability_score=0.9, # Placeholder
-                quality_metrics={},
-                thinking_process=json.dumps(plan, indent=2)
-            )
 
         except Exception as e:
             logger.error("❌ Error in orchestration pipeline", exc_info=e)
