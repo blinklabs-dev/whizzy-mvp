@@ -179,6 +179,7 @@ class EnhancedIntelligentAgenticSystem:
         self.chain_of_thought_prompt = self._load_chain_of_thought_prompt()
         self.summarize_simple_prompt = self._load_prompt_from_file(os.path.join(os.path.dirname(__file__), '..', 'prompts', 'system', 'summarize_simple.txt'))
         self.summarize_full_prompt = self._load_prompt_from_file(os.path.join(os.path.dirname(__file__), '..', 'prompts', 'system', 'summarize_full.txt'))
+        self.narrator_briefing_vp_sales_prompt = self._load_prompt_from_file(os.path.join(os.path.dirname(__file__), '..', 'prompts', 'system', 'narrator_briefing_vp_sales.txt'))
 
         logger.info("🧠 Enhanced Intelligent Agentic System initialized")
 
@@ -470,14 +471,95 @@ class EnhancedIntelligentAgenticSystem:
             explanation="Enhanced fallback classification"
         )
 
+    async def _planner_agent(self, query: str, user_context: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Planner Agent: Classifies intent and extracts key information.
+        For the VP Sales briefing, it confirms the intent.
+        """
+        logger.info(" menjalankan Planner Agent...")
+        plan = await self.classify_intent(query, user_context)
+        logger.info(f"✔️ Planner Agent completed. Intent: {plan.primary_intent.value}")
+        return asdict(plan)
+
+    async def _builder_agent(self, plan: Dict[str, Any]) -> Dict[str, str]:
+        """
+        Builder Agent: Generates the necessary queries for the VP Sales Pipeline Briefing.
+        """
+        logger.info(" menjalankan Builder Agent...")
+        # For this specific briefing, we know the queries we need.
+        queries = {
+            "pipeline_value": "SELECT SUM(Amount) FROM Opportunity WHERE IsClosed = false AND CloseDate = THIS_QUARTER",
+            "win_rate": "SELECT IsWon, COUNT(Id) FROM Opportunity WHERE IsClosed = true AND CloseDate = THIS_QUARTER GROUP BY IsWon",
+            "stuck_deals": "SELECT COUNT(Id) FROM Opportunity WHERE IsClosed = false AND StageName != 'Closed Lost' AND LastModifiedDate < N_DAYS_AGO:14"
+        }
+        logger.info("✔️ Builder Agent completed. Generated 3 queries.")
+        return queries
+
+    async def _runner_agent(self, queries: Dict[str, str], plan: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Runner Agent: Executes a dictionary of queries in parallel.
+        """
+        logger.info(" menjalankan Runner Agent...")
+
+        async def run_query(key: str, soql: str):
+            # The SalesforceTool's `run` method expects a natural language query
+            # and does its own text-to-soql. This is inefficient for our new flow.
+            # We will bypass it and call the sf client directly.
+            try:
+                result = self.salesforce_client.query_all(soql)
+                return key, result
+            except Exception as e:
+                logger.error(f"Error running query for '{key}': {soql}", exc_info=e)
+                return key, {"error": str(e)}
+
+        tasks = [run_query(key, soql) for key, soql in queries.items()]
+        results = await asyncio.gather(*tasks)
+
+        # Restructure results into a dictionary
+        structured_results = {key: result for key, result in results}
+
+        logger.info("✔️ Runner Agent completed.")
+        return structured_results
+
+    async def _narrator_agent(self, data: Dict[str, Any], plan: Dict[str, Any], query: str) -> Dict[str, Any]:
+        """
+        Narrator Agent: Summarizes data and generates the final JSON response for the VP Sales briefing.
+        """
+        logger.info(" menjalankan Narrator Agent...")
+
+        # Format the prompt with the data from the runner
+        prompt = self.narrator_briefing_vp_sales_prompt.format(
+            query=query,
+            data=json.dumps(data, indent=2)
+        )
+
+        # Call the LLM to generate the JSON contract
+        response = await asyncio.get_event_loop().run_in_executor(
+            self.executor,
+            lambda: self.openai_client.chat.completions.create(
+                model="gpt-4-turbo",
+                messages=[{"role": "system", "content": prompt}],
+                temperature=0.3,
+                response_format={"type": "json_object"}
+            )
+        )
+
+        response_str = response.choices[0].message.content
+        json_contract = json.loads(response_str)
+
+        logger.info("✔️ Narrator Agent completed.")
+        return json_contract
+
     async def orchestrate_response(self, query: str, intent_analysis: IntentAnalysis, user_id: str = None) -> AgentResponse:
-        """Enhanced orchestration with thinking and context management"""
+        """
+        Enhanced orchestration using the four-agent pipeline to generate a structured Briefing Card.
+        """
         logger.info(f"Orchestrating response for intent: {intent_analysis.primary_intent.value} with confidence {intent_analysis.confidence:.2f}")
 
-        # Confidence Gate: If intent confidence is too low, ask for clarification.
+        # Confidence Gate
         CONFIDENCE_THRESHOLD = 0.65
         if intent_analysis.confidence < CONFIDENCE_THRESHOLD:
-            logger.warning(f"Intent confidence ({intent_analysis.confidence:.2f}) is below threshold ({CONFIDENCE_THRESHOLD}). Asking for clarification.")
+            logger.warning(f"Intent confidence ({intent_analysis.confidence:.2f}) is below threshold. Asking for clarification.")
             return AgentResponse(
                 response_text="I'm not entirely sure what you're asking. Could you please try rephrasing your question?",
                 data_sources_used=[],
@@ -489,68 +571,34 @@ class EnhancedIntelligentAgenticSystem:
             )
 
         try:
-            # Get or create context state
-            context_state = self._get_context_state(user_id or "default")
+            # The new Four-Agent Pipeline
+            plan = await self._planner_agent(query, {})
 
-            # Update context with current query
-            context_state.last_query = query
-            context_state.current_context.update({
-                "current_intent": intent_analysis.primary_intent.value,
-                "current_persona": intent_analysis.persona.value,
-                "timestamp": datetime.now().isoformat()
-            })
-
-            # Execute thinking process if required
-            logger.info(f"Thinking required: {intent_analysis.thinking_required}")
-            chain_of_thought = None
-            if intent_analysis.thinking_required or intent_analysis.primary_intent == IntentType.THINKING_ANALYSIS:
-                logger.info("Executing advanced thinking process...")
-                chain_of_thought = await self._execute_thinking_process(
-                    query, intent_analysis.persona, context_state.current_context, {}
-                )
-
-            # Route to appropriate handler
-            logger.info("Routing to specialized handler...")
-            if intent_analysis.reasoning_required or chain_of_thought:
-                logger.info("--> Handling as Thinking Query")
-                return await self._handle_thinking_query(query, intent_analysis, chain_of_thought, context_state)
-            elif intent_analysis.coffee_briefing:
-                logger.info("--> Handling as Coffee Briefing")
-                return await self._handle_coffee_briefing(query, intent_analysis, context_state)
-            elif intent_analysis.dbt_model_required:
-                logger.info("--> Handling as dbt Model Request")
-                return await self._handle_dbt_model_request(query, intent_analysis, context_state)
-            elif intent_analysis.primary_intent == IntentType.COMPLEX_ANALYTICS:
-                logger.info("--> Handling as Complex Analytics")
-                return await self._handle_complex_analytics(query, intent_analysis, context_state)
-            elif intent_analysis.primary_intent == IntentType.SALESFORCE_QUERY:
-                logger.info("--> Handling as Salesforce Query")
-                sf_result = await self.tools["salesforce"].run(query)
-                summary = await self._summarize_data(query, sf_result, self.summarize_simple_prompt)
-                return AgentResponse(
-                    response_text=summary,
-                    data_sources_used=[DataSourceType.SALESFORCE],
-                    reasoning_steps=["Tool Execution: Salesforce", "Simple Summarization"],
-                    confidence_score=0.95, persona_alignment=0.85, actionability_score=0.8,
-                    quality_metrics={"data_accuracy": 0.98}
-                )
-            elif intent_analysis.primary_intent == IntentType.BUSINESS_INTELLIGENCE:
-                logger.info("--> Handling as Business Intelligence")
-                sf_result = await self.tools["salesforce"].run(query)
-                summary = await self._summarize_data(query, sf_result, self.summarize_full_prompt)
-                return AgentResponse(
-                    response_text=summary,
-                    data_sources_used=[DataSourceType.SALESFORCE],
-                    reasoning_steps=["Tool Execution: Salesforce", "Full Analysis & Summarization"],
-                    confidence_score=0.90, persona_alignment=0.9, actionability_score=0.85,
-                    quality_metrics={"insight_quality": 0.85}
-                )
+            # For now, we only have the implementation for the VP Sales briefing.
+            # We can add routing logic here later.
+            if "pipeline coverage" in query.lower():
+                queries = await self._builder_agent(plan)
+                data = await self._runner_agent(queries, plan)
+                narrator_output = await self._narrator_agent(data, plan, query)
             else:
-                logger.info("--> Handling as Direct Answer")
-                return await self._handle_direct_answer(query, intent_analysis, context_state)
+                # Fallback for other queries until they are implemented
+                narrator_output = {"headline": "This feature is still under construction.", "pipeline": {}, "insights": [], "actions": []}
+
+
+            # The final AgentResponse will be built from the Narrator's JSON output.
+            return AgentResponse(
+                response_text=json.dumps(narrator_output, indent=2), # For now, just show the raw JSON
+                data_sources_used=[DataSourceType(ds) for ds in plan.get("data_sources", [])],
+                reasoning_steps=["Planner", "Builder", "Runner", "Narrator"],
+                confidence_score=plan.get("confidence", 0.9),
+                persona_alignment=0.9, # Placeholder
+                actionability_score=0.9, # Placeholder
+                quality_metrics={},
+                thinking_process=json.dumps(plan, indent=2)
+            )
 
         except Exception as e:
-            logger.error("❌ Error in orchestration", exc_info=e)
+            logger.error("❌ Error in orchestration pipeline", exc_info=e)
             return self._create_error_response(str(e))
 
     def _get_salesforce_schema(self) -> str:
@@ -572,7 +620,7 @@ class EnhancedIntelligentAgenticSystem:
                          schema_description += f"- {field['name']} ({field['type']})\n"
                 schema_description += "\n"
             except Exception as e:
-                logger.error(f"Failed to describe object {obj_name}", error=e)
+                logger.error(f"Failed to describe object {obj_name}", exc_info=e)
 
         logger.info("Salesforce schema loaded for prompt.")
         return schema_description
@@ -608,7 +656,15 @@ class EnhancedIntelligentAgenticSystem:
                 )
             )
             dag_json_str = response.choices[0].message.content
-            dag = json.loads(dag_json_str)
+
+            # Use regex to find the JSON object within the response string
+            json_match = re.search(r'\{.*\}', dag_json_str, re.DOTALL)
+            if not json_match:
+                logger.error(f"No JSON object found in LLM response for DAG generation. Response: {dag_json_str}")
+                return self._create_error_response("I had trouble planning the steps to answer your question. The model did not return a valid plan.")
+
+            dag_str = json_match.group(0)
+            dag = json.loads(dag_str)
             logger.info(f"Generated DAG: {dag}")
 
             # Step 2: Execute the DAG
@@ -631,7 +687,7 @@ class EnhancedIntelligentAgenticSystem:
             )
 
         except json.JSONDecodeError as e:
-            logger.error(f"Failed to decode DAG JSON from LLM response: {e}")
+            logger.error(f"Failed to decode DAG JSON from LLM response. String was: '{dag_str}'. Error: {e}", exc_info=True)
             return self._create_error_response("I had trouble planning out the steps to answer your question. The model returned invalid JSON.")
         except Exception as e:
             logger.error(f"❌ Error in thinking query (DAG execution): {e}")
@@ -765,7 +821,7 @@ class EnhancedIntelligentAgenticSystem:
             )
             return response.choices[0].message.content.strip()
         except Exception as e:
-            logger.error("Data summarization API call failed", error=e)
+            logger.error("Data summarization API call failed", exc_info=e)
             return "Error: Failed to generate a summary for the data."
 
 
