@@ -1,9 +1,9 @@
 {
   "summary": {
     "total_tests": 19,
-    "passed_tests": 15,
-    "failed_tests": 4,
-    "success_rate": 78.94736842105263
+    "passed_tests": 14,
+    "failed_tests": 5,
+    "success_rate": 73.68421052631578
   },
   "results": [
     {
@@ -11,133 +11,133 @@
       "success": true,
       "details": "AE: True, VP: True, CDO: True",
       "response_length": 0,
-      "timestamp": "2025-08-26T04:35:22.259948"
+      "timestamp": "2025-08-26T04:38:13.080705"
     },
     {
       "test_name": "Win Rate Query",
       "success": true,
       "details": "Percentage: True, Win Rate: True, Concise: True",
       "response_length": 220,
-      "timestamp": "2025-08-26T04:35:22.678200"
+      "timestamp": "2025-08-26T04:38:13.505658"
     },
     {
       "test_name": "AE Briefing",
       "success": false,
-      "details": "Stuck Deals: False, AE Context: False, Concise: True",
-      "response_length": 51,
-      "timestamp": "2025-08-26T04:35:24.250809"
+      "details": "Stuck Deals: True, AE Context: False, Concise: True",
+      "response_length": 796,
+      "timestamp": "2025-08-26T04:38:14.881473"
     },
     {
       "test_name": "VP Briefing",
       "success": false,
-      "details": "Pipeline: False, VP Context: False, Concise: True",
-      "response_length": 51,
-      "timestamp": "2025-08-26T04:35:26.298345"
+      "details": "Pipeline: True, VP Context: False, Concise: False",
+      "response_length": 839,
+      "timestamp": "2025-08-26T04:38:16.086185"
     },
     {
       "test_name": "CDO Briefing",
       "success": true,
       "details": "Forecast: True, CDO Context: True, Concise: True",
       "response_length": 403,
-      "timestamp": "2025-08-26T04:35:26.741030"
+      "timestamp": "2025-08-26T04:38:16.561990"
     },
     {
       "test_name": "Basic Query: what all can you do...",
       "success": true,
-      "details": "Length: 169, Confidence: 0.8",
-      "response_length": 169,
-      "timestamp": "2025-08-26T04:35:30.623012"
+      "details": "Length: 150, Confidence: 0.8",
+      "response_length": 150,
+      "timestamp": "2025-08-26T04:38:22.454858"
     },
     {
       "test_name": "Basic Query: show pipeline breakdown by sta...",
       "success": true,
-      "details": "Length: 901, Confidence: 0.9",
-      "response_length": 901,
-      "timestamp": "2025-08-26T04:35:40.015298"
+      "details": "Length: 885, Confidence: 0.9",
+      "response_length": 885,
+      "timestamp": "2025-08-26T04:38:33.000740"
     },
     {
       "test_name": "Basic Query: top 10 opportunities...",
       "success": true,
       "details": "Length: 500, Confidence: 0.95",
       "response_length": 500,
-      "timestamp": "2025-08-26T04:35:47.624965"
+      "timestamp": "2025-08-26T04:38:42.420689"
     },
     {
       "test_name": "Basic Query: what are my tasks this week...",
       "success": true,
-      "details": "Length: 393, Confidence: 0.95",
-      "response_length": 393,
-      "timestamp": "2025-08-26T04:35:54.496387"
+      "details": "Length: 500, Confidence: 0.95",
+      "response_length": 500,
+      "timestamp": "2025-08-26T04:38:50.766041"
     },
     {
       "test_name": "Complex Query: analyze our biggest deals...",
-      "success": true,
-      "details": "Length: 936, Has Insights: True",
-      "response_length": 936,
-      "timestamp": "2025-08-26T04:36:03.158754"
+      "success": false,
+      "details": "Length: 650, Has Insights: False",
+      "response_length": 650,
+      "timestamp": "2025-08-26T04:38:58.850903"
     },
     {
       "test_name": "Complex Query: what's our win rate trend over...",
       "success": true,
       "details": "Length: 220, Has Insights: True",
       "response_length": 220,
-      "timestamp": "2025-08-26T04:36:08.556915"
+      "timestamp": "2025-08-26T04:39:04.457389"
     },
     {
       "test_name": "Complex Query: show me forecast accuracy for ...",
-      "success": true,
-      "details": "Length: 437, Has Insights: True",
-      "response_length": 437,
-      "timestamp": "2025-08-26T04:36:16.195276"
+      "success": false,
+      "details": "Length: 510, Has Insights: False",
+      "response_length": 510,
+      "timestamp": "2025-08-26T04:39:12.773496"
     },
     {
       "test_name": "Complex Query: which deals are at risk this m...",
       "success": false,
-      "details": "Length: 264, Has Insights: False",
-      "response_length": 264,
-      "timestamp": "2025-08-26T04:36:24.184213"
+      "details": "Length: 268, Has Insights: False",
+      "response_length": 268,
+      "timestamp": "2025-08-26T04:39:20.208927"
     },
     {
       "test_name": "Error Handling",
       "success": true,
       "details": "Has Response: True, Graceful: True",
-      "response_length": 146,
-      "timestamp": "2025-08-26T04:36:28.301060"
+      "response_length": 117,
+      "timestamp": "2025-08-26T04:39:24.603192"
     },
     {
       "test_name": "Quality: Win Rate Query",
       "success": true,
       "details": "Length: 220, Confidence: 0.95",
       "response_length": 0,
-      "timestamp": "2025-08-26T04:36:34.325073"
+      "timestamp": "2025-08-26T04:39:33.137694"
     },
     {
       "test_name": "Quality: Pipeline Query",
-      "success": false,
-      "details": "Length: 1007, Confidence: 0.90",
+      "success": true,
+      "details": "Length: 989, Confidence: 0.90",
       "response_length": 0,
-      "timestamp": "2025-08-26T04:36:43.526908"
+      "timestamp": "2025-08-26T04:39:42.121325"
     },
     {
       "test_name": "Quality: AE Briefing",
       "success": true,
-      "details": "Length: 874, Confidence: 0.95",
+      "details": "Length: 862, Confidence: 0.95",
       "response_length": 0,
-      "timestamp": "2025-08-26T04:36:49.134084"
+      "timestamp": "2025-08-26T04:39:49.515373"
     },
     {
       "test_name": "Quality: VP Briefing",
       "success": true,
-      "details": "Length: 929, Confidence: 0.95",
+      "details": "Length: 946, Confidence: 0.95",
       "response_length": 0,
-      "timestamp": "2025-08-26T04:36:56.026703"
+      "timestamp": "2025-08-26T04:39:55.306416"
     },
     {
       "test_name": "Overall Quality Metrics",
       "success": true,
-      "details": "Avg Length: 758, Avg Confidence: 0.94",
+      "details": "Avg Length: 754, Avg Confidence: 0.94",
       "response_length": 0,
-      "timestamp": "2025-08-26T04:36:56.026725"
+      "timestamp": "2025-08-26T04:39:55.306430"
     }
   ]
 }
