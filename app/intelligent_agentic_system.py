@@ -550,7 +550,7 @@ class EnhancedIntelligentAgenticSystem:
                 return await self._handle_direct_answer(query, intent_analysis, context_state)
 
         except Exception as e:
-            logger.error(f"❌ Error in orchestration: {e}")
+            logger.error("❌ Error in orchestration", exc_info=e)
             return self._create_error_response(str(e))
 
     def _get_salesforce_schema(self) -> str:
@@ -1169,7 +1169,7 @@ Provide a context-aware response that builds on previous interactions.
             quality_metrics={"error": 1.0}
         )
 
-    async def process_query(self, query: str, user_context: Dict[str, Any] = None) -> AgentResponse:
+    async def process_query(self, query: str, user_context: Dict[str, Any] = None, user_id: str = None) -> AgentResponse:
         """Main entry point for processing queries"""
         try:
             logger.info(f"🧠 Processing query: {query}")
