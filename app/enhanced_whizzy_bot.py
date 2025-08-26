@@ -144,6 +144,12 @@ class EnhancedWhizzyBot:
             if user not in self.user_mapping:
                 self.user_mapping[user] = internal_user_id
 
+            # Layer 1: Fast Path for simple, static commands
+            response_text = self._handle_static_commands(text)
+            if response_text:
+                self._send_enhanced_response(channel, response_text)
+                return
+
             # Check for subscription commands before calling the agent
             text_lower = text.lower()
             if text_lower.startswith("subscribe"):
@@ -350,6 +356,53 @@ class EnhancedWhizzyBot:
 
         except Exception as e:
             logger.error(f"❌ Error sending enhanced coffee briefing: {e}")
+
+    def _get_help_response(self) -> str:
+        """Returns a static, pre-written help message."""
+        return """
+Hello! I'm Whizzy, your Salesforce Analytics Assistant. Here's what I can do:
+
+**1. Ask Me Questions About Your Data**
+You can ask me questions in natural language, and I'll do my best to answer them by querying Salesforce.
+- *"What's our win rate this quarter?"*
+- *"Show me the top 5 biggest open deals."*
+- *"Analyze our pipeline by stage."*
+
+**2. Get Proactive Briefings**
+I can send you daily or weekly summary reports via DM.
+- `subscribe daily vp` - Get a daily briefing for a VP of Sales.
+- `subscribe weekly ae` - Get a weekly briefing for an Account Executive.
+- `subscriptions` - See your current subscriptions.
+- `unsubscribe` - Stop all briefings.
+
+**3. Have a Conversation**
+You can chat with me! I'll do my best to be a helpful assistant.
+
+My goal is to get you the insights you need, fast. How can I help you today?
+"""
+
+    def _handle_static_commands(self, text: str) -> Optional[str]:
+        """
+        Handles simple, static commands that don't require AI.
+        Returns a response string if a command is matched, otherwise None.
+        """
+        text_lower = text.lower().strip()
+
+        static_responses = {
+            "help": self._get_help_response,
+            "what can you do": self._get_help_response,
+            "what can you do?": self._get_help_response,
+            "hi": lambda: "Hello there! How can I help you today?",
+            "hello": lambda: "Hello there! How can I help you today?",
+            "hey": lambda: "Hey! What can I do for you?",
+            "thanks": lambda: "You're welcome!",
+            "thank you": lambda: "You're welcome!",
+        }
+
+        if text_lower in static_responses:
+            return static_responses[text_lower]()
+
+        return None
 
     def _load_subscriptions(self) -> List[Dict[str, Any]]:
         """Loads subscriptions from the JSON file."""
